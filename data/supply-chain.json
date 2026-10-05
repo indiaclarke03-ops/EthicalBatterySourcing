@@ -123,9 +123,10 @@
     {
      "instrument": "sulphuric-acid",
      "effect": "Processing depends on sulphuric acid; Hormuz/China export shocks raised costs",
-     "status": "Easing in Q3 2026; re-disruption risk",
+     "status": "Easing in Q3 2026; re-disruption risk; a UFLPA-listed miner (Zijin, Jan 2025) is cited for XUAR sulphuric acid",
      "sources": [
-      "src-benchmark-acid"
+      "src-benchmark-acid",
+      "src-fr-2025-00901"
      ],
      "as_of": "2026-10-05"
     }
@@ -720,9 +721,10 @@
     {
      "instrument": "sulphuric-acid",
      "effect": "Processing depends on sulphuric acid; Hormuz/China export shocks raised costs",
-     "status": "Easing in Q3 2026; re-disruption risk",
+     "status": "Easing in Q3 2026; re-disruption risk; a UFLPA-listed miner (Zijin, Jan 2025) is cited for XUAR sulphuric acid",
      "sources": [
-      "src-benchmark-acid"
+      "src-benchmark-acid",
+      "src-fr-2025-00901"
      ],
      "as_of": "2026-10-05"
     }
@@ -1460,9 +1462,10 @@
     {
      "instrument": "sulphuric-acid",
      "effect": "Processing depends on sulphuric acid; Hormuz/China export shocks raised costs",
-     "status": "Easing in Q3 2026; re-disruption risk",
+     "status": "Easing in Q3 2026; re-disruption risk; a UFLPA-listed miner (Zijin, Jan 2025) is cited for XUAR sulphuric acid",
      "sources": [
-      "src-benchmark-acid"
+      "src-benchmark-acid",
+      "src-fr-2025-00901"
      ],
      "as_of": "2026-10-05"
     },
@@ -1846,9 +1849,10 @@
     {
      "instrument": "sulphuric-acid",
      "effect": "Processing depends on sulphuric acid; Hormuz/China export shocks raised costs",
-     "status": "Easing in Q3 2026; re-disruption risk",
+     "status": "Easing in Q3 2026; re-disruption risk; a UFLPA-listed miner (Zijin, Jan 2025) is cited for XUAR sulphuric acid",
      "sources": [
-      "src-benchmark-acid"
+      "src-benchmark-acid",
+      "src-fr-2025-00901"
      ],
      "as_of": "2026-10-05"
     }
@@ -1969,9 +1973,10 @@
     {
      "instrument": "sulphuric-acid",
      "effect": "Processing depends on sulphuric acid; Hormuz/China export shocks raised costs",
-     "status": "Easing in Q3 2026; re-disruption risk",
+     "status": "Easing in Q3 2026; re-disruption risk; a UFLPA-listed miner (Zijin, Jan 2025) is cited for XUAR sulphuric acid",
      "sources": [
-      "src-benchmark-acid"
+      "src-benchmark-acid",
+      "src-fr-2025-00901"
      ],
      "as_of": "2026-10-05"
     }
@@ -2071,6 +2076,15 @@
      "claim": "> 3.5 GWh installed worldwide",
      "sources": [
       "src-rkp-projects"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Not on the BIS Military End-User list or Entity List (only match is a Beijing building name)",
+     "sources": [
+      "src-ecfr-744"
      ],
      "tier": "T1",
      "tag": "OS",
@@ -2363,7 +2377,18 @@
    "confidence": "Medium",
    "confidence_reason": "Registry date uncorroborated; operations corroborated",
    "flags": [],
-   "policy": [],
+   "policy": [
+    {
+     "instrument": "feoc-pfe",
+     "effect": "China-made cells in US 48E storage projects may count as PFE material assistance (55% non-PFE threshold in 2026); PFE definition pending",
+     "status": "Interim guidance only (Notice 2026-15)",
+     "sources": [
+      "src-usc-7701-52",
+      "src-irs-n-26-15"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
    "ethical_risks": [
     {
      "category": "HR",
@@ -2742,6 +2767,389 @@
    ],
    "as_of": "2026-10",
    "research_note": "research/carbon-o2.md"
+  },
+  {
+   "id": "multi-s0-natural-graphite",
+   "chemistries": [
+    "nmc",
+    "lfp",
+    "lmfp"
+   ],
+   "stage": "S0",
+   "kind": "share",
+   "name": "Natural graphite mining",
+   "country": "CN",
+   "role": "China ≈75% of natural production; Mozambique (Balama) emerging",
+   "share": {
+    "country": "CN",
+    "percent": 75,
+    "metric": "natural graphite production"
+   },
+   "values": [
+    {
+     "value": 75,
+     "claim": "China ≈75% of natural graphite production",
+     "sources": [
+      "src-electrum-report"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Seed figure, not re-verified",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "COM",
+     "signal": "documented-harm",
+     "material": "natural graphite",
+     "evidence": "Balama (Cabo Delgado): land and livelihood loss, pollution and silencing of activists alleged; UNGP analysis finds violations (companies responded)",
+     "sources": [
+      "src-cdd-balama-2025"
+     ],
+     "assurance": "irma-audit",
+     "eu_dd_coverage": "covered",
+     "confidence": "Medium",
+     "confidence_reason": "Single NGO analysis",
+     "as_of": "2026-10",
+     "assurance_detail": "Balama in IRMA surveillance assessment",
+     "has_independent_source": true
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/harm-evidence.md"
+  },
+  {
+   "id": "lmfp-s4-gap",
+   "chemistries": [
+    "lmfp"
+   ],
+   "stage": "S4",
+   "kind": "gap",
+   "name": "LMFP pack integration",
+   "country": "XX",
+   "role": "Not traceable from public or licensed data",
+   "share": null,
+   "values": [],
+   "confidence": "Unknown",
+   "confidence_reason": "GAP: no pack-level source",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "GAP",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lmfp.md"
+  },
+  {
+   "id": "lmfp-s5-ev-models",
+   "chemistries": [
+    "lmfp"
+   ],
+   "stage": "S5",
+   "kind": "share",
+   "name": "LMFP EV deployment (China)",
+   "country": "CN",
+   "role": "Six commercial EV models (2024); storage not established",
+   "share": null,
+   "values": [
+    {
+     "value": 6,
+     "claim": "Six commercial LMFP EV models in China in 2024; storage use not established",
+     "sources": [
+      "src-electrum-report"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Seed, not re-verified",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No harm source found for this node in the research notes",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lmfp.md"
+  },
+  {
+   "id": "vrfb-s2-zhiqing-bocai",
+   "chemistries": [
+    "vrfb"
+   ],
+   "stage": "S2",
+   "kind": "entity",
+   "name": "Suzhou Zhiqing Bocai (membrane)",
+   "country": "CN",
+   "role": "Membrane maker in the Rongke group",
+   "share": null,
+   "values": [
+    {
+     "claim": "Rongke invested (Mar 2026)",
+     "sources": [
+      "src-pitchbook-electrum"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Listed among Rongke group downstream holdings",
+     "sources": [
+      "src-sayari-rongke"
+     ],
+     "tier": "T2",
+     "tag": "S-REG",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "PitchBook (via Electrum) plus registry",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No harm source found for this node in the research notes",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "artefact_check": {
+    "done": true,
+    "pattern_matched": null,
+    "note": "Direct shareholding (research/sayari/rongke.md)"
+   },
+   "research_note": "research/vrfb.md"
+  },
+  {
+   "id": "vrfb-s4-powerchina-nw",
+   "chemistries": [
+    "vrfb"
+   ],
+   "stage": "S4",
+   "kind": "entity",
+   "name": "PowerChina Northwest Engineering (Jimusar integration)",
+   "country": "CN",
+   "role": "Engineering and system integration for Jimusar",
+   "share": null,
+   "values": [
+    {
+     "claim": "Engineering and system integration for Jimusar handled by PowerChina Northwest",
+     "sources": [
+      "src-pvmag-jimusar"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single T2 source",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No harm source found for this node in the research notes",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/vrfb.md"
+  },
+  {
+   "id": "ni-h2-s1-gap",
+   "chemistries": [
+    "ni-h2"
+   ],
+   "stage": "S1",
+   "kind": "gap",
+   "name": "Nickel refining for EnerVenue",
+   "country": "XX",
+   "role": "Not traceable from public or licensed data",
+   "share": null,
+   "values": [],
+   "confidence": "Unknown",
+   "confidence_reason": "GAP: nickel source undisclosed",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "nickel",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "Unknown",
+     "confidence_reason": "GAP",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/ni-h2.md"
+  },
+  {
+   "id": "ni-h2-s2-gap",
+   "chemistries": [
+    "ni-h2"
+   ],
+   "stage": "S2",
+   "kind": "gap",
+   "name": "Electrodes, catalyst, vessel steel, composite wrap",
+   "country": "XX",
+   "role": "Not traceable from public or licensed data",
+   "share": null,
+   "values": [],
+   "confidence": "Unknown",
+   "confidence_reason": "GAP: seed gap #1 still open",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "nickel",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "Unknown",
+     "confidence_reason": "GAP",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/ni-h2.md"
+  },
+  {
+   "id": "ni-h2-s4-energy-rack",
+   "chemistries": [
+    "ni-h2"
+   ],
+   "stage": "S4",
+   "kind": "entity",
+   "name": "EnerVenue Energy Rack",
+   "country": "US",
+   "role": "50 cells / 150 kWh; −40 to 50 °C",
+   "share": null,
+   "values": [
+    {
+     "claim": "50 cells / 150 kWh; −40 to 50 °C operating range",
+     "sources": [
+      "src-electrum-report"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Seed (company statement), not re-verified",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "nickel",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "Unknown",
+     "confidence_reason": "No harm source found for this node in the research notes",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/ni-h2.md"
+  },
+  {
+   "id": "ni-h2-s5-towngas-jintan",
+   "chemistries": [
+    "ni-h2"
+   ],
+   "stage": "S5",
+   "kind": "entity",
+   "name": "Towngas, Jintan (Changzhou)",
+   "country": "CN",
+   "role": "First 4th-generation AMC deployment since Nov 2025",
+   "share": null,
+   "values": [
+    {
+     "claim": "Operating since Nov 2025, integrating renewables with e-bus charging",
+     "sources": [
+      "src-miningweekly-enervenue"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Public reporting",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "nickel",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "Unknown",
+     "confidence_reason": "No harm source found for this node in the research notes",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/ni-h2.md"
   }
  ],
  "edges": [
@@ -3050,14 +3458,6 @@
    "confidence_reason": "Parent link inferred from name and company plan; not shown in registry"
   },
   {
-   "from": "multi-s0-nickel-indonesia",
-   "to": "ni-h2-s3-enervenue-changzhou",
-   "type": "supplies",
-   "overlay": "chain",
-   "confidence": "Low",
-   "confidence_reason": "INF: nickel source undisclosed; sector-level link only"
-  },
-  {
    "from": "ni-h2-cap-enervenue-funding",
    "to": "ni-h2-own-enervenue-holdings",
    "type": "invests_in",
@@ -3088,6 +3488,86 @@
    "overlay": "chain",
    "confidence": "Medium",
    "confidence_reason": "Technology description"
+  },
+  {
+   "from": "multi-s0-natural-graphite",
+   "to": "multi-s2-anode-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country-level flow"
+  },
+  {
+   "from": "lfp-s3-catl",
+   "to": "lmfp-s5-ev-models",
+   "type": "deploys",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "CATL M3P in EV models (ChinaEVHome, seed)"
+  },
+  {
+   "from": "vrfb-s2-zhiqing-bocai",
+   "to": "vrfb-s3-rongke",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Group holding; supply assumed from role"
+  },
+  {
+   "from": "vrfb-s3-rongke",
+   "to": "vrfb-s4-powerchina-nw",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Project reporting"
+  },
+  {
+   "from": "vrfb-s4-powerchina-nw",
+   "to": "vrfb-s5-jimusar",
+   "type": "integrates",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Project reporting"
+  },
+  {
+   "from": "multi-s0-nickel-indonesia",
+   "to": "ni-h2-s1-gap",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Low",
+   "confidence_reason": "GAP stage"
+  },
+  {
+   "from": "ni-h2-s1-gap",
+   "to": "ni-h2-s2-gap",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Low",
+   "confidence_reason": "GAP stage"
+  },
+  {
+   "from": "ni-h2-s2-gap",
+   "to": "ni-h2-s3-enervenue-changzhou",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Low",
+   "confidence_reason": "GAP stage"
+  },
+  {
+   "from": "ni-h2-s3-enervenue-changzhou",
+   "to": "ni-h2-s4-energy-rack",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Company/public reporting"
+  },
+  {
+   "from": "ni-h2-s4-energy-rack",
+   "to": "ni-h2-s5-towngas-jintan",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Company/public reporting"
   }
  ]
 }

@@ -229,7 +229,17 @@
    "status": "deferred",
    "applies": true,
    "applies_note": "Not filled as of Feb 2027 — format still to be specified",
-   "values": [],
+   "values": [
+    {
+     "claim": "Not to be filled/displayed as of February 2027 (format pending implementing act)",
+     "sources": [
+      "src-ec-dbp-guidance-v2"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
    "conflict": false,
    "confidence": "High",
    "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
@@ -253,6 +263,15 @@
      "tier": "T1",
      "tag": "INF",
      "as_of": "2026-10"
+    },
+    {
+     "claim": "Not to be filled/displayed as of February 2027; required from August 2027",
+     "sources": [
+      "src-ec-dbp-guidance-v2"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
     }
    ],
    "conflict": false,
@@ -269,7 +288,17 @@
    "status": "deferred",
    "applies": true,
    "applies_note": null,
-   "values": [],
+   "values": [
+    {
+     "claim": "Not to be filled/displayed as of February 2027 (Art. 8 delegated act)",
+     "sources": [
+      "src-ec-dbp-guidance-v2"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
    "conflict": false,
    "confidence": "High",
    "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (Art. 8 delegated act)"
@@ -521,7 +550,17 @@
    "status": "deferred",
    "applies": true,
    "applies_note": "Not filled as of Feb 2027 — format still to be specified",
-   "values": [],
+   "values": [
+    {
+     "claim": "Not to be filled/displayed as of February 2027 (format pending implementing act)",
+     "sources": [
+      "src-ec-dbp-guidance-v2"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
    "conflict": false,
    "confidence": "High",
    "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
@@ -545,6 +584,15 @@
      "tier": "T1",
      "tag": "INF",
      "as_of": "2026-10"
+    },
+    {
+     "claim": "Not to be filled/displayed as of February 2027; required from August 2027",
+     "sources": [
+      "src-ec-dbp-guidance-v2"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
     }
    ],
    "conflict": false,
@@ -561,7 +609,17 @@
    "status": "deferred",
    "applies": true,
    "applies_note": null,
-   "values": [],
+   "values": [
+    {
+     "claim": "Not to be filled/displayed as of February 2027 (Art. 8 delegated act)",
+     "sources": [
+      "src-ec-dbp-guidance-v2"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
    "conflict": false,
    "confidence": "High",
    "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (Art. 8 delegated act)"
@@ -803,7 +861,17 @@
    "status": "deferred",
    "applies": true,
    "applies_note": "Not filled as of Feb 2027 — format still to be specified",
-   "values": [],
+   "values": [
+    {
+     "claim": "Not to be filled/displayed as of February 2027 (format pending implementing act)",
+     "sources": [
+      "src-ec-dbp-guidance-v2"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
    "conflict": false,
    "confidence": "High",
    "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
@@ -827,6 +895,15 @@
      "tier": "T1",
      "tag": "INF",
      "as_of": "2026-10"
+    },
+    {
+     "claim": "Not to be filled/displayed as of February 2027; required from August 2027",
+     "sources": [
+      "src-ec-dbp-guidance-v2"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
     }
    ],
    "conflict": false,
@@ -843,7 +920,17 @@
    "status": "deferred",
    "applies": true,
    "applies_note": null,
-   "values": [],
+   "values": [
+    {
+     "claim": "Not to be filled/displayed as of February 2027 (Art. 8 delegated act)",
+     "sources": [
+      "src-ec-dbp-guidance-v2"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
    "conflict": false,
    "confidence": "High",
    "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (Art. 8 delegated act)"
@@ -1095,7 +1182,17 @@
    "status": "deferred",
    "applies": true,
    "applies_note": "Not filled as of Feb 2027 — format still to be specified; external-storage batteries on a later timetable (Art. 7)",
-   "values": [],
+   "values": [
+    {
+     "claim": "Not to be filled/displayed as of February 2027 (format pending implementing act)",
+     "sources": [
+      "src-ec-dbp-guidance-v2"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
    "conflict": false,
    "confidence": "High",
    "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
@@ -1118,6 +1215,15 @@
      ],
      "tier": "T1",
      "tag": "INF",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Not to be filled/displayed as of February 2027; required from August 2027",
+     "sources": [
+      "src-ec-dbp-guidance-v2"
+     ],
+     "tier": "T1",
+     "tag": "OS",
      "as_of": "2026-10"
     }
    ],
@@ -1387,7 +1493,17 @@
    "status": "deferred",
    "applies": true,
    "applies_note": "Not filled as of Feb 2027 — format still to be specified",
-   "values": [],
+   "values": [
+    {
+     "claim": "Not to be filled/displayed as of February 2027 (format pending implementing act)",
+     "sources": [
+      "src-ec-dbp-guidance-v2"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
    "conflict": false,
    "confidence": "High",
    "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
@@ -1411,6 +1527,24 @@
      "tier": "T1",
      "tag": "INF",
      "as_of": "2026-10"
+    },
+    {
+     "claim": "Not to be filled/displayed as of February 2027; required from August 2027",
+     "sources": [
+      "src-ec-dbp-guidance-v2"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Pending Omnibus IV compromise would exempt operators below EUR 200m turnover; the maker's turnover isn't public (GAP)",
+     "sources": [
+      "src-council-10978-26"
+     ],
+     "tier": "T1",
+     "tag": "INF",
+     "as_of": "2026-10"
     }
    ],
    "conflict": false,
@@ -1427,7 +1561,17 @@
    "status": "deferred",
    "applies": true,
    "applies_note": null,
-   "values": [],
+   "values": [
+    {
+     "claim": "Not to be filled/displayed as of February 2027 (Art. 8 delegated act)",
+     "sources": [
+      "src-ec-dbp-guidance-v2"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
    "conflict": false,
    "confidence": "High",
    "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (Art. 8 delegated act)"
@@ -1659,7 +1803,17 @@
    "status": "deferred",
    "applies": true,
    "applies_note": "Not filled as of Feb 2027 — format still to be specified; external-storage batteries on a later timetable (Art. 7)",
-   "values": [],
+   "values": [
+    {
+     "claim": "Not to be filled/displayed as of February 2027 (format pending implementing act)",
+     "sources": [
+      "src-ec-dbp-guidance-v2"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
    "conflict": false,
    "confidence": "High",
    "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
@@ -1679,6 +1833,24 @@
      "sources": [
       "src-eurlex-2023-1542",
       "src-eurlex-2025-1561"
+     ],
+     "tier": "T1",
+     "tag": "INF",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Not to be filled/displayed as of February 2027; required from August 2027",
+     "sources": [
+      "src-ec-dbp-guidance-v2"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Pending Omnibus IV compromise would exempt operators below EUR 200m turnover; the maker's turnover isn't public (GAP)",
+     "sources": [
+      "src-council-10978-26"
      ],
      "tier": "T1",
      "tag": "INF",

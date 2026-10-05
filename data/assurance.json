@@ -1,0 +1,91 @@
+{
+ "schema_version": "1.0",
+ "as_of": "2026-10",
+ "items": [
+  {
+   "id": "irma",
+   "name": "Initiative for Responsible Mining Assurance (IRMA)",
+   "covers_materials": [
+    "lithium",
+    "nickel",
+    "cobalt",
+    "natural graphite",
+    "copper"
+   ],
+   "level": "mine",
+   "what_it_checks": "Independent site audits against the IRMA Standard (business integrity, social and environmental responsibility); levels Transparency / 50 / 75 / 100, valid 3 years",
+   "what_it_does_not": "Covers only mines that volunteer; no manganese, phosphate or vanadium mine in the system; 'in process' sites have no level yet",
+   "list_url": "https://responsiblemining.net/what-we-do/certification/mines-under-assessment/",
+   "sources": [
+    "src-irma-list"
+   ],
+   "as_of": "2026-10"
+  },
+  {
+   "id": "rmi-rmap",
+   "name": "RMI Responsible Minerals Assurance Process",
+   "covers_materials": [
+    "cobalt",
+    "nickel",
+    "lithium",
+    "copper"
+   ],
+   "level": "smelter-refiner",
+   "what_it_checks": "Smelter/refiner due-diligence management systems against RMI standards",
+   "what_it_does_not": "Checks process, not outcomes at mine sites; no lists for graphite, manganese, phosphate or vanadium",
+   "list_url": "https://responsiblemineralsinitiative.org/facilities-lists/facilities-lists/indicators/responsible-minerals-assurance-process",
+   "sources": [
+    "src-rmi-lists"
+   ],
+   "as_of": "2026-10"
+  },
+  {
+   "id": "none-manganese",
+   "name": "No assurance scheme found — manganese",
+   "covers_materials": [
+    "manganese"
+   ],
+   "level": "none",
+   "what_it_checks": "—",
+   "what_it_does_not": "No RMI list; no IRMA manganese mine",
+   "list_url": null,
+   "sources": [
+    "src-irma-list",
+    "src-rmi-lists"
+   ],
+   "as_of": "2026-10"
+  },
+  {
+   "id": "none-phosphate",
+   "name": "No assurance scheme found — phosphate",
+   "covers_materials": [
+    "phosphate"
+   ],
+   "level": "none",
+   "what_it_checks": "—",
+   "what_it_does_not": "No RMI list; no IRMA phosphate mine",
+   "list_url": null,
+   "sources": [
+    "src-irma-list",
+    "src-rmi-lists"
+   ],
+   "as_of": "2026-10"
+  },
+  {
+   "id": "none-vanadium",
+   "name": "No assurance scheme found — vanadium",
+   "covers_materials": [
+    "vanadium"
+   ],
+   "level": "none",
+   "what_it_checks": "—",
+   "what_it_does_not": "No RMI list; no IRMA vanadium mine",
+   "list_url": null,
+   "sources": [
+    "src-irma-list",
+    "src-rmi-lists"
+   ],
+   "as_of": "2026-10"
+  }
+ ]
+}
