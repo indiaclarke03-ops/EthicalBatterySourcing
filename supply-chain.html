@@ -18,6 +18,7 @@
   <div class="chain-controls">
     <label>Risk category
       <select id="cat"><option value="">All categories</option></select></label>
+    <label class="check"><input type="checkbox" id="gaps"> Gaps only</label>
     <label class="check"><input type="checkbox" id="own"> Ownership &amp; capital</label>
     <label>Policy risk
       <select id="pol"><option value="">Off</option></select></label>
@@ -44,7 +45,7 @@
 </main>
 
 <script type="module">
-import { loadData, shell, setAsOf, fail, esc, STAGES, STAGE_LABEL, SIGNAL, RISK_LABEL, param, openNodeDetail, POLICY, policyItems } from "./assets/app.js";
+import { loadData, shell, setAsOf, fail, esc, STAGES, STAGE_LABEL, SIGNAL, RISK_LABEL, param, openNodeDetail, POLICY, policyItems, isGapNode } from "./assets/app.js";
 shell("supply-chain.html");
 
 const ORDER = ["lfp", "lmfp", "vrfb", "ni-h2", "carbon-o2", "nmc"];
@@ -53,13 +54,14 @@ const EDGE_VERB = { supplies: "supplies", owned_by: "owned by", offtake: "offtak
 const COUNTRY = { XX: "Origin unknown", MULTI: "Several countries" };
 const SVGNS = "http://www.w3.org/2000/svg";
 const OVERLAY_COL = "OWN";
-let DATA, state = { chem: "lfp", cat: "", own: false, pol: "" };
+let DATA, state = { chem: "lfp", cat: "", own: false, pol: "", gaps: false };
 const polHits = (n) => (state.pol ? policyItems(n).filter((p) => state.pol === "all" || p.instrument === state.pol) : []);
 const colOf = (n) => (n.stage === "CAP" || n.stage === "OWN" ? OVERLAY_COL : n.stage);
 const columns = () => (state.own ? [...STAGES, OVERLAY_COL] : STAGES);
 const colLabel = (c) => (c === OVERLAY_COL ? "Ownership & capital" : STAGE_LABEL[c]);
 
-const matches = (n) => !state.cat || n.ethical_risks.some((r) => r.category === state.cat && r.signal !== "no-known-evidence");
+const matches = (n) => (!state.cat || n.ethical_risks.some((r) => r.category === state.cat && r.signal !== "no-known-evidence"))
+  && (!state.gaps || isGapNode(n));
 
 function badge(n) {
   const counts = {};
@@ -126,7 +128,10 @@ function render() {
   document.getElementById("own-note").textContent = state.own
     ? (ownCount ? `${ownCount} ownership or capital link${ownCount === 1 ? "" : "s"} shown in blue.` : `No ownership or capital links recorded for ${DATA.chemById[state.chem].short}.`)
     : "";
-  document.getElementById("cat-note").textContent = state.cat ? `${hits} of ${nodes.length} nodes have ${RISK_LABEL[state.cat].toLowerCase()} risks; others are dimmed.` : "";
+  document.getElementById("gaps").checked = state.gaps;
+  document.getElementById("cat-note").textContent = state.cat || state.gaps
+    ? `${hits} of ${nodes.length} nodes match${state.cat ? ` ${RISK_LABEL[state.cat].toLowerCase()}` : ""}${state.gaps ? `${state.cat ? " and" : ""} the gaps filter (Low/Unknown, GAP, not covered by EU DD, or no assurance)` : ""}; others are dimmed.`
+    : "";
 
   const cols = document.getElementById("cols");
   cols.classList.toggle("with-own", state.own);
@@ -146,6 +151,7 @@ function render() {
   const q = new URLSearchParams({ chem: state.chem });
   if (state.cat) q.set("cat", state.cat);
   if (state.own) q.set("own", "1");
+  if (state.gaps) q.set("gaps", "1");
   if (state.pol) q.set("pol", state.pol);
   history.replaceState(null, "", `?${q}`);
 }
@@ -194,11 +200,13 @@ loadData().then((d) => {
   });
   document.getElementById("cat").addEventListener("change", (e) => { state.cat = e.target.value; render(); });
   document.getElementById("pol").addEventListener("change", (e) => { state.pol = e.target.value; render(); });
+  document.getElementById("gaps").addEventListener("change", (e) => { state.gaps = e.target.checked; render(); });
   document.getElementById("own").addEventListener("change", (e) => { state.own = e.target.checked; render(); });
   const nodeP = param("node");
   state.chem = ORDER.includes(param("chem")) ? param("chem") : "lfp";
   state.cat = param("cat") || "";
   state.pol = param("pol") || "";
+  state.gaps = param("gaps") === "1";
   state.own = param("own") === "1" || ["CAP", "OWN"].includes(d.nodeById[nodeP]?.stage);
   render();
   let t;

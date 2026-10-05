@@ -13,7 +13,7 @@
   <p class="lede">The six chemistries side by side: which minerals carry recorded risks, where supply is concentrated, which uses the EU passport covers,
     and how far back each chain could be traced.</p>
   <nav class="toc small" aria-label="On this page"><a href="#minerals">Minerals screen</a> · <a href="#chokepoints">Chokepoints</a> ·
-    <a href="#scope">Use-case scope</a> · <a href="#depth">Traceability depth</a></nav>
+    <a href="#scope">Use-case scope</a> · <a href="#depth">Traceability depth</a> · <a href="#gaps">Gaps</a></nav>
 
   <section id="minerals">
     <h2>Minerals screen</h2>
@@ -45,10 +45,17 @@
       <strong>Country</strong>: only a national share of world supply. <strong>Low</strong>: only Low-confidence links. <strong>Gap</strong>: not traceable.</p>
     <div class="table-scroll"><table id="t-depth"><caption class="sr-only">Traceability by chemistry and stage</caption></table></div>
   </section>
+
+  <section id="gaps">
+    <h2>Gaps by chemistry</h2>
+    <p class="small muted">What the gaps filter keeps: passport fields and supply-chain nodes with Low or Unknown confidence, untraceable (GAP) stages, and
+      ethical-sourcing risks that EU due diligence doesn't cover or that have no known independent assurance. Counts overlap: one risk can be both.</p>
+    <div class="table-scroll"><table id="t-gaps"><caption class="sr-only">Gap counts by chemistry</caption></table></div>
+  </section>
 </main>
 
 <script type="module">
-import { loadData, shell, setAsOf, fail, esc, STAGES, STAGE_LABEL, SIGNAL, confBadge, sourceLinks } from "./assets/app.js";
+import { loadData, shell, setAsOf, fail, esc, STAGES, STAGE_LABEL, SIGNAL, confBadge, sourceLinks, isGapField, isGapNode } from "./assets/app.js";
 shell("compare.html");
 
 const ORDER = ["nmc", "lfp", "lmfp", "vrfb", "ni-h2", "carbon-o2"];
@@ -126,7 +133,28 @@ function render(d) {
     }).join("")}</tbody>`);
 }
 
-loadData().then((d) => { render(d); setAsOf(d); }).catch(fail);
+function renderGaps(d) {
+  const cols = ["Passport fields Low/Unknown", "Chain nodes Low/Unknown", "GAP stages", "Risks not covered by EU DD", "Risks with no known assurance", "Nodes kept by the filter"];
+  document.getElementById("t-gaps").insertAdjacentHTML("beforeend", `<thead><tr><th scope="col">Chemistry</th>${cols.map((c) => `<th scope="col">${c}</th>`).join("")}</tr></thead>
+    <tbody>${ORDER.map((id) => {
+      const c = d.chemById[id];
+      const fields = d.passports.filter((f) => f.chemistry === id);
+      const nodes = d.nodes.filter((n) => n.chemistries.includes(id));
+      const risks = nodes.flatMap((n) => n.ethical_risks).filter((r) => SIGNAL[r.signal].rank >= 2);
+      const cells = [
+        `${fields.filter(isGapField).length} of ${fields.length}`,
+        `${nodes.filter((n) => n.kind !== "gap" && (n.confidence === "Low" || n.confidence === "Unknown")).length} of ${nodes.length}`,
+        nodes.filter((n) => n.kind === "gap").length,
+        `${risks.filter((r) => r.eu_dd_coverage === "not-covered").length} of ${risks.length}`,
+        `${risks.filter((r) => r.assurance === "none-known").length} of ${risks.length}`,
+        `${nodes.filter(isGapNode).length} of ${nodes.length}`,
+      ];
+      return `<tr><th scope="row">${esc(c.short)}<br><a class="small" href="index.html?chem=${id}&gaps=1">passport</a> · <a class="small" href="supply-chain.html?chem=${id}&gaps=1">chain</a></th>
+        ${cells.map((x) => `<td>${x}</td>`).join("")}</tr>`;
+    }).join("")}</tbody>`);
+}
+
+loadData().then((d) => { render(d); renderGaps(d); setAsOf(d); }).catch(fail);
 </script>
 </body>
 </html>

@@ -14,6 +14,8 @@
     and, beside each one, what it <em>wouldn't</em> tell you about where the materials came from and who may have been harmed.</p>
 
   <div class="picker" role="group" aria-label="Choose a chemistry" id="picker"></div>
+  <div class="chain-controls"><label class="check"><input type="checkbox" id="gaps"> Show gaps only</label>
+    <span class="small muted" id="gaps-note" aria-live="polite"></span></div>
 
   <div class="passport-layout">
     <article class="card passport" id="passport" aria-live="polite"></article>
@@ -22,7 +24,7 @@
 </main>
 
 <script type="module">
-import { loadData, shell, setAsOf, fail, esc, confBadge, tierBadge, tagBadge, sourceLinks, STAGE_LABEL, SIGNAL, param, openFieldDetail, openNodeDetail } from "./assets/app.js";
+import { loadData, shell, setAsOf, fail, esc, confBadge, tierBadge, tagBadge, sourceLinks, STAGE_LABEL, SIGNAL, param, openFieldDetail, openNodeDetail, isGapField } from "./assets/app.js";
 shell("index.html");
 
 const ORDER = ["lfp", "lmfp", "vrfb", "ni-h2", "carbon-o2", "nmc"];
@@ -34,7 +36,7 @@ const USE_LABEL = { ev: "Electric vehicle", grid: "Grid storage", datacentre: "D
 const SCOPE_LABEL = { "in-scope": "In scope", likely: "Likely in scope", unclear: "Scope unclear", "out-of-scope": "Out of scope" };
 const fmtDate = (d) => new Date(d + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
 
-let DATA;
+let DATA, gapsOnly = false, current = { id: "lfp", use: null };
 
 function valueHTML(v) {
   return `<div class="val${v.superseded ? " superseded" : ""}">
@@ -79,7 +81,7 @@ function shadowHTML(chem) {
   return `<h2>What this passport doesn't show</h2>
     <p class="small muted">None of the 71 passport data points records where materials were mined or refined. This is what the research could trace.</p>
     <h3>Where materials come from (S0–S1)</h3>
-    <ul>${upstream.map((n) => `<li><button type="button" class="open-detail link" data-node="${esc(n.id)}">${esc(n.name)}</button>
+    <ul>${upstream.map((n) => `<li><a href="supply-chain.html?chem=${chem.id}&node=${encodeURIComponent(n.id)}" data-node="${esc(n.id)}">${esc(n.name)}</a>
       <span class="small muted">${esc(n.role)}</span> ${confBadge(n.confidence)}</li>`).join("") || "<li>Nothing traceable</li>"}</ul>
     <h3>Ethical-sourcing evidence along the chain</h3>
     <ul>
@@ -106,11 +108,16 @@ function scopeHTML(chem, u) {
 }
 
 function show(id, use) {
+  current = { id, use };
   const chem = DATA.chemById[id];
   const u = chem.use_cases.find((x) => x.use_case === use) || chem.use_cases[0];
   document.querySelectorAll("#picker button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.id === id)));
   const fields = DATA.passports.filter((p) => p.chemistry === id).sort((a, b) => FIELD_ORDER.indexOf(a.field_id) - FIELD_ORDER.indexOf(b.field_id));
   const deferred = fields.filter((f) => f.status === "deferred").length;
+  const gapCount = fields.filter(isGapField).length;
+  document.getElementById("gaps-note").textContent = gapsOnly
+    ? `${gapCount} of ${fields.length} fields have Low or Unknown confidence.` : `${gapCount} field${gapCount === 1 ? "" : "s"} with Low or Unknown confidence.`;
+  const shown = gapsOnly ? fields.filter(isGapField) : fields;
   document.getElementById("passport").innerHTML = `
     <div class="passport-head">
       <div><h2 style="margin:0">${esc(chem.name)} <span class="muted">(${esc(chem.short)})</span></h2>
@@ -123,15 +130,17 @@ function show(id, use) {
       `<button type="button" data-use="${esc(x.use_case)}" aria-pressed="${x === u}">${esc(USE_LABEL[x.use_case] || x.use_case)}</button>`).join("")}</div>
     ${scopeHTML(chem, u)}
     ${GROUPS.map(([g, label]) => {
-      const fs = fields.filter((f) => f.category === g);
+      const fs = shown.filter((f) => f.category === g);
       return fs.length ? `<section class="field-group"><h3>${label}</h3>${fs.map(fieldHTML).join("")}</section>` : "";
     }).join("")}`;
   document.querySelectorAll("#passport [data-field]").forEach((b) => b.addEventListener("click", () =>
     openFieldDetail(fields.find((f) => f.field_id === b.dataset.field), chem, DATA)));
-  document.querySelectorAll("#shadow [data-node]").forEach((b) => b.addEventListener("click", () => openNodeDetail(DATA.nodeById[b.dataset.node], DATA)));
+  document.querySelectorAll("#shadow [data-node]").forEach((b) => b.addEventListener("click", (e) => {
+    e.preventDefault(); openNodeDetail(DATA.nodeById[b.dataset.node], DATA);
+  }));
   document.querySelectorAll(".use-toggle button").forEach((b) => b.addEventListener("click", () => show(id, b.dataset.use)));
   document.getElementById("shadow").innerHTML = shadowHTML(chem);
-  history.replaceState(null, "", `?chem=${id}&use=${u.use_case}`);
+  history.replaceState(null, "", `?chem=${id}&use=${u.use_case}${gapsOnly ? "&gaps=1" : ""}`);
 }
 
 loadData().then((d) => {
@@ -147,6 +156,10 @@ loadData().then((d) => {
     picker.append(b);
   });
   const [chemP, useP, fieldP, tabP] = ["chem", "use", "field", "tab"].map(param);
+  gapsOnly = param("gaps") === "1";
+  const gb = document.getElementById("gaps");
+  gb.checked = gapsOnly;
+  gb.addEventListener("change", () => { gapsOnly = gb.checked; show(current.id, current.use); });
   const start = ORDER.includes(chemP) ? chemP : "lfp";
   show(start, useP);
   const f = DATA.passports.find((x) => x.chemistry === start && x.field_id === fieldP);

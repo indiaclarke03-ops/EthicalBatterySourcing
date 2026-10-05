@@ -188,7 +188,7 @@ Each note covers S0–S5 plus both overlays, with at least one node per stage. *
   - Chokepoint table.
   - Use-case scope matrix.
   - "Traceability depth" summary: deepest stage reached at High/Medium confidence, per chemistry.
-- [ ] **B-28 Gaps filter** · Must
+- [x] **B-28 Gaps filter** · Must
   - Filter any passport or chain to Low, Unknown and GAP items, plus risks that are **not covered by EU due diligence** or have **no known assurance**.
   - Shows a count per chemistry.
 - [ ] **B-29 Methods page and mock QR** · Must

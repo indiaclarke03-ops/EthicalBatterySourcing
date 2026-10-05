@@ -35,6 +35,14 @@ export const policyItems = (n) => [
   ...n.flags.filter((f) => FLAG_POLICY[f.type]).map((f) => ({ instrument: FLAG_POLICY[f.type], detail: f.label, as_of: f.as_of })),
 ];
 
+// Gaps filter (B-28, spec §6.4): Low/Unknown confidence, GAP nodes, risks EU due diligence doesn't cover, risks with no known assurance.
+const weak = (c) => c === "Low" || c === "Unknown";
+// "No known evidence" entries count only through their confidence, not their (necessarily absent) coverage or assurance.
+export const isGapRisk = (r) => weak(r.confidence)
+  || (r.signal !== "no-known-evidence" && (r.eu_dd_coverage === "not-covered" || r.assurance === "none-known"));
+export const isGapField = (f) => weak(f.confidence);
+export const isGapNode = (n) => n.kind === "gap" || weak(n.confidence) || n.ethical_risks.some(isGapRisk);
+
 const NAV = [
   ["index.html", "Passports"], ["scorecard.html", "Scorecard"], ["supply-chain.html", "Supply chain"],
   ["compare.html", "Compare"], ["methods.html", "Methods"],
