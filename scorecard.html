@@ -118,7 +118,7 @@ function open(c, s, nodes, td, data) {
       ${n.flags.map((f) => `<p class="flag-label">${esc(f.label)}: ${esc(f.basis)}</p>`).join("")}
       <ul class="risk-list">${n.ethical_risks.map((r) => riskItem(r, data)).join("")}</ul>`).join("")}`;
   history.replaceState(null, "", `?cell=${c.id}:${s}`);
-  panel.scrollIntoView({ behavior: "smooth", block: "start" });
+  panel.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
 }
 
 loadData().then((d) => { render(d); setAsOf(d); }).catch(fail);

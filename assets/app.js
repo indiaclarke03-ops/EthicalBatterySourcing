@@ -83,19 +83,22 @@ export function shell(active) {
       <a class="brand" href="index.html">Passport with Gaps</a>
       <nav class="nav" aria-label="Main">${NAV.map(([href, label]) =>
         `<a href="${href}"${href === active ? ' aria-current="page"' : ""}>${label}</a>`).join("")}</nav>
-      <button class="theme-toggle" type="button" aria-label="Toggle colour theme">Theme</button>
+      <button class="theme-toggle" type="button">Dark theme</button>
     </div></header>`;
   document.body.prepend(header);
   const btn = header.querySelector(".theme-toggle");
   const saved = (() => { try { return localStorage.getItem("theme"); } catch { return null; } })();
   if (saved) document.documentElement.dataset.theme = saved;
+  const isDark = () => (document.documentElement.dataset.theme
+    ? document.documentElement.dataset.theme === "dark"
+    : matchMedia("(prefers-color-scheme: dark)").matches);
+  const sync = () => { btn.setAttribute("aria-pressed", String(isDark())); btn.textContent = isDark() ? "Light theme" : "Dark theme"; };
+  sync();
   btn.addEventListener("click", () => {
-    const dark = document.documentElement.dataset.theme
-      ? document.documentElement.dataset.theme === "dark"
-      : matchMedia("(prefers-color-scheme: dark)").matches;
-    const next = dark ? "light" : "dark";
+    const next = isDark() ? "light" : "dark";
     document.documentElement.dataset.theme = next;
     try { localStorage.setItem("theme", next); } catch { /* storage unavailable */ }
+    sync();
   });
   const footer = document.createElement("footer");
   footer.className = "footer";
@@ -163,6 +166,8 @@ function ensureDialog() {
   dlg.setAttribute("aria-labelledby", "detail-title");
   document.body.append(dlg);
   dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+  // return focus to whatever opened the panel
+  dlg.addEventListener("close", () => { if (dlg.opener?.isConnected) dlg.opener.focus(); });
   return dlg;
 }
 
@@ -195,7 +200,7 @@ function renderDialog({ title, subtitle, details, ethical, tab = "details" }) {
   });
   dlg.querySelector(".detail-close").addEventListener("click", () => dlg.close());
   select(tab);
-  if (!dlg.open) dlg.showModal();
+  if (!dlg.open) { dlg.opener = document.activeElement; dlg.showModal(); }
 }
 
 export function openFieldDetail(field, chem, data, tab) {
