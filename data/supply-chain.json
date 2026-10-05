@@ -4068,6 +4068,127 @@
    ],
    "as_of": "2026-10",
    "research_note": "research/nmc-reference.md"
+  },
+  {
+   "id": "multi-s1-ganfeng",
+   "chemistries": [
+    "lfp",
+    "lmfp",
+    "nmc"
+   ],
+   "stage": "S1",
+   "kind": "entity",
+   "name": "Ganfeng Lithium (refining)",
+   "country": "CN",
+   "role": "China's largest lithium producer; Argentine and Malian mines",
+   "share": null,
+   "values": [
+    {
+     "claim": "Described as China's largest lithium producer",
+     "sources": [
+      "src-scmp-ganfeng-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "value": 34100,
+     "claim": "Cauchari-Olaroz (Argentina) produced 34,100 t of lithium carbonate in 2025",
+     "sources": [
+      "src-ganfeng-ar-2025"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "value": 65,
+     "claim": "Holds 65% of Lithium du Mali (Goulamina mine); the Malian state holds 35%",
+     "sources": [
+      "src-lmsa-goulamina"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Grade-A company report (as a statement) corroborated by grade-B press",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "lithium",
+     "evidence": "No documented harm found for this specific company",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "Unknown",
+     "confidence_reason": "No company-specific harm source found; Argentine community disputes found concern other operators",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "multi-s1-tianqi",
+   "chemistries": [
+    "lfp",
+    "lmfp",
+    "nmc"
+   ],
+   "stage": "S1",
+   "kind": "entity",
+   "name": "Tianqi Lithium (refining)",
+   "country": "CN",
+   "role": "121,600 t/yr lithium-chemical capacity; 86,716 t sold in 2025",
+   "share": null,
+   "values": [
+    {
+     "value": 121600,
+     "claim": "Combined lithium-chemical capacity of 121,600 t/yr across Sichuan, Chongqing, Jiangsu and Kwinana",
+     "sources": [
+      "src-tianqi-2025"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "value": 86716,
+     "claim": "86,715.65 t of lithium compounds and derivatives sold in 2025",
+     "sources": [
+      "src-tianqi-2025"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Grade A: company reports (as statements)",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "lithium",
+     "evidence": "No documented harm found for this specific company",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "Unknown",
+     "confidence_reason": "No company-specific harm source found",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
   }
  ],
  "edges": [
@@ -4686,6 +4807,54 @@
    "overlay": "chain",
    "confidence": "Low",
    "confidence_reason": "LGES cathode suppliers not traced here"
+  },
+  {
+   "from": "multi-s0-lithium-mining",
+   "to": "multi-s1-ganfeng",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Company's own mines and spodumene sources (annual report)"
+  },
+  {
+   "from": "multi-s1-ganfeng",
+   "to": "lfp-s2-cathode-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country-level flow; no entity trace"
+  },
+  {
+   "from": "multi-s1-ganfeng",
+   "to": "nmc-s2-cathode-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country-level flow; no entity trace"
+  },
+  {
+   "from": "multi-s0-lithium-mining",
+   "to": "multi-s1-tianqi",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Company's own mines and spodumene sources (annual report)"
+  },
+  {
+   "from": "multi-s1-tianqi",
+   "to": "lfp-s2-cathode-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country-level flow; no entity trace"
+  },
+  {
+   "from": "multi-s1-tianqi",
+   "to": "nmc-s2-cathode-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country-level flow; no entity trace"
   }
  ]
 }

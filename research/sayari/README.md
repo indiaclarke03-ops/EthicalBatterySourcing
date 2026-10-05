@@ -17,6 +17,7 @@ One note per case entity. Each covers:
 | EnerVenue | `enervenue.md` | Cayman → Singapore → Changzhou confirmed; new Hong Kong entity (Nov 2025); KY gigasite record stale |
 | Rongke Power | `rongke.md` | Not MEU- or Entity-listed; group has Hami (Xinjiang) and Panzhihua subsidiaries; electrolyte JV with Pangang |
 | Gotion High-Tech | `gotion.md` | SOE flags sit on a stale former-name record with a self-ownership loop (artefact); VW ≈25% |
+| Link-upgrade attempt (Oct 2026) | `link-upgrade-attempt-2026-10.md` | Tried to confirm BTR, CALB, Hithium and DRC-cobalt customers from trade data; all failed name-match or routing checks, so links stay Low |
 | Nano One | `nano-one.md` | Candiac plant shares an address with the former Johnson Matthey battery-materials company |
 | Largo / Storion | `largo-storion.md` | Mine company and Storion confirmed; "Largo" and "Storion" both have heavy name collisions |
 | Noon Energy | `noon.md` | Registry identity clean; no risk flags; many name collisions |
