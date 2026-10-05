@@ -117,6 +117,34 @@ Tags: tier / provenance tag / confidence. "Seed, not re-verified" means the row 
 - Gotion Morocco: AfDB says 20 GWh, not 10.
 - Refined lithium "≈65%": shown next to the IEA 70–95% band.
 
+## Expansion: more named companies per tier (2026-10-05)
+
+Added so each tier shows the main players, not just one case company. Tiers below use the site's display labels (T5 mine … T0 deployed battery; data codes S0 … S5). Every company was checked against the full text of the UFLPA Entity List (FR 2026-15628, 3 Aug 2026) and the Section 1260H list (FR 2026-11571, 10 Jun 2026) on 2026-10-05.
+
+| Tier | Company | What the sources support | Sources | Confidence |
+|---|---|---|---|---|
+| T3 cathode | Hunan Yuneng New Energy Battery Material | World's largest phosphate-cathode supplier six years running; 28.2% global share in 2025 (Frost & Sullivan, quoted in its own listing document). SNE Research: 1.14 Mt cathode shipped in 2025, #1. CATL and BYD are named shareholders (strategic investors since Dec 2020); its two largest customers, "Company A" (29.7% of 2025 revenue) and "Company B" (17.3%), are both shareholders | L13 (A, statement), L14 (B) | High (share: two independent sources); supply link to CATL/BYD Medium (inference from the shareholder disclosure) |
+| T3 cathode | Hubei Wanrun New Energy | #2 cathode shipper in 2025, 375 kt | L14 (B) | Medium (single source); customers not named → link Low |
+| T3 anode | BTR New Material Group | "World's largest anode producer" (Reuters 2023); Indonesian anode plant (80 kt phase 1, Kendal) processing graphite products from its Morowali plant (Reuters 2024) | L15 (B) | Medium; customers not named in A/B sources → link Low |
+| T2 cells | BYD | 16.4% of global EV battery use in 2025, #2 (SNE Research); top-six storage-cell supplier (InfoLink); #1 storage deployer 2025 (Benchmark, L7) | L16, L17, L7 (B) | High |
+| T2 cells | CALB | 5.3% of global EV battery use in 2025, #4 (SNE Research); top-five utility-scale storage cell supplier (InfoLink) | L16, L17 (B) | High |
+| T2 cells | Hithium (Xiamen) | #2 utility-scale storage-cell shipper in 2025 (InfoLink) | L17 (B) | Medium (single source) |
+| T1 integrator | Tesla Energy (Megapack) | Megapack uses CATL LFP cells (Bloomberg via Korea Herald) | L18 (B) | Medium (single source) |
+
+**Official lists (A, as of the dates above)**
+- **BYD** and **CALB** are on the Section 1260H list. BYD: "directly and indirectly affiliated with SASAC and … indirectly affiliated with MIIT (Section 1260H(g)(2)(B)(i)(I)) … a military-civil fusion contributor … because it is affiliated with MIIT and because it resides in or is affiliated with a military-civil fusion enterprise zone". CALB: "indirectly owned by SASAC and … directly and indirectly affiliated with SASAC (Section 1260H(g)(2)(B)(i)(I))". These are designations, not findings of harm.
+- Hunan Yuneng, Hubei Wanrun, BTR, Ningbo Shanshan, Hithium, REPT and Tesla: on neither list.
+- **Name collision:** "Shanshan" appears in the UFLPA list only as *Hoshine Silicon Industry (Shanshan)*, a place name (Shanshan County, Xinjiang). It is unrelated to the anode maker Ningbo Shanshan.
+
+**Documented harm (BYD)**
+- Brazil's Labour Prosecutor's Office (MPT) found 163 Chinese workers in "slavery-like conditions", as defined by Brazilian law, at the construction site of BYD's EV plant in Camaçari, Bahia (Dec 2024). They were hired by contractor Jinjiang Construction Brazil; passports were withheld and wages held back. BYD said it cut ties with the contractor. Prosecutors later sued BYD and two contractors (2025). Reuters, AP, BBC (L19). Government finding reported by independent outlets → **High**. Scope: a vehicle-plant construction site, not a battery-materials site; recorded on the BYD node as company-level conduct.
+
+**Structural (BTR)**
+- BTR processes graphite at a plant in Morowali, Central Sulawesi (L15). Climate Rights International documented labour and environmental harms at the nickel industrial park in Morowali (CRI 2024/2025). No source ties those harms to BTR → structural, Medium.
+
+**Not added**
+- Ganfeng and Tianqi (lithium refining): the only scale sources found were grade C, and the Argentine community disputes found concern other operators. Left for a later pass rather than attach weak or misattributed evidence.
+
 ## EU due-diligence and assurance coverage (for the scorecard)
 
 | Input | EU DD | Assurance available | Worst documented signal |
@@ -162,6 +190,13 @@ Tags: tier / provenance tag / confidence. "Seed, not re-verified" means the row 
 | L10 | CBT News (17 Jun 2026); electrive (18 Jun 2026). https://www.electrive.com/2026/06/18/ford-to-produce-first-lfp-cells-this-year-thanks-to-catl | T2 | 2026-10-05 |
 | L11 | AfDB press release and project page "Morocco – Gotion Power Morocco 20 GWh BESS Factory". https://www.afdb.org/en/documents/morocco-gotion-power-morocco-20-gwh-bess-factory-p-ma-fz0-009 ; ESS News (3 Aug 2026) | T1 | 2026-10-05 |
 | L12 | Modern Power Systems; ESS News (25 Sep 2026), "Greenvolt begins building 600 MW/2.4 GWh BESS in Poland". https://www.ess-news.com/2026/09/25/greenvolt-begins-building-600-mw-2-4-gwh-bess-in-poland | T2 | 2026-10-05 |
+| L13 | Hunan Yuneng New Energy Battery Material, draft listing document (HKEX, 17 Aug 2026), Business and Definitions sections. https://www1.hkexnews.hk/app/sehk/2026/108797/documents/sehk26081700010.pdf | T1 (statement) | 2026-10-05 |
+| L14 | SNE Research press release, "LFP dominates cathode market with 72% share in 2025". https://www.sneresearch.com/en/insight/release_view/681/page/0 | T2 | 2026-10-05 |
+| L15 | Reuters, "Indonesia launches China-built anode plant for EV batteries" (7 Aug 2024); Reuters, "Global EV battery supply chain puzzles over China graphite curbs" (27 Oct 2023). https://www.reuters.com/technology/indonesia-president-launches-china-based-btrs-anode-plant-2024-08-07 | T2 | 2026-10-05 |
+| L16 | CnEVPost, "Global EV battery market share in 2025" (4 Feb 2026), citing SNE Research. https://cnevpost.com/2026/02/04/global-ev-battery-market-share-2025 | T2 | 2026-10-05 |
+| L17 | ESS News, "InfoLink: 2025 energy storage cell shipments jump 95% to 612 GWh" (9 Feb 2026). https://www.ess-news.com/2026/02/09/infolink-2025-energy-storage-cell-shipments-jump-95-to-612-gwh-as-market-flips-from-glut-to-tightness | T2 | 2026-10-05 |
+| L18 | Korea Herald, "Tesla deepens CATL ties to reshape ESS rivalry in US" (citing Bloomberg). https://www.koreaherald.com/article/10530286 | T2 | 2026-10-05 |
+| L19 | Reuters, "Chinese workers found in 'slavery-like conditions' at BYD construction site in Brazil" (24 Dec 2024); AP; BBC, "Brazil sues China carmaker BYD over 'slave-like' conditions" (2025). https://www.reuters.com/business/autos-transportation/workers-found-slavery-like-conditions-byd-construction-site-brazil-2024-12-23 ; https://www.bbc.com/news/articles/c3v5n7w55kpo | T2 | 2026-10-05 |
 | N1 | Sayari Graph, Nano One Materials Candiac Inc, entity mH_CAr_EOW57s8qdijV2Aw. https://graph.sayari.com/resource/entity/mH_CAr_EOW57s8qdijV2Aw | S-REG | 2026-10-05 |
 | N2 | Sayari Graph, Johnson Matthey Matériaux pour Batteries Ltée, entity 6XqwnnL0GAY0JzqpteHTIg. https://graph.sayari.com/resource/entity/6XqwnnL0GAY0JzqpteHTIg | S-REG | 2026-10-05 |
 | N3 | Sayari Graph, Gotion Power Morocco, entity uLYJweuPfLxFJfDcpNwKcA. https://graph.sayari.com/resource/entity/uLYJweuPfLxFJfDcpNwKcA | S-REG | 2026-10-05 |

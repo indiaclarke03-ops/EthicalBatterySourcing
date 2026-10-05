@@ -241,16 +241,20 @@ function renderDialog({ title, subtitle, details, ethical, tab = "details" }) {
   if (!dlg.open) { dlg.opener = document.activeElement; dlg.showModal(); }
 }
 
+// Side-by-side only when sources genuinely disagree (flagged conflict, or an older value superseded), not for complementary facts.
+export const isConflict = (rec) => rec.values.length > 1 && (rec.conflict === true || rec.conflict_ids?.length > 0 || rec.values.some((v) => v.superseded));
+const CONFLICT_NOTE = '<p class="small"><strong>Sources disagree:</strong> values shown side by side, never averaged.</p>';
+
 export function openFieldDetail(field, chem, data, tab) {
   const nodes = data.nodes.filter((n) => n.chemistries.includes(chem.id));
   const vals = field.values.length
-    ? `<div class="${field.values.length > 1 ? "conflict-row" : ""}">${field.values.map((v) => valueBlock(v, data)).join("")}</div>`
+    ? `<div class="${isConflict(field) ? "conflict-row" : ""}">${field.values.map((v) => valueBlock(v, data)).join("")}</div>`
     : `<p class="muted">${field.status === "deferred" ? "Empty at launch." : field.applies ? "No public value for an illustrative product." : "Not applicable."}</p>`;
   renderDialog({
     title: `${esc(field.field_label)} <span class="muted">#${esc(field.guidance_no)}</span>`,
     subtitle: `${esc(chem.short)} passport · ${esc(field.status)}${field.applies_from ? " from " + esc(field.applies_from) : ""}`,
     tab,
-    details: `${field.values.length > 1 ? '<p class="small"><strong>Values disagree:</strong> shown side by side.</p>' : ""}${vals}
+    details: `${isConflict(field) ? CONFLICT_NOTE : ""}${vals}
       ${field.applies_note ? `<p class="small muted">${esc(field.applies_note)}</p>` : ""}
       <p>${confBadge(field.confidence)} <span class="small">${esc(field.confidence_reason)}</span></p>`,
     ethical: `<p class="small">This field doesn't record any of the following. These are the ethical-sourcing risks the research found along the ${esc(chem.short)} supply chain.</p>
@@ -265,8 +269,8 @@ export function openNodeDetail(node, data, tab) {
     subtitle: `${esc(TIER[node.stage] || node.stage)} ${esc(STAGE_LABEL[node.stage] || "")} · ${esc(node.country)} · as of ${esc(node.as_of)}`,
     tab,
     details: `<p>${esc(node.role)}</p>
-      ${node.values.length > 1 ? '<p class="small"><strong>Values disagree:</strong> shown side by side.</p>' : ""}
-      <div class="${node.values.length > 1 ? "conflict-row" : ""}">${node.values.map((v) => valueBlock(v, data)).join("")}</div>
+      ${isConflict(node) ? CONFLICT_NOTE : ""}
+      <div class="${isConflict(node) ? "conflict-row" : ""}">${node.values.map((v) => valueBlock(v, data)).join("")}</div>
       ${conflicts}
       <p>${confBadge(node.confidence)} <span class="small">${esc(node.confidence_reason)}</span></p>
       ${node.flags.length ? `<h3>Screening flags</h3>${node.flags.map((f) => `<p class="flag-label">${esc(f.label)}: ${esc(f.basis)}</p>${sourceLinks([f.source], data)}`).join("")}` : ""}

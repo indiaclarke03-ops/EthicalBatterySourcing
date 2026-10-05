@@ -31,7 +31,7 @@
 </main>
 
 <script type="module">
-import { loadData, shell, setAsOf, fail, esc, confBadge, tierBadge, tagBadge, sourceLinks, STAGE_LABEL, SIGNAL, param, openFieldDetail, openNodeDetail, isGapField } from "./assets/app.js";
+import { loadData, shell, setAsOf, fail, esc, confBadge, tierBadge, tagBadge, sourceLinks, STAGE_LABEL, SIGNAL, param, openFieldDetail, openNodeDetail, isGapField, isConflict } from "./assets/app.js";
 shell("index.html");
 
 const ORDER = ["lfp", "lmfp", "vrfb", "ni-h2", "carbon-o2", "nmc"];
@@ -63,7 +63,7 @@ function fieldHTML(f) {
     body = `<div><strong>Not applicable.</strong></div>`;
   } else if (empty) {
     body = `<div class="muted">No public value for an illustrative product.</div>`;
-  } else if (f.values.length > 1) {
+  } else if (isConflict(f)) {
     body = `<div class="conflict-row">${f.values.map(valueHTML).join("")}</div>`;
   } else {
     body = valueHTML(f.values[0]);

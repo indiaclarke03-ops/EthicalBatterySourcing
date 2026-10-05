@@ -967,6 +967,94 @@
    "retrieved": "2026-10-05",
    "research_note": "research/sayari/noon.md",
    "licence_note": "Used with Sayari permission (full scope); see research/permissions.md"
+  },
+  {
+   "id": "src-hkex-yuneng-2026",
+   "title": "Hunan Yuneng New Energy Battery Material — draft listing document (17 Aug 2026)",
+   "publisher": "HKEX",
+   "url": "https://www1.hkexnews.hk/app/sehk/2026/108797/documents/sehk26081700010.pdf",
+   "access": "public",
+   "tier": "T1",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "src-sne-cathode-2025",
+   "title": "LFP dominates cathode market with 72% share in 2025 (press release)",
+   "publisher": "SNE Research",
+   "url": "https://www.sneresearch.com/en/insight/release_view/681/page/0",
+   "access": "public",
+   "tier": "T2",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "src-reuters-btr-2024",
+   "title": "Indonesia launches China-built anode plant for EV batteries (7 Aug 2024)",
+   "publisher": "Reuters",
+   "url": "https://www.reuters.com/technology/indonesia-president-launches-china-based-btrs-anode-plant-2024-08-07",
+   "access": "public",
+   "tier": "T2",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "src-cnevpost-sne-2025",
+   "title": "Global EV battery market share in 2025: full rankings (citing SNE Research, 4 Feb 2026)",
+   "publisher": "CnEVPost",
+   "url": "https://cnevpost.com/2026/02/04/global-ev-battery-market-share-2025",
+   "access": "public",
+   "tier": "T2",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "src-infolink-ess-2025",
+   "title": "InfoLink: 2025 energy storage cell shipments jump 95% to 612 GWh (9 Feb 2026)",
+   "publisher": "ESS News",
+   "url": "https://www.ess-news.com/2026/02/09/infolink-2025-energy-storage-cell-shipments-jump-95-to-612-gwh-as-market-flips-from-glut-to-tightness",
+   "access": "public",
+   "tier": "T2",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "src-koreaherald-tesla-catl",
+   "title": "Tesla deepens CATL ties to reshape ESS rivalry in US (citing Bloomberg)",
+   "publisher": "Korea Herald",
+   "url": "https://www.koreaherald.com/article/10530286",
+   "access": "public",
+   "tier": "T2",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "src-reuters-byd-brazil-2024",
+   "title": "Chinese workers found in 'slavery-like conditions' at BYD construction site in Brazil (24 Dec 2024)",
+   "publisher": "Reuters",
+   "url": "https://www.reuters.com/business/autos-transportation/workers-found-slavery-like-conditions-byd-construction-site-brazil-2024-12-23",
+   "access": "public",
+   "tier": "T2",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "src-bbc-byd-brazil-2025",
+   "title": "Brazil sues China carmaker BYD over 'slave-like' conditions (2025)",
+   "publisher": "BBC News",
+   "url": "https://www.bbc.com/news/articles/c3v5n7w55kpo",
+   "access": "public",
+   "tier": "T2",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/lfp.md"
   }
  ]
 }
