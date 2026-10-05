@@ -142,8 +142,13 @@ Added so each tier shows the main players, not just one case company. Tiers belo
 **Structural (BTR)**
 - BTR processes graphite at a plant in Morowali, Central Sulawesi (L15). Climate Rights International documented labour and environmental harms at the nickel industrial park in Morowali (CRI 2024/2025). No source ties those harms to BTR → structural, Medium.
 
-**Not added**
-- Ganfeng and Tianqi (lithium refining): the only scale sources found were grade C, and the Argentine community disputes found concern other operators. Left for a later pass rather than attach weak or misattributed evidence.
+**Lithium refining, second pass (grade-A sources found)**
+| Tier | Company | What the sources support | Sources | Confidence |
+|---|---|---|---|---|
+| T4 refining | Ganfeng Lithium | "China's largest lithium producer" (SCMP); 2025 annual report: Cauchari-Olaroz produced 34,100 t lithium carbonate in 2025; holds 65% of the Goulamina mine in Mali (35% Malian state) | L20 (A), L21 (B), L22 (A, statement) | High |
+| T4 refining | Tianqi Lithium | 121,600 t/yr lithium-chemical capacity (Shehong, Anju/Suining, Tongliang, Zhangjiagang, Kwinana); 86,716 t of lithium compounds sold in 2025 | L23 (A, statements) | High |
+
+Both checked against the UFLPA and 1260H texts: not listed. No company-specific documented harm found; the Argentine community disputes found earlier concern other operators and are **not** attached to Ganfeng. Links to Chinese cathode makers are country-level (no entity trace).
 
 ## EU due-diligence and assurance coverage (for the scorecard)
 
@@ -197,6 +202,10 @@ Added so each tier shows the main players, not just one case company. Tiers belo
 | L17 | ESS News, "InfoLink: 2025 energy storage cell shipments jump 95% to 612 GWh" (9 Feb 2026). https://www.ess-news.com/2026/02/09/infolink-2025-energy-storage-cell-shipments-jump-95-to-612-gwh-as-market-flips-from-glut-to-tightness | T2 | 2026-10-05 |
 | L18 | Korea Herald, "Tesla deepens CATL ties to reshape ESS rivalry in US" (citing Bloomberg). https://www.koreaherald.com/article/10530286 | T2 | 2026-10-05 |
 | L19 | Reuters, "Chinese workers found in 'slavery-like conditions' at BYD construction site in Brazil" (24 Dec 2024); AP; BBC, "Brazil sues China carmaker BYD over 'slave-like' conditions" (2025). https://www.reuters.com/business/autos-transportation/workers-found-slavery-like-conditions-byd-construction-site-brazil-2024-12-23 ; https://www.bbc.com/news/articles/c3v5n7w55kpo | T2 | 2026-10-05 |
+| L20 | Ganfeng Lithium Co., Ltd., 2025 Annual Report (HKEX, 30 Apr 2026). https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0430/2026043002396.pdf | T1 (statement) | 2026-10-05 |
+| L21 | South China Morning Post, "Chinese lithium firm reaches milestone in Mali mine project" (6 Jan 2025). https://www.scmp.com/news/china/diplomacy/article/3292309 | T2 | 2026-10-05 |
+| L22 | Lithium du Mali SA (LMSA), company site. https://www.lithiumdumali.ml/en | T1 (statement) | 2026-10-05 |
+| L23 | Tianqi Lithium, 2025 ESG report and announcement on 2025 sales volume (HKEX, 27 Apr 2026). https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0427/2026042703006.pdf ; https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0427/2026042703028.pdf | T1 (statement) | 2026-10-05 |
 | N1 | Sayari Graph, Nano One Materials Candiac Inc, entity mH_CAr_EOW57s8qdijV2Aw. https://graph.sayari.com/resource/entity/mH_CAr_EOW57s8qdijV2Aw | S-REG | 2026-10-05 |
 | N2 | Sayari Graph, Johnson Matthey Matériaux pour Batteries Ltée, entity 6XqwnnL0GAY0JzqpteHTIg. https://graph.sayari.com/resource/entity/6XqwnnL0GAY0JzqpteHTIg | S-REG | 2026-10-05 |
 | N3 | Sayari Graph, Gotion Power Morocco, entity uLYJweuPfLxFJfDcpNwKcA. https://graph.sayari.com/resource/entity/uLYJweuPfLxFJfDcpNwKcA | S-REG | 2026-10-05 |

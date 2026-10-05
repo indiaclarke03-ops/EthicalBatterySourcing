@@ -1143,6 +1143,50 @@
    "tag": "OS",
    "retrieved": "2026-10-05",
    "research_note": "research/nmc-reference.md"
+  },
+  {
+   "id": "src-ganfeng-ar-2025",
+   "title": "2025 Annual Report",
+   "publisher": "Ganfeng Lithium Co., Ltd. (HKEX)",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0430/2026043002396.pdf",
+   "access": "public",
+   "tier": "T1",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "src-scmp-ganfeng-2025",
+   "title": "Chinese lithium firm reaches milestone in Mali mine project (6 Jan 2025)",
+   "publisher": "South China Morning Post",
+   "url": "https://www.scmp.com/news/china/diplomacy/article/3292309/chinese-lithium-firm-reaches-milestone-mali-mine-project-despite-strict-new-rules",
+   "access": "public",
+   "tier": "T2",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "src-lmsa-goulamina",
+   "title": "Lithium du Mali SA (Goulamina) — company site",
+   "publisher": "Lithium du Mali SA",
+   "url": "https://www.lithiumdumali.ml/en",
+   "access": "public",
+   "tier": "T1",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "src-tianqi-2025",
+   "title": "2025 ESG report (capacity) and announcement on 2025 lithium-compound sales",
+   "publisher": "Tianqi Lithium (HKEX)",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0427/2026042703006.pdf",
+   "access": "public",
+   "tier": "T1",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/lfp.md"
   }
  ]
 }
