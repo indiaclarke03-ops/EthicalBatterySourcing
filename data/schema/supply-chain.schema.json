@@ -1,0 +1,345 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "supply-chain.schema.json",
+ "title": "supply-chain",
+ "type": "object",
+ "required": [
+  "schema_version",
+  "as_of",
+  "nodes",
+  "edges"
+ ],
+ "additionalProperties": false,
+ "properties": {
+  "schema_version": {
+   "const": "1.0"
+  },
+  "as_of": {
+   "$ref": "common.json#/$defs/as_of"
+  },
+  "nodes": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "id",
+     "chemistries",
+     "stage",
+     "kind",
+     "name",
+     "country",
+     "role",
+     "values",
+     "confidence",
+     "confidence_reason",
+     "flags",
+     "policy",
+     "ethical_risks",
+     "as_of"
+    ],
+    "properties": {
+     "id": {
+      "$ref": "common.json#/$defs/id"
+     },
+     "chemistries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+       "$ref": "common.json#/$defs/chemistry"
+      }
+     },
+     "stage": {
+      "anyOf": [
+       {
+        "$ref": "common.json#/$defs/stage"
+       },
+       {
+        "enum": [
+         "CAP",
+         "OWN"
+        ]
+       }
+      ]
+     },
+     "kind": {
+      "enum": [
+       "entity",
+       "share",
+       "gap"
+      ]
+     },
+     "name": {
+      "type": "string"
+     },
+     "country": {
+      "type": "string",
+      "pattern": "^([A-Z]{2}|XX|MULTI)$"
+     },
+     "role": {
+      "type": "string"
+     },
+     "share": {
+      "type": [
+       "object",
+       "null"
+      ]
+     },
+     "values": {
+      "type": "array",
+      "items": {
+       "$ref": "common.json#/$defs/claim"
+      }
+     },
+     "conflict_ids": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "confidence": {
+      "$ref": "common.json#/$defs/confidence"
+     },
+     "confidence_reason": {
+      "$ref": "common.json#/$defs/reason"
+     },
+     "artefact_check": {
+      "type": "object",
+      "required": [
+       "done",
+       "pattern_matched",
+       "note"
+      ],
+      "properties": {
+       "done": {
+        "type": "boolean"
+       },
+       "pattern_matched": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "note": {
+        "type": "string"
+       }
+      }
+     },
+     "flags": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "additionalProperties": false,
+       "required": [
+        "type",
+        "source",
+        "basis",
+        "label"
+       ],
+       "properties": {
+        "type": {
+         "$ref": "common.json#/$defs/flag_type"
+        },
+        "source": {
+         "$ref": "common.json#/$defs/source_id"
+        },
+        "basis": {
+         "type": "string"
+        },
+        "official_list": {
+         "type": "boolean"
+        },
+        "aggregate": {
+         "type": "boolean"
+        },
+        "aggregate_counts": {
+         "type": "object",
+         "properties": {
+          "flagged": {
+           "type": "integer"
+          },
+          "total": {
+           "type": "integer"
+          },
+          "scope": {
+           "type": "string"
+          }
+         }
+        },
+        "corroborated_by": {
+         "type": "array",
+         "items": {
+          "$ref": "common.json#/$defs/source_id"
+         }
+        },
+        "label": {
+         "type": "string"
+        },
+        "as_of": {
+         "$ref": "common.json#/$defs/as_of"
+        }
+       }
+      }
+     },
+     "policy": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "additionalProperties": false,
+       "required": [
+        "instrument",
+        "effect",
+        "status",
+        "sources",
+        "as_of"
+       ],
+       "properties": {
+        "instrument": {
+         "enum": [
+          "decision-58",
+          "decision-70",
+          "feoc-pfe",
+          "1260h",
+          "uflpa",
+          "sulphuric-acid",
+          "ga-ge-sb-controls",
+          "eu-flr"
+         ]
+        },
+        "effect": {
+         "type": "string"
+        },
+        "status": {
+         "type": "string"
+        },
+        "sources": {
+         "type": "array",
+         "items": {
+          "$ref": "common.json#/$defs/source_id"
+         }
+        },
+        "as_of": {
+         "$ref": "common.json#/$defs/day"
+        }
+       }
+      }
+     },
+     "ethical_risks": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "additionalProperties": false,
+       "required": [
+        "category",
+        "signal",
+        "evidence",
+        "sources",
+        "assurance",
+        "eu_dd_coverage",
+        "confidence",
+        "confidence_reason",
+        "as_of"
+       ],
+       "properties": {
+        "category": {
+         "$ref": "common.json#/$defs/risk_category"
+        },
+        "signal": {
+         "$ref": "common.json#/$defs/signal"
+        },
+        "material": {
+         "type": "string"
+        },
+        "evidence": {
+         "type": "string",
+         "minLength": 5
+        },
+        "sources": {
+         "type": "array",
+         "items": {
+          "$ref": "common.json#/$defs/source_id"
+         }
+        },
+        "has_independent_source": {
+         "type": "boolean"
+        },
+        "assurance": {
+         "$ref": "common.json#/$defs/assurance"
+        },
+        "assurance_detail": {
+         "type": "string"
+        },
+        "eu_dd_coverage": {
+         "$ref": "common.json#/$defs/eu_dd_coverage"
+        },
+        "confidence": {
+         "$ref": "common.json#/$defs/confidence"
+        },
+        "confidence_reason": {
+         "$ref": "common.json#/$defs/reason"
+        },
+        "as_of": {
+         "$ref": "common.json#/$defs/as_of"
+        },
+        "gender_note": {
+         "type": "boolean"
+        }
+       }
+      }
+     },
+     "as_of": {
+      "$ref": "common.json#/$defs/as_of"
+     },
+     "research_note": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "edges": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "from",
+     "to",
+     "type",
+     "overlay",
+     "confidence",
+     "confidence_reason"
+    ],
+    "properties": {
+     "from": {
+      "$ref": "common.json#/$defs/id"
+     },
+     "to": {
+      "$ref": "common.json#/$defs/id"
+     },
+     "type": {
+      "$ref": "common.json#/$defs/edge_type"
+     },
+     "overlay": {
+      "enum": [
+       "chain",
+       "ownership",
+       "capital"
+      ]
+     },
+     "values": {
+      "type": "array",
+      "items": {
+       "$ref": "common.json#/$defs/claim"
+      }
+     },
+     "confidence": {
+      "$ref": "common.json#/$defs/confidence"
+     },
+     "confidence_reason": {
+      "$ref": "common.json#/$defs/reason"
+     }
+    }
+   }
+  }
+ }
+}

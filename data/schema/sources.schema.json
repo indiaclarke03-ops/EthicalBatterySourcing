@@ -1,0 +1,78 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "sources.schema.json",
+ "title": "sources",
+ "type": "object",
+ "required": [
+  "schema_version",
+  "as_of",
+  "items"
+ ],
+ "additionalProperties": false,
+ "properties": {
+  "schema_version": {
+   "const": "1.0"
+  },
+  "as_of": {
+   "$ref": "common.json#/$defs/as_of"
+  },
+  "items": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "id",
+     "title",
+     "publisher",
+     "url",
+     "access",
+     "tier",
+     "tag",
+     "retrieved",
+     "research_note"
+    ],
+    "properties": {
+     "id": {
+      "$ref": "common.json#/$defs/source_id"
+     },
+     "title": {
+      "type": "string"
+     },
+     "publisher": {
+      "type": "string"
+     },
+     "url": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "access": {
+      "enum": [
+       "public",
+       "licensed",
+       "paywalled"
+      ]
+     },
+     "tier": {
+      "$ref": "common.json#/$defs/tier"
+     },
+     "tag": {
+      "$ref": "common.json#/$defs/tag"
+     },
+     "retrieved": {
+      "$ref": "common.json#/$defs/day"
+     },
+     "licence_note": {
+      "type": "string"
+     },
+     "research_note": {
+      "type": "string",
+      "pattern": "^research/.+\\.md$"
+     }
+    }
+   }
+  }
+ }
+}
