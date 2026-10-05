@@ -43,7 +43,3 @@
 ## Teammates (Phase 7)
 
 _To record before B-34: each teammate's agreement and the credit wording they chose._
-
-## Reviewer sign-off
-
-_Reviewer name and date._
