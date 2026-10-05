@@ -10,28 +10,27 @@
 </head>
 <body>
 <main id="main" class="wrap">
-  <section class="hero">
-    <span class="eyebrow">EU Batteries Regulation · Illustrative audit</span>
-    <h1>What the EU battery passport won't tell you</h1>
-    <p class="lede">From 18 February 2027, EV batteries and industrial batteries above 2 kWh sold in the EU need a digital passport.
-      This audit fills one in for six battery chemistries, and shows beside each what it leaves out: where the materials were mined, and who may have been harmed.</p>
-    <div class="kpis" id="hero-stats" aria-live="polite"></div>
-  </section>
+  <header class="masthead">
+    <h1>What the battery passport won't tell you</h1>
+    <p class="dek">From 18 February 2027, every EV battery and every industrial battery above 2 kWh sold in the EU carries a digital passport.
+      Below, one is filled in for each of six chemistries and set against what the research found upstream.</p>
+    <p class="factline" id="factline" aria-live="polite"></p>
+  </header>
 
-  <p class="picker-label" id="picker-label">Choose a chemistry</p>
-
-  <div class="picker" role="group" aria-labelledby="picker-label" id="picker"></div>
-  <div class="chain-controls"><label class="check"><input type="checkbox" id="gaps"> Show gaps only</label>
-    <span class="small muted" id="gaps-note" aria-live="polite"></span></div>
-
-  <div class="passport-layout">
-    <article class="card passport" id="passport" aria-live="polite"></article>
-    <aside class="card shadow-panel" id="shadow" aria-label="What this passport doesn't show"></aside>
+  <div class="desk">
+    <div class="tabs-row">
+      <div class="doc-tabs" role="group" aria-label="Choose a chemistry" id="picker"></div>
+      <label class="check gaps-check"><input type="checkbox" id="gaps"> Gaps only <span class="small muted" id="gaps-note" aria-live="polite"></span></label>
+    </div>
+    <div class="passport-layout">
+      <article class="passport" id="passport" aria-live="polite"></article>
+      <aside class="upstream" id="shadow" aria-label="Not in the passport"></aside>
+    </div>
   </div>
 </main>
 
 <script type="module">
-import { loadData, shell, setAsOf, fail, esc, confBadge, tierBadge, tagBadge, sourceLinks, STAGE_LABEL, SIGNAL, param, openFieldDetail, openNodeDetail, isGapField, isConflict } from "./assets/app.js";
+import { loadData, shell, setAsOf, fail, esc, confBadge, tierBadge, tagBadge, sourceLinks, STAGE_LABEL, SIGNAL, SIGNAL_HELP, param, openFieldDetail, openNodeDetail, isGapField, isConflict } from "./assets/app.js";
 shell("index.html");
 
 const ORDER = ["lfp", "lmfp", "vrfb", "ni-h2", "carbon-o2", "nmc"];
@@ -48,7 +47,7 @@ let DATA, gapsOnly = false, current = { id: "lfp", use: null };
 function valueHTML(v) {
   return `<div class="val${v.superseded ? " superseded" : ""}">
     <div>${esc(v.claim)}${v.superseded ? ' <span class="small muted">(superseded)</span>' : ""}</div>
-    <div class="chips">${tierBadge(v.tier)} ${tagBadge(v.tag)} <span class="small muted">as of ${esc(v.as_of)}</span></div>
+    <div class="chips">${tierBadge(v.tier)} ${tagBadge(v.tag)} <span class="asof">${esc(v.as_of)}</span></div>
   </div>`;
 }
 
@@ -57,45 +56,54 @@ function fieldHTML(f) {
   const empty = !f.values.length;
   let body;
   if (deferred) {
-    body = `<div><strong>Empty at launch.</strong> ${f.applies_from ? `Required from ${fmtDate(f.applies_from)}.` : "Format still to be specified; no start date yet."}</div>
+    body = `<div class="blank-note"><strong>Blank at launch.</strong> ${f.applies_from ? `Required from ${fmtDate(f.applies_from)}.` : "Format still to be specified; no start date yet."}</div>
       ${f.values.map(valueHTML).join("")}`;
   } else if (!f.applies) {
     body = `<div><strong>Not applicable.</strong></div>`;
   } else if (empty) {
-    body = `<div class="muted">No public value for an illustrative product.</div>`;
+    body = `<div class="blank-note">No public value for an illustrative product.</div>`;
   } else if (isConflict(f)) {
     body = `<div class="conflict-row">${f.values.map(valueHTML).join("")}</div>`;
   } else {
     body = valueHTML(f.values[0]);
   }
   return `<div class="field${deferred ? " deferred" : ""}${empty && !deferred ? " empty" : ""}" id="f-${esc(f.field_id)}">
-    <div class="no">#${esc(f.guidance_no)}</div>
-    <div class="label">${esc(f.field_label)}<div>${confBadge(f.confidence)}</div></div>
+    <div class="no" title="Commission guidance data point">${esc(String(f.guidance_no).padStart(2, "0"))}</div>
+    <div class="label">${esc(f.field_label)}</div>
     <div class="vals">${body}
       ${f.applies_note ? `<div class="note">${esc(f.applies_note)}</div>` : ""}
-      <button type="button" class="open-detail" data-field="${esc(f.field_id)}">Sources, confidence &amp; ethical sourcing</button>
     </div>
+    <div class="meta">${confBadge(f.confidence)}<button type="button" class="open-detail" data-field="${esc(f.field_id)}"
+      aria-label="Evidence for ${esc(f.field_label)}">Evidence</button></div>
   </div>`;
 }
 
-function shadowHTML(chem) {
+const TIER_CODE = { S0: "T5", S1: "T4" };
+function upstreamHTML(chem) {
   const nodes = DATA.nodes.filter((n) => n.chemistries.includes(chem.id));
-  const upstream = nodes.filter((n) => n.stage === "S0" || n.stage === "S1");
   const risks = nodes.flatMap((n) => n.ethical_risks);
   const harm = risks.filter((r) => r.signal === "documented-harm");
   const notCovered = harm.filter((r) => r.eu_dd_coverage === "not-covered");
   const gaps = nodes.filter((n) => n.kind === "gap");
-  return `<h2>What this passport doesn't show</h2>
-    <p class="small muted">None of the 71 passport data points records where materials were mined or refined. This is what the research could trace.</p>
-    <h3>Where materials come from (T5–T4)</h3>
-    <ul>${upstream.map((n) => `<li><a href="supply-chain.html?chem=${chem.id}&node=${encodeURIComponent(n.id)}" data-node="${esc(n.id)}">${esc(n.name)}</a>
-      <span class="small muted">${esc(n.role)}</span> ${confBadge(n.confidence)}</li>`).join("") || "<li>Nothing traceable</li>"}</ul>
-    <h3>Ethical-sourcing evidence along the chain</h3>
-    <ul>
-      <li><strong>${harm.length}</strong> documented-harm entries; <strong>${notCovered.length}</strong> involve materials EU due diligence doesn't cover.</li>
-      <li><strong>${gaps.length}</strong> stage${gaps.length === 1 ? "" : "s"} not traceable from public or licensed data.</li>
-    </ul>
-    <p><a href="scorecard.html">See the scorecard</a> · <a href="supply-chain.html?chem=${chem.id}">Explore the supply chain</a></p>`;
+  const tier = (st, label) => {
+    const ns = nodes.filter((n) => n.stage === st);
+    return `<li class="tier"><div class="tier-code">${TIER_CODE[st]}<span>${label}</span></div>
+      <ul>${ns.map((n) => {
+        const h = n.ethical_risks.filter((r) => r.signal === "documented-harm").length;
+        const fl = n.ethical_risks.some((r) => r.signal === "screening-flag") || n.flags.length;
+        return `<li class="${n.kind === "gap" ? "is-gap" : ""}"><a href="supply-chain.html?chem=${chem.id}&node=${encodeURIComponent(n.id)}" data-node="${esc(n.id)}">${esc(n.name)}</a>
+          <span class="role">${esc(n.role)}</span>
+          <span class="marks">${h ? `<span class="sig sig-documented-harm" title="Documented harm">● ${h} documented harm${h === 1 ? "" : "s"}</span>` : ""}
+            ${fl ? `<span class="sig sig-screening-flag" title="${esc(SIGNAL_HELP["screening-flag"])}">◆ flagged</span>` : ""}
+            ${n.kind === "gap" ? '<span class="gapmark">not traceable</span>' : ""}</span></li>`;
+      }).join("") || '<li class="is-gap"><span class="role">Nothing traceable</span></li>'}</ul></li>`;
+  };
+  return `<h2>Not in the passport</h2>
+    <p class="up-dek">None of the 71 data points records where the materials were mined or refined. This is what the research traced instead.</p>
+    <ol class="trail">${tier("S0", "Mine & feedstock")}${tier("S1", "Refining")}</ol>
+    <p class="tally"><strong>${harm.length}</strong> documented harm${harm.length === 1 ? "" : "s"} along this chain${notCovered.length ? `, <strong>${notCovered.length}</strong> on materials EU due diligence doesn't cover` : ""}.
+      ${gaps.length ? `<strong>${gaps.length}</strong> stage${gaps.length === 1 ? "" : "s"} could not be traced.` : ""}</p>
+    <p class="up-links"><a href="supply-chain.html?chem=${chem.id}">Full supply chain</a><a href="scorecard.html">Scorecard</a></p>`;
 }
 
 function scopeHTML(chem, u) {
@@ -103,7 +111,7 @@ function scopeHTML(chem, u) {
     : chem.passport_type === "shadow" ? "Too little public detail to fill a full passport, so this is a shadow passport."
     : "";
   return `<div class="scope scope-${esc(u.scope_status)}">
-    <div class="chips"><strong>EU passport scope: ${esc(SCOPE_LABEL[u.scope_status])}</strong> ${confBadge(u.confidence)}
+    <div class="chips"><span class="k">EU scope</span><strong>${esc(SCOPE_LABEL[u.scope_status])}</strong> ${confBadge(u.confidence)}
       ${u.shadow_passport ? '<span class="badge shadow-tag">Shadow passport</span>' : ""}</div>
     <div class="small">${esc(u.scope_basis)}</div>
     ${why ? `<div class="small"><strong>${esc(why)}</strong></div>` : ""}
@@ -120,7 +128,17 @@ function qrHTML(id) {
   let svg = "";
   try { const qr = qrcode(0, "M"); qr.addData(url); qr.make(); svg = qr.createSvgTag({ cellSize: 2, margin: 2, scalable: true }); } catch { return ""; }
   return `<figure class="qr"><a href="${esc(url)}" aria-label="QR code linking to this passport page">${svg}</a>
-    <figcaption><strong>Passport QR code</strong>Mock QR linking to this page. On a real battery, the QR code on the label links to its passport (Art. 13(6)).</figcaption></figure>`;
+    <figcaption><strong>Data carrier</strong>Mock QR linking to this page. On a real battery, the QR code on the label opens its passport (Art. 13(6)).</figcaption></figure>`;
+}
+
+// Separate-collection symbol (crossed-out wheeled bin) that EU batteries carry on their label.
+function binMark() {
+  return `<figure class="binmark"><svg viewBox="0 0 40 48" aria-hidden="true" focusable="false">
+    <path d="M10 12h20l-2.5 26h-15z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M8 12h24M16 8h8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="14" cy="41" r="2.4" fill="currentColor"/><circle cx="26" cy="41" r="2.4" fill="currentColor"/>
+    <path d="M5 6l30 38M35 6L5 44" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+    <figcaption>Separate-collection symbol carried on EU battery labels</figcaption></figure>`;
 }
 
 function show(id, use) {
@@ -132,54 +150,62 @@ function show(id, use) {
   const deferred = fields.filter((f) => f.status === "deferred").length;
   const gapCount = fields.filter(isGapField).length;
   document.getElementById("gaps-note").textContent = gapsOnly
-    ? `${gapCount} of ${fields.length} fields have Low or Unknown confidence.` : `${gapCount} field${gapCount === 1 ? "" : "s"} with Low or Unknown confidence.`;
+    ? `${gapCount} of ${fields.length} fields shown` : `(${gapCount} weak fields)`;
   const shown = gapsOnly ? fields.filter(isGapField) : fields;
+  const kind = chem.passport_type === "shadow" ? "Shadow passport" : chem.passport_type === "reference" ? "Reference passport" : "Full passport";
   document.getElementById("passport").innerHTML = `
-    <div class="passport-head">
-      <div><h2 style="margin:0">${esc(chem.name)} <span class="muted">(${esc(chem.short)})</span></h2>
-        <p class="small muted" style="margin:.25rem 0 0">${esc(chem.passport_type === "shadow" ? "Shadow passport" : chem.passport_type === "reference" ? "Reference passport" : "Full passport")}
-          · ${fields.length} of 71 data points shown · ${deferred} empty at launch</p></div>
+    <div class="doc-band">
+      <div><span class="doc-title">Battery passport</span><span class="doc-reg">Regulation (EU) 2023/1542 · Art. 77 · Annex XIII</span></div>
       <span class="stamp">Illustrative</span>
     </div>
-    <p>${esc(chem.summary)}</p>
-    <div class="use-toggle" role="group" aria-label="Use case">${chem.use_cases.map((x) =>
-      `<button type="button" data-use="${esc(x.use_case)}" aria-pressed="${x === u}">${esc(USE_LABEL[x.use_case] || x.use_case)}</button>`).join("")}</div>
-    ${scopeHTML(chem, u)}
+    <div class="doc-id">
+      <h2>${esc(chem.name)}</h2>
+      <dl class="doc-keys">
+        <div><dt>Chemistry</dt><dd>${esc(chem.short)}</dd></div>
+        <div><dt>Type</dt><dd>${esc(kind)}</dd></div>
+        <div><dt>Data points</dt><dd>${fields.length} of 71</dd></div>
+        <div><dt>Blank at launch</dt><dd>${deferred}</dd></div>
+      </dl>
+      <p class="doc-summary">${esc(chem.summary)}</p>
+      <div class="use-row"><span class="k">Use</span><div class="use-toggle" role="group" aria-label="Use case">${chem.use_cases.map((x) =>
+        `<button type="button" data-use="${esc(x.use_case)}" aria-pressed="${x === u}">${esc(USE_LABEL[x.use_case] || x.use_case)}</button>`).join("")}</div></div>
+      ${scopeHTML(chem, u)}
+    </div>
     ${GROUPS.map(([g, label]) => {
       const fs = shown.filter((f) => f.category === g);
       return fs.length ? `<section class="field-group"><h3>${label}</h3>${fs.map(fieldHTML).join("")}</section>` : "";
     }).join("")}
-    <div class="passport-foot">${qrHTML(id)}</div>`;
+    <div class="passport-foot">${qrHTML(id)}${binMark()}</div>`;
   document.querySelectorAll("#passport [data-field]").forEach((b) => b.addEventListener("click", () =>
     openFieldDetail(fields.find((f) => f.field_id === b.dataset.field), chem, DATA)));
   document.querySelectorAll("#shadow [data-node]").forEach((b) => b.addEventListener("click", (e) => {
     e.preventDefault(); openNodeDetail(DATA.nodeById[b.dataset.node], DATA);
   }));
   document.querySelectorAll(".use-toggle button").forEach((b) => b.addEventListener("click", () => show(id, b.dataset.use)));
-  document.getElementById("shadow").innerHTML = shadowHTML(chem);
+  document.getElementById("shadow").innerHTML = upstreamHTML(chem);
   history.replaceState(null, "", `?chem=${id}&use=${u.use_case}${gapsOnly ? "&gaps=1" : ""}`);
 }
 
-function heroStats(d) {
+function factLine(d) {
   const harm = d.nodes.flatMap((n) => n.ethical_risks).filter((r) => r.signal === "documented-harm");
-  document.getElementById("hero-stats").innerHTML = [
-    ["0 of 71", "passport data points record where materials were mined or refined", ""],
-    [harm.length, "documented harms along the six supply chains", "alert"],
-    [harm.filter((r) => r.eu_dd_coverage === "not-covered").length, "of those involve materials EU due diligence doesn't cover", "alert"],
-    [d.nodes.filter((n) => n.kind === "gap").length, "supply-chain stages no one could trace", ""],
-  ].map(([n, l, c]) => `<div class="card kpi ${c}"><div class="num">${n}</div><div class="lab">${esc(l)}</div></div>`).join("");
+  const nc = harm.filter((r) => r.eu_dd_coverage === "not-covered").length;
+  document.getElementById("factline").innerHTML = [
+    ["0 / 71", "data points record mine or refinery origin"],
+    [harm.length, "documented harms upstream, across six chains"],
+    [nc, "of those on materials EU due diligence skips"],
+  ].map(([n, l]) => `<span><b>${n}</b> ${esc(l)}</span>`).join("");
 }
 
 loadData().then((d) => {
   DATA = d;
   setAsOf(d);
-  heroStats(d);
+  factLine(d);
   const picker = document.getElementById("picker");
   ORDER.forEach((id) => {
     const c = d.chemById[id];
     const b = document.createElement("button");
     b.type = "button"; b.dataset.id = id; b.setAttribute("aria-pressed", "false");
-    b.innerHTML = `${esc(c.short)}<span class="pt">${esc(c.passport_type)}</span>`;
+    b.innerHTML = `<span class="tab-code">${esc(c.short)}</span><span class="pt">${esc(c.passport_type)}</span>`;
     b.addEventListener("click", () => show(id));
     picker.append(b);
   });
