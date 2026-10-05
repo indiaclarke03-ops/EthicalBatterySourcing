@@ -216,3 +216,12 @@ dialog.detail::backdrop { background: rgba(0, 0, 0, 0.35); }
 .edge-text { font-size: 0.8rem; color: var(--muted); padding-left: 0.75rem; }
 @media (max-width: 899px) { .chain { display: none; } .chain-list { display: block; } .node-name { font-size: 0.9rem; } }
 @media (prefers-reduced-motion: reduce) { .node { transition: none; } }
+.chain-controls .check { display: inline-flex; align-items: center; gap: 0.35rem; }
+.chain-cols.with-own { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 1.4rem; }
+.own-col { border-left: 1px dashed var(--line); padding-left: 0.6rem; }
+.chain-edges .edge.ov-ownership, .chain-edges .edge.ov-capital { stroke: var(--accent); stroke-width: 2; }
+.chain-edges .edge.ov-capital { stroke-dasharray: 6 3; }
+.node-own { font-size: 0.7rem; color: var(--accent); border-top: 1px solid var(--line); padding-top: 0.2rem; margin-top: 0.1rem; }
+.legend-own { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--accent); }
+.legend-own line { stroke: var(--accent); stroke-width: 2; }
+.legend-own .lg-cap { stroke-dasharray: 6 3; }

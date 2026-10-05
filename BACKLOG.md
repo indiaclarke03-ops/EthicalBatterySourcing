@@ -179,7 +179,7 @@ Each note covers S0–S5 plus both overlays, with at least one node per stage. *
   - GAP nodes dashed.
   - Clicking a node opens the detail panel.
   - Works on mobile via a stacked list fallback.
-- [ ] **B-25 Ownership and capital overlay** · Must
+- [x] **B-25 Ownership and capital overlay** · Must
   - Toggle shows corporate topology and capital links. EnerVenue and Rongke are the showcase.
 - [ ] **B-26 Policy-risk overlay** · Must
   - Highlights nodes affected by Decision No. 58, FEOC, 1260H and sulphuric-acid exposure, each with an as-of date.
