@@ -1,4 +1,4 @@
-# BACKLOG — Passport with Gaps
+# BACKLOG — Battery Passport Audit
 
 *Status: DRAFT v3 for human review.*
 
@@ -201,6 +201,10 @@ Each note covers S0–S5 plus both overlays, with at least one node per stage. *
   - Each passport card shows a QR code linking to its own page.
 - [x] **B-29a Responsive, dark mode and accessibility** · Should
   - Phone width, system dark mode, keyboard navigation.
+- [x] **B-29b Rename to "Battery Passport Audit"** · Must
+  - Replaces the working title "Passport with Gaps" in every page title, header and doc (requested by India, 2026-10-05).
+- [ ] **B-29c About this tool page** · Must
+  - `about.html`: why the tool exists, what it shows, how it works (data, pages, overlays, filters), how to read it, and its limits.
 
 ## Phase 6 — Ship and demo
 

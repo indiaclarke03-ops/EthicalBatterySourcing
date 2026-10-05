@@ -1,4 +1,4 @@
-# Passport with Gaps
+# Battery Passport Audit
 
 An ethical-sourcing audit of the EU battery passport. Illustrative passports for six battery chemistries trace each supply chain from mine to deployment, and show where human-rights, labour, community and environmental risks sit, how much of each can be verified, and what the passport and EU due diligence would and wouldn't reveal.
 
