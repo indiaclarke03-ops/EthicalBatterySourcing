@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methods · Passport with Gaps</title>
+<meta name="description" content="How the illustrative battery passports were built: evidence tiers, confidence rubric, ethical-sourcing method, Sayari data caveats and AI use.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<main id="main" class="wrap prose">
+  <h1>Methods</h1>
+  <p class="lede">How the passports, supply chains and risk entries on this site were researched and scored, and what they can't tell you.</p>
+  <nav class="toc small" aria-label="On this page">
+    <a href="#not">What this is not</a> · <a href="#evidence">Evidence and confidence</a> · <a href="#signals">Signals are not verdicts</a> ·
+    <a href="#ethical">Ethical-sourcing method</a> · <a href="#eudd">EU due diligence</a> · <a href="#sayari">Sayari data</a> ·
+    <a href="#commitments">Ethical commitments</a> · <a href="#ai">How AI was used</a> · <a href="#dates">Dates</a>
+  </nav>
+
+  <section id="not">
+    <h2>What this is not</h2>
+    <p>These are <strong>illustrative</strong> passports. They're not real product passports, and they make no statement about any company's compliance.
+      <strong>Nothing here is legal, compliance or investment advice.</strong></p>
+  </section>
+
+  <section id="evidence">
+    <h2>Evidence and confidence</h2>
+    <p>Every value, supply-chain link and risk entry carries a source, an evidence tier, a provenance tag, a confidence score and a one-line reason.</p>
+    <h3>Evidence tiers</h3>
+    <div class="table-scroll"><table>
+      <thead><tr><th scope="col">Tier</th><th scope="col">Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge tier">T1</span></td><td>Primary source: regulation, regulator, filing, official company statement. A company claim is T1 <em>as a statement</em>, not as a measurement.</td></tr>
+        <tr><td><span class="badge tier">T2</span></td><td>Credible secondary source or data provider: established press, industry analysts, licensed databases.</td></tr>
+        <tr><td><span class="badge tier">T3</span></td><td>Vendor-published material, a single market-research house, or an unverified aggregation.</td></tr>
+      </tbody></table></div>
+    <h3>Provenance tags</h3>
+    <div class="table-scroll"><table>
+      <thead><tr><th scope="col">Tag</th><th scope="col">Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge tag">S-REG</span></td><td>Sayari corporate-registry record</td></tr>
+        <tr><td><span class="badge tag">S-TRADE</span></td><td>Sayari trade record</td></tr>
+        <tr><td><span class="badge tag">OS</span></td><td>Open source (public documents found by search or by hand)</td></tr>
+        <tr><td><span class="badge tag">INF</span></td><td>Our inference</td></tr>
+        <tr><td><span class="badge tag">GAP</span></td><td>No usable source</td></tr>
+      </tbody></table></div>
+    <h3>Confidence</h3>
+    <div class="table-scroll"><table>
+      <thead><tr><th scope="col">Score</th><th scope="col">When we use it</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge conf-High">High</span></td><td>A primary (T1) source, or two independent credible secondary sources that agree.</td></tr>
+        <tr><td><span class="badge conf-Medium">Medium</span></td><td>One credible secondary source; a Sayari record that has passed our artefact check but has no public corroboration; sources that agree on substance but differ on figures; or a direct reading of regulation text applied to a case it doesn't name (the reason starts "Reading of T1 text:").</td></tr>
+        <tr><td><span class="badge conf-Low">Low</span></td><td>Weaker sources only; our own inference; an unresolved conflict between sources; or a database record that hasn't yet passed, or has failed, our artefact check.</td></tr>
+        <tr><td><span class="badge conf-Unknown">Unknown</span></td><td>No usable source. These are drawn dashed and labelled "not traceable from public or licensed data".</td></tr>
+      </tbody></table></div>
+    <h3>Rules we apply the same way to every chemistry</h3>
+    <ul>
+      <li><strong>Independent means independent.</strong> Several articles reporting one analyst's study count as one source.</li>
+      <li><strong>We score the claim as worded.</strong> Evidence more than five years old supports "this was documented in 2016", not "this is happening now".</li>
+      <li><strong>Company statements are statements.</strong> We report them as "the company states…". They're never treated as measurements.</li>
+      <li><strong>"Not on a list" is dated.</strong> When we say a company isn't on a government list, we mean as of the date shown.</li>
+      <li><strong>Database results need an extra check.</strong> Sayari records stay at Low until checked against three known patterns that can produce false links (<a href="#sayari">below</a>).</li>
+      <li><strong>Same evidence, same score.</strong> A familiar chemistry (NMC, LFP) and an emerging one (Ni-H₂, carbon-O₂) are scored by the same rules.</li>
+    </ul>
+    <p>Where sources disagree, we show every value side by side. We never average them.</p>
+  </section>
+
+  <section id="signals">
+    <h2>Signals are not verdicts</h2>
+    <p>Each risk entry has a <strong>signal type</strong>:</p>
+    <ul>
+      <li><span class="sig sig-documented-harm">● Documented harm</span>: a credible investigation (NGO, journalist, academic field research) or a government finding describes harm at this place or in this activity.</li>
+      <li><span class="sig sig-screening-flag">◆ Screening flag</span>: a database or government list returned a match. Official government lists (the US UFLPA Entity List, the Section 1260H list) are named, with the government's stated reason. Database flags are shown only in aggregate unless a credible public investigation corroborates them. <strong>A screening flag is not an allegation.</strong></li>
+      <li><span class="sig sig-structural">▲ Structural risk</span>: the region or process carries documented risk, but we found no evidence about this specific site or company.</li>
+      <li><span class="sig sig-no-known-evidence">○ No known evidence</span>: we found nothing. Where the region or process carries structural risk, we show this as a <strong>gap</strong>, not as "clean".</li>
+    </ul>
+    <p>Confidence and signal type are separate. A risk can be a High-confidence <em>structural</em> risk with no entity-level evidence at all.</p>
+  </section>
+
+  <section id="ethical">
+    <h2>Ethical-sourcing method</h2>
+    <p>Every supply-chain node has an ethical-sourcing profile. Risk categories follow Annex X, point 2 of the EU Batteries Regulation (Reg. 2023/1542):</p>
+    <div class="table-scroll"><table id="t-cats">
+      <thead><tr><th scope="col">Code</th><th scope="col">Category</th></tr></thead><tbody></tbody></table></div>
+    <p>For each risk we record the evidence and who documented it, the signal type, the EU due-diligence coverage, the confidence and its reason, and the
+      <strong>assurance</strong>: what independent checking exists.</p>
+    <ul>
+      <li><strong>IRMA audit</strong> (Initiative for Responsible Mining Assurance);</li>
+      <li><strong>RMI/RMAP list</strong>: a conformant smelter or refiner list exists for the material;</li>
+      <li><strong>Other scheme</strong> (named);</li>
+      <li><strong>Company self-assessment only</strong>;</li>
+      <li><strong>No assurance known</strong>.</li>
+    </ul>
+    <h3>Rules</h3>
+    <ul>
+      <li>A screening flag is never upgraded to documented harm without a credible investigative or official source naming the entity.</li>
+      <li><strong>Aggregation rule:</strong> supplier-level forced-labour flags from databases (Sayari) are published only as totals, unless a credible public investigation corroborates them.</li>
+      <li>Entities on official government lists (UFLPA Entity List, Section 1260H) are named, with the list, its date and the stated basis. They remain screening flags, not documented harm.</li>
+      <li>Harms are described from sources close to the people affected or from credible investigators, not only from company or database sources. No individual worker, community member or company director is named.</li>
+      <li>"No known evidence" is not "no risk".</li>
+    </ul>
+  </section>
+
+  <section id="eudd">
+    <h2>What EU due diligence covers</h2>
+    <p>The EU Batteries Regulation requires due diligence on four raw materials only: <strong>cobalt, natural graphite, lithium and nickel</strong>, plus their
+      compounds used in active materials. The obligation applies from 18 August 2027 (as postponed by Reg. 2025/1561). Each risk entry says whether its
+      material is <strong>covered</strong>, <strong>not covered</strong>, or <strong>unclear</strong> (for example, synthetic graphite). Coverage doesn't change
+      our confidence in the evidence. It tells you whether the law would ask the question at all.</p>
+  </section>
+
+  <section id="sayari">
+    <h2>Sayari data</h2>
+    <ul>
+      <li>Sayari data is used with Sayari's permission.</li>
+      <li>Before scoring any Sayari finding above Low, we check it against three patterns that can produce misleading links:
+        <ul><li>longest-path traces;</li><li>custodian or registered-agent over-connection at depth;</li><li>stale registers after a company renames.</li></ul></li>
+      <li>We check identifiers before matching names. For example, two unrelated companies on the UFLPA list both use "Jinchuan" in their names.</li>
+    </ul>
+    <h3>Examples found in this project</h3>
+    <ul>
+      <li>A battery maker's record under its former shell-company name listed itself as its own 99.8% shareholder: a stale register after a rename. We don't publish the flags attached to it.</li>
+      <li>Many trade-network flags rest on "Possibly the Same As" links between records that may or may not be the same company. Those flags are shown only as totals.</li>
+      <li>A US export-control list matched a flow-battery maker's name only because another organisation has a similar name. Name matches are never enough on their own.</li>
+      <li>A database flag called "MEU list contractors" turned out to mean "appears in government procurement records", not "on the Military End-User list". We read each flag's definition before using it.</li>
+    </ul>
+  </section>
+
+  <section id="commitments">
+    <h2>Ethical commitments</h2>
+    <ol>
+      <li><strong>Passports are illustrative.</strong> No product is presented as compliant or non-compliant.</li>
+      <li><strong>Confidence is shown, never hidden.</strong> Unknown links are drawn as unknown; conflicting figures are shown side by side.</li>
+      <li><strong>Risk flags are screening signals, not allegations.</strong> Database flags are labelled as screening results, with the source, and published in aggregate unless corroborated.</li>
+      <li><strong>Affected people are not just data points.</strong> Nothing names individual workers or communities beyond what the source has already published.</li>
+      <li><strong>Data is used with permission.</strong> Sayari data is used with Sayari's permission. PitchBook figures appear only where India Clarke already verified them for her Electrum report, cited as "PitchBook, via Electrum report (Aug 2026)"; no new PitchBook data was pulled.</li>
+      <li><strong>Unverifiable information is left out.</strong> Where a claim couldn't be verified, it's recorded as a gap, not filled in.</li>
+    </ol>
+  </section>
+
+  <section id="ai">
+    <h2>How AI was used</h2>
+    <ul>
+      <li>This project was researched and built by India Clarke with <strong>Claude Code</strong> (Anthropic), using the Sayari and Tavily tools.</li>
+      <li>Claude searched sources, drafted research notes with citations, and wrote the site's code and data files.</li>
+      <li>India directs the project and reviews the research notes and data.</li>
+      <li>No value on this site was generated by AI without a cited source. A validator checks that every value resolves to a source in the register.</li>
+      <li>Where a gap couldn't be closed from Sayari or public sources, it's shown as a gap.</li>
+    </ul>
+  </section>
+
+  <section id="dates">
+    <h2>Dates</h2>
+    <p>Data is as of <span data-asof></span>. Policy items carry their own day-level as-of dates. Time-sensitive items scheduled for re-check:
+      China's export-control suspension (Announcement No. 70, to 10 November 2026) and the EU Omnibus IV due-diligence threshold (pending adoption).</p>
+  </section>
+</main>
+
+<script type="module">
+import { loadData, shell, setAsOf, fail, RISK_LABEL, esc } from "./assets/app.js";
+shell("methods.html");
+document.querySelector("#t-cats tbody").innerHTML = Object.entries(RISK_LABEL)
+  .map(([code, label]) => `<tr><td><span class="badge tag">${esc(code)}</span></td><td>${esc(label)}</td></tr>`).join("");
+loadData().then(setAsOf).catch(fail);
+</script>
+</body>
+</html>

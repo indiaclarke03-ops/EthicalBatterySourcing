@@ -191,7 +191,7 @@ Each note covers S0–S5 plus both overlays, with at least one node per stage. *
 - [x] **B-28 Gaps filter** · Must
   - Filter any passport or chain to Low, Unknown and GAP items, plus risks that are **not covered by EU due diligence** or have **no known assurance**.
   - Shows a count per chemistry.
-- [ ] **B-29 Methods page and mock QR** · Must
+- [x] **B-29 Methods page and mock QR** · Must
   - `methods.html` covers:
     - the tiers, tags and confidence rubric;
     - the ethical-sourcing method (risk categories, signal types, assurance, aggregation rule for flags);
