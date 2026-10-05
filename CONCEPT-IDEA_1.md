@@ -59,15 +59,11 @@ If that holds, a newer chemistry can look "cleaner" on paper simply because its 
 
 ### Each passport has three layers
 
-1. **Passport fields.** About 15 of the 71 official data points, weighted toward the sourcing-relevant ones:
-   - raw-material origin;
-   - due-diligence policy and report;
-   - third-party assurance;
-   - carbon footprint;
-   - recycled content.
+1. **Passport fields.** About 15 of the 71 official data points, weighted toward the sourcing-relevant ones: critical raw materials present, detailed composition, place of manufacture, responsible-sourcing information from the due-diligence report, carbon footprint and recycled content. Several of these are deferred at launch (see `research/regulation.md`). Deferred fields are shown as empty and labelled with the date they become required.
+   - **Shadow layer: what the passport doesn't show.** None of the 71 data points records where raw materials were mined or refined. Raw-material origin, by stage, is shown alongside the passport as information a reader would need but the passport doesn't carry.
 2. **Ethical-sourcing profile.** For each supply-chain node, the risks under the due-diligence risk categories:
    - human rights;
-   - labour rights, including forced and child labour;
+   - labour rights, including forced and child labour, discrimination (including gender) and trade-union freedoms;
    - occupational health and safety;
    - community rights, including Indigenous peoples and free, prior and informed consent (FPIC);
    - environment (water, soil, air, biodiversity, tailings);
@@ -117,7 +113,8 @@ Conflicting figures are shown side by side.
 1. **Passports are illustrative.** They show what a passport would need to contain, populated with verified public and licensed data. No product is presented as compliant or non-compliant.
 2. **Confidence is shown, never hidden.** Unknown links are drawn as unknown, and conflicting figures are shown side by side.
 3. **Risk flags are screening signals, not allegations.** Sayari forced-labour, state-ownership, MEU and region flags are labelled as database screening results, with the source.
-   - Supplier-level forced-labour flags are published only in aggregate unless corroborated by a credible public investigation.
+   - Supplier-level forced-labour flags from databases (Sayari) are published only in aggregate unless corroborated by a credible public investigation.
+   - Entities on official government lists (e.g. the UFLPA Entity List, Section 1260H) are named, with the list, its date and the government's stated basis.
    - Findings matching known Sayari artefacts are suppressed and noted on the methods page: longest-path traces, custodian over-connection at depth, and stale registers after a rename.
 4. **Affected people are not just data points.** Harms are described with sources from the people affected or credible investigators (NGOs, journalists, academic field research), not only from company or database sources. Nothing names individual workers or communities beyond what the source has already published.
 5. **Data is used with permission.** Sayari data is used with Sayari's permission, with its scope recorded in the repo. PitchBook is not available to this project as a tool. PitchBook figures appear only where I already verified them for the Electrum report, cited as "PitchBook, via Electrum report (Aug 2026)"; no new PitchBook data is pulled.

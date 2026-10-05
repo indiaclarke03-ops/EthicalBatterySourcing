@@ -66,7 +66,9 @@
     - Xinjiang-linked processing.
   - Each entry has a signal type and confidence.
 - [ ] **B-06 Field selection** · Must · Tavily
-  - About 15 of the 71 data points, weighted toward sourcing: raw-material origin, due-diligence policy and report, third-party assurance, carbon footprint, recycled content.
+  - About 15 of the 71 data points, weighted toward sourcing: critical raw materials (#15), detailed composition (#45), place of manufacture (#8), responsible-sourcing information (#19, deferred to Aug 2027), carbon footprint (#17–18, deferred), recycled content (#20–23, deferred).
+  - Deferred fields are recorded with their legal start date.
+  - Defines the shadow layer, "what the passport doesn't show": raw-material origin by stage, which no data point records.
   - Includes a small set of identification and performance fields for context.
   - Includes a note on which fields don't translate to non-lithium chemistries.
 - [ ] **B-07 Cross-cutting risks** · Must · Tavily
@@ -79,6 +81,7 @@
   - Every item is re-verified from the seed and dated.
 - [ ] **B-08 Confidence rubric dry run** · Must
   - Score 10 seed items with the rubric, including at least 3 ethical-risk entries.
+  - Include at least one matched pair (similar evidence, different chemistries) to check that scoring is consistent across chemistries.
   - Adjust the rubric wording if scores feel wrong.
   - Record the final rubric on the methods page draft.
 

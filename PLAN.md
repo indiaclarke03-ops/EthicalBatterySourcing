@@ -79,8 +79,12 @@ Every node, edge and passport value gets a confidence score.
 |---|---|
 | **High** | A T1 source, or at least two independent T2 sources that agree. A Sayari record counts as High only when a public source corroborates it. |
 | **Medium** | A single T2 source; a Sayari record without independent corroboration; or sources that agree on substance but differ on figures. |
-| **Low** | T3 only; INF; unresolved conflict between sources; or a Sayari path matching a known artefact pattern. |
+| **Low** | T3 only; INF (other than a reading of T1 text, below); unresolved conflict between sources; or a Sayari path matching a known artefact pattern. |
 | **Unknown** | GAP. The node is drawn dashed and labelled "not traceable from public or licensed data". |
+
+**Reading of T1 text.** Applying explicit T1 text to a case it doesn't name, with no contrary source, scores **Medium**. For example, "a VRFB is a battery with external storage" applies Art. 3(1)(8). The reason line must start "Reading of T1 text:".
+
+**Consistency across chemistries.** The rubric is applied the same way to every chemistry. The same evidence earns the same score whether it concerns a familiar chemistry (NMC, LFP) or an emerging one (Ni-H₂, carbon-O₂). The B-08 dry run includes at least one matched pair across chemistries to check this, and the validator warns when similar evidence scores differently.
 
 Each score is shown with a one-line reason. Conflicting values are stored as an array and displayed side by side, never averaged.
 
@@ -105,21 +109,22 @@ Depth target per chemistry:
 
 This is the core of the project. Every supply-chain node gets an ethical-sourcing profile.
 
-**Risk categories.** These follow the battery regulation's due-diligence risk categories (confirm the list in B-05):
+**Risk categories.** These follow the regulation's Annex X, point 2 (confirmed in B-05a; see `research/ethical-sourcing.md` §2):
 
 | Category | Code |
 |---|---|
 | Human rights | HR |
 | Labour rights: forced labour | LR-FL |
 | Labour rights: child labour | LR-CL |
+| Labour rights: discrimination (incl. gender; tag gender-specific harms with a `gender` note) | LR-DIS |
+| Labour rights: trade-union freedoms | LR-TU |
 | Occupational health and safety | OHS |
 | Community rights, incl. Indigenous peoples and FPIC | COM |
 | Environment: water | ENV-W |
-| Environment: soil and tailings | ENV-S |
+| Environment: soil, land use, tailings, waste and residues | ENV-S |
 | Environment: air | ENV-A |
 | Environment: biodiversity | ENV-B |
-| Human health | HH |
-| Gender | GEN |
+| Human health, hazardous substances, plant safety | HH |
 
 **For each risk on a node, record:**
 - **Evidence.** What is documented, and by whom. Prefer investigative, NGO and academic sources alongside company and database sources.
@@ -142,7 +147,8 @@ This is the core of the project. Every supply-chain node gets an ethical-sourcin
 
 **Rules:**
 - A screening flag is never upgraded to "documented harm" without a credible investigative or official source naming the entity.
-- Supplier-level forced-labour flags are published in aggregate unless corroborated.
+- Supplier-level forced-labour flags from databases (Sayari) are published in aggregate unless corroborated.
+- Entities on official government lists (UFLPA Entity List, Section 1260H, US DOL entity-specific findings) are named, with the list, date and stated basis. They remain screening flags, not documented harm.
 - "No known evidence" is not "no risk." It is shown as a gap when the region or process carries structural risk.
 
 **Starting sources to check** (verify availability and terms):

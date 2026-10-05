@@ -21,7 +21,7 @@ Items marked **(confirm)** are decisions I need the reviewer to accept or change
 | `tag` | `S-REG`, `S-TRADE`, `OS`, `INF`, `GAP` |
 | `confidence` | `High`, `Medium`, `Low`, `Unknown` |
 | `stage` | `S0`, `S1`, `S2`, `S3`, `S4`, `S5` |
-| `risk_category` | `HR`, `LR-FL`, `LR-CL`, `OHS`, `COM`, `ENV-W`, `ENV-S`, `ENV-A`, `ENV-B`, `HH`, `GEN` (final list fixed by B-05a) |
+| `risk_category` | `HR`, `LR-FL`, `LR-CL`, `LR-DIS`, `LR-TU`, `OHS`, `COM`, `ENV-W`, `ENV-S`, `ENV-A`, `ENV-B`, `HH` (Annex X, fixed in B-05a) |
 | `signal` | `documented-harm`, `screening-flag`, `structural`, `no-known-evidence` |
 | `assurance` | `irma-audit`, `rmi-rmap-conformant`, `other-scheme`, `self-assessment`, `none-known` |
 | `eu_dd_coverage` | `covered`, `not-covered`, `unclear` |
@@ -132,7 +132,11 @@ One record per chemistry × field. The ~15 fields are fixed by B-06; the list be
 - `category`: `identification`, `performance`, `sourcing`, `carbon`, `circularity`, `due-diligence`.
 - `applies: false` plus `applies_note` records the B-06 note on fields that don't translate to non-lithium chemistries. These fields still render, greyed and labelled "not applicable — why".
 
-**Placeholder field list (B-06 replaces it):** manufacturer identification; chemistry; rated capacity; expected lifetime; raw-material origin (Co, Li, Ni, natural graphite); critical-material content; due-diligence policy; due-diligence report; third-party verification of due diligence; carbon-footprint total; carbon-footprint performance class; recycled content (Co, Li, Ni, Pb); hazardous substances; end-of-life information; supply-chain stage reach.
+**Placeholder field list (B-06 replaces it), using Commission guidance v2.0 numbering:** manufacturer (#3); place of manufacture (#8); battery category (#6); chemistry (#12); capacity (#11); hazardous substances (#13); critical raw materials > 0.1% (#15); renewable content (#24); expected lifetime (#31 / #59–60); detailed composition (#45); carbon-footprint declaration (#17, deferred); responsible-sourcing information (#19, deferred to Aug 2027); recycled content Co/Li/Ni (#20–22, deferred).
+
+Deferred fields take `"status": "deferred"` and `"applies_from": "YYYY-MM-DD"`, and render as an empty, labelled slot.
+
+**Shadow layer.** Raw-material origin isn't a passport data point. It is stored on supply-chain nodes (S0–S1) and shown on the passport card under "What this passport doesn't show", never styled as a passport field.
 
 ### 4.4 `supply-chain.json`
 
@@ -181,7 +185,8 @@ One record per chemistry × field. The ~15 fields are fixed by B-06; the list be
 }
 ```
 
-- **Aggregation rule:** a `forced-labour` flag at supplier level must have `aggregate: true` and no named counterparties, unless `corroborated_by` contains at least one credible investigative or official source naming that entity.
+- **Aggregation rule:** a database-derived (Sayari) `forced-labour` flag at supplier level must have `aggregate: true` and no named counterparties, unless `corroborated_by` contains at least one credible investigative or official source naming that entity.
+- **Official lists:** flags of type `uflpa-entity-list` or `1260h` name the entity and carry `"official_list": true`, the list's Federal Register (or equivalent) citation and its date, and the stated basis in neutral words.
 - `label` is fixed text and is always rendered next to the flag.
 
 **Policy item** (policy-risk overlay)
@@ -257,7 +262,7 @@ The script runs with Node and no dependencies. It prints a pass/fail table that 
 10. A policy item without a day-precision `as_of`.
 11. A `research_note` path that doesn't exist.
 
-Warnings (non-blocking): `as_of` older than 3 months; a chemistry with any stage lacking a node; `T3`-only `Medium` scores.
+Warnings (non-blocking): `as_of` older than 3 months; a chemistry with any stage lacking a node; `T3`-only `Medium` scores; the same source id and tier scored differently on nodes in different chemistries (consistency check); a `Medium` INF whose reason doesn't start "Reading of T1 text:".
 
 ## 6. Pages
 
@@ -334,5 +339,11 @@ Decided:
 - **Sayari** permission is full scope.
 - **PitchBook:** already-verified Electrum figures only, with `"publisher": "PitchBook, via Electrum report (Aug 2026)"`; nothing unverifiable is included.
 
+- **Risk codes** follow Annex X: GEN replaced by LR-DIS (gender as a note); LR-TU added.
+- **Rubric:** "reading of T1 text" scores Medium; scoring must be consistent across chemistries (PLAN.md).
+- **Official government lists** (UFLPA, 1260H): entities are named.
+- **Raw-material origin** moves to the shadow layer ("what the passport doesn't show").
+
 Still open:
 - **Field list:** fixed in B-06; §4.3 is a placeholder.
+- **Reviewer:** to be named.
