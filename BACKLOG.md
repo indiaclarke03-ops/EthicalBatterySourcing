@@ -163,11 +163,11 @@ Each note covers S0–S5 plus both overlays, with at least one node per stage. *
   - It also shows EU due-diligence coverage and assurance coverage.
   - Every cell opens its evidence.
   - This is the lead view of the site's comparison section.
-- [ ] **B-21 Chemistry picker and passport card** · Must
+- [x] **B-21 Chemistry picker and passport card** · Must
   - Six chemistries, fields grouped by category.
   - Tier, tag and confidence badges use text labels, not colour alone.
   - Persistent "Illustrative" banner.
-- [ ] **B-22 Use-case toggle** · Must
+- [x] **B-22 Use-case toggle** · Must
   - Switching use case updates the EU scope status and its confidence.
   - Out-of-scope uses are labelled "shadow passport".
 - [ ] **B-23 Field and node detail panel** · Must

@@ -161,3 +161,13 @@ td.selected { background: var(--surface-2); }
 .shadow-panel h2 { margin-top: 0; font-size: 1.1rem; }
 .shadow-panel ul { padding-left: 1.1rem; margin: 0.25rem 0 0.75rem; font-size: 0.9rem; }
 .shadow-panel li { margin-bottom: 0.3rem; }
+.use-toggle { display: flex; flex-wrap: wrap; gap: 0; margin: 0.5rem 0; }
+.use-toggle button { font: inherit; font-size: 0.85rem; background: var(--surface); color: var(--fg); border: 1px solid var(--line); padding: 0.3rem 0.7rem; cursor: pointer; margin-left: -1px; }
+.use-toggle button:first-child { border-radius: var(--radius) 0 0 var(--radius); margin-left: 0; }
+.use-toggle button:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+.use-toggle button[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); position: relative; }
+.scope { border-left: 4px solid var(--c-high); background: var(--surface-2); padding: 0.5rem 0.75rem; border-radius: 0 4px 4px 0; margin-bottom: 0.5rem; display: grid; gap: 0.25rem; }
+.scope .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; }
+.scope-likely, .scope-unclear { border-left-color: var(--c-medium); }
+.scope-out-of-scope { border-left-color: var(--c-low); }
+.badge.shadow-tag { color: var(--structural); border-style: dashed; }

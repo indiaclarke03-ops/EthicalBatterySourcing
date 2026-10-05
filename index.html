@@ -30,6 +30,8 @@ const GROUPS = [["identification", "Identification"], ["performance", "Performan
   ["carbon", "Carbon footprint"], ["circularity", "Circularity"], ["due-diligence", "Due diligence"]];
 const FIELD_ORDER = ["manufacturer", "battery-category", "chemistry", "place-of-manufacture", "capacity", "lifetime-cycles", "round-trip-efficiency",
   "critical-raw-materials", "detailed-composition", "hazardous-substances", "carbon-footprint", "renewable-content", "recycled-content", "battery-status", "responsible-sourcing"];
+const USE_LABEL = { ev: "Electric vehicle", grid: "Grid storage", datacentre: "Data-centre backup", "long-duration": "Long-duration storage", "defence-aerospace": "Defence & aerospace" };
+const SCOPE_LABEL = { "in-scope": "In scope", likely: "Likely in scope", unclear: "Scope unclear", "out-of-scope": "Out of scope" };
 const fmtDate = (d) => new Date(d + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
 
 let DATA;
@@ -89,8 +91,25 @@ function shadowHTML(chem) {
     <p><a href="scorecard.html">See the scorecard</a> · <a href="supply-chain.html?chem=${chem.id}">Explore the supply chain</a></p>`;
 }
 
-function show(id) {
+function scopeHTML(chem, u) {
+  const why = u.scope_status === "out-of-scope" ? "This use is outside the passport rules, so no official passport would exist."
+    : chem.passport_type === "shadow" ? "Too little public detail to fill a full passport, so this is a shadow passport."
+    : "";
+  return `<div class="scope scope-${esc(u.scope_status)}">
+    <div class="chips"><strong>EU passport scope: ${esc(SCOPE_LABEL[u.scope_status])}</strong> ${confBadge(u.confidence)}
+      ${u.shadow_passport ? '<span class="badge shadow-tag">Shadow passport</span>' : ""}</div>
+    <div class="small">${esc(u.scope_basis)}</div>
+    ${why ? `<div class="small"><strong>${esc(why)}</strong></div>` : ""}
+    <details><summary class="small">Sources and confidence reason</summary>
+      ${u.values.map((v) => `<p class="small">${esc(v.claim)} ${tierBadge(v.tier)} ${tagBadge(v.tag)}</p>`).join("")}
+      <p class="small muted">Confidence: ${esc(u.confidence)}: ${esc(u.confidence_reason)}</p>
+      ${sourceLinks([...new Set(u.values.flatMap((v) => v.sources))], DATA)}</details>
+  </div>`;
+}
+
+function show(id, use) {
   const chem = DATA.chemById[id];
+  const u = chem.use_cases.find((x) => x.use_case === use) || chem.use_cases[0];
   document.querySelectorAll("#picker button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.id === id)));
   const fields = DATA.passports.filter((p) => p.chemistry === id).sort((a, b) => FIELD_ORDER.indexOf(a.field_id) - FIELD_ORDER.indexOf(b.field_id));
   const deferred = fields.filter((f) => f.status === "deferred").length;
@@ -102,12 +121,16 @@ function show(id) {
       <span class="stamp">Illustrative</span>
     </div>
     <p>${esc(chem.summary)}</p>
+    <div class="use-toggle" role="group" aria-label="Use case">${chem.use_cases.map((x) =>
+      `<button type="button" data-use="${esc(x.use_case)}" aria-pressed="${x === u}">${esc(USE_LABEL[x.use_case] || x.use_case)}</button>`).join("")}</div>
+    ${scopeHTML(chem, u)}
     ${GROUPS.map(([g, label]) => {
       const fs = fields.filter((f) => f.category === g);
       return fs.length ? `<section class="field-group"><h3>${label}</h3>${fs.map(fieldHTML).join("")}</section>` : "";
     }).join("")}`;
+  document.querySelectorAll(".use-toggle button").forEach((b) => b.addEventListener("click", () => show(id, b.dataset.use)));
   document.getElementById("shadow").innerHTML = shadowHTML(chem);
-  history.replaceState(null, "", `?chem=${id}`);
+  history.replaceState(null, "", `?chem=${id}&use=${u.use_case}`);
 }
 
 loadData().then((d) => {
@@ -122,7 +145,7 @@ loadData().then((d) => {
     b.addEventListener("click", () => show(id));
     picker.append(b);
   });
-  show(ORDER.includes(param("chem")) ? param("chem") : "lfp");
+  show(ORDER.includes(param("chem")) ? param("chem") : "lfp", param("use"));
 }).catch(fail);
 </script>
 </body>
