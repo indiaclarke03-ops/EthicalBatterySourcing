@@ -212,7 +212,7 @@ Each note covers S0–S5 plus both overlays, with at least one node per stage. *
   - Click through all six passports on the live site.
   - Flag and harm wording is checked for neutrality and for respect toward affected communities.
   - Issues are fixed or logged as new items.
-- [ ] **B-31 README** · Must
+- [x] **B-31 README** · Must
   - Live URL, summary, screenshots, tool setup, method summary, data as-of date.
 - [ ] **B-32 Demo script** · Must
   - About 3 minutes:
