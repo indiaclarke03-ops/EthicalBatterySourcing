@@ -203,7 +203,7 @@ Each note covers S0–S5 plus both overlays, with at least one node per stage. *
   - Phone width, system dark mode, keyboard navigation.
 - [x] **B-29b Rename to "Battery Passport Audit"** · Must
   - Replaces the working title "Passport with Gaps" in every page title, header and doc (requested by India, 2026-10-05).
-- [ ] **B-29c About this tool page** · Must
+- [x] **B-29c About this tool page** · Must
   - `about.html`: why the tool exists, what it shows, how it works (data, pages, overlays, filters), how to read it, and its limits.
 
 ## Phase 6 — Ship and demo

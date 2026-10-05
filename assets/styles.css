@@ -262,3 +262,12 @@ main > section + section { margin-top: 2rem; }
 .table-scroll tbody th[scope="row"] { position: sticky; left: 0; z-index: 1; }
 .mcell { white-space: nowrap; }
 @media (max-width: 640px) { .kpis { grid-template-columns: 1fr 1fr; gap: 0.5rem; } .kpi .num { font-size: 1.3rem; } .kpi { padding: 0.6rem; } }
+/* about page */
+.steps { counter-reset: none; }
+.steps li { margin-bottom: 0.6rem; }
+dl.pages { margin: 0.5rem 0; }
+dl.pages dt { font-weight: 700; margin-top: 0.75rem; }
+dl.pages dd { margin: 0.15rem 0 0; }
+.read-list { list-style: none; padding-left: 0 !important; }
+.read-list li { margin-bottom: 0.6rem; }
+.read-list .badge, .read-list .sig { margin-right: 0.15rem; }
