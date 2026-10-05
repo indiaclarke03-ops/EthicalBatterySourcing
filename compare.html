@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compare chemistries · Passport with Gaps</title>
+<meta name="description" content="Minerals, chokepoints, EU passport scope and traceability depth across six battery chemistries.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<main id="main" class="wrap">
+  <h1>Compare chemistries</h1>
+  <p class="lede">The six chemistries side by side: which minerals carry recorded risks, where supply is concentrated, which uses the EU passport covers,
+    and how far back each chain could be traced.</p>
+  <nav class="toc small" aria-label="On this page"><a href="#minerals">Minerals screen</a> · <a href="#chokepoints">Chokepoints</a> ·
+    <a href="#scope">Use-case scope</a> · <a href="#depth">Traceability depth</a></nav>
+
+  <section id="minerals">
+    <h2>Minerals screen</h2>
+    <p class="small muted">Strongest ethical-risk signal recorded for each mineral in each chemistry's chain. A blank cell means the research recorded no risk
+      for that mineral in that chain, not that none exists. "EU DD" is the Batteries Regulation due-diligence list (Annex X); "CRMA" is the EU critical raw
+      materials list (Reg. 2024/1252, Annex II).</p>
+    <div class="legend" aria-hidden="true"><span class="sig sig-documented-harm">● Documented harm</span><span class="sig sig-screening-flag">◆ Screening flag</span>
+      <span class="sig sig-structural">▲ Structural risk</span><span class="sig sig-no-known-evidence">○ No known evidence</span>
+      <span>number = risks recorded</span><span><span class="nc-key">shaded</span> = risk on a mineral EU due diligence doesn't cover</span></div>
+    <div class="table-scroll"><table id="t-minerals"><caption class="sr-only">Strongest risk signal by mineral and chemistry</caption></table></div>
+  </section>
+
+  <section id="chokepoints">
+    <h2>Chokepoints</h2>
+    <p class="small muted">Stages where one country holds most of world supply, and which chemistries depend on them.</p>
+    <div class="table-scroll"><table id="t-choke"><caption class="sr-only">Supply concentration by stage and country</caption></table></div>
+  </section>
+
+  <section id="scope">
+    <h2>Use-case scope matrix</h2>
+    <p class="small muted">Whether an EU battery passport would exist for each chemistry in each use. "Not assessed" means the research didn't cover that
+      combination. A shadow passport is what the research could fill in where no official one would exist, or where too little is public.</p>
+    <div class="table-scroll"><table id="t-scope"><caption class="sr-only">EU passport scope by chemistry and use case</caption></table></div>
+  </section>
+
+  <section id="depth">
+    <h2>Traceability depth</h2>
+    <p class="small muted">How far back each chain could be traced at High or Medium confidence. <strong>Entity</strong>: a named company or site.
+      <strong>Country</strong>: only a national share of world supply. <strong>Low</strong>: only Low-confidence links. <strong>Gap</strong>: not traceable.</p>
+    <div class="table-scroll"><table id="t-depth"><caption class="sr-only">Traceability by chemistry and stage</caption></table></div>
+  </section>
+</main>
+
+<script type="module">
+import { loadData, shell, setAsOf, fail, esc, STAGES, STAGE_LABEL, SIGNAL, confBadge, sourceLinks } from "./assets/app.js";
+shell("compare.html");
+
+const ORDER = ["nmc", "lfp", "lmfp", "vrfb", "ni-h2", "carbon-o2"];
+// EU DD: Annex X of Reg. 2023/1542. CRMA: Annex II of Reg. 2024/1252 as listed in research/fields.md §4.
+const MINERALS = [
+  ["cobalt", "Cobalt", true, true], ["nickel", "Nickel", true, true], ["lithium", "Lithium", true, true],
+  ["natural graphite", "Natural graphite", true, true], ["synthetic graphite", "Synthetic graphite", false, true],
+  ["manganese", "Manganese", false, true], ["phosphate", "Phosphate", false, true], ["vanadium", "Vanadium", false, true],
+  ["copper", "Copper", false, true], ["aluminium", "Aluminium", false, true], ["iron", "Iron", false, false],
+  ["carbon", "Carbon (from CO₂)", false, false], ["sulphuric acid", "Sulphuric acid (reagent)", false, false],
+];
+const USES = [["ev", "Electric vehicle"], ["grid", "Grid storage"], ["datacentre", "Data-centre backup"], ["long-duration", "Long-duration storage"], ["defence-aerospace", "Defence & aerospace"]];
+const SCOPE_LABEL = { "in-scope": "In scope", likely: "Likely in scope", unclear: "Unclear", "out-of-scope": "Out of scope" };
+const COUNTRY = { CD: "DR Congo", ID: "Indonesia", CN: "China", ZA: "South Africa" };
+const regionName = (c) => COUNTRY[c] || (() => { try { return new Intl.DisplayNames(["en"], { type: "region" }).of(c); } catch { return c; } })();
+const yesNo = (b) => (b ? "Yes" : '<span class="muted">No</span>');
+const HM = (c) => c === "High" || c === "Medium";
+
+function render(d) {
+  const chems = ORDER.map((id) => d.chemById[id]);
+  const head = (first, cols) => `<thead><tr><th scope="col">${first}</th>${cols.map((c) => `<th scope="col">${c}</th>`).join("")}</tr></thead>`;
+  const chemHead = chems.map((c) => `${esc(c.short)}<br><span class="small muted">${esc(c.passport_type)}</span>`);
+  const nodesOf = (id) => d.nodes.filter((n) => n.chemistries.includes(id));
+
+  // 1. minerals screen
+  document.getElementById("t-minerals").insertAdjacentHTML("beforeend", head("Mineral", ["EU DD", "CRMA", ...chemHead]) + `<tbody>${MINERALS.map(([m, label, dd, crma]) =>
+    `<tr><th scope="row">${esc(label)}</th><td>${yesNo(dd)}</td><td>${yesNo(crma)}</td>${chems.map((c) => {
+      const risks = nodesOf(c.id).flatMap((n) => n.ethical_risks).filter((r) => r.material === m);
+      if (!risks.length) return `<td><span class="sr-only">none recorded</span></td>`;
+      const top = risks.reduce((a, r) => (SIGNAL[r.signal].rank > SIGNAL[a.signal].rank ? r : a)).signal;
+      return `<td class="mcell${!dd && SIGNAL[top].rank >= 2 ? " nc" : ""}"><a class="sig sig-${top}" href="supply-chain.html?chem=${c.id}"
+        aria-label="${esc(`${c.short}, ${label}: ${SIGNAL[top].label}, ${risks.length} risk${risks.length === 1 ? "" : "s"} recorded${dd ? "" : ", not on EU DD list"}`)}">${SIGNAL[top].icon}</a>
+        <span class="small muted">${risks.length}</span></td>`;
+    }).join("")}</tr>`).join("")}</tbody>`);
+
+  // 2. chokepoints
+  const shares = d.nodes.filter((n) => n.share && n.share.percent).sort((a, b) => b.share.percent - a.share.percent);
+  document.getElementById("t-choke").insertAdjacentHTML("beforeend", head("Stage", ["What", "Country", "Share", "Chemistries exposed", "Confidence", "Source"]) +
+    `<tbody>${shares.map((n) => `<tr><td>${n.stage}<br><span class="small muted">${esc(STAGE_LABEL[n.stage])}</span></td>
+      <td><a href="supply-chain.html?chem=${ORDER.find((id) => n.chemistries.includes(id))}&node=${encodeURIComponent(n.id)}">${esc(n.name)}</a></td>
+      <td>${esc(regionName(n.share.country))}</td>
+      <td><span class="bar" style="--w:${Number(n.share.percent)}%"><span>${esc(n.share.percent)}%</span></span><span class="small muted">${esc(n.share.metric)}</span></td>
+      <td>${ORDER.filter((id) => n.chemistries.includes(id)).map((id) => esc(d.chemById[id].short)).join(", ")}</td>
+      <td>${confBadge(n.confidence)}</td>
+      <td>${sourceLinks([...new Set(n.values.flatMap((v) => v.sources))], d)}<span class="small muted">as of ${esc(n.as_of)}</span></td></tr>`).join("")}</tbody>`);
+
+  // 3. use-case scope matrix
+  document.getElementById("t-scope").insertAdjacentHTML("beforeend", head("Chemistry", USES.map(([, l]) => l)) + `<tbody>${chems.map((c) =>
+    `<tr><th scope="row">${esc(c.short)}</th>${USES.map(([u]) => {
+      const x = c.use_cases.find((y) => y.use_case === u);
+      if (!x) return `<td class="muted small">Not assessed</td>`;
+      return `<td><a href="index.html?chem=${c.id}&use=${u}" class="scope-cell scope-${x.scope_status}">${esc(SCOPE_LABEL[x.scope_status])}</a> ${confBadge(x.confidence)}
+        ${x.shadow_passport ? '<br><span class="badge shadow-tag">Shadow passport</span>' : ""}</td>`;
+    }).join("")}</tr>`).join("")}</tbody>`);
+
+  // 4. traceability depth
+  const level = (ns) => {
+    if (ns.some((n) => n.kind === "entity" && HM(n.confidence))) return "Entity";
+    if (ns.some((n) => n.kind === "share" && HM(n.confidence))) return "Country";
+    if (ns.some((n) => n.kind !== "gap" && n.confidence === "Low")) return "Low";
+    if (ns.some((n) => n.kind === "gap")) return "Gap";
+    return "";
+  };
+  document.getElementById("t-depth").insertAdjacentHTML("beforeend",
+    head("Chemistry", [...STAGES.map((s) => `${s}<br><span class="small muted">${STAGE_LABEL[s]}</span>`), "Deepest stage reached (High/Medium)"]) +
+    `<tbody>${chems.map((c) => {
+      const lv = STAGES.map((s) => level(nodesOf(c.id).filter((n) => n.stage === s)));
+      const anyI = lv.findIndex((l) => l === "Entity" || l === "Country");
+      const entI = lv.indexOf("Entity");
+      const deepest = anyI < 0 ? "Nothing traced" : `${STAGES[anyI]} ${lv[anyI] === "Country" ? "(country level only)" : "(named entity)"}`
+        + (lv[anyI] === "Country" && entI >= 0 ? `; named entities from ${STAGES[entI]}` : "");
+      return `<tr><th scope="row">${esc(c.short)}</th>${lv.map((l) => `<td>${l ? `<span class="depth depth-${l}">${l}</span>`
+        : `<span class="small muted">${c.passport_type === "reference" ? "Outside scope" : "No node"}</span>`}</td>`).join("")}
+        <td><strong>${esc(deepest)}</strong></td></tr>`;
+    }).join("")}</tbody>`);
+}
+
+loadData().then((d) => { render(d); setAsOf(d); }).catch(fail);
+</script>
+</body>
+</html>
