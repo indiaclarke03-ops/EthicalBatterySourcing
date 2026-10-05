@@ -189,3 +189,30 @@ dialog.detail::backdrop { background: rgba(0, 0, 0, 0.35); }
 .detail .conflict-row .val { border: 1px solid var(--line); border-radius: 4px; padding: 0.4rem 0.5rem; }
 @media (max-width: 640px) { dialog.detail { width: 100vw; max-width: 100vw; max-height: 100vh; height: 100vh; margin: 0; border-radius: 0; } }
 .open-detail.link { font-size: inherit; text-align: left; display: inline; }
+/* supply-chain explorer */
+.chain-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; margin: 0.5rem 0; }
+.chain-controls select { font: inherit; font-size: 0.9rem; margin-left: 0.4rem; padding: 0.25rem 0.4rem; background: var(--surface); color: var(--fg); border: 1px solid var(--line); border-radius: var(--radius); }
+.chain { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.75rem; }
+.chain-edges { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
+.chain-edges .edge { fill: none; stroke: var(--gap-line); stroke-width: 1.5; }
+.chain-edges .edge.conf-Low, .chain-edges .edge.conf-Unknown { stroke-dasharray: 4 4; }
+.chain-edges .edge.dim { opacity: 0.2; }
+.chain-cols { position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1.75rem; }
+.col { display: flex; flex-direction: column; gap: 0.6rem; }
+.col-head { font-size: 0.85rem; margin: 0 0 0.25rem; font-family: var(--mono); }
+.col-head span, .list-head span { display: block; font-family: var(--font); font-weight: 400; font-size: 0.75rem; color: var(--muted); }
+.node { font: inherit; text-align: left; background: var(--surface); color: var(--fg); border: 1.5px solid var(--line); border-radius: var(--radius);
+  padding: 0.4rem 0.5rem; cursor: pointer; display: grid; gap: 0.15rem; width: 100%; transition: opacity 0.15s; }
+.node:hover { border-color: var(--accent); }
+.node.gap { border-style: dashed; border-color: var(--gap-line); background: var(--surface-2); }
+.node.dim { opacity: 0.35; }
+.node-name { font-size: 0.8rem; font-weight: 600; line-height: 1.3; }
+.node-meta { font-size: 0.7rem; color: var(--muted); }
+.node-badge { font-size: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.15rem 0.4rem; align-items: baseline; }
+.node-cats { font-family: var(--mono); font-size: 0.65rem; color: var(--muted); }
+.chain-list { display: none; }
+.list-head { font-size: 1rem; margin: 1.25rem 0 0.5rem; }
+.list-item { margin-bottom: 0.6rem; }
+.edge-text { font-size: 0.8rem; color: var(--muted); padding-left: 0.75rem; }
+@media (max-width: 899px) { .chain { display: none; } .chain-list { display: block; } .node-name { font-size: 0.9rem; } }
+@media (prefers-reduced-motion: reduce) { .node { transition: none; } }

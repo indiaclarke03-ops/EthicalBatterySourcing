@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supply-chain explorer · Passport with Gaps</title>
+<meta name="description" content="Trace each battery chemistry from ore to deployment, with the ethical-sourcing risks the research found at each stage.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<main id="main" class="wrap">
+  <h1>Supply-chain explorer</h1>
+  <p class="lede">Each chemistry from ore and feedstock (S0) to deployment (S5). Badges show the ethical-sourcing risks found at each node; dashed boxes are stages
+    nobody could trace from public or licensed data. Select a node for its sources and evidence.</p>
+
+  <div class="picker" role="group" aria-label="Choose a chemistry" id="picker"></div>
+
+  <div class="chain-controls">
+    <label>Risk category
+      <select id="cat"><option value="">All categories</option></select></label>
+    <span class="small muted" id="cat-note" aria-live="polite"></span>
+  </div>
+
+  <div class="legend" aria-label="Legend">
+    <span class="sig sig-documented-harm">● Documented harm</span>
+    <span class="sig sig-screening-flag">◆ Screening flag</span>
+    <span class="sig sig-structural">▲ Structural risk</span>
+    <span class="sig sig-no-known-evidence">○ No known evidence</span>
+    <span><span class="cell-gap" style="padding:0 .4rem">dashed</span> = not traceable (gap)</span>
+  </div>
+
+  <div class="chain" id="chain">
+    <svg class="chain-edges" id="edges" aria-hidden="true" focusable="false"></svg>
+    <div class="chain-cols" id="cols"></div>
+  </div>
+  <div class="chain-list" id="list"></div>
+</main>
+
+<script type="module">
+import { loadData, shell, setAsOf, fail, esc, STAGES, STAGE_LABEL, SIGNAL, RISK_LABEL, param, openNodeDetail } from "./assets/app.js";
+shell("supply-chain.html");
+
+const ORDER = ["lfp", "lmfp", "vrfb", "ni-h2", "carbon-o2", "nmc"];
+const EDGE_VERB = { supplies: "supplies", owned_by: "owned by", offtake: "offtake to", licenses_to: "licenses to", joint_venture: "joint venture with",
+  invests_in: "invests in", deploys: "deploys", integrates: "integrated into" };
+const COUNTRY = { XX: "Origin unknown", MULTI: "Several countries" };
+const SVGNS = "http://www.w3.org/2000/svg";
+let DATA, state = { chem: "lfp", cat: "" };
+
+const matches = (n) => !state.cat || n.ethical_risks.some((r) => r.category === state.cat && r.signal !== "no-known-evidence");
+
+function badge(n) {
+  const counts = {};
+  n.ethical_risks.forEach((r) => (counts[r.signal] = (counts[r.signal] || 0) + 1));
+  const sigs = Object.keys(SIGNAL).filter((s) => counts[s]);
+  const cats = [...new Set(n.ethical_risks.filter((r) => r.signal !== "no-known-evidence").map((r) => r.category))];
+  return {
+    html: `${sigs.map((s) => `<span class="sig sig-${s}">${SIGNAL[s].icon}${counts[s]}</span>`).join(" ")}
+      ${cats.length ? `<span class="node-cats">${cats.map(esc).join(" · ")}</span>` : ""}`,
+    text: sigs.map((s) => `${counts[s]} ${SIGNAL[s].label.toLowerCase()}`).join(", ") + (cats.length ? `; categories ${cats.join(", ")}` : ""),
+  };
+}
+
+function chainFor(chem) {
+  const nodes = DATA.nodes.filter((n) => n.chemistries.includes(chem) && STAGES.includes(n.stage));
+  const ids = new Set(nodes.map((n) => n.id));
+  const edges = DATA.edges.filter((e) => e.overlay === "chain" && ids.has(e.from) && ids.has(e.to));
+  return { nodes, edges };
+}
+
+const outgoing = (n, edges) => edges.filter((e) => e.from === n.id).map((e) => `${EDGE_VERB[e.type] || e.type} → ${DATA.nodeById[e.to].name}`);
+
+function nodeButton(n, edges) {
+  const b = badge(n);
+  const out = outgoing(n, edges);
+  return `<button type="button" class="node${n.kind === "gap" ? " gap" : ""}${matches(n) ? "" : " dim"}" data-node="${esc(n.id)}"
+      aria-label="${esc(`${n.name}, ${n.stage}${n.kind === "gap" ? ", gap: not traceable" : ""}. ${b.text || "no risks recorded"}.${out.length ? " " + out.join("; ") + "." : ""}`)}">
+    <span class="node-name">${esc(n.name)}</span>
+    <span class="node-meta">${esc(COUNTRY[n.country] || n.country)}${n.share ? ` · ${esc(n.share.percent)}% ${esc(n.share.metric)}` : ""}</span>
+    <span class="node-badge">${b.html}</span></button>`;
+}
+
+function render() {
+  const { nodes, edges } = chainFor(state.chem);
+  const none = `<p class="small muted">${DATA.chemById[state.chem].passport_type === "reference" ? "Outside reference scope" : "No node"}</p>`;
+  document.querySelectorAll("#picker button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.id === state.chem)));
+
+  // category filter options: categories present in this chain
+  const present = [...new Set(nodes.flatMap((n) => n.ethical_risks.filter((r) => r.signal !== "no-known-evidence").map((r) => r.category)))];
+  if (state.cat && !present.includes(state.cat)) state.cat = "";
+  const sel = document.getElementById("cat");
+  sel.innerHTML = `<option value="">All categories</option>${Object.keys(RISK_LABEL).filter((c) => present.includes(c))
+    .map((c) => `<option value="${c}"${c === state.cat ? " selected" : ""}>${c}: ${esc(RISK_LABEL[c])}</option>`).join("")}`;
+  const hits = nodes.filter(matches).length;
+  document.getElementById("cat-note").textContent = state.cat ? `${hits} of ${nodes.length} nodes have ${RISK_LABEL[state.cat].toLowerCase()} risks; others are dimmed.` : "";
+
+  document.getElementById("cols").innerHTML = STAGES.map((s) => `<section class="col" aria-label="${s} ${STAGE_LABEL[s]}">
+    <h2 class="col-head">${s}<span>${STAGE_LABEL[s]}</span></h2>
+    ${nodes.filter((n) => n.stage === s).map((n) => nodeButton(n, edges)).join("") || none}</section>`).join("");
+
+  document.getElementById("list").innerHTML = STAGES.map((s) => {
+    const ns = nodes.filter((n) => n.stage === s);
+    return `<section><h2 class="list-head">${s} · ${STAGE_LABEL[s]}</h2>${ns.length ? ns.map((n) => `<div class="list-item">${nodeButton(n, edges)}
+      ${outgoing(n, edges).map((t) => `<div class="edge-text">${esc(t)}</div>`).join("")}</div>`).join("") : none}</section>`;
+  }).join("");
+
+  document.querySelectorAll("[data-node]").forEach((b) => b.addEventListener("click", () => openNodeDetail(DATA.nodeById[b.dataset.node], DATA)));
+  drawEdges(edges);
+  const q = new URLSearchParams({ chem: state.chem });
+  if (state.cat) q.set("cat", state.cat);
+  history.replaceState(null, "", `?${q}`);
+}
+
+function drawEdges(edges) {
+  const svg = document.getElementById("edges");
+  const box = document.getElementById("chain").getBoundingClientRect();
+  svg.setAttribute("width", box.width); svg.setAttribute("height", box.height);
+  svg.replaceChildren();
+  const rect = (id) => document.querySelector(`#cols [data-node="${CSS.escape(id)}"]`)?.getBoundingClientRect();
+  for (const e of edges) {
+    const a = rect(e.from), b = rect(e.to);
+    if (!a || !b || !a.width) continue;
+    let d;
+    if (Math.abs(a.left - b.left) < 4) { // same column: loop round the right-hand side
+      const x = a.right - box.left, y1 = a.top + a.height / 2 - box.top, y2 = b.top + b.height / 2 - box.top;
+      d = `M${x},${y1} C${x + 18},${y1} ${x + 18},${y2} ${x},${y2}`;
+    } else {
+      const x1 = a.right - box.left, y1 = a.top + a.height / 2 - box.top, x2 = b.left - box.left, y2 = b.top + b.height / 2 - box.top;
+      const mx = (x1 + x2) / 2;
+      d = `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`;
+    }
+    const p = document.createElementNS(SVGNS, "path");
+    p.setAttribute("d", d);
+    p.setAttribute("class", `edge conf-${e.confidence}${matches(DATA.nodeById[e.from]) && matches(DATA.nodeById[e.to]) ? "" : " dim"}`);
+    svg.append(p);
+  }
+}
+
+loadData().then((d) => {
+  DATA = d;
+  setAsOf(d);
+  const picker = document.getElementById("picker");
+  ORDER.forEach((id) => {
+    const c = d.chemById[id];
+    const b = document.createElement("button");
+    b.type = "button"; b.dataset.id = id;
+    b.innerHTML = `${esc(c.short)}<span class="pt">${esc(c.passport_type)}</span>`;
+    b.addEventListener("click", () => { state.chem = id; render(); });
+    picker.append(b);
+  });
+  document.getElementById("cat").addEventListener("change", (e) => { state.cat = e.target.value; render(); });
+  const nodeP = param("node");
+  state.chem = ORDER.includes(param("chem")) ? param("chem") : "lfp";
+  state.cat = param("cat") || "";
+  render();
+  let t;
+  addEventListener("resize", () => { clearTimeout(t); t = setTimeout(() => drawEdges(chainFor(state.chem).edges), 100); });
+  if (nodeP && d.nodeById[nodeP]) openNodeDetail(d.nodeById[nodeP], d);
+}).catch(fail);
+</script>
+</body>
+</html>
