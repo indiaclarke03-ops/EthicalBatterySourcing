@@ -48,7 +48,7 @@ Full method: [`methods.html`](methods.html) and [`PLAN.md`](PLAN.md#method).
 
 ```
 index.html, scorecard.html, supply-chain.html, compare.html, methods.html, about.html
-assets/            app.js (shared helpers), styles.css, vendor/qrcode.js (MIT)
+assets/            app.js (shared helpers), styles.css, fonts/ (Inter, SIL OFL), vendor/qrcode.js (MIT)
 data/              chemistries, passports, supply-chain, sources, assurance (JSON) + schema/
 research/          sourced research notes, one per chemistry and theme; conflicts register; Sayari notes
 scripts/           validate.mjs (schema + project rules), lib/schema.mjs
