@@ -3150,6 +3150,454 @@
    ],
    "as_of": "2026-10",
    "research_note": "research/ni-h2.md"
+  },
+  {
+   "id": "lfp-s2-hunan-yuneng",
+   "chemistries": [
+    "lfp"
+   ],
+   "stage": "S2",
+   "kind": "entity",
+   "name": "Hunan Yuneng (LFP cathode)",
+   "country": "CN",
+   "role": "World's largest phosphate-cathode supplier; 28.2% global share (2025)",
+   "share": null,
+   "values": [
+    {
+     "value": 28.2,
+     "claim": "World's largest supplier of phosphate-based cathode by shipments 2020–2025; 28.2% global share in 2025 (Frost & Sullivan, quoted by the company)",
+     "sources": [
+      "src-hkex-yuneng-2026"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "value": 1140000,
+     "claim": "1.14 Mt cathode shipped in 2025, #1 across LFP and ternary",
+     "sources": [
+      "src-sne-cathode-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "CATL and BYD are shareholders (strategic investors since Dec 2020); its two largest customers, 29.7% and 17.3% of 2025 revenue, are shareholders",
+     "sources": [
+      "src-hkex-yuneng-2026"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Company statement (grade A) and SNE Research (grade B) agree on #1 position",
+   "flags": [],
+   "policy": [
+    {
+     "instrument": "decision-58",
+     "effect": "Export licence would be required for Li-ion cells, cathode and artificial-graphite anode materials, equipment and technology",
+     "status": "Suspended until 2026-11-10 (Ann. No. 70)",
+     "sources": [
+      "src-pillsbury-mofcom"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No entity-level labour or environmental harm source found for Hunan Yuneng plants",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "lfp-s2-hubei-wanrun",
+   "chemistries": [
+    "lfp"
+   ],
+   "stage": "S2",
+   "kind": "entity",
+   "name": "Hubei Wanrun (LFP cathode)",
+   "country": "CN",
+   "role": "#2 cathode shipper in 2025 (375 kt)",
+   "share": null,
+   "values": [
+    {
+     "value": 375000,
+     "claim": "375 kt cathode shipped in 2025, #2",
+     "sources": [
+      "src-sne-cathode-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single grade-B source",
+   "flags": [],
+   "policy": [
+    {
+     "instrument": "decision-58",
+     "effect": "Export licence would be required for Li-ion cells, cathode and artificial-graphite anode materials, equipment and technology",
+     "status": "Suspended until 2026-11-10 (Ann. No. 70)",
+     "sources": [
+      "src-pillsbury-mofcom"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No entity-level harm source found for Hubei Wanrun",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "multi-s2-btr-anode",
+   "chemistries": [
+    "lfp",
+    "lmfp",
+    "nmc"
+   ],
+   "stage": "S2",
+   "kind": "entity",
+   "name": "BTR New Material (anode)",
+   "country": "CN",
+   "role": "World's largest anode producer; Indonesian plant (80 kt phase 1)",
+   "share": null,
+   "values": [
+    {
+     "claim": "Described by Reuters as the world's largest anode producer (2023)",
+     "sources": [
+      "src-reuters-btr-2024"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "value": 80000,
+     "claim": "Indonesian anode plant (Kendal) inaugurated Aug 2024, 80,000 t/yr phase 1, processing graphite products from its Morowali plant",
+     "sources": [
+      "src-reuters-btr-2024"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single grade-B outlet (Reuters, two articles)",
+   "flags": [],
+   "policy": [
+    {
+     "instrument": "decision-58",
+     "effect": "Export licence would be required for Li-ion cells, cathode and artificial-graphite anode materials, equipment and technology",
+     "status": "Suspended until 2026-11-10 (Ann. No. 70)",
+     "sources": [
+      "src-pillsbury-mofcom"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
+   "ethical_risks": [
+    {
+     "category": "LR-FL",
+     "signal": "structural",
+     "material": "graphite",
+     "evidence": "BTR processes graphite at a plant in Morowali, Central Sulawesi; Climate Rights International documented labour and environmental harms at the nickel industrial park in Morowali. No source ties those harms to BTR.",
+     "sources": [
+      "src-reuters-btr-2024",
+      "src-cri-2024"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "unclear",
+     "confidence": "Medium",
+     "confidence_reason": "Location from Reuters; regional harm from CRI; no entity-level evidence",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "lfp-s3-byd",
+   "chemistries": [
+    "lfp"
+   ],
+   "stage": "S3",
+   "kind": "entity",
+   "name": "BYD (cells and storage systems)",
+   "country": "CN",
+   "role": "#2 EV battery maker (16.4%, 2025); top storage-cell supplier",
+   "share": null,
+   "values": [
+    {
+     "value": 16.4,
+     "claim": "16.4% of global EV battery use in 2025 (194.8 GWh), #2",
+     "sources": [
+      "src-cnevpost-sne-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Among the top six energy-storage cell suppliers in 2025",
+     "sources": [
+      "src-infolink-ess-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "BYD Energy Storage supplies the battery technology for Greenvolt's 600 MW / 2.4 GWh Siedlce BESS",
+     "sources": [
+      "src-greenvolt-siedlce"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Two independent grade-B sources (SNE Research, InfoLink) agree on scale",
+   "flags": [
+    {
+     "type": "1260h",
+     "source": "src-fr-2026-11571",
+     "basis": "BYD is directly and indirectly affiliated with SASAC and is indirectly affiliated with MIIT (Section 1260H(g)(2)(B)(i)(I)); military-civil fusion contributor (Sections 1260H(g)(3)(B)(i) and (g)(3)(E))",
+     "official_list": true,
+     "label": "Section 1260H list (US DoD): designation, not a finding of harm",
+     "as_of": "2026-10"
+    }
+   ],
+   "policy": [
+    {
+     "instrument": "decision-58",
+     "effect": "Export licence would be required for Li-ion cells, cathode and artificial-graphite anode materials, equipment and technology",
+     "status": "Suspended until 2026-11-10 (Ann. No. 70)",
+     "sources": [
+      "src-pillsbury-mofcom"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
+   "ethical_risks": [
+    {
+     "category": "LR-FL",
+     "signal": "documented-harm",
+     "material": "processing",
+     "evidence": "Brazil's Labour Prosecutor's Office found 163 Chinese workers in 'slavery-like conditions', as defined by Brazilian law, at the construction site of BYD's EV plant in Camaçari, Bahia (Dec 2024); they were hired by contractor Jinjiang Construction Brazil, with passports withheld and wages held back. BYD said it cut ties with the contractor; prosecutors later sued BYD and two contractors. A vehicle-plant site, not a battery-materials site.",
+     "sources": [
+      "src-reuters-byd-brazil-2024",
+      "src-bbc-byd-brazil-2025"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "High",
+     "confidence_reason": "Government finding reported by independent outlets (Reuters, BBC)",
+     "as_of": "2026-10",
+     "has_independent_source": true
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "lfp-s3-calb",
+   "chemistries": [
+    "lfp"
+   ],
+   "stage": "S3",
+   "kind": "entity",
+   "name": "CALB (cells)",
+   "country": "CN",
+   "role": "#4 EV battery maker (5.3%, 2025); top-five utility-scale storage cells",
+   "share": null,
+   "values": [
+    {
+     "value": 5.3,
+     "claim": "5.3% of global EV battery use in 2025 (62.8 GWh), #4",
+     "sources": [
+      "src-cnevpost-sne-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Top-five utility-scale storage cell supplier in 2025",
+     "sources": [
+      "src-infolink-ess-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Two independent grade-B sources agree",
+   "flags": [
+    {
+     "type": "1260h",
+     "source": "src-fr-2026-11571",
+     "basis": "CALB is indirectly owned by SASAC and is directly and indirectly affiliated with SASAC (Section 1260H(g)(2)(B)(i)(I))",
+     "official_list": true,
+     "label": "Section 1260H list (US DoD): designation, not a finding of harm",
+     "as_of": "2026-10"
+    }
+   ],
+   "policy": [
+    {
+     "instrument": "decision-58",
+     "effect": "Export licence would be required for Li-ion cells, cathode and artificial-graphite anode materials, equipment and technology",
+     "status": "Suspended until 2026-11-10 (Ann. No. 70)",
+     "sources": [
+      "src-pillsbury-mofcom"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No entity-level harm source found for CALB plants",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "lfp-s3-hithium",
+   "chemistries": [
+    "lfp"
+   ],
+   "stage": "S3",
+   "kind": "entity",
+   "name": "Hithium (storage cells)",
+   "country": "CN",
+   "role": "#2 utility-scale storage-cell shipper (2025)",
+   "share": null,
+   "values": [
+    {
+     "claim": "Second among utility-scale energy-storage cell suppliers in 2025 (InfoLink ranking: CATL, Hithium, EVE, CALB, BYD)",
+     "sources": [
+      "src-infolink-ess-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single grade-B source",
+   "flags": [],
+   "policy": [
+    {
+     "instrument": "decision-58",
+     "effect": "Export licence would be required for Li-ion cells, cathode and artificial-graphite anode materials, equipment and technology",
+     "status": "Suspended until 2026-11-10 (Ann. No. 70)",
+     "sources": [
+      "src-pillsbury-mofcom"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No entity-level harm source found for Hithium plants",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "lfp-s4-tesla-megapack",
+   "chemistries": [
+    "lfp"
+   ],
+   "stage": "S4",
+   "kind": "entity",
+   "name": "Tesla Energy (Megapack)",
+   "country": "US",
+   "role": "Grid-storage integrator; Megapack uses CATL LFP cells",
+   "share": null,
+   "values": [
+    {
+     "claim": "Megapack uses CATL LFP cells (Bloomberg, via Korea Herald)",
+     "sources": [
+      "src-koreaherald-tesla-catl"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single grade-B source",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No entity-level harm source found for Megapack assembly",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
   }
  ],
  "edges": [
@@ -3568,6 +4016,134 @@
    "overlay": "chain",
    "confidence": "Medium",
    "confidence_reason": "Company/public reporting"
+  },
+  {
+   "from": "lfp-s2-hunan-yuneng",
+   "to": "lfp-s3-catl",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Company's two largest customers are shareholders; CATL and BYD are its named strategic shareholders (listing document)"
+  },
+  {
+   "from": "lfp-s2-hunan-yuneng",
+   "to": "lfp-s3-byd",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Company's two largest customers are shareholders; CATL and BYD are its named strategic shareholders (listing document)"
+  },
+  {
+   "from": "lfp-s3-catl",
+   "to": "lfp-s2-hunan-yuneng",
+   "type": "invests_in",
+   "overlay": "capital",
+   "confidence": "High",
+   "confidence_reason": "Named shareholder since Dec 2020 strategic financing (company listing document)"
+  },
+  {
+   "from": "lfp-s3-byd",
+   "to": "lfp-s2-hunan-yuneng",
+   "type": "invests_in",
+   "overlay": "capital",
+   "confidence": "High",
+   "confidence_reason": "Named shareholder since Dec 2020 strategic financing (company listing document)"
+  },
+  {
+   "from": "multi-s0-lithium-mining",
+   "to": "lfp-s2-hunan-yuneng",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country-level flow; no entity trace"
+  },
+  {
+   "from": "lfp-s0-phosphate-china",
+   "to": "lfp-s2-hunan-yuneng",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country-level flow; no entity trace"
+  },
+  {
+   "from": "lfp-s2-hubei-wanrun",
+   "to": "nmc-s3-cells-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Low",
+   "confidence_reason": "Customers not named in grade-A/B sources; country-level flow"
+  },
+  {
+   "from": "lfp-s0-phosphate-china",
+   "to": "lfp-s2-hubei-wanrun",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country-level flow; no entity trace"
+  },
+  {
+   "from": "multi-s0-natural-graphite",
+   "to": "multi-s2-btr-anode",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country-level flow; no entity trace"
+  },
+  {
+   "from": "multi-s2-btr-anode",
+   "to": "nmc-s3-cells-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Low",
+   "confidence_reason": "Customers not named in grade-A/B sources"
+  },
+  {
+   "from": "lfp-s2-cathode-china",
+   "to": "lfp-s3-calb",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country-level flow; no entity trace"
+  },
+  {
+   "from": "lfp-s2-cathode-china",
+   "to": "lfp-s3-hithium",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country-level flow; no entity trace"
+  },
+  {
+   "from": "lfp-s3-byd",
+   "to": "lfp-s5-siedlce",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Single grade-B source (ESS News): BYD Energy Storage supplies the battery technology"
+  },
+  {
+   "from": "lfp-s3-calb",
+   "to": "lfp-s4-integrators",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Low",
+   "confidence_reason": "Storage-cell supplier to integrators; specific customers not named"
+  },
+  {
+   "from": "lfp-s3-hithium",
+   "to": "lfp-s4-integrators",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Low",
+   "confidence_reason": "Storage-cell supplier to integrators; specific customers not named"
+  },
+  {
+   "from": "lfp-s3-catl",
+   "to": "lfp-s4-tesla-megapack",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Single grade-B source (Bloomberg via Korea Herald)"
   }
  ]
 }
