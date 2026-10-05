@@ -19,7 +19,10 @@
     <label>Risk category
       <select id="cat"><option value="">All categories</option></select></label>
     <label class="check"><input type="checkbox" id="own"> Ownership &amp; capital</label>
+    <label>Policy risk
+      <select id="pol"><option value="">Off</option></select></label>
     <span class="small muted" id="own-note" aria-live="polite"></span>
+    <span class="small muted" id="pol-note" aria-live="polite"></span>
     <span class="small muted" id="cat-note" aria-live="polite"></span>
   </div>
 
@@ -41,7 +44,7 @@
 </main>
 
 <script type="module">
-import { loadData, shell, setAsOf, fail, esc, STAGES, STAGE_LABEL, SIGNAL, RISK_LABEL, param, openNodeDetail } from "./assets/app.js";
+import { loadData, shell, setAsOf, fail, esc, STAGES, STAGE_LABEL, SIGNAL, RISK_LABEL, param, openNodeDetail, POLICY, policyItems } from "./assets/app.js";
 shell("supply-chain.html");
 
 const ORDER = ["lfp", "lmfp", "vrfb", "ni-h2", "carbon-o2", "nmc"];
@@ -50,7 +53,8 @@ const EDGE_VERB = { supplies: "supplies", owned_by: "owned by", offtake: "offtak
 const COUNTRY = { XX: "Origin unknown", MULTI: "Several countries" };
 const SVGNS = "http://www.w3.org/2000/svg";
 const OVERLAY_COL = "OWN";
-let DATA, state = { chem: "lfp", cat: "", own: false };
+let DATA, state = { chem: "lfp", cat: "", own: false, pol: "" };
+const polHits = (n) => (state.pol ? policyItems(n).filter((p) => state.pol === "all" || p.instrument === state.pol) : []);
 const colOf = (n) => (n.stage === "CAP" || n.stage === "OWN" ? OVERLAY_COL : n.stage);
 const columns = () => (state.own ? [...STAGES, OVERLAY_COL] : STAGES);
 const colLabel = (c) => (c === OVERLAY_COL ? "Ownership & capital" : STAGE_LABEL[c]);
@@ -89,11 +93,13 @@ function overlayLinks(n, edges) {
 function nodeButton(n, edges) {
   const b = badge(n);
   const out = outgoing(n, edges);
-  return `<button type="button" class="node${n.kind === "gap" ? " gap" : ""}${matches(n) ? "" : " dim"}" data-node="${esc(n.id)}"
-      aria-label="${esc(`${n.name}, ${n.stage}${n.kind === "gap" ? ", gap: not traceable" : ""}. ${b.text || "no risks recorded"}.${out.length ? " " + out.join("; ") + "." : ""}`)}">
+  const pol = polHits(n);
+  return `<button type="button" class="node${n.kind === "gap" ? " gap" : ""}${matches(n) ? "" : " dim"}${pol.length ? " pol-hit" : ""}" data-node="${esc(n.id)}"
+      aria-label="${esc(`${n.name}, ${n.stage}${n.kind === "gap" ? ", gap: not traceable" : ""}. ${b.text || "no risks recorded"}.${pol.length ? " Policy: " + pol.map((p) => POLICY[p.instrument]).join(", ") + "." : ""}${out.length ? " " + out.join("; ") + "." : ""}`)}">
     <span class="node-name">${esc(n.name)}</span>
     <span class="node-meta">${esc(COUNTRY[n.country] || n.country)}${n.share ? ` · ${esc(n.share.percent)}% ${esc(n.share.metric)}` : ""}</span>
-    <span class="node-badge">${b.html}</span>${overlayLinks(n, edges)}</button>`;
+    <span class="node-badge">${b.html}</span>${overlayLinks(n, edges)}
+    ${pol.map((p) => `<span class="node-pol"><strong>${esc(POLICY[p.instrument] || p.instrument)}</strong> · ${esc(p.detail)} <span class="asof">as of ${esc(p.as_of)}</span></span>`).join("")}</button>`;
 }
 
 function render() {
@@ -109,6 +115,12 @@ function render() {
     .map((c) => `<option value="${c}"${c === state.cat ? " selected" : ""}>${c}: ${esc(RISK_LABEL[c])}</option>`).join("")}`;
   const hits = nodes.filter(matches).length;
   const ownCount = chainFor(state.chem, true).edges.filter((e) => e.overlay !== "chain").length;
+  const allPol = [...new Set(nodes.flatMap((n) => policyItems(n).map((p) => p.instrument)))];
+  if (state.pol && state.pol !== "all" && !allPol.includes(state.pol)) state.pol = "";
+  document.getElementById("pol").innerHTML = `<option value="">Off</option>${allPol.length ? `<option value="all"${state.pol === "all" ? " selected" : ""}>All policy exposures</option>` : ""}${
+    Object.keys(POLICY).filter((k) => allPol.includes(k)).map((k) => `<option value="${k}"${k === state.pol ? " selected" : ""}>${esc(POLICY[k])}</option>`).join("")}`;
+  const polCount = nodes.filter((n) => polHits(n).length).length;
+  document.getElementById("pol-note").textContent = state.pol ? `${polCount} node${polCount === 1 ? "" : "s"} outlined.` : allPol.length ? "" : "No policy exposures recorded for this chain.";
   document.getElementById("own").checked = state.own;
   document.getElementById("legend-own").hidden = !state.own;
   document.getElementById("own-note").textContent = state.own
@@ -134,6 +146,7 @@ function render() {
   const q = new URLSearchParams({ chem: state.chem });
   if (state.cat) q.set("cat", state.cat);
   if (state.own) q.set("own", "1");
+  if (state.pol) q.set("pol", state.pol);
   history.replaceState(null, "", `?${q}`);
 }
 
@@ -180,10 +193,12 @@ loadData().then((d) => {
     picker.append(b);
   });
   document.getElementById("cat").addEventListener("change", (e) => { state.cat = e.target.value; render(); });
+  document.getElementById("pol").addEventListener("change", (e) => { state.pol = e.target.value; render(); });
   document.getElementById("own").addEventListener("change", (e) => { state.own = e.target.checked; render(); });
   const nodeP = param("node");
   state.chem = ORDER.includes(param("chem")) ? param("chem") : "lfp";
   state.cat = param("cat") || "";
+  state.pol = param("pol") || "";
   state.own = param("own") === "1" || ["CAP", "OWN"].includes(d.nodeById[nodeP]?.stage);
   render();
   let t;
