@@ -45,6 +45,9 @@ The EU Batteries Regulation requires due diligence on four raw materials only: c
   - custodian or registered-agent over-connection at depth;
   - stale registers after a company renames.
 - We also check identifiers before matching names. For example, two unrelated companies on the UFLPA list both use "Jinchuan" in their names.
+- **Examples found in this project:**
+  - A battery maker's record under its former shell-company name listed itself as its own 99.8% shareholder (a stale register after a rename). We don't publish the flags attached to it.
+  - Many trade-network flags rest on "Possibly the Same As" links between records that may or may not be the same company. Those flags are shown only as totals.
 
 ## 5. How AI was used
 
