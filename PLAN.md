@@ -1,4 +1,4 @@
-# PLAN — Passport with Gaps
+# PLAN — Battery Passport Audit
 
 *Status: DRAFT v3 for human review. Read with CONCEPT-IDEA_1.md and SPECIFICATION.md.*
 

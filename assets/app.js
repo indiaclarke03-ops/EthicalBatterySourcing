@@ -1,4 +1,4 @@
-// Passport with Gaps — shared helpers (ES module). No dependencies; the site makes no external API calls.
+// Battery Passport Audit — shared helpers (ES module). No dependencies; the site makes no external API calls.
 export const STAGES = ["S0", "S1", "S2", "S3", "S4", "S5"];
 export const STAGE_LABEL = {
   S0: "Ore & feedstock", S1: "Refining & chemicals", S2: "Active materials & components",
@@ -80,7 +80,7 @@ export function shell(active) {
     <div class="banner" role="note"><div class="wrap"><strong>Illustrative.</strong> Mock passports built from public and licensed research.
       Not real product passports; no statement about any company's compliance. Not legal or investment advice.</div></div>
     <header class="site-header"><div class="wrap">
-      <a class="brand" href="index.html">Passport with Gaps</a>
+      <a class="brand" href="index.html">Battery Passport Audit</a>
       <nav class="nav" aria-label="Main">${NAV.map(([href, label]) =>
         `<a href="${href}"${href === active ? ' aria-current="page"' : ""}>${label}</a>`).join("")}</nav>
       <button class="theme-toggle" type="button">Dark theme</button>

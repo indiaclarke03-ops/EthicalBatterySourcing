@@ -1,4 +1,4 @@
-# CONCEPT-IDEA — Passport with Gaps
+# CONCEPT-IDEA — Battery Passport Audit
 
 *Working title · Status: DRAFT v3 for human review · Owner: India Clarke*
 

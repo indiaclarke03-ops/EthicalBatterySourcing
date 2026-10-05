@@ -1,4 +1,4 @@
-# SPECIFICATION — Passport with Gaps
+# SPECIFICATION — Battery Passport Audit
 
 *Status: DRAFT v1 for human review · Owner: India Clarke. Read with CONCEPT-IDEA_1.md and PLAN.md. Where this document and PLAN.md disagree, this document wins for data shapes and page behaviour; PLAN.md wins for method.*
 
