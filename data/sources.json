@@ -1099,6 +1099,50 @@
    "tag": "OS",
    "retrieved": "2026-10-05",
    "research_note": "research/vrfb.md"
+  },
+  {
+   "id": "src-reuters-cobalt-quota-2025",
+   "title": "Congo's cobalt producers still waiting for export approvals, sources say (24 Oct 2025)",
+   "publisher": "Reuters",
+   "url": "https://www.reuters.com/world/africa/congos-cobalt-producers-still-waiting-export-approvals-sources-say-2025-10-24",
+   "access": "public",
+   "tier": "T2",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/nmc-reference.md"
+  },
+  {
+   "id": "src-huayou-ar-2025",
+   "title": "2025 Annual Report",
+   "publisher": "Zhejiang Huayou Cobalt",
+   "url": "https://www.huayou.com/Public/Uploads/uploadfile2/files/20260407/2025AnnualReportofHuayouCobalt.pdf",
+   "access": "public",
+   "tier": "T1",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/nmc-reference.md"
+  },
+  {
+   "id": "src-doj-glencore-2022",
+   "title": "United States v. Glencore International AG (case record, unsealed 24 May 2022)",
+   "publisher": "US Department of Justice",
+   "url": "https://www.justice.gov/criminal-fraud/united-states-v-glencore-international-ag",
+   "access": "public",
+   "tier": "T1",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/nmc-reference.md"
+  },
+  {
+   "id": "src-reuters-glencore-fines",
+   "title": "Gunvor raises US DOJ fine provision (8 Dec 2023), summarising the Glencore DOJ and SFO resolutions",
+   "publisher": "Reuters",
+   "url": "https://www.reuters.com/business/energy-trader-gunvor-raises-us-doj-fine-provision-650-mln-sources-2023-12-08",
+   "access": "public",
+   "tier": "T2",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/nmc-reference.md"
   }
  ]
 }

@@ -20,7 +20,7 @@
 
 This is the Battery Passport Audit. Six chemistries across the top-to-bottom supply chain: ore, refining, active materials, cells, packs, deployment.
 
-24 documented harms across these chains. 10 of them involve materials that EU due diligence doesn't cover at all, because the law only asks about cobalt, natural graphite, lithium and nickel."
+27 documented harms across these chains. 10 of them involve materials that EU due diligence doesn't cover at all, because the law only asks about cobalt, natural graphite, lithium and nickel."
 
 [Point at the VRFB row: "EU DD: not covered" wherever a risk appears.]
 

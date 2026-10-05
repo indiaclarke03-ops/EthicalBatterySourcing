@@ -3763,6 +3763,311 @@
    ],
    "as_of": "2026-10",
    "research_note": "research/vrfb.md"
+  },
+  {
+   "id": "nmc-s0-cmoc",
+   "chemistries": [
+    "nmc"
+   ],
+   "stage": "S0",
+   "kind": "entity",
+   "name": "CMOC (Tenke Fungurume, Kisanfu)",
+   "country": "CD",
+   "role": "World's top cobalt producer; largest DRC export quota",
+   "share": null,
+   "values": [
+    {
+     "value": 31920,
+     "claim": "Top cobalt producer; DRC export-quota allocations of 6,650 t (Q4 2025) and 31,920 t (2026) for Tenke Fungurume and Kisanfu",
+     "sources": [
+      "src-reuters-cobalt-quota-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single grade-B source",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "LR-CL",
+     "signal": "structural",
+     "material": "cobalt",
+     "evidence": "Industrial copper-cobalt mines in Lualaba, where the US Department of Labor documents child labour in artisanal cobalt mining. No source in these notes ties child labour to CMOC's concessions.",
+     "sources": [
+      "src-reuters-cobalt-quota-2025",
+      "src-dol-tvpra-2024"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "Medium",
+     "confidence_reason": "Regional finding (grade A); no entity-level evidence",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/nmc-reference.md"
+  },
+  {
+   "id": "nmc-s0-glencore-drc",
+   "chemistries": [
+    "nmc"
+   ],
+   "stage": "S0",
+   "kind": "entity",
+   "name": "Glencore (Kamoto Copper Co., Mutanda)",
+   "country": "CD",
+   "role": "World's second-largest cobalt producer",
+   "share": null,
+   "values": [
+    {
+     "value": 18840,
+     "claim": "World's second-largest cobalt producer; DRC export quotas of 3,925 t (Q4 2025) and 18,840 t (2026) for Kamoto Copper Company and Mutanda",
+     "sources": [
+      "src-reuters-cobalt-quota-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single grade-B source",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "documented-harm",
+     "material": "cobalt",
+     "evidence": "Glencore International AG pleaded guilty in the US (May 2022) to decade-long bribery schemes in several countries including the DRC, agreeing to pay about $1.1bn; the UK Serious Fraud Office separately fined it £280m for corruption in Africa.",
+     "sources": [
+      "src-doj-glencore-2022",
+      "src-reuters-glencore-fines"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "High",
+     "confidence_reason": "Grade-A court record corroborated by Reuters",
+     "as_of": "2026-10",
+     "has_independent_source": true
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/nmc-reference.md"
+  },
+  {
+   "id": "nmc-s1-huayou",
+   "chemistries": [
+    "nmc"
+   ],
+   "stage": "S1",
+   "kind": "entity",
+   "name": "Huayou Cobalt (refining; Indonesia HPAL)",
+   "country": "CN",
+   "role": "Cobalt and nickel refiner; owns Congo Dongfang Mining; Indonesian HPAL plants",
+   "share": null,
+   "values": [
+    {
+     "value": 235000,
+     "claim": "Huayue and Huafei HPAL plants in Indonesia shipped 235,000 t of mixed hydroxide precipitate (MHP) in 2025",
+     "sources": [
+      "src-huayou-ar-2025"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Grade A: company annual report (as a statement)",
+   "flags": [],
+   "policy": [
+    {
+     "instrument": "decision-58",
+     "effect": "Export licence would be required for Li-ion cells, cathode and artificial-graphite anode materials, equipment and technology",
+     "status": "Suspended until 2026-11-10 (Ann. No. 70)",
+     "sources": [
+      "src-pillsbury-mofcom"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
+   "ethical_risks": [
+    {
+     "category": "LR-CL",
+     "signal": "documented-harm",
+     "material": "cobalt",
+     "evidence": "Amnesty International and Afrewatch documented (2016) that traders bought cobalt from areas where child labour is rife and sold it to Congo Dongfang Mining, Huayou's wholly owned subsidiary.",
+     "sources": [
+      "src-amnesty-2016"
+     ],
+     "assurance": "rmi-rmap-conformant",
+     "assurance_detail": "RMI cobalt refiners list exists",
+     "eu_dd_coverage": "covered",
+     "confidence": "Medium",
+     "confidence_reason": "Single investigation; documented in 2016 (past-tense claim)",
+     "as_of": "2026-10",
+     "has_independent_source": false
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/nmc-reference.md"
+  },
+  {
+   "id": "nmc-s2-ronbay",
+   "chemistries": [
+    "nmc"
+   ],
+   "stage": "S2",
+   "kind": "entity",
+   "name": "Ronbay (high-nickel cathode)",
+   "country": "CN",
+   "role": "Supplied >80 kt high-nickel cathode to CATL (2025)",
+   "share": null,
+   "values": [
+    {
+     "value": 80000,
+     "claim": "Supplied more than 80 kt of high-nickel (≥80%) cathode to CATL in 2025; 4th in ternary cathode shipments",
+     "sources": [
+      "src-sne-cathode-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single grade-B source",
+   "flags": [],
+   "policy": [
+    {
+     "instrument": "decision-58",
+     "effect": "Export licence would be required for Li-ion cells, cathode and artificial-graphite anode materials, equipment and technology",
+     "status": "Suspended until 2026-11-10 (Ann. No. 70)",
+     "sources": [
+      "src-pillsbury-mofcom"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No entity-level harm source found for Ronbay",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/nmc-reference.md"
+  },
+  {
+   "id": "nmc-s2-reshine",
+   "chemistries": [
+    "nmc"
+   ],
+   "stage": "S2",
+   "kind": "entity",
+   "name": "Reshine (ternary cathode)",
+   "country": "CN",
+   "role": "#1 ternary (NMC/NCA) cathode shipper (2025)",
+   "share": null,
+   "values": [
+    {
+     "value": 177000,
+     "claim": "#1 in ternary cathode shipments in 2025, 177 kt",
+     "sources": [
+      "src-sne-cathode-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single grade-B source",
+   "flags": [],
+   "policy": [
+    {
+     "instrument": "decision-58",
+     "effect": "Export licence would be required for Li-ion cells, cathode and artificial-graphite anode materials, equipment and technology",
+     "status": "Suspended until 2026-11-10 (Ann. No. 70)",
+     "sources": [
+      "src-pillsbury-mofcom"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No entity-level harm source found for Reshine",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/nmc-reference.md"
+  },
+  {
+   "id": "nmc-s3-lges",
+   "chemistries": [
+    "nmc"
+   ],
+   "stage": "S3",
+   "kind": "entity",
+   "name": "LG Energy Solution",
+   "country": "KR",
+   "role": "#3 EV battery maker (9.2%, 2025)",
+   "share": null,
+   "values": [
+    {
+     "value": 9.2,
+     "claim": "9.2% of global EV battery use in 2025 (108.8 GWh), #3",
+     "sources": [
+      "src-cnevpost-sne-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single grade-B source",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No entity-level harm source found for LGES cell plants",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/nmc-reference.md"
   }
  ],
  "edges": [
@@ -4333,6 +4638,54 @@
    "overlay": "chain",
    "confidence": "Low",
    "confidence_reason": "Electrolyte source not disclosed; global vanadium supply assumed"
+  },
+  {
+   "from": "multi-s0-cobalt-drc",
+   "to": "nmc-s1-huayou",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Owns Congo Dongfang Mining, which processes DRC cobalt (Amnesty 2016; company report)"
+  },
+  {
+   "from": "multi-s0-nickel-indonesia",
+   "to": "nmc-s1-huayou",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Company's own Indonesian HPAL plants (annual report)"
+  },
+  {
+   "from": "nmc-s1-huayou",
+   "to": "nmc-s2-cathode-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Integrated precursor and cathode business (annual report); customers not traced here"
+  },
+  {
+   "from": "nmc-s2-ronbay",
+   "to": "lfp-s3-catl",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Single grade-B source (SNE Research)"
+  },
+  {
+   "from": "nmc-s2-reshine",
+   "to": "nmc-s3-cells-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Low",
+   "confidence_reason": "Customers not named in grade-A/B sources"
+  },
+  {
+   "from": "nmc-s2-cathode-china",
+   "to": "nmc-s3-lges",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Low",
+   "confidence_reason": "LGES cathode suppliers not traced here"
   }
  ]
 }
