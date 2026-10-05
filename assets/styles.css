@@ -188,7 +188,6 @@ dialog.detail::backdrop { background: rgba(0, 0, 0, 0.35); }
 .detail .conflict-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 0.5rem; }
 .detail .conflict-row .val { border: 1px solid var(--line); border-radius: 4px; padding: 0.4rem 0.5rem; }
 @media (max-width: 640px) { dialog.detail { width: 100vw; max-width: 100vw; max-height: 100vh; height: 100vh; margin: 0; border-radius: 0; } }
-.open-detail.link { font-size: inherit; text-align: left; display: inline; }
 /* supply-chain explorer */
 .chain-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; margin: 0.5rem 0; }
 .chain-controls select { font: inherit; font-size: 0.9rem; margin-left: 0.4rem; padding: 0.25rem 0.4rem; background: var(--surface); color: var(--fg); border: 1px solid var(--line); border-radius: var(--radius); }
@@ -233,7 +232,7 @@ dialog.detail::backdrop { background: rgba(0, 0, 0, 0.35); }
 .chain-controls select { max-width: 22rem; }
 /* compare page */
 .toc { margin: 0.5rem 0 1rem; }
-section + section { margin-top: 2rem; }
+main > section + section { margin-top: 2rem; }
 .bar { display: block; position: relative; background: var(--surface-2); border-radius: 3px; height: 1.3rem; min-width: 6rem; }
 .bar::before { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--w); background: var(--flag); opacity: 0.35; border-radius: 3px; }
 .bar span { position: relative; padding-left: 0.35rem; font-weight: 700; font-size: 0.85rem; }
