@@ -98,12 +98,12 @@ Status values: In scope / Likely / Unclear / Out of scope. Out-of-scope cells ge
 | LMFP | **In scope** · High | — | — | — | — |
 | VRFB | — | **In scope** · Medium ² | — | — | — |
 | Ni-H₂ (EnerVenue) | — | **In scope** · High | — | — | **Out of scope** · High ³ (shadow passport) |
-| Carbon-O₂ (Noon) | — | — | **Unclear** · Low ⁴ | **Unclear** · Low ⁴ | — |
+| Carbon-O₂ (Noon) | — | — | **Likely** · Medium ⁴ | **Likely** · Medium ⁴ | — |
 
 1. UPS/backup batteries above 2 kWh are industrial batteries. Very small units (≤ 2 kWh) would fall outside the passport but stay within the rest of the regulation.
 2. Industrial battery with external storage (see §4). It also has a later carbon-footprint timetable.
 3. EaglePicher's defence and space Ni-H₂ heritage falls under Art. 1(5). Terrestrial grid Ni-H₂ (EnerVenue) is in scope. The exclusion is about the equipment a battery goes into, not the chemistry.
-4. Depends on B-13's technical description. If Noon is classed as outside the definition of "battery", every use gets a shadow passport.
+4. Updated after B-13 (`carbon-o2.md`). Discharge is direct electrochemical conversion of stored carbon, held in attached external tanks, which fits "battery with external storage". Counter-argument: oxygen comes from open air, and the device is a reversible fuel cell, which the regulation doesn't mention. Status: Likely (reading of T1 text). Noon is shown as a **shadow passport** in any case: no product, materials undisclosed.
 
 **What scope doesn't settle.** A battery can be in passport scope while its maker is exempt from due diligence. If the Omnibus €200m threshold is adopted, early-stage makers such as EnerVenue and Noon may be outside due diligence even for in-scope batteries. Their turnover isn't public, so record this as a **GAP** per company, not as a finding.
 
