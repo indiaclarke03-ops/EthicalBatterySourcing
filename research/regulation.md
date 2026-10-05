@@ -58,7 +58,7 @@ Applicability by data point, from [R4]. "Deferred" = "Not to be filled/displayed
 
 For industrial batteries, several performance points are marked "only applicable for some industrial batteries" (#31–32 lifetime in cycles, #36–37 round-trip efficiency, #39 C-rate) or "if applicable" (#52–60 dynamic performance). This matters for VRFB and Ni-H₂, whose performance is described differently from Li-ion. It feeds into B-06.
 
-**Mandatory counts per category aren't settled.** Secondary sites quote 51 (EV) / 54 (LMT) / 36 (industrial) [R5]. A rough machine count of [R4] gave 46 / 49 / 32. Don't publish either until the table has been counted by hand (B-06).
+**Mandatory counts per category:** settled in `fields.md` §1 from a row-by-row count of [R4]: **46 (EV) / 49 (LMT) / 32 (industrial)**. Secondary sites give 51 / 54 / 36 [R5]; that conflict goes to the register.
 
 ## 3. Definitions that decide scope
 
