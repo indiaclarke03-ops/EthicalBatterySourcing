@@ -12,7 +12,7 @@
   --banner-line: #e6cf86;
   /* signal colours (always paired with a shape and text) */
   --harm: #a8322a;
-  --flag: #a85f00;
+  --flag: #935300;
   --structural: #5b4ea0;
   --none: #6c6c66;
   --gap-line: #8a877c;
@@ -56,7 +56,9 @@ h3 { font-size: 1.05rem; }
 p { margin: 0 0 0.75rem; }
 .muted { color: var(--muted); }
 .small { font-size: 0.875rem; }
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+a.sr-only:focus { position: fixed; top: 0.5rem; left: 0.5rem; width: auto; height: auto; margin: 0; padding: 0.5rem 0.75rem; clip: auto; overflow: visible;
+  z-index: 10; background: var(--surface); color: var(--fg); border: 2px solid var(--accent); border-radius: var(--radius); }
 
 /* layout */
 .wrap { max-width: 72rem; margin: 0 auto; padding: 0 16px; }
@@ -90,7 +92,7 @@ main.wrap { padding-top: 1.25rem; padding-bottom: 3rem; }
 .cov-not-covered { font-weight: 700; }
 
 /* tables */
-.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.table-scroll { position: relative; overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
 table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
 th, td { text-align: left; vertical-align: top; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--line); }
 th { background: var(--surface-2); font-weight: 600; }
@@ -257,3 +259,6 @@ main > section + section { margin-top: 2rem; }
 .prose li { margin-bottom: 0.35rem; }
 .prose h3 { margin-top: 1.25rem; }
 .prose .table-scroll { margin: 0.5rem 0 1rem; }
+.table-scroll tbody th[scope="row"] { position: sticky; left: 0; z-index: 1; }
+.mcell { white-space: nowrap; }
+@media (max-width: 640px) { .kpis { grid-template-columns: 1fr 1fr; gap: 0.5rem; } .kpi .num { font-size: 1.3rem; } .kpi { padding: 0.6rem; } }

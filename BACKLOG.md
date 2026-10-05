@@ -199,7 +199,7 @@ Each note covers S0–S5 plus both overlays, with at least one node per stage. *
     - Sayari permission and artefact caveats;
     - a "not legal or investment advice" statement.
   - Each passport card shows a QR code linking to its own page.
-- [ ] **B-29a Responsive, dark mode and accessibility** · Should
+- [x] **B-29a Responsive, dark mode and accessibility** · Should
   - Phone width, system dark mode, keyboard navigation.
 
 ## Phase 6 — Ship and demo
