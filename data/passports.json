@@ -1056,7 +1056,7 @@
    "applies_note": null,
    "values": [
     {
-     "claim": "> 25,000 cycles (company, unaudited)",
+     "claim": "The company states > 25,000 cycles (unaudited)",
      "sources": [
       "src-rkp-projects"
      ],
@@ -1367,7 +1367,7 @@
    "applies_note": null,
    "values": [
     {
-     "claim": "30,000-cycle claim; 30-year design life (company, unaudited)",
+     "claim": "The company states 30,000 cycles and a 30-year design life (unaudited)",
      "sources": [
       "src-enervenue-site"
      ],

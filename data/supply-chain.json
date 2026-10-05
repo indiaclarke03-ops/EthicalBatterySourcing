@@ -72,7 +72,7 @@
      "category": "COM",
      "signal": "documented-harm",
      "material": "cobalt",
-     "evidence": "Forced evictions with reported sexual assault, arson and beatings during industrial mine expansion near Kolwezi (Amnesty/IBGDH)",
+     "evidence": "Amnesty International and IBGDH documented forced evictions with reported sexual assault, arson and beatings during industrial mine expansion near Kolwezi",
      "sources": [
       "src-amnesty-2023"
      ],
@@ -152,7 +152,7 @@
      "category": "COM",
      "signal": "documented-harm",
      "material": "nickel",
-     "evidence": "Pollution, lost livelihoods, land grabbing, threats to Indigenous ways of life (93 interviews)",
+     "evidence": "Climate Rights International documented pollution, lost livelihoods, land grabbing and threats to Indigenous ways of life (93 interviews)",
      "sources": [
       "src-cri-2025",
       "src-cri-2024"
@@ -168,7 +168,7 @@
      "category": "ENV-S",
      "signal": "documented-harm",
      "material": "nickel",
-     "evidence": "HPAL filtered-tailings facilities overfilled and unstable; worker deaths; seepage contamination",
+     "evidence": "Earthworks and Mongabay report HPAL filtered-tailings facilities that are overfilled and unstable, worker deaths, and seepage contamination",
      "sources": [
       "src-earthworks-2026",
       "src-mongabay-2026-ni"
@@ -184,7 +184,7 @@
      "category": "LR-DIS",
      "signal": "documented-harm",
      "material": "nickel",
-     "evidence": "Women workers face discrimination, harassment and reproductive-health risks (IMIP)",
+     "evidence": "Climate Rights International documented discrimination, harassment and reproductive-health risks faced by women workers at IMIP",
      "sources": [
       "src-cri-2025"
      ],
@@ -233,7 +233,7 @@
      "category": "ENV-W",
      "signal": "documented-harm",
      "material": "lithium",
-     "evidence": "Brine extraction in Salar de Atacama linked to water injustice for Atacameño communities (magnitude contested)",
+     "evidence": "Peer-reviewed studies link brine extraction in the Salar de Atacama to water injustice for Atacameño communities (magnitude contested)",
      "sources": [
       "src-slca-atacama-2024",
       "src-atacama-water-justice"
@@ -265,7 +265,7 @@
      "category": "HR",
      "signal": "documented-harm",
      "material": "lithium",
-     "evidence": "Corruption red flags; mining without environmental assessment (Zimbabwe, Namibia, DRC)",
+     "evidence": "Global Witness documented corruption red flags and mining without environmental assessment (Zimbabwe, Namibia, DRC)",
      "sources": [
       "src-gw-2023"
      ],
@@ -331,7 +331,7 @@
      "category": "LR-FL",
      "signal": "documented-harm",
      "material": "lithium",
-     "evidence": "State labour transfers documented at the largest XUAR lithium company (Driving Force)",
+     "evidence": "Sheffield Hallam University (Driving Force) documented state labour transfers at the largest XUAR lithium company",
      "sources": [
       "src-shu-driving-force"
      ],
@@ -403,7 +403,7 @@
      "category": "ENV-A",
      "signal": "documented-harm",
      "material": "natural graphite",
-     "evidence": "Graphite dust, air and water pollution near Heilongjiang plants; complaints reportedly suppressed (2014–16)",
+     "evidence": "The Washington Post reported graphite dust, air and water pollution near Heilongjiang plants, with complaints reportedly suppressed (2014–16)",
      "sources": [
       "src-wapo-graphite-2016"
      ],
@@ -469,7 +469,7 @@
      "category": "LR-CL",
      "signal": "documented-harm",
      "material": "copper",
-     "evidence": "Children mine, crush and wash copper ore in DRC artisanal mining; ore enters Chinese Li-ion battery supply (DOL)",
+     "evidence": "The US Department of Labor documents children mining, crushing and washing copper ore in DRC artisanal mining; the ore enters Chinese Li-ion battery supply",
      "sources": [
       "src-dol-tvpra-2024"
      ],
@@ -672,7 +672,7 @@
      "category": "ENV-W",
      "signal": "documented-harm",
      "material": "lithium",
-     "evidence": "Thallium pollution of the Jin River (city drinking-water source), Nov–Dec 2022; lithium plants halted; police case over evading supervision",
+     "evidence": "SCMP, Yicai and state media reported thallium pollution of the Jin River (a city drinking-water source) in Nov–Dec 2022; lithium plants were halted and police opened a case over evading supervision",
      "sources": [
       "src-yichun-thallium-2022"
      ],
@@ -734,7 +734,7 @@
      "category": "ENV-W",
      "signal": "documented-harm",
      "material": "phosphate",
-     "evidence": "Total-phosphorus pollution from mining, chemical plants and phosphogypsum stacks along rivers",
+     "evidence": "A peer-reviewed study (Research of Environmental Sciences) documented total-phosphorus pollution from mining, chemical plants and phosphogypsum stacks along rivers",
      "sources": [
       "src-yangtze-p-2020"
      ],
@@ -1355,7 +1355,7 @@
      "category": "OHS",
      "signal": "documented-harm",
      "material": "manganese",
-     "evidence": "26% of manganese miners studied in Hotazel had Parkinson's-like symptoms; workers report memory loss",
+     "evidence": "The Washington Post and Oxpeckers report that 26% of manganese miners studied in Hotazel had Parkinson's-like symptoms; workers describe memory loss",
      "sources": [
       "src-wapo-mn-2023",
       "src-oxpeckers-mn-2026"
@@ -1372,7 +1372,7 @@
      "category": "COM",
      "signal": "documented-harm",
      "material": "manganese",
-     "evidence": "Kalahari communities: toxic dust on crops and water; blasting cracks; groundwater nitrate above WHO guideline",
+     "evidence": "Oxpeckers and the Washington Post report Kalahari communities' accounts of toxic dust on crops and water and cracks from blasting, and groundwater nitrate above the WHO guideline",
      "sources": [
       "src-oxpeckers-mn-2026",
       "src-wapo-mn-2023"
@@ -1484,7 +1484,7 @@
      "category": "ENV-W",
      "signal": "documented-harm",
      "material": "manganese",
-     "evidence": "Chinese manganese industry: severe water and soil pollution; refineries discharging toxic waste (2008–10)",
+     "evidence": "Peer-reviewed research and Yale Environment 360 document severe water and soil pollution in China's manganese industry, with refineries discharging toxic waste (2008–10)",
      "sources": [
       "src-wang-2025-mn",
       "src-yale-e360-mn",
@@ -1785,7 +1785,7 @@
      "category": "ENV-S",
      "signal": "documented-harm",
      "material": "vanadium",
-     "evidence": "Farmland soil and crop contamination near stone-coal vanadium smelting (Hunan); child health risk",
+     "evidence": "A peer-reviewed study found farmland soil and crop contamination near stone-coal vanadium smelting in Hunan, with a health risk to children",
      "sources": [
       "src-v-chemosphere-2020"
      ],
@@ -1801,7 +1801,7 @@
      "category": "COM",
      "signal": "documented-harm",
      "material": "vanadium",
-     "evidence": "Brits (ZA): non-consultation, land/livestock loss and dust illness alleged at Rhovan and Vametco; companies dispute",
+     "evidence": "MACUA and IOL Business Report: residents near Brits (ZA) allege non-consultation, land and livestock loss and dust illness at Rhovan and Vametco; the companies dispute this",
      "sources": [
       "src-macua-rhovan-2024",
       "src-iol-vametco-2023"
@@ -1862,7 +1862,7 @@
      "category": "ENV-S",
      "signal": "documented-harm",
      "material": "vanadium",
-     "evidence": "Vanadium pollution of topsoil and sediments in Panzhihua mining, smelting, slag and tailings areas (regional; not a finding about Pangang)",
+     "evidence": "Peer-reviewed studies found vanadium pollution of topsoil and sediments in Panzhihua's mining, smelting, slag and tailings areas (regional; not a finding about Pangang)",
      "sources": [
       "src-v-panzhihua-2006",
       "src-v-chemosphere-2020"
@@ -1944,11 +1944,11 @@
    "kind": "entity",
    "name": "Rongke electrolyte (Dalian line; Panzhihua JV)",
    "country": "CN",
-   "role": "Claims ≈90% of global vanadium electrolyte",
+   "role": "The company states it supplies ≈90% of global vanadium electrolyte",
    "share": null,
    "values": [
     {
-     "claim": "Dalian electrolyte line phase 1 in production June 2025; company claims ≈90% global share",
+     "claim": "Dalian electrolyte line phase 1 in production June 2025; the company states a ≈90% global share",
      "sources": [
       "src-stdaily-rongke"
      ],
@@ -2806,7 +2806,7 @@
      "category": "COM",
      "signal": "documented-harm",
      "material": "natural graphite",
-     "evidence": "Balama (Cabo Delgado): land and livelihood loss, pollution and silencing of activists alleged; UNGP analysis finds violations (companies responded)",
+     "evidence": "CDD Mozambique reports alleged land and livelihood loss, pollution and silencing of activists at Balama (Cabo Delgado); its UNGP analysis finds violations (the companies responded)",
      "sources": [
       "src-cdd-balama-2025"
      ],
