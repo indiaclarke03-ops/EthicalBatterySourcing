@@ -247,3 +247,13 @@ main > section + section { margin-top: 2rem; }
 .mcell .sig { font-size: 1.05rem; text-decoration: none; }
 .mcell.nc, .nc-key { background: color-mix(in srgb, var(--harm) 12%, transparent); }
 .nc-key { padding: 0 0.3rem; border-radius: 3px; }
+.passport-id { display: flex; flex-direction: column; align-items: flex-end; gap: 0.4rem; }
+.qr { margin: 0; width: 7.5rem; text-align: center; }
+.qr svg { width: 5.5rem; height: 5.5rem; display: block; margin: 0 auto; background: #fff; border-radius: 3px; }
+.qr svg rect[fill="white"], .qr svg rect[fill="#ffffff"] { fill: #fff; }
+.qr figcaption { font-size: 0.65rem; color: var(--muted); line-height: 1.3; margin-top: 0.2rem; }
+.prose > * { max-width: 52rem; }
+.prose ul, .prose ol { padding-left: 1.3rem; }
+.prose li { margin-bottom: 0.35rem; }
+.prose h3 { margin-top: 1.25rem; }
+.prose .table-scroll { margin: 0.5rem 0 1rem; }
