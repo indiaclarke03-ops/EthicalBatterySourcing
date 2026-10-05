@@ -31,7 +31,9 @@
 | Aluminium | All (foil, casings) | **Not covered** | High | Absent |
 | Gallium, silver | Carbon-O₂ (trace) | **Not covered** | High | Absent |
 
-The "Not covered" scores are High because the list is closed (T1). Whether a material is *risky* is a separate question, answered in B-05b.
+The "Not covered" scores are High because the list is closed (T1).
+
+**The Forced Labour Regulation is a partial backstop.** From **14 Dec 2027**, Reg. (EU) 2024/3015 bans products made with forced labour, whatever the material, minerals included (`regulation.md`). For materials outside the list (manganese, vanadium, phosphate, copper, aluminium), **forced labour** risk will fall under an EU ban, enforced case by case after investigation. Child labour, environmental harm and community rights won't. And there's still no duty to look upstream before placing the battery on the market. The scorecard shows this as a separate column, "EU FLR (from Dec 2027)", so the gap isn't overstated. Whether a material is *risky* is a separate question, answered in B-05b.
 
 ## 2. Risk taxonomy: Annex X versus PLAN.md
 
