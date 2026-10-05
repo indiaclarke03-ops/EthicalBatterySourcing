@@ -208,7 +208,7 @@ Each note covers S0–S5 plus both overlays, with at least one node per stage. *
 
 ## Phase 6 — Ship and demo
 
-- [ ] **B-30 Live-site review** · Must
+- [x] **B-30 Live-site review** · Must
   - Click through all six passports on the live site.
   - Flag and harm wording is checked for neutrality and for respect toward affected communities.
   - Issues are fixed or logged as new items.
