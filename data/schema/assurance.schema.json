@@ -1,0 +1,80 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "assurance.schema.json",
+ "title": "assurance",
+ "type": "object",
+ "required": [
+  "schema_version",
+  "as_of",
+  "items"
+ ],
+ "additionalProperties": false,
+ "properties": {
+  "schema_version": {
+   "const": "1.0"
+  },
+  "as_of": {
+   "$ref": "common.json#/$defs/as_of"
+  },
+  "items": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "id",
+     "name",
+     "covers_materials",
+     "level",
+     "what_it_checks",
+     "what_it_does_not",
+     "sources",
+     "as_of"
+    ],
+    "properties": {
+     "id": {
+      "$ref": "common.json#/$defs/id"
+     },
+     "name": {
+      "type": "string"
+     },
+     "covers_materials": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "level": {
+      "enum": [
+       "mine",
+       "smelter-refiner",
+       "company",
+       "none"
+      ]
+     },
+     "what_it_checks": {
+      "type": "string"
+     },
+     "what_it_does_not": {
+      "type": "string"
+     },
+     "list_url": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "sources": {
+      "type": "array",
+      "items": {
+       "$ref": "common.json#/$defs/source_id"
+      }
+     },
+     "as_of": {
+      "$ref": "common.json#/$defs/as_of"
+     }
+    }
+   }
+  }
+ }
+}

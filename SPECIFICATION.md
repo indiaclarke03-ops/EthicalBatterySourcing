@@ -246,9 +246,22 @@ Deferred fields take `"status": "deferred"` and `"applies_from": "YYYY-MM-DD"`, 
 
 Schemes, at minimum: IRMA, RMI/RMAP, and whatever B-05a finds for graphite, manganese, phosphate and vanadium (or an explicit "no scheme found" record per material).
 
+### 4.6 Additions made in B-17 (schemas in `data/schema/`)
+
+The schemas are the binding definition of data shapes. Changes from §4.1–4.5:
+- **`chemistries.json`:** adds a required `passport_type` (`full` / `reference` / `shadow`) and an optional `research_note`.
+- **`passports.json`:** adds a required `guidance_no` (Commission guidance v2.0 data-point number), a required `status` (`mandatory` / `deferred` / `conditional` / `not-applicable`) and an optional `applies_from` (deferred fields).
+- **`eu_dd_coverage`** adds `not-applicable`, for inputs that aren't mined materials (e.g. carbon from CO₂).
+- **`edge_type`** adds `joint_venture`.
+- **Node `stage`** also allows `CAP` (capital) and `OWN` (ownership-overlay) nodes.
+- **Policy `instrument`** adds `eu-flr` (EU Forced Labour Regulation).
+- **Claims** may carry `superseded: true`, which keeps a losing value visible in resolved conflicts (`research/conflicts.md`).
+- **Ethical risks** may carry `gender_note: true` (LR-DIS entries with gender-specific harm).
+- **Shared enums and the claim object** are in `data/schema/common.json`.
+
 ## 5. Validation (`scripts/validate.mjs`, B-20)
 
-The script runs with Node and no dependencies. It prints a pass/fail table that goes in the PR description. It fails on:
+The script (`scripts/validate.mjs`, with `scripts/lib/schema.mjs`) runs with Node and no dependencies. It prints a pass/fail table that goes in the PR description. It fails on:
 
 1. JSON Schema violations.
 2. A source id referenced anywhere that is missing from `sources.json`, and any source that nothing references (orphan).

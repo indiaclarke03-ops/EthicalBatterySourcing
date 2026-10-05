@@ -1,0 +1,229 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "common.json",
+ "$defs": {
+  "id": {
+   "type": "string",
+   "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+  },
+  "source_id": {
+   "type": "string",
+   "pattern": "^src-[a-z0-9-]+$"
+  },
+  "as_of": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}(-\\d{2})?$"
+  },
+  "day": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+  },
+  "tier": {
+   "enum": [
+    "T1",
+    "T2",
+    "T3",
+    null
+   ]
+  },
+  "tag": {
+   "enum": [
+    "S-REG",
+    "S-TRADE",
+    "OS",
+    "INF",
+    "GAP"
+   ]
+  },
+  "confidence": {
+   "enum": [
+    "High",
+    "Medium",
+    "Low",
+    "Unknown"
+   ]
+  },
+  "stage": {
+   "enum": [
+    "S0",
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5"
+   ]
+  },
+  "chemistry": {
+   "enum": [
+    "nmc",
+    "lfp",
+    "lmfp",
+    "vrfb",
+    "ni-h2",
+    "carbon-o2",
+    "na-ion",
+    "iron-air",
+    "zinc",
+    "lnmo",
+    "solid-state"
+   ]
+  },
+  "risk_category": {
+   "enum": [
+    "HR",
+    "LR-FL",
+    "LR-CL",
+    "LR-DIS",
+    "LR-TU",
+    "OHS",
+    "COM",
+    "ENV-W",
+    "ENV-S",
+    "ENV-A",
+    "ENV-B",
+    "HH"
+   ]
+  },
+  "signal": {
+   "enum": [
+    "documented-harm",
+    "screening-flag",
+    "structural",
+    "no-known-evidence"
+   ]
+  },
+  "assurance": {
+   "enum": [
+    "irma-audit",
+    "rmi-rmap-conformant",
+    "other-scheme",
+    "self-assessment",
+    "none-known"
+   ]
+  },
+  "eu_dd_coverage": {
+   "enum": [
+    "covered",
+    "not-covered",
+    "unclear",
+    "not-applicable"
+   ]
+  },
+  "scope_status": {
+   "enum": [
+    "in-scope",
+    "likely",
+    "unclear",
+    "out-of-scope"
+   ]
+  },
+  "use_case": {
+   "enum": [
+    "ev",
+    "grid",
+    "datacentre",
+    "long-duration",
+    "defence-aerospace"
+   ]
+  },
+  "flag_type": {
+   "enum": [
+    "forced-labour",
+    "sanctions",
+    "state-ownership",
+    "meu",
+    "region-risk",
+    "1260h",
+    "feoc-pfe",
+    "uflpa-entity-list"
+   ]
+  },
+  "edge_type": {
+   "enum": [
+    "supplies",
+    "owned_by",
+    "invests_in",
+    "offtake",
+    "licenses_to",
+    "integrates",
+    "deploys",
+    "joint_venture"
+   ]
+  },
+  "reason": {
+   "type": "string",
+   "minLength": 3,
+   "maxLength": 200
+  },
+  "claim": {
+   "type": "object",
+   "required": [
+    "claim",
+    "sources",
+    "tier",
+    "tag",
+    "as_of"
+   ],
+   "properties": {
+    "value": {},
+    "claim": {
+     "type": "string",
+     "minLength": 1
+    },
+    "sources": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/source_id"
+     }
+    },
+    "tier": {
+     "$ref": "#/$defs/tier"
+    },
+    "tag": {
+     "$ref": "#/$defs/tag"
+    },
+    "as_of": {
+     "$ref": "#/$defs/as_of"
+    },
+    "superseded": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  },
+  "scored": {
+   "type": "object",
+   "required": [
+    "confidence",
+    "confidence_reason"
+   ],
+   "properties": {
+    "confidence": {
+     "$ref": "#/$defs/confidence"
+    },
+    "confidence_reason": {
+     "$ref": "#/$defs/reason"
+    }
+   }
+  },
+  "wrapper": {
+   "type": "object",
+   "required": [
+    "schema_version",
+    "as_of",
+    "items"
+   ],
+   "properties": {
+    "schema_version": {
+     "const": "1.0"
+    },
+    "as_of": {
+     "$ref": "#/$defs/as_of"
+    },
+    "items": {
+     "type": "array"
+    }
+   }
+  }
+ }
+}

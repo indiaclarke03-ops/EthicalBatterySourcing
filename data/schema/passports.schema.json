@@ -1,0 +1,103 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "passports.schema.json",
+ "title": "passports",
+ "type": "object",
+ "required": [
+  "schema_version",
+  "as_of",
+  "items"
+ ],
+ "additionalProperties": false,
+ "properties": {
+  "schema_version": {
+   "const": "1.0"
+  },
+  "as_of": {
+   "$ref": "common.json#/$defs/as_of"
+  },
+  "items": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "chemistry",
+     "field_id",
+     "guidance_no",
+     "field_label",
+     "category",
+     "status",
+     "applies",
+     "values",
+     "conflict",
+     "confidence",
+     "confidence_reason"
+    ],
+    "properties": {
+     "chemistry": {
+      "$ref": "common.json#/$defs/chemistry"
+     },
+     "field_id": {
+      "$ref": "common.json#/$defs/id"
+     },
+     "guidance_no": {
+      "type": "string"
+     },
+     "field_label": {
+      "type": "string"
+     },
+     "category": {
+      "enum": [
+       "identification",
+       "performance",
+       "sourcing",
+       "carbon",
+       "circularity",
+       "due-diligence"
+      ]
+     },
+     "status": {
+      "enum": [
+       "mandatory",
+       "deferred",
+       "conditional",
+       "not-applicable"
+      ]
+     },
+     "applies_from": {
+      "$ref": "common.json#/$defs/day"
+     },
+     "applies": {
+      "type": "boolean"
+     },
+     "applies_note": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "values": {
+      "type": "array",
+      "items": {
+       "$ref": "common.json#/$defs/claim"
+      }
+     },
+     "conflict": {
+      "type": "boolean"
+     },
+     "conflict_id": {
+      "type": "string",
+      "pattern": "^[CRS]-\\d{2}$"
+     },
+     "confidence": {
+      "$ref": "common.json#/$defs/confidence"
+     },
+     "confidence_reason": {
+      "$ref": "common.json#/$defs/reason"
+     }
+    }
+   }
+  }
+ }
+}
