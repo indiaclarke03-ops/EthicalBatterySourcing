@@ -1,0 +1,292 @@
+{
+ "schema_version": "1.0",
+ "as_of": "2026-10",
+ "items": [
+  {
+   "id": "nmc",
+   "name": "Lithium nickel manganese cobalt oxide",
+   "short": "NMC",
+   "tier_of_depth": "reference",
+   "passport_type": "reference",
+   "case_companies": [],
+   "summary": "Reference baseline. The chemistry the EU due-diligence list was written around: its highest-harm inputs, cobalt and nickel, are both covered.",
+   "research_note": "research/nmc-reference.md",
+   "use_cases": [
+    {
+     "use_case": "ev",
+     "scope_status": "in-scope",
+     "scope_basis": "EV battery under Art. 3(1)(14); passport under Art. 77(1)",
+     "shadow_passport": false,
+     "values": [
+      {
+       "claim": "EV batteries need a passport from 18 Feb 2027 (Art. 77(1))",
+       "sources": [
+        "src-eurlex-2023-1542"
+       ],
+       "tier": "T1",
+       "tag": "OS",
+       "as_of": "2026-10"
+      }
+     ],
+     "confidence": "High",
+     "confidence_reason": "T1: regulation text"
+    }
+   ]
+  },
+  {
+   "id": "lfp",
+   "name": "Lithium iron phosphate",
+   "short": "LFP",
+   "tier_of_depth": "core",
+   "passport_type": "full",
+   "case_companies": [
+    "catl",
+    "lges-lansing",
+    "ford-marshall",
+    "gotion-morocco",
+    "nano-one",
+    "first-phosphate",
+    "byd"
+   ],
+   "summary": "Removes cobalt and nickel but keeps lithium, graphite and copper, and adds phosphate and iron, which are outside the EU due-diligence list. Cathode and anode production is concentrated in China.",
+   "research_note": "research/lfp.md",
+   "use_cases": [
+    {
+     "use_case": "ev",
+     "scope_status": "in-scope",
+     "scope_basis": "EV battery under Art. 3(1)(14); passport under Art. 77(1)",
+     "shadow_passport": false,
+     "values": [
+      {
+       "claim": "EV batteries need a passport from 18 Feb 2027 (Art. 77(1))",
+       "sources": [
+        "src-eurlex-2023-1542"
+       ],
+       "tier": "T1",
+       "tag": "OS",
+       "as_of": "2026-10"
+      }
+     ],
+     "confidence": "High",
+     "confidence_reason": "T1: regulation text"
+    },
+    {
+     "use_case": "grid",
+     "scope_status": "in-scope",
+     "scope_basis": "Industrial battery > 2 kWh (Art. 3(1)(13), 3(1)(15), 77(1))",
+     "shadow_passport": false,
+     "values": [
+      {
+       "claim": "Stationary storage is an industrial battery; industrial batteries > 2 kWh need a passport",
+       "sources": [
+        "src-eurlex-2023-1542"
+       ],
+       "tier": "T1",
+       "tag": "OS",
+       "as_of": "2026-10"
+      }
+     ],
+     "confidence": "High",
+     "confidence_reason": "T1: regulation text"
+    },
+    {
+     "use_case": "datacentre",
+     "scope_status": "in-scope",
+     "scope_basis": "Backup batteries > 2 kWh are industrial batteries; ≤ 2 kWh units fall outside the passport",
+     "shadow_passport": false,
+     "values": [
+      {
+       "claim": "Data-centre backup above 2 kWh is an industrial battery in passport scope",
+       "sources": [
+        "src-eurlex-2023-1542"
+       ],
+       "tier": "T1",
+       "tag": "OS",
+       "as_of": "2026-10"
+      }
+     ],
+     "confidence": "High",
+     "confidence_reason": "T1: regulation text"
+    }
+   ]
+  },
+  {
+   "id": "lmfp",
+   "name": "Lithium manganese iron phosphate",
+   "short": "LMFP",
+   "tier_of_depth": "core",
+   "passport_type": "full",
+   "case_companies": [
+    "dynanonic",
+    "catl",
+    "gotion",
+    "integrals-power"
+   ],
+   "summary": "LFP plus manganese. The manganese-sulphate chain is outside the EU due-diligence list, has no assurance scheme, and has documented harm at both mining and refining.",
+   "research_note": "research/lmfp.md",
+   "use_cases": [
+    {
+     "use_case": "ev",
+     "scope_status": "in-scope",
+     "scope_basis": "EV battery under Art. 3(1)(14); passport under Art. 77(1)",
+     "shadow_passport": false,
+     "values": [
+      {
+       "claim": "EV batteries need a passport from 18 Feb 2027 (Art. 77(1))",
+       "sources": [
+        "src-eurlex-2023-1542"
+       ],
+       "tier": "T1",
+       "tag": "OS",
+       "as_of": "2026-10"
+      }
+     ],
+     "confidence": "High",
+     "confidence_reason": "T1: regulation text"
+    }
+   ]
+  },
+  {
+   "id": "vrfb",
+   "name": "Vanadium redox flow battery",
+   "short": "VRFB",
+   "tier_of_depth": "core",
+   "passport_type": "full",
+   "case_companies": [
+    "rongke",
+    "largo",
+    "storion",
+    "invinity"
+   ],
+   "summary": "Energy stored in vanadium electrolyte in external tanks. Vanadium is outside the EU due-diligence list, so the passport's sourcing field would cover none of its inputs.",
+   "research_note": "research/vrfb.md",
+   "use_cases": [
+    {
+     "use_case": "grid",
+     "scope_status": "in-scope",
+     "scope_basis": "Battery with external storage (Art. 3(1)(1), 3(1)(8)); industrial battery > 2 kWh. Not a 'stationary battery energy storage system' (internal storage required)",
+     "shadow_passport": false,
+     "values": [
+      {
+       "claim": "A battery 'having internal or external storage' is a battery; VRFB stores energy in external electrolyte tanks",
+       "sources": [
+        "src-eurlex-2023-1542"
+       ],
+       "tier": "T1",
+       "tag": "INF",
+       "as_of": "2026-10"
+      }
+     ],
+     "confidence": "Medium",
+     "confidence_reason": "Reading of T1 text: definition covers external storage; no guidance names flow batteries"
+    }
+   ]
+  },
+  {
+   "id": "ni-h2",
+   "name": "Nickel-hydrogen",
+   "short": "Ni-H₂",
+   "tier_of_depth": "core",
+   "passport_type": "full",
+   "case_companies": [
+    "enervenue",
+    "eaglepicher",
+    "great-power"
+   ],
+   "summary": "Nickel hydroxide and nickel-alloy electrodes with hydrogen stored in a sealed cell. Nickel is on the EU due-diligence list; EnerVenue's nickel source is undisclosed.",
+   "research_note": "research/ni-h2.md",
+   "use_cases": [
+    {
+     "use_case": "grid",
+     "scope_status": "in-scope",
+     "scope_basis": "Industrial battery > 2 kWh (Art. 3(1)(13), 3(1)(15), 77(1))",
+     "shadow_passport": false,
+     "values": [
+      {
+       "claim": "Stationary storage is an industrial battery; industrial batteries > 2 kWh need a passport",
+       "sources": [
+        "src-eurlex-2023-1542"
+       ],
+       "tier": "T1",
+       "tag": "OS",
+       "as_of": "2026-10"
+      }
+     ],
+     "confidence": "High",
+     "confidence_reason": "T1: regulation text"
+    },
+    {
+     "use_case": "defence-aerospace",
+     "scope_status": "out-of-scope",
+     "scope_basis": "Art. 1(5): batteries in equipment for essential security interests, arms, munitions, war material, or equipment sent into space",
+     "shadow_passport": true,
+     "values": [
+      {
+       "claim": "The regulation does not apply to batteries in military equipment or equipment designed to be sent into space",
+       "sources": [
+        "src-eurlex-2023-1542"
+       ],
+       "tier": "T1",
+       "tag": "OS",
+       "as_of": "2026-10"
+      }
+     ],
+     "confidence": "High",
+     "confidence_reason": "T1: regulation text"
+    }
+   ]
+  },
+  {
+   "id": "carbon-o2",
+   "name": "Carbon-oxygen (reversible solid-oxide)",
+   "short": "Carbon-O₂",
+   "tier_of_depth": "core",
+   "passport_type": "shadow",
+   "case_companies": [
+    "noon"
+   ],
+   "summary": "Shadow passport: no product on market yet and cell materials undisclosed. Charging turns CO₂ into stored solid carbon; discharging recombines it with air oxygen in a reversible solid-oxide cell.",
+   "research_note": "research/carbon-o2.md",
+   "use_cases": [
+    {
+     "use_case": "datacentre",
+     "scope_status": "likely",
+     "scope_basis": "Direct conversion of chemical energy with carbon in attached external tanks fits 'battery with external storage'; counter-argument: open-air oxygen and fuel-cell design, not addressed by the regulation",
+     "shadow_passport": true,
+     "values": [
+      {
+       "claim": "Likely a battery with external storage under Art. 3(1)(1) and 3(1)(8)",
+       "sources": [
+        "src-eurlex-2023-1542"
+       ],
+       "tier": "T1",
+       "tag": "INF",
+       "as_of": "2026-10"
+      }
+     ],
+     "confidence": "Medium",
+     "confidence_reason": "Reading of T1 text, with a stated counter-argument"
+    },
+    {
+     "use_case": "long-duration",
+     "scope_status": "likely",
+     "scope_basis": "Direct conversion of chemical energy with carbon in attached external tanks fits 'battery with external storage'; counter-argument: open-air oxygen and fuel-cell design, not addressed by the regulation",
+     "shadow_passport": true,
+     "values": [
+      {
+       "claim": "Likely a battery with external storage under Art. 3(1)(1) and 3(1)(8)",
+       "sources": [
+        "src-eurlex-2023-1542"
+       ],
+       "tier": "T1",
+       "tag": "INF",
+       "as_of": "2026-10"
+      }
+     ],
+     "confidence": "Medium",
+     "confidence_reason": "Reading of T1 text, with a stated counter-argument"
+    }
+   ]
+  }
+ ]
+}
