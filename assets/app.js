@@ -23,6 +23,18 @@ export const ASSURANCE = {
   "self-assessment": "Company self-assessment only", "none-known": "No assurance known",
 };
 
+export const POLICY = {
+  "decision-58": "China export controls on battery technology (Decision No. 58)", "decision-70": "China export-control suspension (Announcement No. 70)",
+  "feoc-pfe": "US FEOC / prohibited foreign entity rules", "1260h": "US 1260H list (Chinese military companies)", uflpa: "US UFLPA Entity List",
+  "sulphuric-acid": "Sulphuric-acid supply exposure", "eu-flr": "EU Forced Labour Regulation", "ga-ge-sb-controls": "China gallium/germanium/antimony controls",
+};
+const FLAG_POLICY = { "1260h": "1260h", "uflpa-entity-list": "uflpa" };
+// Policy exposures for a node: its policy items plus official-list flags (1260H, UFLPA), each with an as-of date.
+export const policyItems = (n) => [
+  ...n.policy.map((p) => ({ instrument: p.instrument, detail: p.status, as_of: p.as_of })),
+  ...n.flags.filter((f) => FLAG_POLICY[f.type]).map((f) => ({ instrument: FLAG_POLICY[f.type], detail: f.label, as_of: f.as_of })),
+];
+
 const NAV = [
   ["index.html", "Passports"], ["scorecard.html", "Scorecard"], ["supply-chain.html", "Supply chain"],
   ["compare.html", "Compare"], ["methods.html", "Methods"],
@@ -207,7 +219,7 @@ export function openNodeDetail(node, data, tab) {
       ${conflicts}
       <p>${confBadge(node.confidence)} <span class="small">${esc(node.confidence_reason)}</span></p>
       ${node.flags.length ? `<h3>Screening flags</h3>${node.flags.map((f) => `<p class="flag-label">${esc(f.label)}: ${esc(f.basis)}</p>${sourceLinks([f.source], data)}`).join("")}` : ""}
-      ${node.policy.length ? `<h3>Policy exposure</h3>${node.policy.map((p) => `<p class="small"><strong>${esc(p.instrument)}</strong>: ${esc(p.effect)}. ${esc(p.status)} <span class="muted">(as of ${esc(p.as_of)})</span></p>${sourceLinks(p.sources, data)}`).join("")}` : ""}`,
+      ${node.policy.length ? `<h3>Policy exposure</h3>${node.policy.map((p) => `<p class="small"><strong>${esc(POLICY[p.instrument] || p.instrument)}</strong>: ${esc(p.effect)}. ${esc(p.status)} <span class="muted">(as of ${esc(p.as_of)})</span></p>${sourceLinks(p.sources, data)}`).join("")}` : ""}`,
     ethical: risksByNode([node], data),
   });
 }

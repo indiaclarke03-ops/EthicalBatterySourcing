@@ -225,3 +225,9 @@ dialog.detail::backdrop { background: rgba(0, 0, 0, 0.35); }
 .legend-own { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--accent); }
 .legend-own line { stroke: var(--accent); stroke-width: 2; }
 .legend-own .lg-cap { stroke-dasharray: 6 3; }
+.node.pol-hit { border-color: var(--flag); box-shadow: 0 0 0 2px var(--flag); }
+.node-pol { font-size: 0.7rem; color: var(--fg); border-top: 1px solid var(--line); padding-top: 0.2rem; margin-top: 0.1rem; }
+.node-pol strong { color: var(--flag); }
+.node-pol .asof { color: var(--muted); white-space: nowrap; }
+[hidden] { display: none !important; }
+.chain-controls select { max-width: 22rem; }
