@@ -48,6 +48,8 @@ The EU Batteries Regulation requires due diligence on four raw materials only: c
 - **Examples found in this project:**
   - A battery maker's record under its former shell-company name listed itself as its own 99.8% shareholder (a stale register after a rename). We don't publish the flags attached to it.
   - Many trade-network flags rest on "Possibly the Same As" links between records that may or may not be the same company. Those flags are shown only as totals.
+  - A US export-control list matched a flow-battery maker's name only because another company's office is in a building with a similar name. Name matches are never enough on their own.
+  - A database flag called "MEU list contractors" turned out to mean "appears in government procurement records", not "on the Military End-User list". We read each flag's definition before using it.
 
 ## 5. How AI was used
 
