@@ -173,7 +173,7 @@ Each note covers S0–S5 plus both overlays, with at least one node per stage. *
 - [x] **B-23 Field and node detail panel** · Must
   - Shows sources (linked), tier, tag, confidence plus reason, as-of date, and conflicting values side by side.
   - Includes an **Ethical sourcing** tab listing each risk with signal type, evidence, assurance and EU due-diligence coverage.
-- [ ] **B-24 Supply-chain explorer** · Must
+- [x] **B-24 Supply-chain explorer** · Must
   - Stage columns S0–S5 with nodes and edges.
   - An ethical-risk badge on each node, filterable by risk category (e.g. show only forced or child labour).
   - GAP nodes dashed.
