@@ -22,11 +22,11 @@
 | Lithium: brine (Chile) | Water depletion and Indigenous water rights at Salar de Atacama | ENV-W, COM, ENV-B | Documented harm | Covered | High |
 | Lithium: hard rock (Zimbabwe, Namibia) | Child labour; displacement; unsafe work | LR-CL, COM, OHS | Documented harm | Covered | High |
 | Lithium: Xinjiang processing | State-imposed forced labour exposure | LR-FL | Documented harm (region) + screening flag (UFLPA entity) | Covered | High |
-| Graphite: processing (China) | Air and water pollution near anode and graphite plants; suppressed complaints | ENV-A, ENV-W, HH, HR | Documented harm (dated, 2014–16) | Natural: covered · synthetic: unclear | Medium |
+| Graphite: processing (China) | Air and water pollution near anode and graphite plants; suppressed complaints | ENV-A, ENV-W, HH, HR | Documented harm (historical, 2014–16) | Natural: covered · synthetic: unclear | High as historical · Medium if stated as current |
 | Graphite: mining (Mozambique) | Land and livelihood loss in a conflict-affected region | COM, HR | Documented harm (allegation) | Covered | Medium |
 | Manganese: mining and refining | Child labour (Zambia); heavy-metal pollution and worker illness near mines and refineries (China); Xinjiang labour transfers | LR-CL, LR-FL, HH, ENV-W, ENV-S | Documented harm | **Not covered** | High |
 | Phosphate (China) | Phosphorus pollution of the Yangtze basin from mining, chemicals and phosphogypsum | ENV-W, ENV-S | Documented harm (environment) | **Not covered** | High |
-| Phosphate (Québec, First Phosphate) | No harm found; collaboration agreement with Pekuakamiulnuatsh First Nation (exploration stage) | COM | No known evidence | **Not covered** | Medium |
+| Phosphate (Québec, First Phosphate) | No harm found; collaboration agreement with Pekuakamiulnuatsh First Nation (exploration stage) | COM | No known evidence | **Not covered** | High (as statement); FPIC status GAP |
 | Vanadium (China) | Soil and crop contamination near V-titanomagnetite and stone-coal smelting | ENV-S, HH | Documented harm (environment) | **Not covered** | High |
 | Vanadium (South Africa, Russia) | **GAP:** no harm-specific source found this pass | — | Structural | **Not covered** | Unknown |
 | Aluminium (Xinjiang) | Forced labour via labour transfers | LR-FL | Documented harm + screening flag | **Not covered** | High |
@@ -69,7 +69,7 @@
 
 | # | Harm (as documented) | By whom | Where / when | Codes | Signal | Conf | Src |
 |---|---|---|---|---|---|---|---|
-| GR-1 | Villagers near graphite plants report contaminated air and water, crop and tree loss, and health complaints ("graphite rain"); complaints reportedly suppressed | *Washington Post*, "In your phone, in their air" (Oct 2016); Bloomberg (Apr 2014) | Jixi and Luobei, Heilongjiang | ENV-A, ENV-W, HH, HR | Documented harm | Medium. **Dated** (2014–16): current conditions not verified | H13 |
+| GR-1 | Villagers near graphite plants report contaminated air and water, crop and tree loss, and health complaints ("graphite rain"); complaints reportedly suppressed | *Washington Post*, "In your phone, in their air" (Oct 2016); Bloomberg (Apr 2014) | Jixi and Luobei, Heilongjiang | ENV-A, ENV-W, HH, HR | Documented harm (historical) | High as a past-tense claim (two independent T2). Medium if worded as current (rubric: recency, B-08) | H13 |
 | GR-2 | Anode-material producer sourcing XUAR petroleum coke, anthracite and asphalt | DHS UFLPA Entity List (Aug 2026) | XUAR | LR-FL | Screening flag (official list) | High (as a listing) | E5 |
 | GR-3 | Land and livelihood loss, pollution and silencing of activists around graphite mining in a conflict-affected province; UNGP analysis finds violations by State and companies | BHRRC series; CDD Mozambique, *Graphite, rights and responsibility* (Mar 2025) | Balama, Cabo Delgado, Mozambique | COM, HR, ENV-W | Documented harm (allegation; companies responded) | Medium | H14 |
 | GR-4 | Balama is in IRMA independent assessment, with an audit report published | IRMA (Dec 2024 audit packet) | Balama | — | Assurance | — | E6 |
@@ -82,7 +82,7 @@
 | MN-2 | Manganese mining and **refineries** discharging toxic waste into rivers, ruining crops and draining wells; local health officials diagnosed mine workers with neurological disease from heavy-metal exposure | Yale Environment 360 (investigative feature) | Wuling Mountains county producing ~⅕ of world manganese, south-central China | ENV-W, ENV-S, HH, OHS | Documented harm | Medium. **Dated** (2008–10 events); current conditions not verified | H15 |
 | MN-3 | Soils and crops around a manganese mine severely contaminated with Pb and Cd; significant health risk for adults | Peer-reviewed studies (Li et al. 2007, *Environ. Pollut.*; Pingle study, US EPA HERO ref. 4860323) | Pingle, Guangxi | ENV-S, HH | Documented harm (environment) | High (multiple studies) | H16 |
 | MN-4 | Manganese mining and processing in the Uyghur Region implicated in state labour transfers | Sheffield Hallam University, *Driving Force* | XUAR | LR-FL | Documented harm (academic) | Medium (single source on Mn specifically) | H12 |
-| MN-5 | LMFP Sayari screen: 346 of 1,145 manganese-sulphate supplier nodes forced-labour-flagged | Sayari (seed) | Mostly China | LR-FL | Screening flag (aggregate only) | Medium | seed |
+| MN-5 | LMFP Sayari screen: 346 of 1,145 manganese-sulphate supplier nodes forced-labour-flagged | Sayari (seed) | Mostly China | LR-FL | Screening flag (aggregate only) | Low until the artefact check is done (SPECIFICATION §4.4; B-08) | seed |
 
 **MN-1 to MN-4 link to battery-grade manganese only at the level of country and process.** Which mines and refineries feed battery-grade manganese sulphate (and Dynanonic) is a B-10 task, and stays GAP until traced.
 
@@ -92,7 +92,7 @@
 |---|---|---|---|---|---|---|---|
 | PH-1 | Upper Yangtze basin is China's most concentrated area of phosphate mining, phosphorus chemicals and phosphogypsum stacks, and is seriously polluted by total phosphorus. Causes named: mining, poorly managed chemical plants, phosphogypsum stockpiled along rivers | Shi et al. (2020), *Research of Environmental Sciences* (Chinese, peer-reviewed); China MEE statements via Yicai | Sichuan, Guizhou, Hubei, Yunnan | ENV-W, ENV-S | Documented harm (environment) | High | H17 |
 | PH-2 | LFP cathode makers integrating upstream into Chinese phosphate mines (e.g. Guizhou mining licence) | Mysteel (2026) | Guizhou, Hunan | — | Structural link LFP → PH-1 | Medium | H18 |
-| PH-3 | Collaboration agreement (9 Apr 2024) between First Phosphate and Pekuakamiulnuatsh Takuhikan covering employment, environmental protection on the Nitassinan, and supervision of exploration. The Chief stated the First Nation "must be considered and consulted at the beginning" | First Phosphate press release (company statement, quotes the Chief) | Bégin-Lamarche, Québec | COM | No known evidence of harm. A collaboration agreement at exploration stage **isn't consent to a mine**; FPIC status = GAP | Medium | H19 |
+| PH-3 | Collaboration agreement (9 Apr 2024) between First Phosphate and Pekuakamiulnuatsh Takuhikan covering employment, environmental protection on the Nitassinan, and supervision of exploration. The Chief stated the First Nation "must be considered and consulted at the beginning" | First Phosphate press release (company statement, quotes the Chief) | Bégin-Lamarche, Québec | COM | No known evidence of harm. A collaboration agreement at exploration stage **isn't consent to a mine**; FPIC status = GAP | High as a company statement that the agreement was signed (quotes the Chief) | H19 |
 
 ## 7. Vanadium
 
