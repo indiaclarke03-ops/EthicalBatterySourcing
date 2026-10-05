@@ -214,7 +214,7 @@ Each note covers S0–S5 plus both overlays, with at least one node per stage. *
   - Issues are fixed or logged as new items.
 - [x] **B-31 README** · Must
   - Live URL, summary, screenshots, tool setup, method summary, data as-of date.
-- [ ] **B-32 Demo script** · Must
+- [x] **B-32 Demo script** · Must
   - About 3 minutes:
     1. open on the ethical-sourcing scorecard (where the risk sits, and what EU due diligence misses);
     2. tool setup in Claude Code (GitHub, Sayari, Tavily);
