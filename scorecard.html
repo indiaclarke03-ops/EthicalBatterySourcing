@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ethical-sourcing scorecard · Passport with Gaps</title>
+<meta name="description" content="Where each battery chemistry's human-rights, labour, community and environmental risks sit, and what EU due diligence would miss.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<main id="main" class="wrap">
+  <h1>Ethical-sourcing scorecard</h1>
+  <p class="lede">Where each chemistry's documented harms and screening flags sit along the chain, whether EU battery due diligence would ask about them,
+    and whether any independent assurance exists. Select a cell to see the evidence.</p>
+
+  <div class="kpis" id="kpis" aria-live="polite"></div>
+
+  <div class="legend" aria-label="Legend">
+    <span class="sig sig-documented-harm">● Documented harm</span>
+    <span class="sig sig-screening-flag">◆ Screening flag</span>
+    <span class="sig sig-structural">▲ Structural risk</span>
+    <span class="sig sig-no-known-evidence">○ No known evidence</span>
+    <span><span class="cell-gap" style="padding:0 .4rem">dashed</span> = not traceable (gap)</span>
+  </div>
+
+  <div class="table-scroll">
+    <table class="scorecard" id="grid">
+      <caption class="sr-only">Strongest ethical-risk signal by chemistry and supply-chain stage</caption>
+    </table>
+  </div>
+  <p class="small muted">The cell shows the <em>strongest</em> signal present: documented harm, then screening flag, then structural risk, then no known evidence.
+    It is not a score, and companies are not ranked. "EU DD" means the materials involved are (or aren't) on the Batteries Regulation's due-diligence list
+    (cobalt, natural graphite, lithium, nickel). "Assurance" means an IRMA audit or RMI list exists for at least one risk in the cell.</p>
+
+  <section class="panel card" id="panel" hidden aria-live="polite"></section>
+</main>
+
+<script type="module">
+import { loadData, shell, setAsOf, fail, STAGES, STAGE_LABEL, SIGNAL, esc, signalLabel, riskItem, confBadge, param } from "./assets/app.js";
+shell("scorecard.html");
+
+const ORDER = ["nmc", "lfp", "lmfp", "vrfb", "ni-h2", "carbon-o2"];
+
+function summarise(nodes) {
+  const risks = nodes.flatMap((n) => n.ethical_risks);
+  const allGap = nodes.length > 0 && nodes.every((n) => n.kind === "gap");
+  if (!risks.length) return { empty: true, allGap };
+  const top = risks.reduce((a, r) => (SIGNAL[r.signal].rank > SIGNAL[a.signal].rank ? r : a)).signal;
+  const material = risks.filter((r) => SIGNAL[r.signal].rank >= 2);
+  const cats = [...new Set(risks.filter((r) => r.signal === top && top !== "no-known-evidence").map((r) => r.category))];
+  const cov = new Set(material.map((r) => r.eu_dd_coverage).filter((c) => c !== "not-applicable"));
+  const dd = !cov.size ? "—" : cov.size > 1 ? "mixed" : { covered: "covered", "not-covered": "not covered", unclear: "unclear" }[[...cov][0]];
+  const assured = material.some((r) => r.assurance === "irma-audit" || r.assurance === "rmi-rmap-conformant" || r.assurance === "other-scheme");
+  return { top, cats, dd, assured, allGap, risks };
+}
+
+function render(data) {
+  const chems = ORDER.map((id) => data.chemById[id]).filter(Boolean);
+  const grid = document.getElementById("grid");
+  grid.insertAdjacentHTML("beforeend", `<thead><tr><th scope="col">Chemistry</th>${STAGES.map((s) =>
+    `<th scope="col">${s}<br><span class="small muted">${STAGE_LABEL[s]}</span></th>`).join("")}</tr></thead>`);
+  const body = document.createElement("tbody");
+  for (const c of chems) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<th scope="row">${esc(c.short)}<br><span class="small muted">${esc(c.passport_type)} passport</span></th>`;
+    for (const s of STAGES) {
+      const nodes = data.nodes.filter((n) => n.stage === s && n.chemistries.includes(c.id));
+      const sm = summarise(nodes);
+      const td = document.createElement("td");
+      if (sm.empty) {
+        td.innerHTML = `<span class="cell-empty">${c.passport_type === "reference" ? "Outside reference scope" : "No node"}</span>`;
+      } else {
+        const btn = document.createElement("button");
+        btn.className = "cell-btn" + (sm.allGap ? " cell-gap" : "");
+        btn.type = "button";
+        btn.setAttribute("aria-label", `${c.short}, ${s}: ${SIGNAL[sm.top].label}${sm.cats.length ? ", " + sm.cats.join(", ") : ""}; EU due diligence ${sm.dd}; assurance ${sm.assured ? "some" : "none known"}`);
+        btn.innerHTML = `${signalLabel(sm.top)}<span class="cats">${esc(sm.cats.join(" · ") || " ")}</span>
+          <span class="meta${sm.dd === "not covered" ? " nc" : ""}">EU DD: ${esc(sm.dd)}</span><span class="meta">Assurance: ${sm.assured ? "some" : "none known"}</span>`;
+        btn.addEventListener("click", () => open(c, s, nodes, td, data));
+        td.append(btn);
+      }
+      tr.append(td);
+    }
+    body.append(tr);
+  }
+  grid.append(body);
+
+  // headline numbers, computed from the data
+  const risks = data.nodes.flatMap((n) => n.ethical_risks.map((r) => ({ ...r, node: n })));
+  const harm = risks.filter((r) => r.signal === "documented-harm");
+  const harmNotCovered = harm.filter((r) => r.eu_dd_coverage === "not-covered");
+  const unassured = harm.filter((r) => r.assurance === "none-known");
+  const gaps = data.nodes.filter((n) => n.kind === "gap").length;
+  document.getElementById("kpis").innerHTML = [
+    [harm.length, "documented-harm entries across all chains"],
+    [harmNotCovered.length, `of the ${harm.length} involve materials EU due diligence doesn't cover`],
+    [unassured.length, `of the ${harm.length} have no independent assurance known`],
+    [gaps, "supply-chain stages that can't be traced at all"],
+  ].map(([n, l]) => `<div class="card kpi"><div class="num">${n}</div><div class="lab">${esc(l)}</div></div>`).join("");
+
+  const pre = param("cell");
+  if (pre) {
+    const [cid, st] = pre.split(":");
+    const td = [...grid.querySelectorAll("tbody tr")][ORDER.indexOf(cid)]?.children[STAGES.indexOf(st) + 1];
+    td?.querySelector("button")?.click();
+  }
+}
+
+function open(c, s, nodes, td, data) {
+  document.querySelectorAll("td.selected").forEach((el) => el.classList.remove("selected"));
+  td.classList.add("selected");
+  const panel = document.getElementById("panel");
+  panel.hidden = false;
+  panel.innerHTML = `<h2>${esc(c.short)} · ${s} ${esc(STAGE_LABEL[s])}</h2>
+    ${nodes.map((n) => `<h3>${esc(n.name)} ${confBadge(n.confidence)}${n.kind === "gap" ? ' <span class="badge conf-Unknown">GAP</span>' : ""}</h3>
+      <p class="small muted">${esc(n.role)} · as of ${esc(n.as_of)} ·
+        <a href="supply-chain.html?chem=${encodeURIComponent(c.id)}&node=${encodeURIComponent(n.id)}">open in supply-chain explorer</a></p>
+      ${n.flags.map((f) => `<p class="flag-label">${esc(f.label)}: ${esc(f.basis)}</p>`).join("")}
+      <ul class="risk-list">${n.ethical_risks.map((r) => riskItem(r, data)).join("")}</ul>`).join("")}`;
+  history.replaceState(null, "", `?cell=${c.id}:${s}`);
+  panel.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+loadData().then((d) => { render(d); setAsOf(d); }).catch(fail);
+</script>
+</body>
+</html>

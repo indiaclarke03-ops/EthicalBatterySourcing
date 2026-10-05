@@ -144,21 +144,21 @@ Each note covers S0–S5 plus both overlays, with at least one node per stage. *
 
 ## Phase 4 — Data
 
-- [ ] **B-17 Schema** · Must
+- [x] **B-17 Schema** · Must
   - JSON schemas for all data files match SPECIFICATION.md, including confidence, confidence_reason, flags, `ethical_risks`, as_of and multi-value conflicts.
   - Includes `assurance.json`.
-- [ ] **B-18 Chemistries and scope matrix** · Must
+- [x] **B-18 Chemistries and scope matrix** · Must
   - `chemistries.json` populated from B-05.
-- [ ] **B-19 Passports and supply chains** · Must
+- [x] **B-19 Passports and supply chains** · Must
   - `passports.json` and `supply-chain.json` populated for all six chemistries, from research notes only.
-- [ ] **B-20 Sources and validation** · Must
+- [x] **B-20 Sources and validation** · Must
   - Every source id resolves, with no orphans.
   - Every node has a confidence score, an as-of date and at least one ethical-risk entry (or an explicit "no known evidence" entry).
   - The agent runs a validation script and reports results in the PR.
 
 ## Phase 5 — Build
 
-- [ ] **B-20a Ethical-sourcing scorecard** · Must
+- [x] **B-20a Ethical-sourcing scorecard** · Must
   - `scorecard.html` shows a chemistry × stage grid of risk hotspots, with signal types distinguished: documented harm, screening flag, structural.
   - It also shows EU due-diligence coverage and assurance coverage.
   - Every cell opens its evidence.
