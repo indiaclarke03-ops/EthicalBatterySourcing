@@ -54,7 +54,7 @@
 </main>
 
 <script type="module">
-import { loadData, shell, setAsOf, fail, esc, STAGES, STAGE_LABEL, SIGNAL, confBadge, sourceLinks, isGapField, isGapNode } from "./assets/app.js";
+import { loadData, shell, setAsOf, fail, esc, STAGES, STAGE_LABEL, TIER, SIGNAL, confBadge, sourceLinks, isGapField, isGapNode } from "./assets/app.js";
 shell("compare.html");
 
 const ORDER = ["nmc", "lfp", "lmfp", "vrfb", "ni-h2", "carbon-o2"];
@@ -93,7 +93,7 @@ function render(d) {
   // 2. chokepoints
   const shares = d.nodes.filter((n) => n.share && n.share.percent).sort((a, b) => b.share.percent - a.share.percent);
   document.getElementById("t-choke").insertAdjacentHTML("beforeend", head("Stage", ["What", "Country", "Share", "Chemistries exposed", "Confidence", "Source"]) +
-    `<tbody>${shares.map((n) => `<tr><td>${n.stage}<br><span class="small muted">${esc(STAGE_LABEL[n.stage])}</span></td>
+    `<tbody>${shares.map((n) => `<tr><td>${TIER[n.stage]}<br><span class="small muted">${esc(STAGE_LABEL[n.stage])}</span></td>
       <td><a href="supply-chain.html?chem=${ORDER.find((id) => n.chemistries.includes(id))}&node=${encodeURIComponent(n.id)}">${esc(n.name)}</a></td>
       <td>${esc(regionName(n.share.country))}</td>
       <td><span class="bar" style="--w:${Number(n.share.percent)}%"><span>${esc(n.share.percent)}%</span></span><span class="small muted">${esc(n.share.metric)}</span></td>
@@ -119,13 +119,13 @@ function render(d) {
     return "";
   };
   document.getElementById("t-depth").insertAdjacentHTML("beforeend",
-    head("Chemistry", [...STAGES.map((s) => `${s}<br><span class="small muted">${STAGE_LABEL[s]}</span>`), "Deepest stage reached (High/Medium)"]) +
+    head("Chemistry", [...STAGES.map((s) => `${TIER[s]}<br><span class="small muted">${STAGE_LABEL[s]}</span>`), "Deepest stage reached (High/Medium)"]) +
     `<tbody>${chems.map((c) => {
       const lv = STAGES.map((s) => level(nodesOf(c.id).filter((n) => n.stage === s)));
       const anyI = lv.findIndex((l) => l === "Entity" || l === "Country");
       const entI = lv.indexOf("Entity");
-      const deepest = anyI < 0 ? "Nothing traced" : `${STAGES[anyI]} ${lv[anyI] === "Country" ? "(country level only)" : "(named entity)"}`
-        + (lv[anyI] === "Country" && entI >= 0 ? `; named entities from ${STAGES[entI]}` : "");
+      const deepest = anyI < 0 ? "Nothing traced" : `${TIER[STAGES[anyI]]} ${esc(STAGE_LABEL[STAGES[anyI]].toLowerCase())} ${lv[anyI] === "Country" ? "(country level only)" : "(named entity)"}`
+        + (lv[anyI] === "Country" && entI >= 0 ? `; named entities from ${TIER[STAGES[entI]]}` : "");
       return `<tr><th scope="row">${esc(c.short)}</th>${lv.map((l) => `<td>${l ? `<span class="depth depth-${l}">${l}</span>`
         : `<span class="small muted">${c.passport_type === "reference" ? "Outside scope" : "No node"}</span>`}</td>`).join("")}
         <td><strong>${esc(deepest)}</strong></td></tr>`;

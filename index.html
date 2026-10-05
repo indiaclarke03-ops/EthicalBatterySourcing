@@ -87,7 +87,7 @@ function shadowHTML(chem) {
   const gaps = nodes.filter((n) => n.kind === "gap");
   return `<h2>What this passport doesn't show</h2>
     <p class="small muted">None of the 71 passport data points records where materials were mined or refined. This is what the research could trace.</p>
-    <h3>Where materials come from (S0–S1)</h3>
+    <h3>Where materials come from (T5–T4)</h3>
     <ul>${upstream.map((n) => `<li><a href="supply-chain.html?chem=${chem.id}&node=${encodeURIComponent(n.id)}" data-node="${esc(n.id)}">${esc(n.name)}</a>
       <span class="small muted">${esc(n.role)}</span> ${confBadge(n.confidence)}</li>`).join("") || "<li>Nothing traceable</li>"}</ul>
     <h3>Ethical-sourcing evidence along the chain</h3>

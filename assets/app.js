@@ -4,6 +4,17 @@ export const STAGE_LABEL = {
   S0: "Ore & feedstock", S1: "Refining & chemicals", S2: "Active materials & components",
   S3: "Cell or stack", S4: "Pack & system", S5: "Deployment", CAP: "Capital", OWN: "Ownership",
 };
+// Display labels. Data keeps internal codes: stages S0 (mine) to S5 (deployment); evidence tiers T1-T3.
+// Visitors see industry supply-chain tiers (T0 = deployed battery/brand ... T5 = mine) and evidence grades A-C.
+export const TIER = { S0: "T5", S1: "T4", S2: "T3", S3: "T2", S4: "T1", S5: "T0", CAP: "CAP", OWN: "OWN" };
+export const GRADE = { T1: "A", T2: "B", T3: "C" };
+export const GRADE_LABEL = { T1: "Grade A: primary source", T2: "Grade B: credible secondary source", T3: "Grade C: weaker source" };
+export const SIGNAL_HELP = {
+  "documented-harm": "A credible investigation or government finding describes harm here.",
+  "screening-flag": "Matched a government list or database check. A warning sign to look into, not proof of harm.",
+  structural: "The region or process carries known risk, but nothing specific to this site or company was found.",
+  "no-known-evidence": "Nothing found. Not the same as no risk.",
+};
 export const SIGNAL = {
   "documented-harm": { label: "Documented harm", icon: "●", rank: 4 },
   "screening-flag": { label: "Screening flag", icon: "◆", rank: 3 },
@@ -118,12 +129,13 @@ export function shell(active) {
     <nav aria-label="Footer"><a href="about.html">About</a><a href="methods.html">Methods</a>
       <a href="https://github.com/indiaclarke03-ops/EthicalBatterySourcing" rel="noopener">Source on GitHub</a></nav></div>`;
   document.body.append(footer);
+  legendNotes();
 }
 
 export const confBadge = (c) => `<span class="badge conf-${esc(c)}" title="Confidence">${esc(c)}</span>`;
-export const tierBadge = (t) => (t ? `<span class="badge tier" title="Evidence tier">${esc(t)}</span>` : "");
+export const tierBadge = (t) => (t ? `<span class="badge tier" title="${esc(GRADE_LABEL[t] || "Evidence grade")}">${esc(GRADE[t] || t)}</span>` : "");
 export const tagBadge = (t) => `<span class="badge tag" title="Provenance tag">${esc(t)}</span>`;
-export const signalLabel = (s) => `<span class="sig sig-${esc(s)}">${SIGNAL[s].icon} ${esc(SIGNAL[s].label)}</span>`;
+export const signalLabel = (s) => `<span class="sig sig-${esc(s)}" title="${esc(SIGNAL_HELP[s] || "")}">${SIGNAL[s].icon} ${esc(SIGNAL[s].label)}</span>`;
 export const covLabel = (c) => `<span class="cov cov-${esc(c)}">${esc(COVERAGE[c] || c)}</span>`;
 
 export function sourceLinks(ids, data) {
@@ -132,7 +144,7 @@ export function sourceLinks(ids, data) {
     const s = data.sources[id];
     if (!s) return `<li>${esc(id)}</li>`;
     const label = `${esc(s.publisher)}: ${esc(s.title)}`;
-    const meta = ` <span class="muted">(${esc(s.tier || "—")}, ${esc(s.tag)}${s.access !== "public" ? ", " + esc(s.access) : ""})</span>`;
+    const meta = ` <span class="muted">(${s.tier ? "grade " + esc(GRADE[s.tier] || s.tier) : "—"}, ${esc(s.tag)}${s.access !== "public" ? ", " + esc(s.access) : ""})</span>`;
     return `<li>${s.url ? `<a href="${esc(s.url)}" rel="noopener">${label}</a>` : label}${meta}</li>`;
   }).join("")}</ul>`;
 }
@@ -146,6 +158,19 @@ export function riskItem(r, data) {
       · Confidence reason: ${esc(r.confidence_reason)}</div>
     ${sourceLinks(r.sources, data)}
   </li>`;
+}
+
+// One-line explanation shown under every signal legend.
+export function legendNotes() {
+  document.querySelectorAll(".legend").forEach((lg) => {
+    lg.querySelectorAll(".sig").forEach((el) => {
+      const key = [...el.classList].find((c) => c.startsWith("sig-"))?.slice(4);
+      if (SIGNAL_HELP[key]) el.title = SIGNAL_HELP[key];
+    });
+    if (lg.querySelector(".sig-screening-flag") && !lg.nextElementSibling?.classList.contains("legend-note")) {
+      lg.insertAdjacentHTML("afterend", `<p class="legend-note"><span class="sig sig-screening-flag">◆ Screening flag</span>: ${esc(SIGNAL_HELP["screening-flag"])}</p>`);
+    }
+  });
 }
 
 export const param = (k) => new URLSearchParams(location.search).get(k);
@@ -165,7 +190,7 @@ const valueBlock = (v, data) => `<div class="val${v.superseded ? " superseded" :
 function risksByNode(nodes, data) {
   const withRisks = nodes.filter((n) => n.ethical_risks?.length);
   if (!withRisks.length) return `<p class="muted">No ethical-sourcing risks recorded.</p>`;
-  return withRisks.map((n) => `<h4>${esc(n.stage)} · ${esc(n.name)}</h4>
+  return withRisks.map((n) => `<h4>${esc(TIER[n.stage] || n.stage)} · ${esc(n.name)}</h4>
     <ul class="risk-list">${[...n.ethical_risks].sort((a, b) => SIGNAL[b.signal].rank - SIGNAL[a.signal].rank)
       .map((r) => riskItem(r, data)).join("")}</ul>`).join("");
 }
@@ -237,7 +262,7 @@ export function openNodeDetail(node, data, tab) {
   const conflicts = node.conflict_ids?.length ? `<p class="small">Conflicts register: ${node.conflict_ids.map(esc).join(", ")}</p>` : "";
   renderDialog({
     title: esc(node.name) + (node.kind === "gap" ? ' <span class="badge conf-Unknown">GAP</span>' : ""),
-    subtitle: `${esc(node.stage)} ${esc(STAGE_LABEL[node.stage] || "")} · ${esc(node.country)} · as of ${esc(node.as_of)}`,
+    subtitle: `${esc(TIER[node.stage] || node.stage)} ${esc(STAGE_LABEL[node.stage] || "")} · ${esc(node.country)} · as of ${esc(node.as_of)}`,
     tab,
     details: `<p>${esc(node.role)}</p>
       ${node.values.length > 1 ? '<p class="small"><strong>Values disagree:</strong> shown side by side.</p>' : ""}

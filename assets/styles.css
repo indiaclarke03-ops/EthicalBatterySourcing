@@ -341,3 +341,4 @@ dl.pages dd { margin: 0.15rem 0 0; color: var(--muted); }
 /* ---------- small screens and print ---------- */
 @media (max-width: 640px) { h1 { font-size: 1.6rem; } main.wrap { padding-top: 1.25rem; } }
 @media print { .site-header, .theme-toggle, .banner { display: none; } body { background: #fff; } }
+.legend-note { font-size: 0.82rem; color: var(--muted); margin: -0.5rem 0 1rem; }

@@ -10,7 +10,7 @@
 <body>
 <main id="main" class="wrap">
   <h1>Supply-chain explorer</h1>
-  <p class="lede">Each chemistry from ore and feedstock (S0) to deployment (S5). Badges show the ethical-sourcing risks found at each node; dashed boxes are stages
+  <p class="lede">Each chemistry traced from the mine (T5) to the deployed battery (T0), using the industry convention where Tier 1 is the brand's direct supplier. Badges show the ethical-sourcing risks found at each node; dashed boxes are stages
     nobody could trace from public or licensed data. Select a node for its sources and evidence.</p>
 
   <div class="picker" role="group" aria-label="Choose a chemistry" id="picker"></div>
@@ -46,7 +46,7 @@
 </main>
 
 <script type="module">
-import { loadData, shell, setAsOf, fail, esc, STAGES, STAGE_LABEL, SIGNAL, RISK_LABEL, param, openNodeDetail, POLICY, policyItems, isGapNode } from "./assets/app.js";
+import { loadData, shell, setAsOf, fail, esc, STAGES, STAGE_LABEL, TIER, SIGNAL, RISK_LABEL, param, openNodeDetail, POLICY, policyItems, isGapNode } from "./assets/app.js";
 shell("supply-chain.html");
 
 const ORDER = ["lfp", "lmfp", "vrfb", "ni-h2", "carbon-o2", "nmc"];
@@ -98,7 +98,7 @@ function nodeButton(n, edges) {
   const out = outgoing(n, edges);
   const pol = polHits(n);
   return `<button type="button" class="node${n.kind === "gap" ? " gap" : ""}${matches(n) ? "" : " dim"}${pol.length ? " pol-hit" : ""}" data-node="${esc(n.id)}"
-      aria-label="${esc(`${n.name}, ${n.stage}${n.kind === "gap" ? ", gap: not traceable" : ""}. ${b.text || "no risks recorded"}.${pol.length ? " Policy: " + pol.map((p) => POLICY[p.instrument]).join(", ") + "." : ""}${out.length ? " " + out.join("; ") + "." : ""}`)}">
+      aria-label="${esc(`${n.name}, ${TIER[n.stage]}${n.kind === "gap" ? ", gap: not traceable" : ""}. ${b.text || "no risks recorded"}.${pol.length ? " Policy: " + pol.map((p) => POLICY[p.instrument]).join(", ") + "." : ""}${out.length ? " " + out.join("; ") + "." : ""}`)}">
     <span class="node-name">${esc(n.name)}</span>
     <span class="node-meta">${esc(COUNTRY[n.country] || n.country)}${n.share ? ` · ${esc(n.share.percent)}% ${esc(n.share.metric)}` : ""}</span>
     <span class="node-badge">${b.html}</span>${overlayLinks(n, edges)}
@@ -137,13 +137,13 @@ function render() {
   const cols = document.getElementById("cols");
   cols.classList.toggle("with-own", state.own);
   cols.innerHTML = columns().map((s) => `<section class="col${s === OVERLAY_COL ? " own-col" : ""}" aria-label="${esc(colLabel(s))}">
-    <h2 class="col-head">${s === OVERLAY_COL ? "OWN/CAP" : s}<span>${esc(colLabel(s))}</span></h2>
+    <h2 class="col-head">${s === OVERLAY_COL ? "OWN/CAP" : TIER[s]}<span>${esc(colLabel(s))}</span></h2>
     ${nodes.filter((n) => colOf(n) === s).map((n) => nodeButton(n, edges)).join("") || (s === OVERLAY_COL ? '<p class="small muted">None recorded</p>' : none)}</section>`).join("");
 
   document.getElementById("list").innerHTML = columns().map((s) => {
     const ns = nodes.filter((n) => colOf(n) === s);
     if (s === OVERLAY_COL && !ns.length) return "";
-    return `<section><h2 class="list-head">${s === OVERLAY_COL ? "Ownership & capital" : `${s} · ${STAGE_LABEL[s]}`}</h2>${ns.length ? ns.map((n) => `<div class="list-item">${nodeButton(n, edges)}
+    return `<section><h2 class="list-head">${s === OVERLAY_COL ? "Ownership & capital" : `${TIER[s]} · ${STAGE_LABEL[s]}`}</h2>${ns.length ? ns.map((n) => `<div class="list-item">${nodeButton(n, edges)}
       ${outgoing(n, edges).map((t) => `<div class="edge-text">${esc(t)}</div>`).join("")}</div>`).join("") : none}</section>`;
   }).join("");
 

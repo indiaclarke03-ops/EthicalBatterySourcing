@@ -29,7 +29,7 @@
       }
      ],
      "confidence": "High",
-     "confidence_reason": "T1: regulation text"
+     "confidence_reason": "Grade A: regulation text"
     }
    ]
   },
@@ -68,7 +68,7 @@
       }
      ],
      "confidence": "High",
-     "confidence_reason": "T1: regulation text"
+     "confidence_reason": "Grade A: regulation text"
     },
     {
      "use_case": "grid",
@@ -87,7 +87,7 @@
       }
      ],
      "confidence": "High",
-     "confidence_reason": "T1: regulation text"
+     "confidence_reason": "Grade A: regulation text"
     },
     {
      "use_case": "datacentre",
@@ -106,7 +106,7 @@
       }
      ],
      "confidence": "High",
-     "confidence_reason": "T1: regulation text"
+     "confidence_reason": "Grade A: regulation text"
     }
    ]
   },
@@ -142,7 +142,7 @@
       }
      ],
      "confidence": "High",
-     "confidence_reason": "T1: regulation text"
+     "confidence_reason": "Grade A: regulation text"
     }
    ]
   },
@@ -178,7 +178,7 @@
       }
      ],
      "confidence": "Medium",
-     "confidence_reason": "Reading of T1 text: definition covers external storage; no guidance names flow batteries"
+     "confidence_reason": "Reading of grade-A text: definition covers external storage; no guidance names flow batteries"
     }
    ]
   },
@@ -213,7 +213,7 @@
       }
      ],
      "confidence": "High",
-     "confidence_reason": "T1: regulation text"
+     "confidence_reason": "Grade A: regulation text"
     },
     {
      "use_case": "defence-aerospace",
@@ -232,7 +232,7 @@
       }
      ],
      "confidence": "High",
-     "confidence_reason": "T1: regulation text"
+     "confidence_reason": "Grade A: regulation text"
     }
    ]
   },
@@ -265,7 +265,7 @@
       }
      ],
      "confidence": "Medium",
-     "confidence_reason": "Reading of T1 text, with a stated counter-argument"
+     "confidence_reason": "Reading of grade-A text, with a stated counter-argument"
     },
     {
      "use_case": "long-duration",
@@ -284,7 +284,7 @@
       }
      ],
      "confidence": "Medium",
-     "confidence_reason": "Reading of T1 text, with a stated counter-argument"
+     "confidence_reason": "Reading of grade-A text, with a stated counter-argument"
     }
    ]
   }
