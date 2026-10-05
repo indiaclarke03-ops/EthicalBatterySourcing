@@ -4,21 +4,126 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Passport with Gaps</title>
-<style>
-:root{--bg:#fafaf7;--fg:#1d1d1b;--muted:#5c5c57;--line:#d9d8d0;--banner:#fff4d6}
-@media (prefers-color-scheme:dark){:root{--bg:#161614;--fg:#ecebe5;--muted:#a8a79f;--line:#3a3a36;--banner:#3a3218}}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:44rem;margin:0 auto;padding:3rem 1rem}
-.banner{background:var(--banner);border:1px solid var(--line);border-radius:6px;padding:.75rem 1rem;font-size:.95rem}
-p.muted{color:var(--muted)}
-</style>
+<meta name="description" content="Illustrative EU battery passports for six chemistries, and what each passport would and wouldn't reveal about ethical sourcing.">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<main>
-<p class="banner"><strong>Illustrative.</strong> Mock passports built from public and licensed research. Not real product passports; no statement about any company's compliance.</p>
-<h1>Passport with Gaps</h1>
-<p>An ethical-sourcing audit of the EU battery passport across six battery chemistries: where the risks sit, what can be verified, and what the passport would miss.</p>
-<p class="muted">Under construction. Research in progress.</p>
+<main id="main" class="wrap">
+  <h1>Passport with Gaps</h1>
+  <p class="lede">The EU battery passport starts on 18 February 2027. These illustrative passports show what it would say for six battery chemistries,
+    and, beside each one, what it <em>wouldn't</em> tell you about where the materials came from and who may have been harmed.</p>
+
+  <div class="picker" role="group" aria-label="Choose a chemistry" id="picker"></div>
+
+  <div class="passport-layout">
+    <article class="card passport" id="passport" aria-live="polite"></article>
+    <aside class="card shadow-panel" id="shadow" aria-label="What this passport doesn't show"></aside>
+  </div>
 </main>
+
+<script type="module">
+import { loadData, shell, setAsOf, fail, esc, confBadge, tierBadge, tagBadge, sourceLinks, STAGE_LABEL, SIGNAL, param } from "./assets/app.js";
+shell("index.html");
+
+const ORDER = ["lfp", "lmfp", "vrfb", "ni-h2", "carbon-o2", "nmc"];
+const GROUPS = [["identification", "Identification"], ["performance", "Performance"], ["sourcing", "Materials & sourcing"],
+  ["carbon", "Carbon footprint"], ["circularity", "Circularity"], ["due-diligence", "Due diligence"]];
+const FIELD_ORDER = ["manufacturer", "battery-category", "chemistry", "place-of-manufacture", "capacity", "lifetime-cycles", "round-trip-efficiency",
+  "critical-raw-materials", "detailed-composition", "hazardous-substances", "carbon-footprint", "renewable-content", "recycled-content", "battery-status", "responsible-sourcing"];
+const fmtDate = (d) => new Date(d + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+
+let DATA;
+
+function valueHTML(v) {
+  return `<div class="val${v.superseded ? " superseded" : ""}">
+    <div>${esc(v.claim)}${v.superseded ? ' <span class="small muted">(superseded)</span>' : ""}</div>
+    <div class="chips">${tierBadge(v.tier)} ${tagBadge(v.tag)} <span class="small muted">as of ${esc(v.as_of)}</span></div>
+  </div>`;
+}
+
+function fieldHTML(f) {
+  const deferred = f.status === "deferred";
+  const empty = !f.values.length;
+  let body;
+  if (deferred) {
+    body = `<div><strong>Empty at launch.</strong> ${f.applies_from ? `Required from ${fmtDate(f.applies_from)}.` : "Format still to be specified; no start date yet."}</div>
+      ${f.values.map(valueHTML).join("")}`;
+  } else if (!f.applies) {
+    body = `<div><strong>Not applicable.</strong></div>`;
+  } else if (empty) {
+    body = `<div class="muted">No public value for an illustrative product.</div>`;
+  } else if (f.values.length > 1) {
+    body = `<div class="conflict-row">${f.values.map(valueHTML).join("")}</div>`;
+  } else {
+    body = valueHTML(f.values[0]);
+  }
+  return `<div class="field${deferred ? " deferred" : ""}${empty && !deferred ? " empty" : ""}" id="f-${esc(f.field_id)}">
+    <div class="no">#${esc(f.guidance_no)}</div>
+    <div class="label">${esc(f.field_label)}<div>${confBadge(f.confidence)}</div></div>
+    <div class="vals">${body}
+      ${f.applies_note ? `<div class="note">${esc(f.applies_note)}</div>` : ""}
+      <details><summary class="small">Sources and confidence reason</summary>
+        <p class="small muted">Confidence: ${esc(f.confidence)}: ${esc(f.confidence_reason)}</p>
+        ${sourceLinks([...new Set(f.values.flatMap((v) => v.sources))], DATA)}</details>
+    </div>
+  </div>`;
+}
+
+function shadowHTML(chem) {
+  const nodes = DATA.nodes.filter((n) => n.chemistries.includes(chem.id));
+  const upstream = nodes.filter((n) => n.stage === "S0" || n.stage === "S1");
+  const risks = nodes.flatMap((n) => n.ethical_risks);
+  const harm = risks.filter((r) => r.signal === "documented-harm");
+  const notCovered = harm.filter((r) => r.eu_dd_coverage === "not-covered");
+  const gaps = nodes.filter((n) => n.kind === "gap");
+  return `<h2>What this passport doesn't show</h2>
+    <p class="small muted">None of the 71 passport data points records where materials were mined or refined. This is what the research could trace.</p>
+    <h3>Where materials come from (S0–S1)</h3>
+    <ul>${upstream.map((n) => `<li><a href="supply-chain.html?chem=${chem.id}&node=${encodeURIComponent(n.id)}">${esc(n.name)}</a>
+      <span class="small muted">${esc(n.role)}</span> ${confBadge(n.confidence)}</li>`).join("") || "<li>Nothing traceable</li>"}</ul>
+    <h3>Ethical-sourcing evidence along the chain</h3>
+    <ul>
+      <li><strong>${harm.length}</strong> documented-harm entries; <strong>${notCovered.length}</strong> involve materials EU due diligence doesn't cover.</li>
+      <li><strong>${gaps.length}</strong> stage${gaps.length === 1 ? "" : "s"} not traceable from public or licensed data.</li>
+    </ul>
+    <p><a href="scorecard.html">See the scorecard</a> · <a href="supply-chain.html?chem=${chem.id}">Explore the supply chain</a></p>`;
+}
+
+function show(id) {
+  const chem = DATA.chemById[id];
+  document.querySelectorAll("#picker button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.id === id)));
+  const fields = DATA.passports.filter((p) => p.chemistry === id).sort((a, b) => FIELD_ORDER.indexOf(a.field_id) - FIELD_ORDER.indexOf(b.field_id));
+  const deferred = fields.filter((f) => f.status === "deferred").length;
+  document.getElementById("passport").innerHTML = `
+    <div class="passport-head">
+      <div><h2 style="margin:0">${esc(chem.name)} <span class="muted">(${esc(chem.short)})</span></h2>
+        <p class="small muted" style="margin:.25rem 0 0">${esc(chem.passport_type === "shadow" ? "Shadow passport" : chem.passport_type === "reference" ? "Reference passport" : "Full passport")}
+          · ${fields.length} of 71 data points shown · ${deferred} empty at launch</p></div>
+      <span class="stamp">Illustrative</span>
+    </div>
+    <p>${esc(chem.summary)}</p>
+    ${GROUPS.map(([g, label]) => {
+      const fs = fields.filter((f) => f.category === g);
+      return fs.length ? `<section class="field-group"><h3>${label}</h3>${fs.map(fieldHTML).join("")}</section>` : "";
+    }).join("")}`;
+  document.getElementById("shadow").innerHTML = shadowHTML(chem);
+  history.replaceState(null, "", `?chem=${id}`);
+}
+
+loadData().then((d) => {
+  DATA = d;
+  setAsOf(d);
+  const picker = document.getElementById("picker");
+  ORDER.forEach((id) => {
+    const c = d.chemById[id];
+    const b = document.createElement("button");
+    b.type = "button"; b.dataset.id = id; b.setAttribute("aria-pressed", "false");
+    b.innerHTML = `${esc(c.short)}<span class="pt">${esc(c.passport_type)}</span>`;
+    b.addEventListener("click", () => show(id));
+    picker.append(b);
+  });
+  show(ORDER.includes(param("chem")) ? param("chem") : "lfp");
+}).catch(fail);
+</script>
 </body>
 </html>
