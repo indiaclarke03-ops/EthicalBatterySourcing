@@ -99,7 +99,24 @@
 | Storion | DOE MAKE IT Prize US$5m (2024) | V5 | High |
 | Rongke | State visit: Premier Li Qiang visited Rongke (7 Jun 2025) | Rongke group news (V4) | High (as statement) |
 
-## EU due-diligence and assurance coverage
+## Expansion: more named companies per tier (2026-10-05)
+
+Added so the VRFB chain is not shown as Rongke alone. Tiers use the site's display labels (T5 mine … T0 deployed battery). All names checked against the full UFLPA Entity List (FR 2026-15628, 3 Aug 2026) and Section 1260H list (FR 2026-11571, 10 Jun 2026) texts on 2026-10-05: none listed.
+
+| Tier | Company | What the sources support | Sources | Confidence |
+|---|---|---|---|---|
+| T5 vanadium | Glencore, Rhovan (Brits, South Africa) | Glencore holds 74.0% of the Rhovan Pooling and Sharing Joint Venture, "vanadium production" | V14 (A, statement) | High |
+| T2 stacks/systems | Sumitomo Electric (Japan) | Long-running VRFB maker; selected a third time by Hokkaido Electric Power Network: 11 MW / 33 MWh at Minami-Hayakita substation, completion by end May 2029, with a 20-year service agreement | V15 (A, statement), V16 (B) | High |
+| T0 deployment | Hokkaido Electric Power Network, Minami-Hayakita | 33 MWh VRFB for wind integration (above) | V15, V16 | High |
+| T2 stacks/systems | Invinity Energy Systems (UK) | 2025: 31.4 MWh sold, 24.9 MWh shipped (company results) | V17 (A, statement) | High (as a company statement) |
+
+**Harm:** the existing MACUA / IOL allegation (residents near Brits allege non-consultation, land and livestock loss and dust illness at Rhovan and Vametco; the companies dispute this) moves from the country-level vanadium node to the Rhovan node. It is moved, not copied, so harm counts don't double.
+
+**Gaps:** neither Sumitomo Electric nor Invinity discloses where its vanadium electrolyte comes from → links from global vanadium supply are Low. No traced link from Rhovan to any VRFB electrolyte maker (Rhovan's own disclosures are about V₂O₅ production generally).
+
+**Not added:** HBIS Chengde (China's other major vanadium producer; only a grade-C source found); Bushveld Vametco (in business rescue / liquidation since 2024–25, plant shut).
+
+
 
 | Input | EU DD | Assurance | Worst documented signal |
 |---|---|---|---|
@@ -146,3 +163,7 @@
 | V11 | eCFR, 15 CFR Part 744, Supplement No. 4 (Entity List) and No. 7 (MEU List), current. https://www.ecfr.gov/current/title-15/part-744 | T1 | 2026-10-05 |
 | V12 | Sayari risk-factor definitions: meu_list_contractors, owner_of_forced_labor_xinjiang_entity, pep_adjacent | S-REG | 2026-10-05 |
 | V13 | Largo Inc., Form 6-K Exhibit 99.1 (Jul 2026). https://www.sec.gov/Archives/edgar/data/1400438/000106299326003581/exhibit99-1.htm | T1 | 2026-10-05 |
+| V14 | Glencore plc, 2025 Annual Report (principal joint arrangements). https://www.glencore.com/.rest/api/v1/documents/static/9b103e11-72e7-40bf-ae7c-eabe57361522/GLEN-2025-Annual-Report.pdf | T1 (statement) | 2026-10-05 |
+| V15 | Sumitomo Electric press release, "VRFB selected by Hokkaido Electric Power Network for the third time" (28 Apr 2026). https://sumitomoelectric.com/press/2026/04/prs015 | T1 (statement) | 2026-10-05 |
+| V16 | Energy-Storage.news, "Sumitomo Electric flow battery wins HEPCO's renewables integration tender" (28 Apr 2026). https://www.energy-storage.news/sumitomo-electric-flow-battery-wins-japanese-transmission-operator-hepcos-renewables-integration-tender | T2 | 2026-10-05 |
+| V17 | Invinity Energy Systems plc, "2025 Financial Results" (RNS, 1 Jun 2026). https://www.investormeetcompany.com/companies/invinity-energy-systems-plc/rns/4719675/view | T1 (statement) | 2026-10-05 |
