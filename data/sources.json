@@ -1055,6 +1055,50 @@
    "tag": "OS",
    "retrieved": "2026-10-05",
    "research_note": "research/lfp.md"
+  },
+  {
+   "id": "src-glencore-ar-2025",
+   "title": "2025 Annual Report (principal joint arrangements: Rhovan)",
+   "publisher": "Glencore plc",
+   "url": "https://www.glencore.com/.rest/api/v1/documents/static/9b103e11-72e7-40bf-ae7c-eabe57361522/GLEN-2025-Annual-Report.pdf",
+   "access": "public",
+   "tier": "T1",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/vrfb.md"
+  },
+  {
+   "id": "src-sumitomo-hepco-2026",
+   "title": "VRFB selected by Hokkaido Electric Power Network for the third time (28 Apr 2026)",
+   "publisher": "Sumitomo Electric",
+   "url": "https://sumitomoelectric.com/press/2026/04/prs015",
+   "access": "public",
+   "tier": "T1",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/vrfb.md"
+  },
+  {
+   "id": "src-esn-sumitomo-hepco-2026",
+   "title": "Sumitomo Electric flow battery wins HEPCO's renewables integration tender (28 Apr 2026)",
+   "publisher": "Energy-Storage.news",
+   "url": "https://www.energy-storage.news/sumitomo-electric-flow-battery-wins-japanese-transmission-operator-hepcos-renewables-integration-tender",
+   "access": "public",
+   "tier": "T2",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/vrfb.md"
+  },
+  {
+   "id": "src-invinity-fy2025",
+   "title": "2025 Financial Results (RNS, 1 Jun 2026)",
+   "publisher": "Invinity Energy Systems plc",
+   "url": "https://www.investormeetcompany.com/companies/invinity-energy-systems-plc/rns/4719675/view",
+   "access": "public",
+   "tier": "T1",
+   "tag": "OS",
+   "retrieved": "2026-10-05",
+   "research_note": "research/vrfb.md"
   }
  ]
 }

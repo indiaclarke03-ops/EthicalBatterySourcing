@@ -1796,22 +1796,6 @@
      "as_of": "2026-10",
      "assurance_detail": "No assurance scheme for vanadium",
      "has_independent_source": true
-    },
-    {
-     "category": "COM",
-     "signal": "documented-harm",
-     "material": "vanadium",
-     "evidence": "MACUA and IOL Business Report: residents near Brits (ZA) allege non-consultation, land and livestock loss and dust illness at Rhovan and Vametco; the companies dispute this",
-     "sources": [
-      "src-macua-rhovan-2024",
-      "src-iol-vametco-2023"
-     ],
-     "assurance": "none-known",
-     "eu_dd_coverage": "not-covered",
-     "confidence": "Medium",
-     "confidence_reason": "Separate sources, two sites; allegations",
-     "as_of": "2026-10",
-     "has_independent_source": true
     }
    ],
    "as_of": "2026-10",
@@ -3598,6 +3582,187 @@
    ],
    "as_of": "2026-10",
    "research_note": "research/lfp.md"
+  },
+  {
+   "id": "vrfb-s0-glencore-rhovan",
+   "chemistries": [
+    "vrfb"
+   ],
+   "stage": "S0",
+   "kind": "entity",
+   "name": "Glencore, Rhovan (Brits, South Africa)",
+   "country": "ZA",
+   "role": "Vanadium producer (Glencore 74%); no traced link to VRFB electrolyte",
+   "share": null,
+   "values": [
+    {
+     "value": 74.0,
+     "claim": "Glencore holds 74.0% of the Rhovan Pooling and Sharing Joint Venture (vanadium production)",
+     "sources": [
+      "src-glencore-ar-2025"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Grade A: company annual report (as a statement)",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "COM",
+     "signal": "documented-harm",
+     "material": "vanadium",
+     "evidence": "MACUA and IOL Business Report: residents near Brits (ZA) allege non-consultation, land and livestock loss and dust illness at Rhovan and Vametco; the companies dispute this",
+     "sources": [
+      "src-macua-rhovan-2024",
+      "src-iol-vametco-2023"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "Medium",
+     "confidence_reason": "Separate sources, two sites; allegations",
+     "as_of": "2026-10",
+     "has_independent_source": true
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/vrfb.md"
+  },
+  {
+   "id": "vrfb-s3-sumitomo-electric",
+   "chemistries": [
+    "vrfb"
+   ],
+   "stage": "S3",
+   "kind": "entity",
+   "name": "Sumitomo Electric (VRFB systems)",
+   "country": "JP",
+   "role": "Japanese VRFB maker; electrolyte source not disclosed",
+   "share": null,
+   "values": [
+    {
+     "claim": "Selected by Hokkaido Electric Power Network for the third time: 11 MW / 33 MWh VRFB, completion by end May 2029, 20-year service agreement",
+     "sources": [
+      "src-sumitomo-hepco-2026",
+      "src-esn-sumitomo-hepco-2026"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Company statement corroborated by Energy-Storage.news",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No entity-level harm source found for Sumitomo Electric VRFB production",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/vrfb.md"
+  },
+  {
+   "id": "vrfb-s5-hepco-minami-hayakita",
+   "chemistries": [
+    "vrfb"
+   ],
+   "stage": "S5",
+   "kind": "entity",
+   "name": "Hokkaido Electric Power Network, Minami-Hayakita (33 MWh)",
+   "country": "JP",
+   "role": "Grid VRFB for wind integration; due end May 2029",
+   "share": null,
+   "values": [
+    {
+     "value": 33,
+     "claim": "11 MW / 33 MWh VRFB at Minami-Hayakita substation, Abira Town; completion by end May 2029",
+     "sources": [
+      "src-sumitomo-hepco-2026",
+      "src-esn-sumitomo-hepco-2026"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Company statement corroborated by Energy-Storage.news",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No harm source for the deployment site",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/vrfb.md"
+  },
+  {
+   "id": "vrfb-s3-invinity",
+   "chemistries": [
+    "vrfb"
+   ],
+   "stage": "S3",
+   "kind": "entity",
+   "name": "Invinity Energy Systems (VFB systems)",
+   "country": "GB",
+   "role": "UK-listed VFB maker; 24.9 MWh shipped in 2025; electrolyte source not disclosed",
+   "share": null,
+   "values": [
+    {
+     "value": 24.9,
+     "claim": "2025: 31.4 MWh sold, 24.9 MWh shipped (company results)",
+     "sources": [
+      "src-invinity-fy2025"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Grade A: company results (as a statement)",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No entity-level harm source found for Invinity production",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/vrfb.md"
   }
  ],
  "edges": [
@@ -4144,6 +4309,30 @@
    "overlay": "chain",
    "confidence": "Medium",
    "confidence_reason": "Single grade-B source (Bloomberg via Korea Herald)"
+  },
+  {
+   "from": "vrfb-s3-sumitomo-electric",
+   "to": "vrfb-s5-hepco-minami-hayakita",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "High",
+   "confidence_reason": "Company statement corroborated by Energy-Storage.news"
+  },
+  {
+   "from": "vrfb-s0-vanadium-world",
+   "to": "vrfb-s3-sumitomo-electric",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Low",
+   "confidence_reason": "Electrolyte source not disclosed; global vanadium supply assumed"
+  },
+  {
+   "from": "vrfb-s0-vanadium-world",
+   "to": "vrfb-s3-invinity",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Low",
+   "confidence_reason": "Electrolyte source not disclosed; global vanadium supply assumed"
   }
  ]
 }
