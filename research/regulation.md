@@ -12,7 +12,7 @@
    - all recycled-content shares (20–23).
 
    This is a stronger finding than the six-month gap in CONCEPT-IDEA_1.md. The issue isn't only that the passport starts before due diligence; the passport has no sourcing field until due diligence starts.
-4. **No passport data point records where raw materials came from.** The closest fields are:
+4. **No passport data point records where raw materials came from** (decided: shown in the shadow layer, "what the passport doesn't show"). The closest fields are:
    - #8: the battery plant's location;
    - #15: critical raw materials above 0.1% w/w;
    - #45: detailed composition of the cathode, anode and electrolyte.
@@ -79,10 +79,10 @@ For industrial batteries, several performance points are marked "only applicable
 |---|---|---|---|
 | Stationary storage above 2 kWh is an industrial battery, so it's in passport scope | **Confirmed.** Stationary storage is "industrial" by design; Art. 77 covers industrial > 2 kWh | High | Direct reading of Art. 3(1)(13), 3(1)(15) and 77(1) |
 | Military and space uses are excluded | **Confirmed, with a limit.** The exclusion covers batteries in equipment for essential security interests, arms, munitions and war material, and equipment designed to be sent into space. Dual-use products "not intended for specifically military purposes" stay **in** scope | High | Art. 1(5) text |
-| Flow batteries meet the definition of "battery" | **Supported.** The definition expressly includes "external storage", and Art. 3(1)(8) and Art. 7 treat external-storage batteries as a recognised kind of industrial battery. A VRFB stores energy in external electrolyte tanks. It's an industrial battery, but **not** a "stationary battery energy storage system" as defined (that requires internal storage), so some BESS-specific provisions won't apply | Medium | T1 text, but applying it to VRFB is my reading. No T1 guidance names flow batteries. See rubric note below |
+| Flow batteries meet the definition of "battery" | **Supported.** The definition expressly includes "external storage", and Art. 3(1)(8) and Art. 7 treat external-storage batteries as a recognised kind of industrial battery. A VRFB stores energy in external electrolyte tanks. It's an industrial battery, but **not** a "stationary battery energy storage system" as defined (that requires internal storage), so some BESS-specific provisions won't apply | Medium | Reading of T1 text: the definition expressly covers external storage. No T1 guidance names flow batteries |
 | Reversible solid-oxide systems (Noon) meet the definition | **Unclear.** It turns on whether Noon's cells are "battery cells" that deliver electricity "by direct conversion of chemical energy" from stored material. If its carbon storage sits in attached external tanks, it may be a battery with external storage. Needs the technical description from B-13 | Low | Inference only; no T1 or technical source yet |
 
-**Rubric question for B-08:** the PLAN rubric scores INF as Low. A direct reading of explicit T1 text (the VRFB case) is stronger than a free inference. I propose a rule: "INF that applies T1 text with no contrary source → Medium, labelled 'reading of T1 text'." I've used that here. Please accept or reject it.
+**Rubric rule (decided 2026-10-05):** a reading of explicit T1 text with no contrary source scores **Medium**, and its reason starts "Reading of T1 text:". The rule applies identically to every chemistry (PLAN.md).
 
 ## 5. Scope matrix: chemistry × use case
 
