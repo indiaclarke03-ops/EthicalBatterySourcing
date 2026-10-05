@@ -22,7 +22,7 @@
 </main>
 
 <script type="module">
-import { loadData, shell, setAsOf, fail, esc, confBadge, tierBadge, tagBadge, sourceLinks, STAGE_LABEL, SIGNAL, param } from "./assets/app.js";
+import { loadData, shell, setAsOf, fail, esc, confBadge, tierBadge, tagBadge, sourceLinks, STAGE_LABEL, SIGNAL, param, openFieldDetail, openNodeDetail } from "./assets/app.js";
 shell("index.html");
 
 const ORDER = ["lfp", "lmfp", "vrfb", "ni-h2", "carbon-o2", "nmc"];
@@ -64,9 +64,7 @@ function fieldHTML(f) {
     <div class="label">${esc(f.field_label)}<div>${confBadge(f.confidence)}</div></div>
     <div class="vals">${body}
       ${f.applies_note ? `<div class="note">${esc(f.applies_note)}</div>` : ""}
-      <details><summary class="small">Sources and confidence reason</summary>
-        <p class="small muted">Confidence: ${esc(f.confidence)}: ${esc(f.confidence_reason)}</p>
-        ${sourceLinks([...new Set(f.values.flatMap((v) => v.sources))], DATA)}</details>
+      <button type="button" class="open-detail" data-field="${esc(f.field_id)}">Sources, confidence &amp; ethical sourcing</button>
     </div>
   </div>`;
 }
@@ -81,7 +79,7 @@ function shadowHTML(chem) {
   return `<h2>What this passport doesn't show</h2>
     <p class="small muted">None of the 71 passport data points records where materials were mined or refined. This is what the research could trace.</p>
     <h3>Where materials come from (S0–S1)</h3>
-    <ul>${upstream.map((n) => `<li><a href="supply-chain.html?chem=${chem.id}&node=${encodeURIComponent(n.id)}">${esc(n.name)}</a>
+    <ul>${upstream.map((n) => `<li><button type="button" class="open-detail link" data-node="${esc(n.id)}">${esc(n.name)}</button>
       <span class="small muted">${esc(n.role)}</span> ${confBadge(n.confidence)}</li>`).join("") || "<li>Nothing traceable</li>"}</ul>
     <h3>Ethical-sourcing evidence along the chain</h3>
     <ul>
@@ -128,6 +126,9 @@ function show(id, use) {
       const fs = fields.filter((f) => f.category === g);
       return fs.length ? `<section class="field-group"><h3>${label}</h3>${fs.map(fieldHTML).join("")}</section>` : "";
     }).join("")}`;
+  document.querySelectorAll("#passport [data-field]").forEach((b) => b.addEventListener("click", () =>
+    openFieldDetail(fields.find((f) => f.field_id === b.dataset.field), chem, DATA)));
+  document.querySelectorAll("#shadow [data-node]").forEach((b) => b.addEventListener("click", () => openNodeDetail(DATA.nodeById[b.dataset.node], DATA)));
   document.querySelectorAll(".use-toggle button").forEach((b) => b.addEventListener("click", () => show(id, b.dataset.use)));
   document.getElementById("shadow").innerHTML = shadowHTML(chem);
   history.replaceState(null, "", `?chem=${id}&use=${u.use_case}`);
@@ -145,7 +146,11 @@ loadData().then((d) => {
     b.addEventListener("click", () => show(id));
     picker.append(b);
   });
-  show(ORDER.includes(param("chem")) ? param("chem") : "lfp", param("use"));
+  const [chemP, useP, fieldP, tabP] = ["chem", "use", "field", "tab"].map(param);
+  const start = ORDER.includes(chemP) ? chemP : "lfp";
+  show(start, useP);
+  const f = DATA.passports.find((x) => x.chemistry === start && x.field_id === fieldP);
+  if (f) openFieldDetail(f, DATA.chemById[start], DATA, tabP === "ethical" ? "ethical" : "details");
 }).catch(fail);
 </script>
 </body>
