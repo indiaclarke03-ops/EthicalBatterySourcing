@@ -21,7 +21,7 @@ Each item re-verifies the matching row in `electrum-seed.md` and states whether 
 |---|---|---|---|---|
 | EC-1 | MOFCOM/GAC Announcement No. 58 of 2025 (9 Oct 2025) adds to the dual-use control list: high-performance lithium batteries (cells and packs), cathode materials, artificial-graphite anode materials, and the equipment and technology to make them (codes 3A001, 3B901.a–c, 3C901, 3C902.b.2, 3E901.a–b) | Pillsbury summary table; White & Case | T2 | High (two agree) |
 | EC-2 | Announcement No. 70 of 2025 (7 Nov 2025) suspends Nos. 55–58, 61 and 62 **from 7 Nov 2025 to 10 Nov 2026** | Global Times (state media, reporting MOFCOM); CIRS; Pillsbury | T1 (via state media) / T2 | High |
-| EC-3 | Graphite items under **Ann. No. 39/2023 (1C108)** still need a dual-use export licence. The suspension doesn't cover them | 0523.tw compliance summary (as of 23 Aug 2026), citing MOFCOM | T3 | Medium. Needs a MOFCOM primary |
+| EC-3 | Graphite items under **Ann. No. 39/2023 (1C108)** still need a dual-use export licence. The suspension doesn't cover them | 0523.tw compliance summary (as of 23 Aug 2026), citing MOFCOM | T3 | Low. T3 only; needs a MOFCOM primary (rubric fix, B-08) |
 | EC-4 | Ann. No. 72 (9 Nov 2025) suspends the US-specific tightening for gallium, germanium, antimony, superhard materials and graphite (Art. 2 of Ann. 46/2024) **until 27 Nov 2026**. The ban on dual-use exports to **US military end users stays** | Pillsbury; Clark Hill | T2 | High |
 
 **Relevance to ethics.** The export controls are a supply-security issue, not a harm. But they decide whether non-Chinese chains can get process know-how (CATL licensing to Ford; Nano One). That matters to the "does a non-Chinese chain change the risk picture?" question in B-09 and B-10. Gallium (carbon-O₂ stack, trace amounts) falls under EC-4.
@@ -55,7 +55,7 @@ Each item re-verifies the matching row in `electrum-seed.md` and states whether 
 
 | # | Finding | Source | Tier | Conf |
 |---|---|---|---|---|
-| SA-1 | Over half of 2026 lithium, cobalt, rare-earth and purified phosphoric acid (PPA) production is exposed to sulphur/acid shocks. **100% of high-purity manganese sulphate (HPMSM)** is exposed | Benchmark Mineral Intelligence (free article); MINING.COM (28 May 2026) | T2 | High (two agree; same underlying analysis) |
+| SA-1 | Over half of 2026 lithium, cobalt, rare-earth and purified phosphoric acid (PPA) production is exposed to sulphur/acid shocks. **100% of high-purity manganese sulphate (HPMSM)** is exposed | Benchmark Mineral Intelligence (free article); MINING.COM (28 May 2026) | T2 | Medium. MINING.COM reports Benchmark's analysis, so this is one source, not two independent ones (rubric fix, B-08) |
 | SA-2 | Acid is now **11%** of hard-rock lithium chemical C1 cost (was 3%). Sulphur is **42%** of HPAL nickel cost (was 26%). Acid is **59%** of PPA production cost | Benchmark; Oregon Group | T2 | Medium (one underlying analysis) |
 | SA-3 | Indonesia sourced 76% of its sulphur imports from the Middle East (2025). Sulphur to Indonesia rose from US$101/t (Jul 2024) to US$554/t (Jan 2026) before the conflict | Oregon Group (citing Benchmark); Atlantic Council | T2 | Medium |
 | SA-4 | DRC copper-cobalt leaching is 50–60% reliant on imported acid; southern African sulphur imports come almost entirely from the Middle East | Atlantic Council | T2 | Medium |
