@@ -73,17 +73,23 @@ export async function loadData() {
   return cache;
 }
 
+const LOGO = `<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="7" fill="var(--accent)"/>
+  <rect x="7" y="10" width="16" height="12" rx="2" fill="none" stroke="var(--accent-fg)" stroke-width="2"/><rect x="23" y="13.5" width="2.5" height="5" rx="1" fill="var(--accent-fg)"/>
+  <path d="M11 16.2l2.4 2.4 4.6-4.8" fill="none" stroke="var(--accent-fg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const MOON = `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>`;
+const SUN = `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`;
+
 export function shell(active) {
   const header = document.createElement("div");
   header.innerHTML = `
     <a class="sr-only" href="#main">Skip to content</a>
-    <div class="banner" role="note"><div class="wrap"><strong>Illustrative.</strong> Mock passports built from public and licensed research.
-      Not real product passports; no statement about any company's compliance. Not legal or investment advice.</div></div>
+    <div class="banner" role="note"><div class="wrap"><strong>Illustrative</strong><span>Mock passports built from public and licensed research.
+      Not real product passports and no statement about any company's compliance. Not legal or investment advice.</span></div></div>
     <header class="site-header"><div class="wrap">
-      <a class="brand" href="index.html">Battery Passport Audit</a>
+      <a class="brand" href="index.html">${LOGO}<span>Battery Passport Audit</span></a>
       <nav class="nav" aria-label="Main">${NAV.map(([href, label]) =>
         `<a href="${href}"${href === active ? ' aria-current="page"' : ""}>${label}</a>`).join("")}</nav>
-      <button class="theme-toggle" type="button">Dark theme</button>
+      <button class="theme-toggle" type="button"></button>
     </div></header>`;
   document.body.prepend(header);
   const btn = header.querySelector(".theme-toggle");
@@ -92,7 +98,12 @@ export function shell(active) {
   const isDark = () => (document.documentElement.dataset.theme
     ? document.documentElement.dataset.theme === "dark"
     : matchMedia("(prefers-color-scheme: dark)").matches);
-  const sync = () => { btn.setAttribute("aria-pressed", String(isDark())); btn.textContent = isDark() ? "Light theme" : "Dark theme"; };
+  const sync = () => {
+    btn.setAttribute("aria-pressed", String(isDark()));
+    btn.setAttribute("aria-label", isDark() ? "Switch to light theme" : "Switch to dark theme");
+    btn.title = btn.getAttribute("aria-label");
+    btn.innerHTML = isDark() ? SUN : MOON;
+  };
   sync();
   btn.addEventListener("click", () => {
     const next = isDark() ? "light" : "dark";
@@ -102,8 +113,10 @@ export function shell(active) {
   });
   const footer = document.createElement("footer");
   footer.className = "footer";
-  footer.innerHTML = `<div class="wrap">Data as of <span data-asof></span>. Every value links to its source; see
-    <a href="methods.html">Methods</a> for tiers, tags and confidence. Built by India Clarke with Claude Code.</div>`;
+  footer.innerHTML = `<div class="wrap">
+    <div><strong>Battery Passport Audit</strong> · Data as of <span data-asof></span> · Built by India Clarke with Claude Code</div>
+    <nav aria-label="Footer"><a href="about.html">About</a><a href="methods.html">Methods</a>
+      <a href="https://github.com/indiaclarke03-ops/EthicalBatterySourcing" rel="noopener">Source on GitHub</a></nav></div>`;
   document.body.append(footer);
 }
 

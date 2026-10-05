@@ -10,11 +10,17 @@
 </head>
 <body>
 <main id="main" class="wrap">
-  <h1>Battery Passport Audit</h1>
-  <p class="lede">The EU battery passport starts on 18 February 2027. These illustrative passports show what it would say for six battery chemistries,
-    and, beside each one, what it <em>wouldn't</em> tell you about where the materials came from and who may have been harmed.</p>
+  <section class="hero">
+    <span class="eyebrow">EU Batteries Regulation · Illustrative audit</span>
+    <h1>What the EU battery passport won't tell you</h1>
+    <p class="lede">From 18 February 2027, EV batteries and industrial batteries above 2 kWh sold in the EU need a digital passport.
+      This audit fills one in for six battery chemistries, and shows beside each what it leaves out: where the materials were mined, and who may have been harmed.</p>
+    <div class="kpis" id="hero-stats" aria-live="polite"></div>
+  </section>
 
-  <div class="picker" role="group" aria-label="Choose a chemistry" id="picker"></div>
+  <p class="picker-label" id="picker-label">Choose a chemistry</p>
+
+  <div class="picker" role="group" aria-labelledby="picker-label" id="picker"></div>
   <div class="chain-controls"><label class="check"><input type="checkbox" id="gaps"> Show gaps only</label>
     <span class="small muted" id="gaps-note" aria-live="polite"></span></div>
 
@@ -114,7 +120,7 @@ function qrHTML(id) {
   let svg = "";
   try { const qr = qrcode(0, "M"); qr.addData(url); qr.make(); svg = qr.createSvgTag({ cellSize: 2, margin: 2, scalable: true }); } catch { return ""; }
   return `<figure class="qr"><a href="${esc(url)}" aria-label="QR code linking to this passport page">${svg}</a>
-    <figcaption>Mock QR: links to this page. On a real battery, the QR code links to its passport (Art. 13(6)).</figcaption></figure>`;
+    <figcaption><strong>Passport QR code</strong>Mock QR linking to this page. On a real battery, the QR code on the label links to its passport (Art. 13(6)).</figcaption></figure>`;
 }
 
 function show(id, use) {
@@ -133,7 +139,7 @@ function show(id, use) {
       <div><h2 style="margin:0">${esc(chem.name)} <span class="muted">(${esc(chem.short)})</span></h2>
         <p class="small muted" style="margin:.25rem 0 0">${esc(chem.passport_type === "shadow" ? "Shadow passport" : chem.passport_type === "reference" ? "Reference passport" : "Full passport")}
           · ${fields.length} of 71 data points shown · ${deferred} empty at launch</p></div>
-      <div class="passport-id"><span class="stamp">Illustrative</span>${qrHTML(id)}</div>
+      <span class="stamp">Illustrative</span>
     </div>
     <p>${esc(chem.summary)}</p>
     <div class="use-toggle" role="group" aria-label="Use case">${chem.use_cases.map((x) =>
@@ -142,7 +148,8 @@ function show(id, use) {
     ${GROUPS.map(([g, label]) => {
       const fs = shown.filter((f) => f.category === g);
       return fs.length ? `<section class="field-group"><h3>${label}</h3>${fs.map(fieldHTML).join("")}</section>` : "";
-    }).join("")}`;
+    }).join("")}
+    <div class="passport-foot">${qrHTML(id)}</div>`;
   document.querySelectorAll("#passport [data-field]").forEach((b) => b.addEventListener("click", () =>
     openFieldDetail(fields.find((f) => f.field_id === b.dataset.field), chem, DATA)));
   document.querySelectorAll("#shadow [data-node]").forEach((b) => b.addEventListener("click", (e) => {
@@ -153,9 +160,20 @@ function show(id, use) {
   history.replaceState(null, "", `?chem=${id}&use=${u.use_case}${gapsOnly ? "&gaps=1" : ""}`);
 }
 
+function heroStats(d) {
+  const harm = d.nodes.flatMap((n) => n.ethical_risks).filter((r) => r.signal === "documented-harm");
+  document.getElementById("hero-stats").innerHTML = [
+    ["0 of 71", "passport data points record where materials were mined or refined", ""],
+    [harm.length, "documented harms along the six supply chains", "alert"],
+    [harm.filter((r) => r.eu_dd_coverage === "not-covered").length, "of those involve materials EU due diligence doesn't cover", "alert"],
+    [d.nodes.filter((n) => n.kind === "gap").length, "supply-chain stages no one could trace", ""],
+  ].map(([n, l, c]) => `<div class="card kpi ${c}"><div class="num">${n}</div><div class="lab">${esc(l)}</div></div>`).join("");
+}
+
 loadData().then((d) => {
   DATA = d;
   setAsOf(d);
+  heroStats(d);
   const picker = document.getElementById("picker");
   ORDER.forEach((id) => {
     const c = d.chemById[id];
