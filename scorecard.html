@@ -36,7 +36,7 @@
 </main>
 
 <script type="module">
-import { loadData, shell, setAsOf, fail, STAGES, STAGE_LABEL, SIGNAL, esc, signalLabel, riskItem, confBadge, param } from "./assets/app.js";
+import { loadData, shell, setAsOf, fail, STAGES, STAGE_LABEL, TIER, SIGNAL, esc, signalLabel, riskItem, confBadge, param } from "./assets/app.js";
 shell("scorecard.html");
 
 const ORDER = ["nmc", "lfp", "lmfp", "vrfb", "ni-h2", "carbon-o2"];
@@ -58,7 +58,7 @@ function render(data) {
   const chems = ORDER.map((id) => data.chemById[id]).filter(Boolean);
   const grid = document.getElementById("grid");
   grid.insertAdjacentHTML("beforeend", `<thead><tr><th scope="col">Chemistry</th>${STAGES.map((s) =>
-    `<th scope="col">${s}<br><span class="small muted">${STAGE_LABEL[s]}</span></th>`).join("")}</tr></thead>`);
+    `<th scope="col">${TIER[s]}<br><span class="small muted">${STAGE_LABEL[s]}</span></th>`).join("")}</tr></thead>`);
   const body = document.createElement("tbody");
   for (const c of chems) {
     const tr = document.createElement("tr");
@@ -73,7 +73,7 @@ function render(data) {
         const btn = document.createElement("button");
         btn.className = "cell-btn" + (sm.allGap ? " cell-gap" : "");
         btn.type = "button";
-        btn.setAttribute("aria-label", `${c.short}, ${s}: ${SIGNAL[sm.top].label}${sm.cats.length ? ", " + sm.cats.join(", ") : ""}; EU due diligence ${sm.dd}; assurance ${sm.assured ? "some" : "none known"}`);
+        btn.setAttribute("aria-label", `${c.short}, ${TIER[s]}: ${SIGNAL[sm.top].label}${sm.cats.length ? ", " + sm.cats.join(", ") : ""}; EU due diligence ${sm.dd}; assurance ${sm.assured ? "some" : "none known"}`);
         btn.innerHTML = `${signalLabel(sm.top)}<span class="cats">${esc(sm.cats.join(" · ") || " ")}</span>
           <span class="meta${sm.dd === "not covered" ? " nc" : ""}">EU DD: ${esc(sm.dd)}</span><span class="meta">Assurance: ${sm.assured ? "some" : "none known"}</span>`;
         btn.addEventListener("click", () => open(c, s, nodes, td, data));
@@ -111,7 +111,7 @@ function open(c, s, nodes, td, data) {
   td.classList.add("selected");
   const panel = document.getElementById("panel");
   panel.hidden = false;
-  panel.innerHTML = `<h2>${esc(c.short)} · ${s} ${esc(STAGE_LABEL[s])}</h2>
+  panel.innerHTML = `<h2>${esc(c.short)} · ${TIER[s]} ${esc(STAGE_LABEL[s])}</h2>
     ${nodes.map((n) => `<h3>${esc(n.name)} ${confBadge(n.confidence)}${n.kind === "gap" ? ' <span class="badge conf-Unknown">GAP</span>' : ""}</h3>
       <p class="small muted">${esc(n.role)} · as of ${esc(n.as_of)} ·
         <a href="supply-chain.html?chem=${encodeURIComponent(c.id)}&node=${encodeURIComponent(n.id)}">open in supply-chain explorer</a></p>

@@ -31,7 +31,7 @@
     }
    ],
    "confidence": "High",
-   "confidence_reason": "T1: USGS MCS 2026",
+   "confidence_reason": "Grade A: USGS MCS 2026",
    "flags": [],
    "policy": [],
    "ethical_risks": [
@@ -47,7 +47,7 @@
      "assurance": "rmi-rmap-conformant",
      "eu_dd_coverage": "covered",
      "confidence": "High",
-     "confidence_reason": "T1 government finding corroborated by NGO field research",
+     "confidence_reason": "Grade-A government finding corroborated by NGO field research",
      "as_of": "2026-10",
      "assurance_detail": "RMI cobalt refiners list exists",
      "has_independent_source": true
@@ -63,7 +63,7 @@
      "assurance": "rmi-rmap-conformant",
      "eu_dd_coverage": "covered",
      "confidence": "High",
-     "confidence_reason": "T1 government finding",
+     "confidence_reason": "Grade-A government finding",
      "as_of": "2026-10",
      "assurance_detail": "RMI cobalt refiners list exists",
      "has_independent_source": false
@@ -117,7 +117,7 @@
     }
    ],
    "confidence": "Medium",
-   "confidence_reason": "Single T2 source (IEA)",
+   "confidence_reason": "Single grade-B source (IEA)",
    "flags": [],
    "policy": [
     {
@@ -143,7 +143,7 @@
      "assurance": "none-known",
      "eu_dd_coverage": "covered",
      "confidence": "High",
-     "confidence_reason": "T1 government finding",
+     "confidence_reason": "Grade-A government finding",
      "as_of": "2026-10",
      "assurance_detail": "IRMA: Harita and Sorowako in assessment; no published level",
      "has_independent_source": false
@@ -225,7 +225,7 @@
     }
    ],
    "confidence": "High",
-   "confidence_reason": "T1: USGS MCS 2026",
+   "confidence_reason": "Grade A: USGS MCS 2026",
    "flags": [],
    "policy": [],
    "ethical_risks": [
@@ -257,7 +257,7 @@
      "assurance": "none-known",
      "eu_dd_coverage": "covered",
      "confidence": "High",
-     "confidence_reason": "T1 government finding",
+     "confidence_reason": "Grade-A government finding",
      "as_of": "2026-10",
      "has_independent_source": false
     },
@@ -314,7 +314,7 @@
     }
    ],
    "confidence": "High",
-   "confidence_reason": "T1 official listing plus academic documentation",
+   "confidence_reason": "Grade-A official listing plus academic documentation",
    "flags": [
     {
      "type": "uflpa-entity-list",
@@ -338,7 +338,7 @@
      "assurance": "none-known",
      "eu_dd_coverage": "covered",
      "confidence": "High",
-     "confidence_reason": "Academic documentation with T1 listings of related entities",
+     "confidence_reason": "Academic documentation with grade-A listings of related entities",
      "as_of": "2026-10",
      "has_independent_source": true
     }
@@ -376,7 +376,7 @@
     }
    ],
    "confidence": "High",
-   "confidence_reason": "T2 IEA, consistent with seed",
+   "confidence_reason": "Grade-B IEA, consistent with seed",
    "flags": [
     {
      "type": "uflpa-entity-list",
@@ -426,7 +426,7 @@
      "assurance": "none-known",
      "eu_dd_coverage": "unclear",
      "confidence": "High",
-     "confidence_reason": "T1 official listing",
+     "confidence_reason": "Grade-A official listing",
      "as_of": "2026-10",
      "has_independent_source": false
     }
@@ -461,7 +461,7 @@
     }
    ],
    "confidence": "High",
-   "confidence_reason": "T1 government finding",
+   "confidence_reason": "Grade-A government finding",
    "flags": [],
    "policy": [],
    "ethical_risks": [
@@ -476,7 +476,7 @@
      "assurance": "rmi-rmap-conformant",
      "eu_dd_coverage": "not-covered",
      "confidence": "High",
-     "confidence_reason": "T1 government finding",
+     "confidence_reason": "Grade-A government finding",
      "as_of": "2026-10",
      "assurance_detail": "RMI copper processors list exists",
      "has_independent_source": false
@@ -510,7 +510,7 @@
     }
    ],
    "confidence": "High",
-   "confidence_reason": "T1 official listing",
+   "confidence_reason": "Grade-A official listing",
    "flags": [
     {
      "type": "uflpa-entity-list",
@@ -535,7 +535,7 @@
      "assurance": "none-known",
      "eu_dd_coverage": "not-covered",
      "confidence": "High",
-     "confidence_reason": "T1 government finding plus T1 listing",
+     "confidence_reason": "Grade-A government finding plus grade-A listing",
      "as_of": "2026-10",
      "has_independent_source": false
     }
@@ -570,7 +570,7 @@
     }
    ],
    "confidence": "Medium",
-   "confidence_reason": "Single T2 source",
+   "confidence_reason": "Single grade-B source",
    "flags": [],
    "policy": [],
    "ethical_risks": [
@@ -620,7 +620,7 @@
     }
    ],
    "confidence": "Medium",
-   "confidence_reason": "Single T2 source",
+   "confidence_reason": "Single grade-B source",
    "flags": [],
    "policy": [],
    "ethical_risks": [
@@ -664,7 +664,7 @@
     }
    ],
    "confidence": "Low",
-   "confidence_reason": "Restart disputed: closed per Reuters (Aug 2026) vs resumed per a T3 source (C-07)",
+   "confidence_reason": "Restart disputed: closed per Reuters (Aug 2026) vs resumed per a grade-C source (C-07)",
    "flags": [],
    "policy": [],
    "ethical_risks": [
@@ -788,7 +788,7 @@
      "assurance": "none-known",
      "eu_dd_coverage": "not-covered",
      "confidence": "High",
-     "confidence_reason": "T1 company statement quoting the Chief",
+     "confidence_reason": "Grade-A company statement quoting the Chief",
      "as_of": "2026-10",
      "has_independent_source": false
     }
@@ -971,7 +971,7 @@
     }
    ],
    "confidence": "Medium",
-   "confidence_reason": "Single T2 source",
+   "confidence_reason": "Single grade-B source",
    "flags": [
     {
      "type": "1260h",
@@ -1204,7 +1204,7 @@
     }
    ],
    "confidence": "Medium",
-   "confidence_reason": "Single T2 source",
+   "confidence_reason": "Single grade-B source",
    "flags": [
     {
      "type": "1260h",
@@ -1395,7 +1395,7 @@
      "assurance": "none-known",
      "eu_dd_coverage": "not-covered",
      "confidence": "High",
-     "confidence_reason": "T1 government finding",
+     "confidence_reason": "Grade-A government finding",
      "as_of": "2026-10",
      "has_independent_source": false
     }
@@ -1578,7 +1578,7 @@
      "assurance": "none-known",
      "eu_dd_coverage": "not-covered",
      "confidence": "Medium",
-     "confidence_reason": "No entity-level harm source; inherits manganese S0/S1 risks",
+     "confidence_reason": "No entity-level harm source; inherits manganese T5/T4 risks",
      "as_of": "2026-10"
     }
    ],
@@ -1617,7 +1617,7 @@
     }
    ],
    "confidence": "Medium",
-   "confidence_reason": "Single T2 source",
+   "confidence_reason": "Single grade-B source",
    "flags": [],
    "policy": [],
    "ethical_risks": [
@@ -1660,7 +1660,7 @@
     }
    ],
    "confidence": "Medium",
-   "confidence_reason": "Single T2 source (seed High not re-checked independently)",
+   "confidence_reason": "Single grade-B source (seed High not re-checked independently)",
    "flags": [],
    "policy": [],
    "ethical_risks": [
@@ -1704,7 +1704,7 @@
     }
    ],
    "confidence": "High",
-   "confidence_reason": "T1 VW statement",
+   "confidence_reason": "Grade-A VW statement",
    "flags": [],
    "policy": [],
    "ethical_risks": [
@@ -1777,7 +1777,7 @@
     }
    ],
    "confidence": "High",
-   "confidence_reason": "T1 USGS (shares); co-production share in conflict C-04",
+   "confidence_reason": "Grade-A USGS (shares); co-production share in conflict C-04",
    "flags": [],
    "policy": [],
    "ethical_risks": [
@@ -2217,7 +2217,7 @@
     }
    ],
    "confidence": "High",
-   "confidence_reason": "T1 SEC filing",
+   "confidence_reason": "Grade-A SEC filing",
    "flags": [],
    "policy": [],
    "ethical_risks": [
@@ -2979,7 +2979,7 @@
     }
    ],
    "confidence": "Medium",
-   "confidence_reason": "Single T2 source",
+   "confidence_reason": "Single grade-B source",
    "flags": [],
    "policy": [],
    "ethical_risks": [
@@ -3431,7 +3431,7 @@
    "type": "offtake",
    "overlay": "capital",
    "confidence": "High",
-   "confidence_reason": "T1 SEC filing"
+   "confidence_reason": "Grade-A SEC filing"
   },
   {
    "from": "ni-h2-own-enrv-sg",

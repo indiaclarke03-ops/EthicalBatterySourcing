@@ -22,7 +22,7 @@ Built by India Clarke with Claude Code, using Sayari and Tavily for research. Se
 |---|---|
 | [Passports](https://indiaclarke03-ops.github.io/EthicalBatterySourcing/) | A passport card per chemistry and use case, a "what this passport doesn't show" panel, a detail panel per field (sources, confidence, ethical-sourcing risks), a gaps filter and a mock QR code |
 | [Scorecard](https://indiaclarke03-ops.github.io/EthicalBatterySourcing/scorecard.html) | Chemistry × supply-chain stage: strongest risk signal, EU due-diligence coverage, independent assurance |
-| [Supply chain](https://indiaclarke03-ops.github.io/EthicalBatterySourcing/supply-chain.html) | S0–S5 explorer with risk-category filter, ownership & capital overlay, policy-risk overlay and gaps filter |
+| [Supply chain](https://indiaclarke03-ops.github.io/EthicalBatterySourcing/supply-chain.html) | Supply-chain explorer (T5 mine → T0 deployed battery) with risk-category filter, ownership & capital overlay, policy-risk overlay and gaps filter |
 | [Compare](https://indiaclarke03-ops.github.io/EthicalBatterySourcing/compare.html) | Minerals screen, chokepoints, use-case scope matrix, traceability depth, gaps by chemistry |
 | [Methods](https://indiaclarke03-ops.github.io/EthicalBatterySourcing/methods.html) · [About](https://indiaclarke03-ops.github.io/EthicalBatterySourcing/about.html) | Rubric, ethical-sourcing method, Sayari caveats, AI use; how the tool works and how to read it |
 
@@ -36,7 +36,8 @@ Chemistries: **LFP**, **LMFP**, **VRFB** (Rongke), **Ni-H₂** (EnerVenue) as fu
 
 ## Method in brief
 
-- **Evidence tiers:** T1 primary (regulation, regulator, filing, company statement *as a statement*); T2 credible secondary or licensed database; T3 weaker.
+- **Supply-chain tiers:** industry convention, counting back from the battery: T0 deployed battery/brand, T1 pack, T2 cell, T3 active materials, T4 refining, T5 mine. (Data files use internal stage codes S5…S0 for the same tiers.)
+- **Evidence grades:** A primary (regulation, regulator, filing, company statement *as a statement*); B credible secondary or licensed database; C weaker. (Data files store these as T1–T3.)
 - **Provenance tags:** S-REG / S-TRADE (Sayari registry / trade), OS (open source), INF (inference), GAP (no usable source).
 - **Confidence:** High, Medium, Low or Unknown, each with a one-line reason, applied by one rubric to every chemistry. Conflicting values are shown side by side, never averaged.
 - **Ethical-sourcing profile per node:** risk category (EU Batteries Regulation Annex X), signal type (documented harm, screening flag, structural risk, no known evidence), assurance (IRMA, RMI/RMAP, other, self-assessment, none known) and EU due-diligence coverage.

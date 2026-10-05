@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Methods · Battery Passport Audit</title>
-<meta name="description" content="How the illustrative battery passports were built: evidence tiers, confidence rubric, ethical-sourcing method, Sayari data caveats and AI use.">
+<meta name="description" content="How the illustrative battery passports were built: supply-chain tiers, evidence grades, confidence rubric, ethical-sourcing method, Sayari data caveats and AI use.">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -23,14 +23,26 @@
 
   <section id="evidence">
     <h2>Evidence and confidence</h2>
-    <p>Every value, supply-chain link and risk entry carries a source, an evidence tier, a provenance tag, a confidence score and a one-line reason.</p>
-    <h3>Evidence tiers</h3>
+    <p>Every value, supply-chain link and risk entry carries a source, an evidence grade, a provenance tag, a confidence score and a one-line reason.</p>
+    <h3>Supply-chain tiers</h3>
+    <p>Stages follow the industry convention, counting back from the battery: Tier 1 is the brand's direct supplier.</p>
     <div class="table-scroll"><table>
-      <thead><tr><th scope="col">Tier</th><th scope="col">Meaning</th></tr></thead>
+      <thead><tr><th scope="col">Tier</th><th scope="col">Stage</th></tr></thead>
       <tbody>
-        <tr><td><span class="badge tier">T1</span></td><td>Primary source: regulation, regulator, filing, official company statement. A company claim is T1 <em>as a statement</em>, not as a measurement.</td></tr>
-        <tr><td><span class="badge tier">T2</span></td><td>Credible secondary source or data provider: established press, industry analysts, licensed databases.</td></tr>
-        <tr><td><span class="badge tier">T3</span></td><td>Vendor-published material, a single market-research house, or an unverified aggregation.</td></tr>
+        <tr><td><strong>T0</strong></td><td>Deployed battery: the brand, project or operator</td></tr>
+        <tr><td><strong>T1</strong></td><td>Pack and system integration</td></tr>
+        <tr><td><strong>T2</strong></td><td>Cell or stack manufacturing</td></tr>
+        <tr><td><strong>T3</strong></td><td>Active materials and components (cathode, anode, electrolyte, foils)</td></tr>
+        <tr><td><strong>T4</strong></td><td>Refining and chemicals</td></tr>
+        <tr><td><strong>T5</strong></td><td>Mining, ore and feedstock</td></tr>
+      </tbody></table></div>
+    <h3>Evidence grades</h3>
+    <div class="table-scroll"><table>
+      <thead><tr><th scope="col">Grade</th><th scope="col">Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge tier">A</span></td><td>Primary source: regulation, regulator, filing, official company statement. A company claim is grade A <em>as a statement</em>, not as a measurement.</td></tr>
+        <tr><td><span class="badge tier">B</span></td><td>Credible secondary source or data provider: established press, industry analysts, licensed databases.</td></tr>
+        <tr><td><span class="badge tier">C</span></td><td>Vendor-published material, a single market-research house, or an unverified aggregation.</td></tr>
       </tbody></table></div>
     <h3>Provenance tags</h3>
     <div class="table-scroll"><table>
@@ -46,8 +58,8 @@
     <div class="table-scroll"><table>
       <thead><tr><th scope="col">Score</th><th scope="col">When we use it</th></tr></thead>
       <tbody>
-        <tr><td><span class="badge conf-High">High</span></td><td>A primary (T1) source, or two independent credible secondary sources that agree.</td></tr>
-        <tr><td><span class="badge conf-Medium">Medium</span></td><td>One credible secondary source; a Sayari record that has passed our artefact check but has no public corroboration; sources that agree on substance but differ on figures; or a direct reading of regulation text applied to a case it doesn't name (the reason starts "Reading of T1 text:").</td></tr>
+        <tr><td><span class="badge conf-High">High</span></td><td>A primary (grade A) source, or two independent credible secondary sources that agree.</td></tr>
+        <tr><td><span class="badge conf-Medium">Medium</span></td><td>One credible secondary source; a Sayari record that has passed our artefact check but has no public corroboration; sources that agree on substance but differ on figures; or a direct reading of regulation text applied to a case it doesn't name (the reason starts "Reading of grade-A text:").</td></tr>
         <tr><td><span class="badge conf-Low">Low</span></td><td>Weaker sources only; our own inference; an unresolved conflict between sources; or a database record that hasn't yet passed, or has failed, our artefact check.</td></tr>
         <tr><td><span class="badge conf-Unknown">Unknown</span></td><td>No usable source. These are drawn dashed and labelled "not traceable from public or licensed data".</td></tr>
       </tbody></table></div>

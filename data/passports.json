@@ -38,7 +38,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: regulation text"
+   "confidence_reason": "Grade A: regulation text"
   },
   {
    "chemistry": "nmc",
@@ -242,7 +242,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
+   "confidence_reason": "Grade A: guidance marks not filled as of Feb 2027 (format pending)"
   },
   {
    "chemistry": "nmc",
@@ -276,7 +276,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: Annex X list applied to this chemistry's materials",
+   "confidence_reason": "Grade A: Annex X list applied to this chemistry's materials",
    "applies_from": "2027-08-18"
   },
   {
@@ -301,7 +301,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (Art. 8 delegated act)"
+   "confidence_reason": "Grade A: guidance marks not filled as of Feb 2027 (Art. 8 delegated act)"
   },
   {
    "chemistry": "lfp",
@@ -325,7 +325,7 @@
    ],
    "conflict": false,
    "confidence": "Medium",
-   "confidence_reason": "Single T2 source; illustrative manufacturer"
+   "confidence_reason": "Single grade-B source; illustrative manufacturer"
   },
   {
    "chemistry": "lfp",
@@ -349,7 +349,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: regulation text"
+   "confidence_reason": "Grade A: regulation text"
   },
   {
    "chemistry": "lfp",
@@ -421,7 +421,7 @@
    ],
    "conflict": false,
    "confidence": "Medium",
-   "confidence_reason": "Single T2 source for an illustrative cell"
+   "confidence_reason": "Single grade-B source for an illustrative cell"
   },
   {
    "chemistry": "lfp",
@@ -563,7 +563,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
+   "confidence_reason": "Grade A: guidance marks not filled as of Feb 2027 (format pending)"
   },
   {
    "chemistry": "lfp",
@@ -597,7 +597,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: Annex X list applied to this chemistry's materials",
+   "confidence_reason": "Grade A: Annex X list applied to this chemistry's materials",
    "applies_from": "2027-08-18"
   },
   {
@@ -622,7 +622,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (Art. 8 delegated act)"
+   "confidence_reason": "Grade A: guidance marks not filled as of Feb 2027 (Art. 8 delegated act)"
   },
   {
    "chemistry": "lmfp",
@@ -670,7 +670,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: regulation text"
+   "confidence_reason": "Grade A: regulation text"
   },
   {
    "chemistry": "lmfp",
@@ -874,7 +874,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
+   "confidence_reason": "Grade A: guidance marks not filled as of Feb 2027 (format pending)"
   },
   {
    "chemistry": "lmfp",
@@ -908,7 +908,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: Annex X list applied to this chemistry's materials",
+   "confidence_reason": "Grade A: Annex X list applied to this chemistry's materials",
    "applies_from": "2027-08-18"
   },
   {
@@ -933,7 +933,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (Art. 8 delegated act)"
+   "confidence_reason": "Grade A: guidance marks not filled as of Feb 2027 (Art. 8 delegated act)"
   },
   {
    "chemistry": "vrfb",
@@ -981,7 +981,7 @@
    ],
    "conflict": false,
    "confidence": "Medium",
-   "confidence_reason": "Reading of T1 text"
+   "confidence_reason": "Reading of grade-A text"
   },
   {
    "chemistry": "vrfb",
@@ -1195,7 +1195,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
+   "confidence_reason": "Grade A: guidance marks not filled as of Feb 2027 (format pending)"
   },
   {
    "chemistry": "vrfb",
@@ -1229,7 +1229,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: Annex X list applied to this chemistry's materials",
+   "confidence_reason": "Grade A: Annex X list applied to this chemistry's materials",
    "applies_from": "2027-08-18"
   },
   {
@@ -1292,7 +1292,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: regulation text"
+   "confidence_reason": "Grade A: regulation text"
   },
   {
    "chemistry": "ni-h2",
@@ -1506,7 +1506,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
+   "confidence_reason": "Grade A: guidance marks not filled as of Feb 2027 (format pending)"
   },
   {
    "chemistry": "ni-h2",
@@ -1549,7 +1549,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: Annex X list applied to this chemistry's materials",
+   "confidence_reason": "Grade A: Annex X list applied to this chemistry's materials",
    "applies_from": "2027-08-18"
   },
   {
@@ -1574,7 +1574,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (Art. 8 delegated act)"
+   "confidence_reason": "Grade A: guidance marks not filled as of Feb 2027 (Art. 8 delegated act)"
   },
   {
    "chemistry": "carbon-o2",
@@ -1622,7 +1622,7 @@
    ],
    "conflict": false,
    "confidence": "Medium",
-   "confidence_reason": "Reading of T1 text"
+   "confidence_reason": "Reading of grade-A text"
   },
   {
    "chemistry": "carbon-o2",
@@ -1816,7 +1816,7 @@
    ],
    "conflict": false,
    "confidence": "High",
-   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
+   "confidence_reason": "Grade A: guidance marks not filled as of Feb 2027 (format pending)"
   },
   {
    "chemistry": "carbon-o2",

@@ -138,8 +138,8 @@ const COV = { cobalt: "covered", lithium: "covered", nickel: "covered", "natural
   });
   claims.filter(([, v, owner]) => owner.confidence === "Medium" && v.tier === "T3" && owner.values?.every((x) => x.tier === "T3"))
     .forEach(([w]) => warnings.push(`${w}: T3-only claims scored Medium`));
-  const inf = [...chems.flatMap((c) => c.use_cases), ...passports].filter((o) => o.confidence === "Medium" && o.values.some((v) => v.tag === "INF") && !/^Reading of T1 text/.test(o.confidence_reason));
-  inf.forEach((o) => warnings.push(`Medium INF without 'Reading of T1 text': ${o.use_case || o.field_id}`));
+  const inf = [...chems.flatMap((c) => c.use_cases), ...passports].filter((o) => o.confidence === "Medium" && o.values.some((v) => v.tag === "INF") && !/^Reading of grade-A text/.test(o.confidence_reason));
+  inf.forEach((o) => warnings.push(`Medium INF without 'Reading of grade-A text': ${o.use_case || o.field_id}`));
   // Consistency: same source set + signal + material should get the same confidence across chemistries.
   const seen = new Map();
   risks.forEach(([w, r]) => {
