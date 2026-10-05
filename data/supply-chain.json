@@ -1,0 +1,3093 @@
+{
+ "schema_version": "1.0",
+ "as_of": "2026-10",
+ "nodes": [
+  {
+   "id": "multi-s0-cobalt-drc",
+   "chemistries": [
+    "nmc",
+    "ni-h2"
+   ],
+   "stage": "S0",
+   "kind": "share",
+   "name": "Cobalt mining, DRC",
+   "country": "CD",
+   "role": "73% of world cobalt mine output (2025)",
+   "share": {
+    "country": "CD",
+    "percent": 73,
+    "metric": "mine output"
+   },
+   "values": [
+    {
+     "value": 73,
+     "claim": "DRC 73%, Indonesia 14% of 2025 mine output; export quotas up to 96,600 t/yr in 2026–27",
+     "sources": [
+      "src-usgs-mcs-2026"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "T1: USGS MCS 2026",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "LR-CL",
+     "signal": "documented-harm",
+     "material": "cobalt",
+     "evidence": "Children and adults in hazardous artisanal cobalt mining (DOL; Amnesty 2016)",
+     "sources": [
+      "src-dol-tvpra-2024",
+      "src-amnesty-2016"
+     ],
+     "assurance": "rmi-rmap-conformant",
+     "eu_dd_coverage": "covered",
+     "confidence": "High",
+     "confidence_reason": "T1 government finding corroborated by NGO field research",
+     "as_of": "2026-10",
+     "assurance_detail": "RMI cobalt refiners list exists",
+     "has_independent_source": true
+    },
+    {
+     "category": "LR-FL",
+     "signal": "documented-harm",
+     "material": "cobalt",
+     "evidence": "Forced-labour indicators among cobalt workers: hazardous work, withheld wages, debt-like dependence (DOL)",
+     "sources": [
+      "src-dol-tvpra-2024"
+     ],
+     "assurance": "rmi-rmap-conformant",
+     "eu_dd_coverage": "covered",
+     "confidence": "High",
+     "confidence_reason": "T1 government finding",
+     "as_of": "2026-10",
+     "assurance_detail": "RMI cobalt refiners list exists",
+     "has_independent_source": false
+    },
+    {
+     "category": "COM",
+     "signal": "documented-harm",
+     "material": "cobalt",
+     "evidence": "Forced evictions with reported sexual assault, arson and beatings during industrial mine expansion near Kolwezi (Amnesty/IBGDH)",
+     "sources": [
+      "src-amnesty-2023"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "Medium",
+     "confidence_reason": "Single NGO investigation (130+ interviews)",
+     "as_of": "2026-10",
+     "has_independent_source": true,
+     "gender_note": true
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/nmc-reference.md"
+  },
+  {
+   "id": "multi-s0-nickel-indonesia",
+   "chemistries": [
+    "nmc",
+    "ni-h2"
+   ],
+   "stage": "S0",
+   "kind": "share",
+   "name": "Nickel mining and HPAL processing, Indonesia",
+   "country": "ID",
+   "role": "≈60% of mined nickel; ≈45% of processing (2024)",
+   "share": {
+    "country": "ID",
+    "percent": 60,
+    "metric": "mined supply"
+   },
+   "values": [
+    {
+     "value": 60,
+     "claim": "Indonesia supplied 60% of mined nickel and processed almost 45% (2024)",
+     "sources": [
+      "src-iea-gcmo-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single T2 source (IEA)",
+   "flags": [],
+   "policy": [
+    {
+     "instrument": "sulphuric-acid",
+     "effect": "Processing depends on sulphuric acid; Hormuz/China export shocks raised costs",
+     "status": "Easing in Q3 2026; re-disruption risk",
+     "sources": [
+      "src-benchmark-acid"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
+   "ethical_risks": [
+    {
+     "category": "LR-FL",
+     "signal": "documented-harm",
+     "material": "nickel",
+     "evidence": "Forced labour in nickel production: deceptive recruitment, withheld passports (DOL)",
+     "sources": [
+      "src-dol-tvpra-2024"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "High",
+     "confidence_reason": "T1 government finding",
+     "as_of": "2026-10",
+     "assurance_detail": "IRMA: Harita and Sorowako in assessment; no published level",
+     "has_independent_source": false
+    },
+    {
+     "category": "COM",
+     "signal": "documented-harm",
+     "material": "nickel",
+     "evidence": "Pollution, lost livelihoods, land grabbing, threats to Indigenous ways of life (93 interviews)",
+     "sources": [
+      "src-cri-2025",
+      "src-cri-2024"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "High",
+     "confidence_reason": "Two independent CRI investigations agree",
+     "as_of": "2026-10",
+     "has_independent_source": true
+    },
+    {
+     "category": "ENV-S",
+     "signal": "documented-harm",
+     "material": "nickel",
+     "evidence": "HPAL filtered-tailings facilities overfilled and unstable; worker deaths; seepage contamination",
+     "sources": [
+      "src-earthworks-2026",
+      "src-mongabay-2026-ni"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "High",
+     "confidence_reason": "Two independent sources",
+     "as_of": "2026-10",
+     "has_independent_source": true
+    },
+    {
+     "category": "LR-DIS",
+     "signal": "documented-harm",
+     "material": "nickel",
+     "evidence": "Women workers face discrimination, harassment and reproductive-health risks (IMIP)",
+     "sources": [
+      "src-cri-2025"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "Medium",
+     "confidence_reason": "Single NGO investigation",
+     "as_of": "2026-10",
+     "has_independent_source": true,
+     "gender_note": true
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/harm-evidence.md"
+  },
+  {
+   "id": "multi-s0-lithium-mining",
+   "chemistries": [
+    "nmc",
+    "lfp",
+    "lmfp"
+   ],
+   "stage": "S0",
+   "kind": "share",
+   "name": "Lithium mining (global)",
+   "country": "MULTI",
+   "role": "Australia, China, Chile, Zimbabwe, Argentina lead (2025)",
+   "share": null,
+   "values": [
+    {
+     "claim": "2025 mine output: Australia 92 kt, China 62 kt, Chile 56 kt, Zimbabwe 28 kt, Argentina 23 kt",
+     "sources": [
+      "src-usgs-mcs-2026"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "T1: USGS MCS 2026",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "ENV-W",
+     "signal": "documented-harm",
+     "material": "lithium",
+     "evidence": "Brine extraction in Salar de Atacama linked to water injustice for Atacameño communities (magnitude contested)",
+     "sources": [
+      "src-slca-atacama-2024",
+      "src-atacama-water-justice"
+     ],
+     "assurance": "irma-audit",
+     "eu_dd_coverage": "covered",
+     "confidence": "High",
+     "confidence_reason": "Two peer-reviewed sources agree that the concern is documented",
+     "as_of": "2026-10",
+     "assurance_detail": "IRMA: Salar de Atacama sites audited",
+     "has_independent_source": true
+    },
+    {
+     "category": "LR-CL",
+     "signal": "documented-harm",
+     "material": "lithium",
+     "evidence": "Children in artisanal lithium mining in Zimbabwe (DOL)",
+     "sources": [
+      "src-dol-tvpra-2024"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "High",
+     "confidence_reason": "T1 government finding",
+     "as_of": "2026-10",
+     "has_independent_source": false
+    },
+    {
+     "category": "HR",
+     "signal": "documented-harm",
+     "material": "lithium",
+     "evidence": "Corruption red flags; mining without environmental assessment (Zimbabwe, Namibia, DRC)",
+     "sources": [
+      "src-gw-2023"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "Medium",
+     "confidence_reason": "Single investigation",
+     "as_of": "2026-10",
+     "has_independent_source": true
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/harm-evidence.md"
+  },
+  {
+   "id": "multi-s1-lithium-xinjiang",
+   "chemistries": [
+    "nmc",
+    "lfp",
+    "lmfp"
+   ],
+   "stage": "S1",
+   "kind": "entity",
+   "name": "Xinjiang lithium processing (SDIC Xinjiang Lithium; Xinjiang Asia-Europe Rare Metal)",
+   "country": "CN",
+   "role": "Lithium carbonate from Lop Nur brine; largest XUAR lithium company",
+   "share": null,
+   "values": [
+    {
+     "claim": "SDIC Xinjiang Lithium produces lithium carbonate from Lop Nur salt-lake brine (UFLPA notice)",
+     "sources": [
+      "src-fr-2026-15628"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Xinjiang Asia-Europe Rare Metal has received 'assigned' workers since at least 2017",
+     "sources": [
+      "src-shu-driving-force"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "T1 official listing plus academic documentation",
+   "flags": [
+    {
+     "type": "uflpa-entity-list",
+     "source": "src-fr-2026-15628",
+     "basis": "SDIC Xinjiang Lithium sources lithium from Lop Nur brine in the XUAR (criterion 2(d)(2)(B)(v))",
+     "official_list": true,
+     "label": "UFLPA Entity List (US DHS): screening result, not a finding of documented harm",
+     "as_of": "2026-10"
+    }
+   ],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "LR-FL",
+     "signal": "documented-harm",
+     "material": "lithium",
+     "evidence": "State labour transfers documented at the largest XUAR lithium company (Driving Force)",
+     "sources": [
+      "src-shu-driving-force"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "High",
+     "confidence_reason": "Academic documentation with T1 listings of related entities",
+     "as_of": "2026-10",
+     "has_independent_source": true
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/ethical-sourcing.md"
+  },
+  {
+   "id": "multi-s2-anode-china",
+   "chemistries": [
+    "nmc",
+    "lfp",
+    "lmfp"
+   ],
+   "stage": "S2",
+   "kind": "share",
+   "name": "Anode material (natural and synthetic graphite)",
+   "country": "CN",
+   "role": ">90% of anode material made in China",
+   "share": {
+    "country": "CN",
+    "percent": 90,
+    "metric": "anode material production"
+   },
+   "values": [
+    {
+     "value": 90,
+     "claim": "China produced over 90% of anode material (2024)",
+     "sources": [
+      "src-iea-gcmo-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "T2 IEA, consistent with seed",
+   "flags": [
+    {
+     "type": "uflpa-entity-list",
+     "source": "src-fr-2026-15628",
+     "basis": "Xinjiang Tianhongji sources carbon materials from the XUAR to produce lithium and sodium-ion battery materials",
+     "official_list": true,
+     "label": "UFLPA Entity List (US DHS): screening result, not a finding of documented harm",
+     "as_of": "2026-10"
+    }
+   ],
+   "policy": [
+    {
+     "instrument": "decision-58",
+     "effect": "Export licence would be required for Li-ion cells, cathode and artificial-graphite anode materials, equipment and technology",
+     "status": "Suspended until 2026-11-10 (Ann. No. 70)",
+     "sources": [
+      "src-pillsbury-mofcom"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
+   "ethical_risks": [
+    {
+     "category": "ENV-A",
+     "signal": "documented-harm",
+     "material": "natural graphite",
+     "evidence": "Graphite dust, air and water pollution near Heilongjiang plants; complaints reportedly suppressed (2014–16)",
+     "sources": [
+      "src-wapo-graphite-2016"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "Medium",
+     "confidence_reason": "Historical evidence; present-tense use capped at Medium",
+     "as_of": "2026-10",
+     "assurance_detail": "No RMI graphite list",
+     "has_independent_source": true
+    },
+    {
+     "category": "LR-FL",
+     "signal": "screening-flag",
+     "material": "synthetic graphite",
+     "evidence": "Xinjiang Tianhongji (anode materials) is UFLPA-listed for sourcing XUAR petroleum coke, anthracite and asphalt",
+     "sources": [
+      "src-fr-2026-15628"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "unclear",
+     "confidence": "High",
+     "confidence_reason": "T1 official listing",
+     "as_of": "2026-10",
+     "has_independent_source": false
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "multi-s0-copper",
+   "chemistries": [
+    "nmc",
+    "lfp",
+    "lmfp",
+    "vrfb",
+    "ni-h2"
+   ],
+   "stage": "S0",
+   "kind": "share",
+   "name": "Copper (current collectors, wiring)",
+   "country": "MULTI",
+   "role": "In every chemistry; DRC ore enters Chinese Li-ion batteries",
+   "share": null,
+   "values": [
+    {
+     "claim": "DOL lists Chinese electrolytic copper and Li-ion batteries as made with a child-labour input (DRC copper ore)",
+     "sources": [
+      "src-dol-tvpra-2024"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "T1 government finding",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "LR-CL",
+     "signal": "documented-harm",
+     "material": "copper",
+     "evidence": "Children mine, crush and wash copper ore in DRC artisanal mining; ore enters Chinese Li-ion battery supply (DOL)",
+     "sources": [
+      "src-dol-tvpra-2024"
+     ],
+     "assurance": "rmi-rmap-conformant",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "High",
+     "confidence_reason": "T1 government finding",
+     "as_of": "2026-10",
+     "assurance_detail": "RMI copper processors list exists",
+     "has_independent_source": false
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/cross-cutting.md"
+  },
+  {
+   "id": "multi-s2-aluminium-foil",
+   "chemistries": [
+    "nmc",
+    "lfp",
+    "lmfp"
+   ],
+   "stage": "S2",
+   "kind": "entity",
+   "name": "Battery aluminium foil — Xinjiang (Tianshan Aluminum group)",
+   "country": "CN",
+   "role": "Cathode current-collector foil",
+   "share": null,
+   "values": [
+    {
+     "claim": "Shihezi Xinren Battery Aluminum Foil Technology (Tianshan Aluminum group) is UFLPA-listed",
+     "sources": [
+      "src-fr-2026-15628"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "T1 official listing",
+   "flags": [
+    {
+     "type": "uflpa-entity-list",
+     "source": "src-fr-2026-15628",
+     "basis": "Tianshan Aluminum and subsidiaries source prebaked anode carbon, coal, aluminium liquid and foil billets from the XUAR",
+     "official_list": true,
+     "label": "UFLPA Entity List (US DHS): screening result, not a finding of documented harm",
+     "as_of": "2026-10"
+    }
+   ],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "LR-FL",
+     "signal": "documented-harm",
+     "material": "aluminium",
+     "evidence": "Aluminium produced under XUAR labour transfers (DOL); battery-foil maker UFLPA-listed",
+     "sources": [
+      "src-dol-tvpra-2024",
+      "src-fr-2026-15628"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "High",
+     "confidence_reason": "T1 government finding plus T1 listing",
+     "as_of": "2026-10",
+     "has_independent_source": false
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/ethical-sourcing.md"
+  },
+  {
+   "id": "nmc-s2-cathode-china",
+   "chemistries": [
+    "nmc"
+   ],
+   "stage": "S2",
+   "kind": "share",
+   "name": "Nickel-based cathode material",
+   "country": "CN",
+   "role": "≈ two-thirds of Ni-based cathode made in China",
+   "share": {
+    "country": "CN",
+    "percent": 67,
+    "metric": "cathode production"
+   },
+   "values": [
+    {
+     "claim": "China produced two-thirds of nickel-based cathode material (2024)",
+     "sources": [
+      "src-iea-gcmo-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single T2 source",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "structural",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node; region or process carries structural risk",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Medium",
+     "confidence_reason": "Refining/cathode stage: concentration documented, no entity-level harm source",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/nmc-reference.md"
+  },
+  {
+   "id": "nmc-s3-cells-china",
+   "chemistries": [
+    "nmc",
+    "lfp",
+    "lmfp"
+   ],
+   "stage": "S3",
+   "kind": "share",
+   "name": "Battery cells (all Li-ion)",
+   "country": "CN",
+   "role": "≈80% of global cells made in China",
+   "share": {
+    "country": "CN",
+    "percent": 80,
+    "metric": "cell production"
+   },
+   "values": [
+    {
+     "value": 80,
+     "claim": "China produced 80% of global battery cells (2024)",
+     "sources": [
+      "src-iea-gcmo-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single T2 source",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No entity-level harm source at cell stage",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/nmc-reference.md"
+  },
+  {
+   "id": "lfp-s0-lithium-yichun",
+   "chemistries": [
+    "lfp",
+    "lmfp"
+   ],
+   "stage": "S0",
+   "kind": "entity",
+   "name": "Lepidolite lithium, Yichun (Jiangxi) incl. CATL Jianxiawo mine",
+   "country": "CN",
+   "role": "Yichun produced >¼ of China's lithium carbonate (2021); CATL's Jianxiawo mine",
+   "share": null,
+   "values": [
+    {
+     "claim": "Jianxiawo mine suspended Aug 2025 (licence expiry); new EIA in consultation 27 Jul 2026; remains closed pending approval",
+     "sources": [
+      "src-reuters-jianxiawo"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Low",
+   "confidence_reason": "Restart disputed: closed per Reuters (Aug 2026) vs resumed per a T3 source (C-07)",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "ENV-W",
+     "signal": "documented-harm",
+     "material": "lithium",
+     "evidence": "Thallium pollution of the Jin River (city drinking-water source), Nov–Dec 2022; lithium plants halted; police case over evading supervision",
+     "sources": [
+      "src-yichun-thallium-2022"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "High",
+     "confidence_reason": "SCMP, Yicai and state media agree (historical, 2022)",
+     "as_of": "2026-10",
+     "assurance_detail": "No IRMA site in Jiangxi",
+     "has_independent_source": true
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md",
+   "conflict_ids": [
+    "C-07"
+   ]
+  },
+  {
+   "id": "lfp-s0-phosphate-china",
+   "chemistries": [
+    "lfp",
+    "lmfp"
+   ],
+   "stage": "S0",
+   "kind": "share",
+   "name": "Phosphate rock and phosphorus chemicals, upper Yangtze",
+   "country": "CN",
+   "role": "Most Chinese phosphate rock; LFP makers integrating upstream",
+   "share": null,
+   "values": [
+    {
+     "claim": "Upper Yangtze is China's most concentrated phosphate mining/chemicals/phosphogypsum area, seriously polluted by total phosphorus",
+     "sources": [
+      "src-yangtze-p-2020"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Peer-reviewed study with ministry statements",
+   "flags": [],
+   "policy": [
+    {
+     "instrument": "sulphuric-acid",
+     "effect": "Processing depends on sulphuric acid; Hormuz/China export shocks raised costs",
+     "status": "Easing in Q3 2026; re-disruption risk",
+     "sources": [
+      "src-benchmark-acid"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
+   "ethical_risks": [
+    {
+     "category": "ENV-W",
+     "signal": "documented-harm",
+     "material": "phosphate",
+     "evidence": "Total-phosphorus pollution from mining, chemical plants and phosphogypsum stacks along rivers",
+     "sources": [
+      "src-yangtze-p-2020"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "High",
+     "confidence_reason": "Peer-reviewed plus MEE statements",
+     "as_of": "2026-10",
+     "assurance_detail": "No assurance scheme for phosphate",
+     "has_independent_source": true
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/harm-evidence.md"
+  },
+  {
+   "id": "lfp-s0-first-phosphate",
+   "chemistries": [
+    "lfp"
+   ],
+   "stage": "S0",
+   "kind": "entity",
+   "name": "First Phosphate — Bégin-Lamarche (Québec)",
+   "country": "CA",
+   "role": "Igneous phosphate project; offtakes 200,000 tpa concentrate",
+   "share": null,
+   "values": [
+    {
+     "claim": "EIFO LOI for up to C$275m guarantee signed 30 Mar 2026; feasibility study expected early 2027",
+     "sources": [
+      "src-firstphosphate-g7"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Company statements; pre-production",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "COM",
+     "signal": "no-known-evidence",
+     "material": "phosphate",
+     "evidence": "Collaboration agreement with Pekuakamiulnuatsh Takuhikan (9 Apr 2024) at exploration stage; not consent to a mine; FPIC status GAP",
+     "sources": [
+      "src-firstphosphate-agreement"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "High",
+     "confidence_reason": "T1 company statement quoting the Chief",
+     "as_of": "2026-10",
+     "has_independent_source": false
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "lfp-s0-iron-gap",
+   "chemistries": [
+    "lfp",
+    "lmfp"
+   ],
+   "stage": "S0",
+   "kind": "gap",
+   "name": "Iron feedstock for iron phosphate",
+   "country": "XX",
+   "role": "Not traceable from public or licensed data",
+   "share": null,
+   "values": [],
+   "confidence": "Unknown",
+   "confidence_reason": "GAP: no source for LFP-grade iron origin",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "iron",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "Unknown",
+     "confidence_reason": "GAP: origin unknown",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "lfp-s2-cathode-china",
+   "chemistries": [
+    "lfp"
+   ],
+   "stage": "S2",
+   "kind": "share",
+   "name": "LFP cathode material",
+   "country": "CN",
+   "role": "98% of LFP cathode made in China",
+   "share": {
+    "country": "CN",
+    "percent": 98,
+    "metric": "cathode production"
+   },
+   "values": [
+    {
+     "value": 98,
+     "claim": "China produced 98% of LFP cathode material (2024; same reported for 2025)",
+     "sources": [
+      "src-iea-gcmo-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "IEA, consistent with Reuters 2026",
+   "flags": [],
+   "policy": [
+    {
+     "instrument": "decision-58",
+     "effect": "Export licence would be required for Li-ion cells, cathode and artificial-graphite anode materials, equipment and technology",
+     "status": "Suspended until 2026-11-10 (Ann. No. 70)",
+     "sources": [
+      "src-pillsbury-mofcom"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "structural",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node; region or process carries structural risk",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Medium",
+     "confidence_reason": "Cathode concentration documented; no entity-level harm source",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "lfp-s2-nano-one-candiac",
+   "chemistries": [
+    "lfp"
+   ],
+   "stage": "S2",
+   "kind": "entity",
+   "name": "Nano One, Candiac (Québec)",
+   "country": "CA",
+   "role": "One-Pot LFP: 200 tpa pilot, expanding to 800 tpa",
+   "share": null,
+   "values": [
+    {
+     "claim": "Pilot 200 tpa; expansion to 800 tpa; Rio Tinto lithium pre-qualified",
+     "sources": [
+      "src-nanoone-q3-2025"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Candiac entity shares address 280 av. Liberté with Johnson Matthey Matériaux pour Batteries",
+     "sources": [
+      "src-sayari-nanoone"
+     ],
+     "tier": "T2",
+     "tag": "S-REG",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Company statement plus registry address match",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No harm source found for this node in the research notes",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "artefact_check": {
+    "done": true,
+    "pattern_matched": null,
+    "note": "research/sayari/nano-one.md"
+   },
+   "research_note": "research/sayari/nano-one.md"
+  },
+  {
+   "id": "lfp-s3-catl",
+   "chemistries": [
+    "lfp",
+    "lmfp",
+    "nmc"
+   ],
+   "stage": "S3",
+   "kind": "entity",
+   "name": "CATL",
+   "country": "CN",
+   "role": "39.2% of global EV battery use (2025)",
+   "share": null,
+   "values": [
+    {
+     "value": 39.2,
+     "claim": "39.2% of global EV battery use in 2025 (SNE Research)",
+     "sources": [
+      "src-sne-catl-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single T2 source",
+   "flags": [
+    {
+     "type": "1260h",
+     "source": "src-fr-2026-11571",
+     "basis": "CATL is indirectly affiliated with MIIT and directly and indirectly affiliated with SASAC (Section 1260H(g)(2)(B)(i)(I))",
+     "official_list": true,
+     "label": "Section 1260H list (US DoD): designation, not a finding of harm",
+     "as_of": "2026-10"
+    }
+   ],
+   "policy": [
+    {
+     "instrument": "decision-58",
+     "effect": "Export licence would be required for Li-ion cells, cathode and artificial-graphite anode materials, equipment and technology",
+     "status": "Suspended until 2026-11-10 (Ann. No. 70)",
+     "sources": [
+      "src-pillsbury-mofcom"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No entity-level labour or environmental harm source for CATL cell plants in the notes",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "lfp-s3-lges-lansing",
+   "chemistries": [
+    "lfp"
+   ],
+   "stage": "S3",
+   "kind": "entity",
+   "name": "LG Energy Solution, Lansing MI",
+   "country": "US",
+   "role": "US$4.3bn LFP prismatic plant; production 2027; supplies Megapack 3",
+   "share": null,
+   "values": [
+    {
+     "claim": "US$4.3bn LFP plant; production 2027; cells for Tesla Megapack 3 (Houston)",
+     "sources": [
+      "src-doi-lges-2026"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "US DOI announcement",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No harm source found for this node in the research notes",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "lfp-s3-ford-marshall",
+   "chemistries": [
+    "lfp"
+   ],
+   "stage": "S3",
+   "kind": "entity",
+   "name": "Ford BlueOval Battery Park, Marshall MI",
+   "country": "US",
+   "role": "CATL-licensed LFP cells from Jun 2026",
+   "share": null,
+   "values": [
+    {
+     "claim": "First CATL-licensed LFP cells June 2026; launch-ready before end 2026",
+     "sources": [
+      "src-electrive-ford-2026"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "value": "20 GWh",
+     "claim": "≈20 GWh",
+     "sources": [
+      "src-electrum-report"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "value": "35 GWh",
+     "claim": "35 GWh (2023 announcement, later phase)",
+     "sources": [
+      "src-electrive-ford-2026"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Low",
+   "confidence_reason": "Capacity conflict C-09",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No harm source found for this node in the research notes",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md",
+   "conflict_ids": [
+    "C-09"
+   ]
+  },
+  {
+   "id": "lfp-s3-gotion-morocco",
+   "chemistries": [
+    "lfp"
+   ],
+   "stage": "S3",
+   "kind": "entity",
+   "name": "Gotion Power Morocco, Kénitra",
+   "country": "MA",
+   "role": "Africa's first integrated LFP gigafactory; AfDB €100m",
+   "share": null,
+   "values": [
+    {
+     "value": "20 GWh",
+     "claim": "AfDB €100m loan; 20 GWh LFP + 100,000 t cathode",
+     "sources": [
+      "src-afdb-gotion"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "value": "10 GWh",
+     "claim": "10 GWh at launch, to 100 GWh",
+     "sources": [
+      "src-essnews-gotion"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Low",
+   "confidence_reason": "Capacity conflict C-08",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No harm source found for this node in the research notes",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "artefact_check": {
+    "done": true,
+    "pattern_matched": null,
+    "note": "Sayari registry record exists; no shareholders shown (research/sayari/gotion.md)"
+   },
+   "research_note": "research/lfp.md",
+   "conflict_ids": [
+    "C-08"
+   ]
+  },
+  {
+   "id": "lfp-s3-eve-jingmen",
+   "chemistries": [
+    "lfp"
+   ],
+   "stage": "S3",
+   "kind": "entity",
+   "name": "EVE Energy, Jingmen",
+   "country": "CN",
+   "role": "628Ah cell; 60 GWh storage plant",
+   "share": null,
+   "values": [
+    {
+     "claim": "628Ah 'Mr. Big' cell in mass production at the 60 GWh Jingmen plant since Dec 2024",
+     "sources": [
+      "src-eve-jingmen"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single T2 source",
+   "flags": [
+    {
+     "type": "1260h",
+     "source": "src-fr-2026-11571",
+     "basis": "EVE Energy is directly and indirectly affiliated with SASAC; military-civil fusion contributor",
+     "official_list": true,
+     "label": "Section 1260H list (US DoD): designation, not a finding of harm",
+     "as_of": "2026-10"
+    }
+   ],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No harm source found for this node in the research notes",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "lfp-s4-integrators",
+   "chemistries": [
+    "lfp"
+   ],
+   "stage": "S4",
+   "kind": "share",
+   "name": "BESS integrators (BYD, Tesla, Sungrow)",
+   "country": "MULTI",
+   "role": "BYD #1 (13%), Tesla (10%), Sungrow (9%) in 2025",
+   "share": null,
+   "values": [
+    {
+     "claim": "BYD >60 GWh (13%), Tesla 46.7 GWh (10%), Sungrow 43 GWh (9%) in 2025",
+     "sources": [
+      "src-benchmark-bess-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "One Benchmark analysis",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No harm source found for this node in the research notes",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "lfp-s5-siedlce",
+   "chemistries": [
+    "lfp"
+   ],
+   "stage": "S5",
+   "kind": "entity",
+   "name": "Greenvolt Siedlce BESS (Poland), BYD Haohan",
+   "country": "PL",
+   "role": "600 MW / 2.4 GWh; construction from Sep 2026",
+   "share": null,
+   "values": [
+    {
+     "claim": "Construction started Sep 2026; COD end 2027",
+     "sources": [
+      "src-greenvolt-siedlce"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Developer and supplier statements agree",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No harm source found for this node in the research notes",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lfp.md"
+  },
+  {
+   "id": "lmfp-s0-manganese-ore",
+   "chemistries": [
+    "lmfp",
+    "nmc"
+   ],
+   "stage": "S0",
+   "kind": "share",
+   "name": "Manganese ore (South Africa 46%, Gabon 19%)",
+   "country": "MULTI",
+   "role": "Kalahari field (ZA) and Moanda (GA) dominate",
+   "share": {
+    "country": "ZA",
+    "percent": 46,
+    "metric": "ore output"
+   },
+   "values": [
+    {
+     "claim": "South Africa 46%, Gabon 19%, Australia 9%, Ghana 7% of 2025 ore output",
+     "sources": [
+      "src-imni-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single industry body",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "OHS",
+     "signal": "documented-harm",
+     "material": "manganese",
+     "evidence": "26% of manganese miners studied in Hotazel had Parkinson's-like symptoms; workers report memory loss",
+     "sources": [
+      "src-wapo-mn-2023",
+      "src-oxpeckers-mn-2026"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "High",
+     "confidence_reason": "Two independent sources",
+     "as_of": "2026-10",
+     "assurance_detail": "No IRMA manganese mine; no RMI list",
+     "has_independent_source": true
+    },
+    {
+     "category": "COM",
+     "signal": "documented-harm",
+     "material": "manganese",
+     "evidence": "Kalahari communities: toxic dust on crops and water; blasting cracks; groundwater nitrate above WHO guideline",
+     "sources": [
+      "src-oxpeckers-mn-2026",
+      "src-wapo-mn-2023"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "High",
+     "confidence_reason": "Two independent sources",
+     "as_of": "2026-10",
+     "has_independent_source": true
+    },
+    {
+     "category": "LR-CL",
+     "signal": "documented-harm",
+     "material": "manganese",
+     "evidence": "Children as young as 11 in artisanal manganese mining, Zambia (DOL)",
+     "sources": [
+      "src-dol-tvpra-2024"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "High",
+     "confidence_reason": "T1 government finding",
+     "as_of": "2026-10",
+     "has_independent_source": false
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lmfp.md"
+  },
+  {
+   "id": "lmfp-s1-hpmsm",
+   "chemistries": [
+    "lmfp",
+    "nmc"
+   ],
+   "stage": "S1",
+   "kind": "share",
+   "name": "High-purity manganese sulphate (HPMSM)",
+   "country": "CN",
+   "role": "China ≈95% of battery grade; 100% acid-dependent",
+   "share": {
+    "country": "CN",
+    "percent": 95,
+    "metric": "battery-grade output"
+   },
+   "values": [
+    {
+     "value": 95,
+     "claim": "China ≈95% of battery-grade manganese sulphate",
+     "sources": [
+      "src-electrum-report"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Sayari: 1,148 manganese-sulphate suppliers; 466 in China; 350 with ≥1 forced-labour-category screening flag",
+     "sources": [
+      "src-sayari-mn-trade"
+     ],
+     "tier": "T2",
+     "tag": "S-TRADE",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Seed figure not re-verified; Sayari count reproduced",
+   "flags": [
+    {
+     "type": "forced-labour",
+     "source": "src-sayari-mn-trade",
+     "basis": "DOL-listed product exports and tier-2/3 trade proximity to Xinjiang-assessed or UFLPA-listed entities; many via 'Possibly the Same As' paths",
+     "aggregate": true,
+     "aggregate_counts": {
+      "flagged": 350,
+      "total": 1148,
+      "scope": "Manganese-sulphate supplier entities, HS 283329"
+     },
+     "corroborated_by": [],
+     "label": "Screening result, not an allegation",
+     "as_of": "2026-10"
+    }
+   ],
+   "policy": [
+    {
+     "instrument": "sulphuric-acid",
+     "effect": "Processing depends on sulphuric acid; Hormuz/China export shocks raised costs",
+     "status": "Easing in Q3 2026; re-disruption risk",
+     "sources": [
+      "src-benchmark-acid"
+     ],
+     "as_of": "2026-10-05"
+    },
+    {
+     "instrument": "eu-flr",
+     "effect": "From 14 Dec 2027 products made with forced labour are banned from the EU market, whatever the material",
+     "status": "Applies from 2027-12-14",
+     "sources": [
+      "src-ec-flr"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
+   "ethical_risks": [
+    {
+     "category": "ENV-W",
+     "signal": "documented-harm",
+     "material": "manganese",
+     "evidence": "Chinese manganese industry: severe water and soil pollution; refineries discharging toxic waste (2008–10)",
+     "sources": [
+      "src-wang-2025-mn",
+      "src-yale-e360-mn",
+      "src-li-2007-mn"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "Medium",
+     "confidence_reason": "Current conditions: one 2025 study; historical evidence High",
+     "as_of": "2026-10",
+     "has_independent_source": true
+    },
+    {
+     "category": "LR-FL",
+     "signal": "screening-flag",
+     "material": "manganese",
+     "evidence": "350 of 1,148 supplier entities carry forced-labour-category screening flags — mostly DOL-product exports and tier-2/3 Xinjiang/UFLPA proximity, often via 'Possibly the Same As' links",
+     "sources": [
+      "src-sayari-mn-trade"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "Medium",
+     "confidence_reason": "Database statement, reproduced; not findings",
+     "as_of": "2026-10",
+     "has_independent_source": false
+    }
+   ],
+   "as_of": "2026-10",
+   "artefact_check": {
+    "done": true,
+    "pattern_matched": null,
+    "note": "Aggregate reproduced 2026-10-05; PSA-path flags present, so no supplier is named (research/lmfp.md)"
+   },
+   "research_note": "research/lmfp.md"
+  },
+  {
+   "id": "lmfp-s2-dynanonic-qujing",
+   "chemistries": [
+    "lmfp"
+   ],
+   "stage": "S2",
+   "kind": "entity",
+   "name": "Dynanonic, Qujing (Yunnan)",
+   "country": "CN",
+   "role": "110,000 t/yr LMFP (commissioned 19 Sep 2022)",
+   "share": null,
+   "values": [
+    {
+     "value": 110000,
+     "claim": "110,000 t/yr LMFP project commissioned 19 Sep 2022, CNY 2.59bn",
+     "sources": [
+      "src-smm-dynanonic"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "value": 80000,
+     "claim": "> 80,000 t/yr",
+     "sources": [
+      "src-electrum-report"
+     ],
+     "tier": "T3",
+     "tag": "OS",
+     "as_of": "2026-10",
+     "superseded": true
+    },
+    {
+     "claim": "Trade records show shipments to Tesla Inc.; holds 60% of a Qujing JV owned with a 1260H-flagged entity",
+     "sources": [
+      "src-sayari-dynanonic"
+     ],
+     "tier": "T2",
+     "tag": "S-TRADE",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Commissioning record (resolved R-01)",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "structural",
+     "material": "manganese",
+     "evidence": "No documented harm found for this specific node; region or process carries structural risk",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "Medium",
+     "confidence_reason": "No entity-level harm source; inherits manganese S0/S1 risks",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "artefact_check": {
+    "done": true,
+    "pattern_matched": null,
+    "note": "Direct shareholding; trade link plausible (research/sayari/dynanonic.md)"
+   },
+   "research_note": "research/lmfp.md",
+   "conflict_ids": [
+    "R-01"
+   ]
+  },
+  {
+   "id": "lmfp-s2-shipments",
+   "chemistries": [
+    "lmfp"
+   ],
+   "stage": "S2",
+   "kind": "share",
+   "name": "Global LMFP cathode shipments",
+   "country": "MULTI",
+   "role": "13,000 t in 2024",
+   "share": null,
+   "values": [
+    {
+     "value": 13000,
+     "claim": "Global LMFP shipments 13,000 t in 2024; ~35,000 t projected 2025",
+     "sources": [
+      "src-evtank-lmfp"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single T2 source",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "structural",
+     "material": "manganese",
+     "evidence": "No documented harm found for this specific node; region or process carries structural risk",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "Medium",
+     "confidence_reason": "Market-level node",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lmfp.md"
+  },
+  {
+   "id": "lmfp-s2-integrals-olimpus",
+   "chemistries": [
+    "lmfp"
+   ],
+   "stage": "S2",
+   "kind": "entity",
+   "name": "Integrals Power / OLiMPUS (Horizon Europe)",
+   "country": "GB",
+   "role": "European LMFP chain pilot",
+   "share": null,
+   "values": [
+    {
+     "claim": "> 150 kg LMFP CAM (80% Mn) to the €9m OLiMPUS project (16 partners, to 2030)",
+     "sources": [
+      "src-olimpus"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Single T2 source (seed High not re-checked independently)",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "structural",
+     "material": "manganese",
+     "evidence": "No documented harm found for this specific node; region or process carries structural risk",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "Medium",
+     "confidence_reason": "Manganese origin for European LMFP not traced (GAP)",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/lmfp.md"
+  },
+  {
+   "id": "lmfp-s3-gotion",
+   "chemistries": [
+    "lmfp",
+    "lfp"
+   ],
+   "stage": "S3",
+   "kind": "entity",
+   "name": "Gotion High-Tech",
+   "country": "CN",
+   "role": "LMFP blending (L600 cell); VW ≈25% largest shareholder",
+   "share": null,
+   "values": [
+    {
+     "claim": "Volkswagen holds ≈25%; three JVs announced 28 Sep 2026 incl. Kénitra LFP-cathode JV (Gotion 51%)",
+     "sources": [
+      "src-vw-gotion-2026"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "T1 VW statement",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "processing",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No harm source found for this node in the research notes",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "artefact_check": {
+    "done": true,
+    "pattern_matched": "stale register after rename",
+    "note": "SOE flags sit on former-name record with self-ownership loop; not published (research/sayari/gotion.md)"
+   },
+   "research_note": "research/sayari/gotion.md"
+  },
+  {
+   "id": "vrfb-s0-vanadium-world",
+   "chemistries": [
+    "vrfb"
+   ],
+   "stage": "S0",
+   "kind": "share",
+   "name": "Vanadium mine production",
+   "country": "CN",
+   "role": "China 72%, mostly steel co-product",
+   "share": {
+    "country": "CN",
+    "percent": 72,
+    "metric": "mine output"
+   },
+   "values": [
+    {
+     "value": 72,
+     "claim": "2025: world 110,000 t; China 82,000 t; Russia 21,000 t; South Africa 5,000 t; China's output mostly co-product of V-Ti magnetite in steelmaking",
+     "sources": [
+      "src-usgs-mcs-2026"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "value": "73%",
+     "claim": "≈73% co-produced",
+     "sources": [
+      "src-electrum-report"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "value": "73–90%",
+     "claim": "73–90% co-produced",
+     "sources": [
+      "src-electrum-report"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "T1 USGS (shares); co-production share in conflict C-04",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "ENV-S",
+     "signal": "documented-harm",
+     "material": "vanadium",
+     "evidence": "Farmland soil and crop contamination near stone-coal vanadium smelting (Hunan); child health risk",
+     "sources": [
+      "src-v-chemosphere-2020"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "High",
+     "confidence_reason": "Peer-reviewed",
+     "as_of": "2026-10",
+     "assurance_detail": "No assurance scheme for vanadium",
+     "has_independent_source": true
+    },
+    {
+     "category": "COM",
+     "signal": "documented-harm",
+     "material": "vanadium",
+     "evidence": "Brits (ZA): non-consultation, land/livestock loss and dust illness alleged at Rhovan and Vametco; companies dispute",
+     "sources": [
+      "src-macua-rhovan-2024",
+      "src-iol-vametco-2023"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "Medium",
+     "confidence_reason": "Separate sources, two sites; allegations",
+     "as_of": "2026-10",
+     "has_independent_source": true
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/vrfb.md",
+   "conflict_ids": [
+    "C-04"
+   ]
+  },
+  {
+   "id": "vrfb-s0-pangang-panzhihua",
+   "chemistries": [
+    "vrfb"
+   ],
+   "stage": "S0",
+   "kind": "entity",
+   "name": "Pangang Vanadium & Titanium, Panzhihua (Sichuan)",
+   "country": "CN",
+   "role": "V-Ti magnetite; vanadium electrolyte mainly supplied to Rongke",
+   "share": null,
+   "values": [
+    {
+     "claim": "Pangang's vanadium electrolyte 'mainly supplies Dalian Rongke'; JV 2,000 m³ line; 60,000 m³/yr planned",
+     "sources": [
+      "src-cailian-pangang"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Two sources (Cailian; broker report) plus Sayari holdings",
+   "flags": [],
+   "policy": [
+    {
+     "instrument": "sulphuric-acid",
+     "effect": "Processing depends on sulphuric acid; Hormuz/China export shocks raised costs",
+     "status": "Easing in Q3 2026; re-disruption risk",
+     "sources": [
+      "src-benchmark-acid"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
+   "ethical_risks": [
+    {
+     "category": "ENV-S",
+     "signal": "documented-harm",
+     "material": "vanadium",
+     "evidence": "Vanadium pollution of topsoil and sediments in Panzhihua mining, smelting, slag and tailings areas (regional; not a finding about Pangang)",
+     "sources": [
+      "src-v-panzhihua-2006",
+      "src-v-chemosphere-2020"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "High",
+     "confidence_reason": "Two peer-reviewed sources",
+     "as_of": "2026-10",
+     "has_independent_source": true
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/vrfb.md"
+  },
+  {
+   "id": "vrfb-s0-largo-maracas",
+   "chemistries": [
+    "vrfb"
+   ],
+   "stage": "S0",
+   "kind": "entity",
+   "name": "Largo, Maracás Menchen (Bahia)",
+   "country": "BR",
+   "role": "Only vanadium mine in Latin America",
+   "share": null,
+   "values": [
+    {
+     "claim": "99.94% Largo; 2025 guidance 9,500–11,500 t V₂O₅",
+     "sources": [
+      "src-largo-maracas"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Largo Vanádio de Maracás S.A., CNPJ 15.191.786/0001-49; 608 shipments sent",
+     "sources": [
+      "src-sayari-largo"
+     ],
+     "tier": "T2",
+     "tag": "S-REG",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Company statement corroborated by registry",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "vanadium",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "Unknown",
+     "confidence_reason": "No harm source found for Maracás",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "artefact_check": {
+    "done": true,
+    "pattern_matched": null,
+    "note": "Matched on CNPJ; 'Largo' name collisions excluded (research/sayari/largo-storion.md)"
+   },
+   "research_note": "research/sayari/largo-storion.md"
+  },
+  {
+   "id": "vrfb-s1-rongke-electrolyte",
+   "chemistries": [
+    "vrfb"
+   ],
+   "stage": "S1",
+   "kind": "entity",
+   "name": "Rongke electrolyte (Dalian line; Panzhihua JV)",
+   "country": "CN",
+   "role": "Claims ≈90% of global vanadium electrolyte",
+   "share": null,
+   "values": [
+    {
+     "claim": "Dalian electrolyte line phase 1 in production June 2025; company claims ≈90% global share",
+     "sources": [
+      "src-stdaily-rongke"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Group holds Sichuan Vanadium-Rong Storage and Rongke Energy Storage Technology (Panzhihua)",
+     "sources": [
+      "src-sayari-rongke"
+     ],
+     "tier": "T2",
+     "tag": "S-REG",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Public sources plus registry",
+   "flags": [],
+   "policy": [
+    {
+     "instrument": "sulphuric-acid",
+     "effect": "Processing depends on sulphuric acid; Hormuz/China export shocks raised costs",
+     "status": "Easing in Q3 2026; re-disruption risk",
+     "sources": [
+      "src-benchmark-acid"
+     ],
+     "as_of": "2026-10-05"
+    }
+   ],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "structural",
+     "material": "sulphuric acid",
+     "evidence": "No documented harm found for this specific node; region or process carries structural risk",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "Medium",
+     "confidence_reason": "Electrolyte uses sulphuric acid; route-specific exposure GAP",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "artefact_check": {
+    "done": true,
+    "pattern_matched": null,
+    "note": "Direct shareholding, ≤ 2 hops (research/sayari/rongke.md)"
+   },
+   "research_note": "research/vrfb.md"
+  },
+  {
+   "id": "vrfb-s1-storion",
+   "chemistries": [
+    "vrfb"
+   ],
+   "stage": "S1",
+   "kind": "entity",
+   "name": "Storion Energy (Largo/Stryten JV), US",
+   "country": "US",
+   "role": "US vanadium electrolyte",
+   "share": null,
+   "values": [
+    {
+     "claim": "JV closed Feb 2025; DOE MAKE IT Prize US$5m; first electrolyte customer Sep 2025",
+     "sources": [
+      "src-storion-2025"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Company statements; registry identity confirmed",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "vanadium",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "Unknown",
+     "confidence_reason": "No harm source found for this node in the research notes",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "artefact_check": {
+    "done": true,
+    "pattern_matched": null,
+    "note": "Matched on CAGE/UEI; unrelated 'Storion' collisions excluded"
+   },
+   "research_note": "research/sayari/largo-storion.md"
+  },
+  {
+   "id": "vrfb-s3-rongke",
+   "chemistries": [
+    "vrfb"
+   ],
+   "stage": "S3",
+   "kind": "entity",
+   "name": "Rongke Power, Dalian",
+   "country": "CN",
+   "role": "VRFB stacks and systems; Hami (XUAR) subsidiaries",
+   "share": null,
+   "values": [
+    {
+     "claim": "Founded 29 Oct 2008 (DICP and Dalian Bolong); group has two Hami-registered subsidiaries",
+     "sources": [
+      "src-sayari-rongke"
+     ],
+     "tier": "T2",
+     "tag": "S-REG",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "> 3.5 GWh installed worldwide",
+     "sources": [
+      "src-rkp-projects"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Global VRFB base ≈2.5–3 GWh, Rongke 40–50%",
+     "sources": [
+      "src-electrum-report"
+     ],
+     "tier": "T3",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Registry plus company statements; installed base in conflict C-05",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "LR-FL",
+     "signal": "structural",
+     "material": "vanadium",
+     "evidence": "Group subsidiaries registered in Hami (XUAR), a region with documented state labour transfers; no entity-level evidence",
+     "sources": [
+      "src-sayari-rongke",
+      "src-shu-driving-force"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "Medium",
+     "confidence_reason": "Registry fact plus regional documentation; entity-level Unknown",
+     "as_of": "2026-10",
+     "has_independent_source": false
+    }
+   ],
+   "as_of": "2026-10",
+   "artefact_check": {
+    "done": true,
+    "pattern_matched": null,
+    "note": "Not MEU- or Entity-listed; 'Rongke Information Center' collision excluded; meu_list_contractors = procurement records"
+   },
+   "research_note": "research/sayari/rongke.md",
+   "conflict_ids": [
+    "C-05"
+   ]
+  },
+  {
+   "id": "vrfb-s5-jimusar",
+   "chemistries": [
+    "vrfb"
+   ],
+   "stage": "S5",
+   "kind": "entity",
+   "name": "Jimusar VRFB, Xinjiang (200 MW / 1,000 MWh)",
+   "country": "CN",
+   "role": "World's first GWh-scale flow battery; operation announced 31 Dec 2025",
+   "share": null,
+   "values": [
+    {
+     "claim": "Owner: China Three Gorges",
+     "sources": [
+      "src-esn-jimusar",
+      "src-rkp-projects"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Owner: Huaneng Xinjiang Jimusar Power",
+     "sources": [
+      "src-pvmag-jimusar"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Owner conflict C-06; leaning CTG",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "LR-FL",
+     "signal": "structural",
+     "material": "vanadium",
+     "evidence": "Sited in the XUAR, where state labour transfers are documented; no source ties the project's components to labour transfers",
+     "sources": [
+      "src-shu-driving-force",
+      "src-esn-jimusar"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "High",
+     "confidence_reason": "Siting High; entity-level Unknown",
+     "as_of": "2026-10",
+     "has_independent_source": false
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/vrfb.md",
+   "conflict_ids": [
+    "C-06"
+   ]
+  },
+  {
+   "id": "vrfb-cap-dla-order",
+   "chemistries": [
+    "vrfb"
+   ],
+   "stage": "CAP",
+   "kind": "entity",
+   "name": "US Defense Logistics Agency order to Largo",
+   "country": "US",
+   "role": "US$60.1m V₂O₅ delivery order",
+   "share": null,
+   "values": [
+    {
+     "value": 60.1,
+     "claim": "US$60.1m firm-fixed-price order received 1 Jul 2026 (to Jan 2030) under a 5-year IDIQ with US$125m ceiling",
+     "sources": [
+      "src-largo-6k-dla"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "T1 SEC filing",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "vanadium",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-covered",
+     "confidence": "Unknown",
+     "confidence_reason": "No harm source found for this node in the research notes",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/vrfb.md"
+  },
+  {
+   "id": "ni-h2-own-enervenue-holdings",
+   "chemistries": [
+    "ni-h2"
+   ],
+   "stage": "OWN",
+   "kind": "entity",
+   "name": "EnerVenue Holdings, Ltd. (Cayman)",
+   "country": "KY",
+   "role": "Holding company; Series B issuer",
+   "share": null,
+   "values": [
+    {
+     "claim": "Cayman holdco (Maples, Ugland House); SG UEN T23UF0046J",
+     "sources": [
+      "src-sayari-enervenue"
+     ],
+     "tier": "T2",
+     "tag": "S-REG",
+     "as_of": "2026-10"
+    },
+    {
+     "value": 300,
+     "claim": "US$300m Series B extension closed 31 Mar 2026",
+     "sources": [
+      "src-fvc-enervenue-2026"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Registry corroborated by company release",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "nickel",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "Unknown",
+     "confidence_reason": "Holding company; no operations",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "artefact_check": {
+    "done": true,
+    "pattern_matched": null,
+    "note": "research/sayari/enervenue.md"
+   },
+   "research_note": "research/sayari/enervenue.md"
+  },
+  {
+   "id": "ni-h2-own-enrv-sg",
+   "chemistries": [
+    "ni-h2"
+   ],
+   "stage": "OWN",
+   "kind": "entity",
+   "name": "ENRV Pte. Ltd. (Singapore)",
+   "country": "SG",
+   "role": "Intermediate holding; 'manufacture of secondary batteries'",
+   "share": null,
+   "values": [
+    {
+     "claim": "Registered 27 Aug 2023, UEN 202334718C; 100% owned by EnerVenue Holdings",
+     "sources": [
+      "src-sayari-enervenue"
+     ],
+     "tier": "T2",
+     "tag": "S-REG",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Registry, no public corroboration of link",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "nickel",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "Unknown",
+     "confidence_reason": "Holding company",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "artefact_check": {
+    "done": true,
+    "pattern_matched": null,
+    "note": "Direct shareholding"
+   },
+   "research_note": "research/sayari/enervenue.md"
+  },
+  {
+   "id": "ni-h2-s3-enervenue-changzhou",
+   "chemistries": [
+    "ni-h2"
+   ],
+   "stage": "S3",
+   "kind": "entity",
+   "name": "Yichuang New Energy Technology (Jiangsu) — EnerVenue WFOE, Changzhou",
+   "country": "CN",
+   "role": "250 MWh/yr line; first cell end Sep 2026",
+   "share": null,
+   "values": [
+    {
+     "claim": "Registered 12 Oct 2023; USCC 91320412MACYJDUF24; 100% held by ENRV Pte. Ltd.",
+     "sources": [
+      "src-sayari-enervenue"
+     ],
+     "tier": "T2",
+     "tag": "S-REG",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Ground broken Apr 2026; first conforming cell end Sep 2026; 250 MWh/yr, 1 GWh 2027",
+     "sources": [
+      "src-miningweekly-enervenue"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Registry date uncorroborated; operations corroborated",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "structural",
+     "material": "nickel",
+     "evidence": "Supplier visibility: WFOE sources inside China's battery-materials ecosystem; nickel source undisclosed (GAP)",
+     "sources": [
+      "src-miningweekly-enervenue"
+     ],
+     "assurance": "self-assessment",
+     "eu_dd_coverage": "covered",
+     "confidence": "Medium",
+     "confidence_reason": "Structural opacity; no entity-level harm",
+     "as_of": "2026-10",
+     "assurance_detail": "EnerVenue publishes a Supplier Code of Conduct",
+     "has_independent_source": false
+    }
+   ],
+   "as_of": "2026-10",
+   "artefact_check": {
+    "done": true,
+    "pattern_matched": null,
+    "note": "Shareholder node linked by exact name and shared officer"
+   },
+   "research_note": "research/ni-h2.md"
+  },
+  {
+   "id": "ni-h2-own-enervenue-hk",
+   "chemistries": [
+    "ni-h2"
+   ],
+   "stage": "OWN",
+   "kind": "entity",
+   "name": "EnerVenue Hong Kong Limited",
+   "country": "HK",
+   "role": "Registered 18 Nov 2025; planned regional HQ",
+   "share": null,
+   "values": [
+    {
+     "claim": "HK BR 79193890, registered 18 Nov 2025",
+     "sources": [
+      "src-sayari-enervenue"
+     ],
+     "tier": "T2",
+     "tag": "S-REG",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Plan for HK regional HQ and innovation centre with HKIC support",
+     "sources": [
+      "src-fvc-enervenue-2026"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Medium",
+   "confidence_reason": "Registry plus company plan",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "nickel",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "Unknown",
+     "confidence_reason": "Holding/regional office",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "artefact_check": {
+    "done": true,
+    "pattern_matched": null,
+    "note": "research/sayari/enervenue.md"
+   },
+   "research_note": "research/sayari/enervenue.md"
+  },
+  {
+   "id": "ni-h2-own-kentucky-stale",
+   "chemistries": [
+    "ni-h2"
+   ],
+   "stage": "OWN",
+   "kind": "entity",
+   "name": "EnerVenue Gigasite, Shelbyville KY (vacated)",
+   "country": "US",
+   "role": "Project put on hold Oct 2024; building taken over by Canadian Solar",
+   "share": null,
+   "values": [
+    {
+     "claim": "EnerVenue exited after production delays; Canadian Solar's e-STORAGE took over (Nov 2024)",
+     "sources": [
+      "src-esn-kentucky"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Public reporting with state confirmation",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "nickel",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "Unknown",
+     "confidence_reason": "Vacated site",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "artefact_check": {
+    "done": true,
+    "pattern_matched": "stale facility record",
+    "note": "EPA record persists for vacated site"
+   },
+   "research_note": "research/ni-h2.md"
+  },
+  {
+   "id": "ni-h2-cap-enervenue-funding",
+   "chemistries": [
+    "ni-h2"
+   ],
+   "stage": "CAP",
+   "kind": "entity",
+   "name": "EnerVenue total funding raised",
+   "country": "US",
+   "role": "Five conflicting totals",
+   "share": null,
+   "values": [
+    {
+     "value": 445,
+     "claim": "US$445m",
+     "sources": [
+      "src-tnw-enervenue"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "value": 784.85,
+     "claim": "US$784.85m",
+     "sources": [
+      "src-pitchbook-electrum"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "value": 1080,
+     "claim": "US$1.08bn",
+     "sources": [
+      "src-tracxn-enervenue"
+     ],
+     "tier": "T3",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "Low",
+   "confidence_reason": "Unresolved conflict C-01; shown side by side",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "nickel",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "covered",
+     "confidence": "Unknown",
+     "confidence_reason": "Capital node",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/ni-h2.md",
+   "conflict_ids": [
+    "C-01",
+    "C-02"
+   ]
+  },
+  {
+   "id": "carbon-o2-s3-noon",
+   "chemistries": [
+    "carbon-o2"
+   ],
+   "stage": "S3",
+   "kind": "entity",
+   "name": "Noon Energy Inc., Palo Alto",
+   "country": "US",
+   "role": "Reversible solid-oxide carbon-oxygen battery; no production yet",
+   "share": null,
+   "values": [
+    {
+     "claim": "Charging splits CO₂ into stored solid carbon; discharge recombines it with air oxygen in a reversible solid-oxide cell",
+     "sources": [
+      "src-noon-efcf-2026",
+      "src-latitude-noon"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    },
+    {
+     "claim": "Delaware 6850177; SEC CIK 0001838796; no Sayari risk flags",
+     "sources": [
+      "src-sayari-noon"
+     ],
+     "tier": "T2",
+     "tag": "S-REG",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Company technical paper corroborated by media; registry clean",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "structural",
+     "material": "mixed",
+     "evidence": "Power-block ceramics likely use Ni, Co, rare earths, Sr, Zr (typical SOCs); Noon's materials undisclosed (GAP)",
+     "sources": [
+      "src-soc-materials-2023"
+     ],
+     "assurance": "none-known",
+     "eu_dd_coverage": "unclear",
+     "confidence": "Low",
+     "confidence_reason": "INF from general SOC literature",
+     "as_of": "2026-10",
+     "has_independent_source": false
+    }
+   ],
+   "as_of": "2026-10",
+   "artefact_check": {
+    "done": true,
+    "pattern_matched": null,
+    "note": "Single company; name collisions excluded"
+   },
+   "research_note": "research/carbon-o2.md"
+  },
+  {
+   "id": "carbon-o2-s0-storage-medium",
+   "chemistries": [
+    "carbon-o2"
+   ],
+   "stage": "S0",
+   "kind": "entity",
+   "name": "Storage medium: carbon from CO₂; oxygen from air",
+   "country": "XX",
+   "role": "No mined input for the energy-storing medium",
+   "share": null,
+   "values": [
+    {
+     "claim": "Energy stored as solid carbon made from CO₂; oxygen drawn from air",
+     "sources": [
+      "src-noon-efcf-2026"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Company technical paper",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "carbon",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "No mined input",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/carbon-o2.md"
+  },
+  {
+   "id": "carbon-o2-s2-cell-materials-gap",
+   "chemistries": [
+    "carbon-o2"
+   ],
+   "stage": "S2",
+   "kind": "gap",
+   "name": "Cell, stack and ceramics suppliers",
+   "country": "XX",
+   "role": "Not traceable from public or licensed data",
+   "share": null,
+   "values": [],
+   "confidence": "Unknown",
+   "confidence_reason": "GAP: materials and suppliers undisclosed",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "mixed",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "unclear",
+     "confidence": "Unknown",
+     "confidence_reason": "GAP",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/carbon-o2.md"
+  },
+  {
+   "id": "carbon-o2-s5-meta",
+   "chemistries": [
+    "carbon-o2"
+   ],
+   "stage": "S5",
+   "kind": "entity",
+   "name": "Meta reservation",
+   "country": "US",
+   "role": "Up to 1 GW / 100 GWh; first 25 MW / 2.5 GWh by 2028",
+   "share": null,
+   "values": [
+    {
+     "claim": "Meta reserves up to 1 GW / 100 GWh; first 25 MW / 2.5 GWh by 2028 (reservation, not firm order)",
+     "sources": [
+      "src-noon-meta-2026"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "confidence": "High",
+   "confidence_reason": "Company announcement corroborated by media",
+   "flags": [],
+   "policy": [],
+   "ethical_risks": [
+    {
+     "category": "HR",
+     "signal": "no-known-evidence",
+     "material": "carbon",
+     "evidence": "No documented harm found for this specific node",
+     "sources": [],
+     "assurance": "none-known",
+     "eu_dd_coverage": "not-applicable",
+     "confidence": "Unknown",
+     "confidence_reason": "Customer node",
+     "as_of": "2026-10"
+    }
+   ],
+   "as_of": "2026-10",
+   "research_note": "research/carbon-o2.md"
+  }
+ ],
+ "edges": [
+  {
+   "from": "multi-s0-cobalt-drc",
+   "to": "nmc-s2-cathode-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country-level flow; no entity trace"
+  },
+  {
+   "from": "multi-s0-nickel-indonesia",
+   "to": "nmc-s2-cathode-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country-level flow; no entity trace"
+  },
+  {
+   "from": "multi-s0-lithium-mining",
+   "to": "nmc-s2-cathode-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country-level flow; no entity trace"
+  },
+  {
+   "from": "multi-s0-copper",
+   "to": "nmc-s2-cathode-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country-level flow; no entity trace"
+  },
+  {
+   "from": "multi-s2-anode-china",
+   "to": "nmc-s3-cells-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country-level flow"
+  },
+  {
+   "from": "nmc-s2-cathode-china",
+   "to": "nmc-s3-cells-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country-level flow"
+  },
+  {
+   "from": "multi-s0-lithium-mining",
+   "to": "lfp-s2-cathode-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country/stage-level flow; no entity contract"
+  },
+  {
+   "from": "lfp-s0-lithium-yichun",
+   "to": "lfp-s2-cathode-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country/stage-level flow; no entity contract"
+  },
+  {
+   "from": "lfp-s0-phosphate-china",
+   "to": "lfp-s2-cathode-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country/stage-level flow; no entity contract"
+  },
+  {
+   "from": "lfp-s0-iron-gap",
+   "to": "lfp-s2-cathode-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Low",
+   "confidence_reason": "Country/stage-level flow; no entity contract"
+  },
+  {
+   "from": "multi-s1-lithium-xinjiang",
+   "to": "lfp-s2-cathode-china",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country/stage-level flow; no entity contract"
+  },
+  {
+   "from": "lfp-s0-first-phosphate",
+   "to": "lfp-s2-nano-one-candiac",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country/stage-level flow; no entity contract"
+  },
+  {
+   "from": "lfp-s2-cathode-china",
+   "to": "lfp-s3-catl",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country/stage-level flow; no entity contract"
+  },
+  {
+   "from": "lfp-s2-cathode-china",
+   "to": "lfp-s3-eve-jingmen",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country/stage-level flow; no entity contract"
+  },
+  {
+   "from": "multi-s2-anode-china",
+   "to": "lfp-s3-catl",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country/stage-level flow; no entity contract"
+  },
+  {
+   "from": "multi-s0-copper",
+   "to": "lfp-s3-catl",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country/stage-level flow; no entity contract"
+  },
+  {
+   "from": "multi-s2-aluminium-foil",
+   "to": "lfp-s3-catl",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country/stage-level flow; no entity contract"
+  },
+  {
+   "from": "lfp-s3-catl",
+   "to": "lfp-s4-integrators",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country/stage-level flow; no entity contract"
+  },
+  {
+   "from": "lfp-s3-lges-lansing",
+   "to": "lfp-s4-integrators",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Company statement"
+  },
+  {
+   "from": "lfp-s4-integrators",
+   "to": "lfp-s5-siedlce",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country/stage-level flow; no entity contract"
+  },
+  {
+   "from": "lfp-s3-catl",
+   "to": "lfp-s3-ford-marshall",
+   "type": "licenses_to",
+   "overlay": "chain",
+   "confidence": "High",
+   "confidence_reason": "Ford and CATL statements"
+  },
+  {
+   "from": "lmfp-s0-manganese-ore",
+   "to": "lmfp-s1-hpmsm",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country/stage-level flow"
+  },
+  {
+   "from": "lmfp-s1-hpmsm",
+   "to": "lmfp-s2-dynanonic-qujing",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country/stage-level flow"
+  },
+  {
+   "from": "multi-s0-lithium-mining",
+   "to": "lmfp-s2-dynanonic-qujing",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country/stage-level flow"
+  },
+  {
+   "from": "lfp-s0-phosphate-china",
+   "to": "lmfp-s2-dynanonic-qujing",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country/stage-level flow"
+  },
+  {
+   "from": "lmfp-s2-dynanonic-qujing",
+   "to": "lfp-s3-catl",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Stage-level flow; Dynanonic→CATL M3P per 2023 report"
+  },
+  {
+   "from": "lmfp-s0-manganese-ore",
+   "to": "lmfp-s2-integrals-olimpus",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Country/stage-level flow"
+  },
+  {
+   "from": "lfp-s3-gotion-morocco",
+   "to": "lmfp-s3-gotion",
+   "type": "owned_by",
+   "overlay": "ownership",
+   "confidence": "Medium",
+   "confidence_reason": "AfDB and VW statements; no Sayari shareholders"
+  },
+  {
+   "from": "vrfb-s0-vanadium-world",
+   "to": "vrfb-s0-pangang-panzhihua",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Stage-level flow"
+  },
+  {
+   "from": "vrfb-s0-pangang-panzhihua",
+   "to": "vrfb-s1-rongke-electrolyte",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "High",
+   "confidence_reason": "Public sources plus registry"
+  },
+  {
+   "from": "vrfb-s1-rongke-electrolyte",
+   "to": "vrfb-s3-rongke",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Stage-level flow"
+  },
+  {
+   "from": "vrfb-s3-rongke",
+   "to": "vrfb-s5-jimusar",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Stage-level flow"
+  },
+  {
+   "from": "vrfb-s0-largo-maracas",
+   "to": "vrfb-s1-storion",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "High",
+   "confidence_reason": "Public sources plus registry"
+  },
+  {
+   "from": "vrfb-s0-pangang-panzhihua",
+   "to": "vrfb-s1-rongke-electrolyte",
+   "type": "joint_venture",
+   "overlay": "ownership",
+   "confidence": "High",
+   "confidence_reason": "Pangang–Rongke JV (Cailian) and Sayari holdings"
+  },
+  {
+   "from": "vrfb-cap-dla-order",
+   "to": "vrfb-s0-largo-maracas",
+   "type": "offtake",
+   "overlay": "capital",
+   "confidence": "High",
+   "confidence_reason": "T1 SEC filing"
+  },
+  {
+   "from": "ni-h2-own-enrv-sg",
+   "to": "ni-h2-own-enervenue-holdings",
+   "type": "owned_by",
+   "overlay": "ownership",
+   "confidence": "Medium",
+   "confidence_reason": "Direct 100% shareholding (registry)"
+  },
+  {
+   "from": "ni-h2-s3-enervenue-changzhou",
+   "to": "ni-h2-own-enrv-sg",
+   "type": "owned_by",
+   "overlay": "ownership",
+   "confidence": "Medium",
+   "confidence_reason": "Direct 100% shareholding (registry)"
+  },
+  {
+   "from": "ni-h2-own-enervenue-hk",
+   "to": "ni-h2-own-enervenue-holdings",
+   "type": "owned_by",
+   "overlay": "ownership",
+   "confidence": "Low",
+   "confidence_reason": "Parent link inferred from name and company plan; not shown in registry"
+  },
+  {
+   "from": "multi-s0-nickel-indonesia",
+   "to": "ni-h2-s3-enervenue-changzhou",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Low",
+   "confidence_reason": "INF: nickel source undisclosed; sector-level link only"
+  },
+  {
+   "from": "ni-h2-cap-enervenue-funding",
+   "to": "ni-h2-own-enervenue-holdings",
+   "type": "invests_in",
+   "overlay": "capital",
+   "confidence": "Medium",
+   "confidence_reason": "Company release; totals in conflict"
+  },
+  {
+   "from": "carbon-o2-s0-storage-medium",
+   "to": "carbon-o2-s3-noon",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Technology description"
+  },
+  {
+   "from": "carbon-o2-s2-cell-materials-gap",
+   "to": "carbon-o2-s3-noon",
+   "type": "supplies",
+   "overlay": "chain",
+   "confidence": "Unknown",
+   "confidence_reason": "GAP"
+  },
+  {
+   "from": "carbon-o2-s3-noon",
+   "to": "carbon-o2-s5-meta",
+   "type": "offtake",
+   "overlay": "chain",
+   "confidence": "Medium",
+   "confidence_reason": "Technology description"
+  }
+ ]
+}

@@ -1,0 +1,1708 @@
+{
+ "schema_version": "1.0",
+ "as_of": "2026-10",
+ "items": [
+  {
+   "chemistry": "nmc",
+   "field_id": "manufacturer",
+   "guidance_no": "3",
+   "field_label": "Manufacturer",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Reference passport: no case company"
+  },
+  {
+   "chemistry": "nmc",
+   "field_id": "battery-category",
+   "guidance_no": "6",
+   "field_label": "Battery category",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "EV battery",
+     "sources": [
+      "src-eurlex-2023-1542"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: regulation text"
+  },
+  {
+   "chemistry": "nmc",
+   "field_id": "place-of-manufacture",
+   "guidance_no": "8",
+   "field_label": "Place of manufacture",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": "Cell/pack plant only — not where materials were mined or refined",
+   "values": [
+    {
+     "claim": "China ≈80% of global cells (country-level, reference)",
+     "sources": [
+      "src-iea-gcmo-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Medium",
+   "confidence_reason": "Country-level only"
+  },
+  {
+   "chemistry": "nmc",
+   "field_id": "chemistry",
+   "guidance_no": "12",
+   "field_label": "Chemistry",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "Cathode Li(NiMnCo)O₂",
+     "sources": [
+      "src-iea-gcmo-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "Chemistry class documented in research notes"
+  },
+  {
+   "chemistry": "nmc",
+   "field_id": "capacity",
+   "guidance_no": "11",
+   "field_label": "Capacity",
+   "category": "performance",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "nmc",
+   "field_id": "lifetime-cycles",
+   "guidance_no": "31",
+   "field_label": "Expected lifetime in cycles",
+   "category": "performance",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "nmc",
+   "field_id": "round-trip-efficiency",
+   "guidance_no": "36",
+   "field_label": "Initial round-trip efficiency",
+   "category": "performance",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "nmc",
+   "field_id": "hazardous-substances",
+   "guidance_no": "13",
+   "field_label": "Hazardous substances (other than Hg, Cd, Pb)",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "nmc",
+   "field_id": "critical-raw-materials",
+   "guidance_no": "15",
+   "field_label": "Critical raw materials > 0.1% w/w",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": "Discloses presence, not origin (research/fields.md §4)",
+   "values": [
+    {
+     "claim": "Co, Li, Ni, Mn, graphite, Cu, Al",
+     "sources": [
+      "src-eurlex-2024-1252"
+     ],
+     "tier": "T1",
+     "tag": "INF",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Low",
+   "confidence_reason": "INF: regulation doesn't name the CRM list; CRMA Annex II assumed"
+  },
+  {
+   "chemistry": "nmc",
+   "field_id": "detailed-composition",
+   "guidance_no": "45",
+   "field_label": "Detailed composition (cathode, anode, electrolyte)",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "Cathode Li(NiMnCo)O₂; anode graphite; organic Li-salt electrolyte",
+     "sources": [
+      "src-iea-gcmo-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Medium",
+   "confidence_reason": "Chemistry-level composition from research notes"
+  },
+  {
+   "chemistry": "nmc",
+   "field_id": "renewable-content",
+   "guidance_no": "24",
+   "field_label": "Share of renewable content",
+   "category": "circularity",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "nmc",
+   "field_id": "battery-status",
+   "guidance_no": "67",
+   "field_label": "Battery status",
+   "category": "circularity",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Per-battery dynamic field"
+  },
+  {
+   "chemistry": "nmc",
+   "field_id": "carbon-footprint",
+   "guidance_no": "17",
+   "field_label": "Carbon-footprint declaration",
+   "category": "carbon",
+   "status": "deferred",
+   "applies": true,
+   "applies_note": "Not filled as of Feb 2027 — format still to be specified",
+   "values": [],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
+  },
+  {
+   "chemistry": "nmc",
+   "field_id": "responsible-sourcing",
+   "guidance_no": "19",
+   "field_label": "Responsible-sourcing information (DD report)",
+   "category": "due-diligence",
+   "status": "deferred",
+   "applies": true,
+   "applies_note": "Required from 18 Aug 2027; covers only Annex X materials",
+   "values": [
+    {
+     "claim": "Would cover: cobalt, lithium, nickel, natural graphite",
+     "sources": [
+      "src-eurlex-2023-1542",
+      "src-eurlex-2025-1561"
+     ],
+     "tier": "T1",
+     "tag": "INF",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: Annex X list applied to this chemistry's materials",
+   "applies_from": "2027-08-18"
+  },
+  {
+   "chemistry": "nmc",
+   "field_id": "recycled-content",
+   "guidance_no": "20-22",
+   "field_label": "Recycled share of Co, Li, Ni in active materials",
+   "category": "circularity",
+   "status": "deferred",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (Art. 8 delegated act)"
+  },
+  {
+   "chemistry": "lfp",
+   "field_id": "manufacturer",
+   "guidance_no": "3",
+   "field_label": "Manufacturer",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "CATL (39.2% of EV battery use, 2025)",
+     "sources": [
+      "src-sne-catl-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Medium",
+   "confidence_reason": "Single T2 source; illustrative manufacturer"
+  },
+  {
+   "chemistry": "lfp",
+   "field_id": "battery-category",
+   "guidance_no": "6",
+   "field_label": "Battery category",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "EV or industrial battery",
+     "sources": [
+      "src-eurlex-2023-1542"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: regulation text"
+  },
+  {
+   "chemistry": "lfp",
+   "field_id": "place-of-manufacture",
+   "guidance_no": "8",
+   "field_label": "Place of manufacture",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": "Cell/pack plant only — not where materials were mined or refined",
+   "values": [
+    {
+     "claim": "Lansing MI (LGES) or Marshall MI (Ford) for US-made LFP",
+     "sources": [
+      "src-doi-lges-2026"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "US DOI statement"
+  },
+  {
+   "chemistry": "lfp",
+   "field_id": "chemistry",
+   "guidance_no": "12",
+   "field_label": "Chemistry",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "Cathode LiFePO₄",
+     "sources": [
+      "src-iea-gcmo-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "Chemistry class documented in research notes"
+  },
+  {
+   "chemistry": "lfp",
+   "field_id": "capacity",
+   "guidance_no": "11",
+   "field_label": "Capacity",
+   "category": "performance",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "628Ah prismatic storage cell (EVE 'Mr. Big')",
+     "sources": [
+      "src-eve-jingmen"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Medium",
+   "confidence_reason": "Single T2 source for an illustrative cell"
+  },
+  {
+   "chemistry": "lfp",
+   "field_id": "lifetime-cycles",
+   "guidance_no": "31",
+   "field_label": "Expected lifetime in cycles",
+   "category": "performance",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "lfp",
+   "field_id": "round-trip-efficiency",
+   "guidance_no": "36",
+   "field_label": "Initial round-trip efficiency",
+   "category": "performance",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "lfp",
+   "field_id": "hazardous-substances",
+   "guidance_no": "13",
+   "field_label": "Hazardous substances (other than Hg, Cd, Pb)",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "lfp",
+   "field_id": "critical-raw-materials",
+   "guidance_no": "15",
+   "field_label": "Critical raw materials > 0.1% w/w",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": "Discloses presence, not origin (research/fields.md §4)",
+   "values": [
+    {
+     "claim": "Li, graphite, phosphorus/phosphate rock, Cu, Al",
+     "sources": [
+      "src-eurlex-2024-1252"
+     ],
+     "tier": "T1",
+     "tag": "INF",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Low",
+   "confidence_reason": "INF: regulation doesn't name the CRM list; CRMA Annex II assumed"
+  },
+  {
+   "chemistry": "lfp",
+   "field_id": "detailed-composition",
+   "guidance_no": "45",
+   "field_label": "Detailed composition (cathode, anode, electrolyte)",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "Cathode LiFePO₄; anode graphite (often synthetic); organic Li-salt electrolyte",
+     "sources": [
+      "src-iea-gcmo-2025"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Medium",
+   "confidence_reason": "Chemistry-level composition from research notes"
+  },
+  {
+   "chemistry": "lfp",
+   "field_id": "renewable-content",
+   "guidance_no": "24",
+   "field_label": "Share of renewable content",
+   "category": "circularity",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "lfp",
+   "field_id": "battery-status",
+   "guidance_no": "67",
+   "field_label": "Battery status",
+   "category": "circularity",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Per-battery dynamic field"
+  },
+  {
+   "chemistry": "lfp",
+   "field_id": "carbon-footprint",
+   "guidance_no": "17",
+   "field_label": "Carbon-footprint declaration",
+   "category": "carbon",
+   "status": "deferred",
+   "applies": true,
+   "applies_note": "Not filled as of Feb 2027 — format still to be specified",
+   "values": [],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
+  },
+  {
+   "chemistry": "lfp",
+   "field_id": "responsible-sourcing",
+   "guidance_no": "19",
+   "field_label": "Responsible-sourcing information (DD report)",
+   "category": "due-diligence",
+   "status": "deferred",
+   "applies": true,
+   "applies_note": "Required from 18 Aug 2027; covers only Annex X materials",
+   "values": [
+    {
+     "claim": "Would cover: lithium, natural graphite",
+     "sources": [
+      "src-eurlex-2023-1542",
+      "src-eurlex-2025-1561"
+     ],
+     "tier": "T1",
+     "tag": "INF",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: Annex X list applied to this chemistry's materials",
+   "applies_from": "2027-08-18"
+  },
+  {
+   "chemistry": "lfp",
+   "field_id": "recycled-content",
+   "guidance_no": "20-22",
+   "field_label": "Recycled share of Co, Li, Ni in active materials",
+   "category": "circularity",
+   "status": "deferred",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (Art. 8 delegated act)"
+  },
+  {
+   "chemistry": "lmfp",
+   "field_id": "manufacturer",
+   "guidance_no": "3",
+   "field_label": "Manufacturer",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "CATL M3P / Gotion (illustrative)",
+     "sources": [
+      "src-evtank-lmfp"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Medium",
+   "confidence_reason": "Illustrative manufacturers"
+  },
+  {
+   "chemistry": "lmfp",
+   "field_id": "battery-category",
+   "guidance_no": "6",
+   "field_label": "Battery category",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "EV battery",
+     "sources": [
+      "src-eurlex-2023-1542"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: regulation text"
+  },
+  {
+   "chemistry": "lmfp",
+   "field_id": "place-of-manufacture",
+   "guidance_no": "8",
+   "field_label": "Place of manufacture",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": "Cell/pack plant only — not where materials were mined or refined",
+   "values": [
+    {
+     "claim": "Qujing, Yunnan (Dynanonic cathode); cell plants in China",
+     "sources": [
+      "src-smm-dynanonic"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Medium",
+   "confidence_reason": "Cathode site; cell site illustrative"
+  },
+  {
+   "chemistry": "lmfp",
+   "field_id": "chemistry",
+   "guidance_no": "12",
+   "field_label": "Chemistry",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "Cathode LiMnₓFe₁₋ₓPO₄ (often blended with ternary)",
+     "sources": [
+      "src-evtank-lmfp"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "Chemistry class documented in research notes"
+  },
+  {
+   "chemistry": "lmfp",
+   "field_id": "capacity",
+   "guidance_no": "11",
+   "field_label": "Capacity",
+   "category": "performance",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "lmfp",
+   "field_id": "lifetime-cycles",
+   "guidance_no": "31",
+   "field_label": "Expected lifetime in cycles",
+   "category": "performance",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "lmfp",
+   "field_id": "round-trip-efficiency",
+   "guidance_no": "36",
+   "field_label": "Initial round-trip efficiency",
+   "category": "performance",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "lmfp",
+   "field_id": "hazardous-substances",
+   "guidance_no": "13",
+   "field_label": "Hazardous substances (other than Hg, Cd, Pb)",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "lmfp",
+   "field_id": "critical-raw-materials",
+   "guidance_no": "15",
+   "field_label": "Critical raw materials > 0.1% w/w",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": "Discloses presence, not origin (research/fields.md §4)",
+   "values": [
+    {
+     "claim": "Li, Mn, graphite, phosphorus/phosphate rock, Cu, Al",
+     "sources": [
+      "src-eurlex-2024-1252"
+     ],
+     "tier": "T1",
+     "tag": "INF",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Low",
+   "confidence_reason": "INF: regulation doesn't name the CRM list; CRMA Annex II assumed"
+  },
+  {
+   "chemistry": "lmfp",
+   "field_id": "detailed-composition",
+   "guidance_no": "45",
+   "field_label": "Detailed composition (cathode, anode, electrolyte)",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "Cathode LiMnₓFe₁₋ₓPO₄ (often blended with ternary); anode graphite",
+     "sources": [
+      "src-evtank-lmfp"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Medium",
+   "confidence_reason": "Chemistry-level composition from research notes"
+  },
+  {
+   "chemistry": "lmfp",
+   "field_id": "renewable-content",
+   "guidance_no": "24",
+   "field_label": "Share of renewable content",
+   "category": "circularity",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "lmfp",
+   "field_id": "battery-status",
+   "guidance_no": "67",
+   "field_label": "Battery status",
+   "category": "circularity",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Per-battery dynamic field"
+  },
+  {
+   "chemistry": "lmfp",
+   "field_id": "carbon-footprint",
+   "guidance_no": "17",
+   "field_label": "Carbon-footprint declaration",
+   "category": "carbon",
+   "status": "deferred",
+   "applies": true,
+   "applies_note": "Not filled as of Feb 2027 — format still to be specified",
+   "values": [],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
+  },
+  {
+   "chemistry": "lmfp",
+   "field_id": "responsible-sourcing",
+   "guidance_no": "19",
+   "field_label": "Responsible-sourcing information (DD report)",
+   "category": "due-diligence",
+   "status": "deferred",
+   "applies": true,
+   "applies_note": "Required from 18 Aug 2027; covers only Annex X materials",
+   "values": [
+    {
+     "claim": "Would cover: lithium, natural graphite",
+     "sources": [
+      "src-eurlex-2023-1542",
+      "src-eurlex-2025-1561"
+     ],
+     "tier": "T1",
+     "tag": "INF",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: Annex X list applied to this chemistry's materials",
+   "applies_from": "2027-08-18"
+  },
+  {
+   "chemistry": "lmfp",
+   "field_id": "recycled-content",
+   "guidance_no": "20-22",
+   "field_label": "Recycled share of Co, Li, Ni in active materials",
+   "category": "circularity",
+   "status": "deferred",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (Art. 8 delegated act)"
+  },
+  {
+   "chemistry": "vrfb",
+   "field_id": "manufacturer",
+   "guidance_no": "3",
+   "field_label": "Manufacturer",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "Rongke Power",
+     "sources": [
+      "src-rkp-projects"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "Company statement"
+  },
+  {
+   "chemistry": "vrfb",
+   "field_id": "battery-category",
+   "guidance_no": "6",
+   "field_label": "Battery category",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "Industrial battery (external storage)",
+     "sources": [
+      "src-eurlex-2023-1542"
+     ],
+     "tier": "T1",
+     "tag": "INF",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Medium",
+   "confidence_reason": "Reading of T1 text"
+  },
+  {
+   "chemistry": "vrfb",
+   "field_id": "place-of-manufacture",
+   "guidance_no": "8",
+   "field_label": "Place of manufacture",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": "Cell/pack plant only — not where materials were mined or refined",
+   "values": [
+    {
+     "claim": "Dalian, Liaoning (Rongke)",
+     "sources": [
+      "src-stdaily-rongke"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "Public reporting"
+  },
+  {
+   "chemistry": "vrfb",
+   "field_id": "chemistry",
+   "guidance_no": "12",
+   "field_label": "Chemistry",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "Vanadium ions in sulphuric-acid electrolyte (external tanks)",
+     "sources": [
+      "src-stdaily-rongke"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "Chemistry class documented in research notes"
+  },
+  {
+   "chemistry": "vrfb",
+   "field_id": "capacity",
+   "guidance_no": "11",
+   "field_label": "Capacity",
+   "category": "performance",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": "VRFB energy scales with tank volume, separately from power",
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "vrfb",
+   "field_id": "lifetime-cycles",
+   "guidance_no": "31",
+   "field_label": "Expected lifetime in cycles",
+   "category": "performance",
+   "status": "conditional",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "> 25,000 cycles (company, unaudited)",
+     "sources": [
+      "src-rkp-projects"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "Company statement (as statement, unaudited)"
+  },
+  {
+   "chemistry": "vrfb",
+   "field_id": "round-trip-efficiency",
+   "guidance_no": "36",
+   "field_label": "Initial round-trip efficiency",
+   "category": "performance",
+   "status": "conditional",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "vrfb",
+   "field_id": "hazardous-substances",
+   "guidance_no": "13",
+   "field_label": "Hazardous substances (other than Hg, Cd, Pb)",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "vrfb",
+   "field_id": "critical-raw-materials",
+   "guidance_no": "15",
+   "field_label": "Critical raw materials > 0.1% w/w",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": "Discloses presence, not origin (research/fields.md §4)",
+   "values": [
+    {
+     "claim": "Vanadium (plus Cu in balance of plant)",
+     "sources": [
+      "src-eurlex-2024-1252"
+     ],
+     "tier": "T1",
+     "tag": "INF",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Low",
+   "confidence_reason": "INF: regulation doesn't name the CRM list; CRMA Annex II assumed"
+  },
+  {
+   "chemistry": "vrfb",
+   "field_id": "detailed-composition",
+   "guidance_no": "45",
+   "field_label": "Detailed composition (cathode, anode, electrolyte)",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": "Template assumes Li-ion architecture",
+   "values": [
+    {
+     "claim": "Vanadium ions in sulphuric-acid electrolyte (external tanks); carbon-felt electrodes; ion-exchange membrane",
+     "sources": [
+      "src-stdaily-rongke"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Medium",
+   "confidence_reason": "Chemistry-level composition from research notes"
+  },
+  {
+   "chemistry": "vrfb",
+   "field_id": "renewable-content",
+   "guidance_no": "24",
+   "field_label": "Share of renewable content",
+   "category": "circularity",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "vrfb",
+   "field_id": "battery-status",
+   "guidance_no": "67",
+   "field_label": "Battery status",
+   "category": "circularity",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Per-battery dynamic field"
+  },
+  {
+   "chemistry": "vrfb",
+   "field_id": "carbon-footprint",
+   "guidance_no": "17",
+   "field_label": "Carbon-footprint declaration",
+   "category": "carbon",
+   "status": "deferred",
+   "applies": true,
+   "applies_note": "Not filled as of Feb 2027 — format still to be specified; external-storage batteries on a later timetable (Art. 7)",
+   "values": [],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
+  },
+  {
+   "chemistry": "vrfb",
+   "field_id": "responsible-sourcing",
+   "guidance_no": "19",
+   "field_label": "Responsible-sourcing information (DD report)",
+   "category": "due-diligence",
+   "status": "deferred",
+   "applies": true,
+   "applies_note": "Required from 18 Aug 2027; covers only Annex X materials — none of VRFB's inputs",
+   "values": [
+    {
+     "claim": "Would cover: none",
+     "sources": [
+      "src-eurlex-2023-1542",
+      "src-eurlex-2025-1561"
+     ],
+     "tier": "T1",
+     "tag": "INF",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: Annex X list applied to this chemistry's materials",
+   "applies_from": "2027-08-18"
+  },
+  {
+   "chemistry": "vrfb",
+   "field_id": "recycled-content",
+   "guidance_no": "20-22",
+   "field_label": "Recycled share of Co, Li, Ni in active materials",
+   "category": "circularity",
+   "status": "not-applicable",
+   "applies": false,
+   "applies_note": "Not applicable: no Co/Li/Ni; recycled vanadium/carbon has no field",
+   "values": [],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "No Co/Li/Ni in active materials"
+  },
+  {
+   "chemistry": "ni-h2",
+   "field_id": "manufacturer",
+   "guidance_no": "3",
+   "field_label": "Manufacturer",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "EnerVenue (Yichuang New Energy Technology (Jiangsu))",
+     "sources": [
+      "src-miningweekly-enervenue"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "Public reporting plus registry"
+  },
+  {
+   "chemistry": "ni-h2",
+   "field_id": "battery-category",
+   "guidance_no": "6",
+   "field_label": "Battery category",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "Industrial battery",
+     "sources": [
+      "src-eurlex-2023-1542"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: regulation text"
+  },
+  {
+   "chemistry": "ni-h2",
+   "field_id": "place-of-manufacture",
+   "guidance_no": "8",
+   "field_label": "Place of manufacture",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": "Cell/pack plant only — not where materials were mined or refined",
+   "values": [
+    {
+     "claim": "Wujin, Changzhou, Jiangsu",
+     "sources": [
+      "src-miningweekly-enervenue"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "Public reporting"
+  },
+  {
+   "chemistry": "ni-h2",
+   "field_id": "chemistry",
+   "guidance_no": "12",
+   "field_label": "Chemistry",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "Nickel hydroxide cathode",
+     "sources": [
+      "src-mercom-enervenue"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "Chemistry class documented in research notes"
+  },
+  {
+   "chemistry": "ni-h2",
+   "field_id": "capacity",
+   "guidance_no": "11",
+   "field_label": "Capacity",
+   "category": "performance",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "ni-h2",
+   "field_id": "lifetime-cycles",
+   "guidance_no": "31",
+   "field_label": "Expected lifetime in cycles",
+   "category": "performance",
+   "status": "conditional",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "30,000-cycle claim; 30-year design life (company, unaudited)",
+     "sources": [
+      "src-enervenue-site"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "Company statement (as statement, unaudited)"
+  },
+  {
+   "chemistry": "ni-h2",
+   "field_id": "round-trip-efficiency",
+   "guidance_no": "36",
+   "field_label": "Initial round-trip efficiency",
+   "category": "performance",
+   "status": "conditional",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "ni-h2",
+   "field_id": "hazardous-substances",
+   "guidance_no": "13",
+   "field_label": "Hazardous substances (other than Hg, Cd, Pb)",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "ni-h2",
+   "field_id": "critical-raw-materials",
+   "guidance_no": "15",
+   "field_label": "Critical raw materials > 0.1% w/w",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": "Discloses presence, not origin (research/fields.md §4)",
+   "values": [
+    {
+     "claim": "Ni (Co if present)",
+     "sources": [
+      "src-eurlex-2024-1252"
+     ],
+     "tier": "T1",
+     "tag": "INF",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Low",
+   "confidence_reason": "INF: regulation doesn't name the CRM list; CRMA Annex II assumed"
+  },
+  {
+   "chemistry": "ni-h2",
+   "field_id": "detailed-composition",
+   "guidance_no": "45",
+   "field_label": "Detailed composition (cathode, anode, electrolyte)",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": "Template assumes Li-ion architecture",
+   "values": [
+    {
+     "claim": "Nickel hydroxide cathode; nickel-alloy anode; alkaline electrolyte; hydrogen stored in sealed cell",
+     "sources": [
+      "src-mercom-enervenue"
+     ],
+     "tier": "T2",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Medium",
+   "confidence_reason": "Chemistry-level composition from research notes"
+  },
+  {
+   "chemistry": "ni-h2",
+   "field_id": "renewable-content",
+   "guidance_no": "24",
+   "field_label": "Share of renewable content",
+   "category": "circularity",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "ni-h2",
+   "field_id": "battery-status",
+   "guidance_no": "67",
+   "field_label": "Battery status",
+   "category": "circularity",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Per-battery dynamic field"
+  },
+  {
+   "chemistry": "ni-h2",
+   "field_id": "carbon-footprint",
+   "guidance_no": "17",
+   "field_label": "Carbon-footprint declaration",
+   "category": "carbon",
+   "status": "deferred",
+   "applies": true,
+   "applies_note": "Not filled as of Feb 2027 — format still to be specified",
+   "values": [],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
+  },
+  {
+   "chemistry": "ni-h2",
+   "field_id": "responsible-sourcing",
+   "guidance_no": "19",
+   "field_label": "Responsible-sourcing information (DD report)",
+   "category": "due-diligence",
+   "status": "deferred",
+   "applies": true,
+   "applies_note": "Required from 18 Aug 2027; covers only Annex X materials",
+   "values": [
+    {
+     "claim": "Would cover: nickel (cobalt if present)",
+     "sources": [
+      "src-eurlex-2023-1542",
+      "src-eurlex-2025-1561"
+     ],
+     "tier": "T1",
+     "tag": "INF",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: Annex X list applied to this chemistry's materials",
+   "applies_from": "2027-08-18"
+  },
+  {
+   "chemistry": "ni-h2",
+   "field_id": "recycled-content",
+   "guidance_no": "20-22",
+   "field_label": "Recycled share of Co, Li, Ni in active materials",
+   "category": "circularity",
+   "status": "deferred",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (Art. 8 delegated act)"
+  },
+  {
+   "chemistry": "carbon-o2",
+   "field_id": "manufacturer",
+   "guidance_no": "3",
+   "field_label": "Manufacturer",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "Noon Energy Inc.",
+     "sources": [
+      "src-noon-meta-2026"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "Company statement"
+  },
+  {
+   "chemistry": "carbon-o2",
+   "field_id": "battery-category",
+   "guidance_no": "6",
+   "field_label": "Battery category",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "Likely industrial battery (external storage)",
+     "sources": [
+      "src-eurlex-2023-1542"
+     ],
+     "tier": "T1",
+     "tag": "INF",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Medium",
+   "confidence_reason": "Reading of T1 text"
+  },
+  {
+   "chemistry": "carbon-o2",
+   "field_id": "place-of-manufacture",
+   "guidance_no": "8",
+   "field_label": "Place of manufacture",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": "Cell/pack plant only — not where materials were mined or refined",
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "No manufacturing site announced"
+  },
+  {
+   "chemistry": "carbon-o2",
+   "field_id": "chemistry",
+   "guidance_no": "12",
+   "field_label": "Chemistry",
+   "category": "identification",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [
+    {
+     "claim": "Reversible solid-oxide cells",
+     "sources": [
+      "src-noon-efcf-2026"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "Chemistry class documented in research notes"
+  },
+  {
+   "chemistry": "carbon-o2",
+   "field_id": "capacity",
+   "guidance_no": "11",
+   "field_label": "Capacity",
+   "category": "performance",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "carbon-o2",
+   "field_id": "lifetime-cycles",
+   "guidance_no": "31",
+   "field_label": "Expected lifetime in cycles",
+   "category": "performance",
+   "status": "conditional",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "carbon-o2",
+   "field_id": "round-trip-efficiency",
+   "guidance_no": "36",
+   "field_label": "Initial round-trip efficiency",
+   "category": "performance",
+   "status": "conditional",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "carbon-o2",
+   "field_id": "hazardous-substances",
+   "guidance_no": "13",
+   "field_label": "Hazardous substances (other than Hg, Cd, Pb)",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "carbon-o2",
+   "field_id": "critical-raw-materials",
+   "guidance_no": "15",
+   "field_label": "Critical raw materials > 0.1% w/w",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": "Discloses presence, not origin (research/fields.md §4)",
+   "values": [
+    {
+     "claim": "Undisclosed; typical SOCs contain Ni, Co, rare earths, Sr",
+     "sources": [
+      "src-eurlex-2024-1252"
+     ],
+     "tier": "T1",
+     "tag": "INF",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Low",
+   "confidence_reason": "INF: regulation doesn't name the CRM list; CRMA Annex II assumed"
+  },
+  {
+   "chemistry": "carbon-o2",
+   "field_id": "detailed-composition",
+   "guidance_no": "45",
+   "field_label": "Detailed composition (cathode, anode, electrolyte)",
+   "category": "sourcing",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": "Template assumes Li-ion architecture",
+   "values": [
+    {
+     "claim": "Reversible solid-oxide cells; solid-carbon storage medium; cell materials undisclosed",
+     "sources": [
+      "src-noon-efcf-2026"
+     ],
+     "tier": "T1",
+     "tag": "OS",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Low",
+   "confidence_reason": "Materials undisclosed beyond mechanism"
+  },
+  {
+   "chemistry": "carbon-o2",
+   "field_id": "renewable-content",
+   "guidance_no": "24",
+   "field_label": "Share of renewable content",
+   "category": "circularity",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Product-specific; no public value for an illustrative product"
+  },
+  {
+   "chemistry": "carbon-o2",
+   "field_id": "battery-status",
+   "guidance_no": "67",
+   "field_label": "Battery status",
+   "category": "circularity",
+   "status": "mandatory",
+   "applies": true,
+   "applies_note": null,
+   "values": [],
+   "conflict": false,
+   "confidence": "Unknown",
+   "confidence_reason": "Per-battery dynamic field"
+  },
+  {
+   "chemistry": "carbon-o2",
+   "field_id": "carbon-footprint",
+   "guidance_no": "17",
+   "field_label": "Carbon-footprint declaration",
+   "category": "carbon",
+   "status": "deferred",
+   "applies": true,
+   "applies_note": "Not filled as of Feb 2027 — format still to be specified; external-storage batteries on a later timetable (Art. 7)",
+   "values": [],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "T1: guidance marks not filled as of Feb 2027 (format pending)"
+  },
+  {
+   "chemistry": "carbon-o2",
+   "field_id": "responsible-sourcing",
+   "guidance_no": "19",
+   "field_label": "Responsible-sourcing information (DD report)",
+   "category": "due-diligence",
+   "status": "deferred",
+   "applies": true,
+   "applies_note": "Required from 18 Aug 2027; covers only Annex X materials",
+   "values": [
+    {
+     "claim": "Would cover: cobalt and nickel only if present in cells",
+     "sources": [
+      "src-eurlex-2023-1542",
+      "src-eurlex-2025-1561"
+     ],
+     "tier": "T1",
+     "tag": "INF",
+     "as_of": "2026-10"
+    }
+   ],
+   "conflict": false,
+   "confidence": "Low",
+   "confidence_reason": "Materials undisclosed",
+   "applies_from": "2027-08-18"
+  },
+  {
+   "chemistry": "carbon-o2",
+   "field_id": "recycled-content",
+   "guidance_no": "20-22",
+   "field_label": "Recycled share of Co, Li, Ni in active materials",
+   "category": "circularity",
+   "status": "not-applicable",
+   "applies": false,
+   "applies_note": "Not applicable: no Co/Li/Ni; recycled vanadium/carbon has no field",
+   "values": [],
+   "conflict": false,
+   "confidence": "High",
+   "confidence_reason": "No Co/Li/Ni in active materials"
+  }
+ ]
+}
