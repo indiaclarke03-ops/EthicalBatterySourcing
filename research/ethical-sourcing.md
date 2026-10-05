@@ -40,7 +40,7 @@ Annex X point 2 [E1] lists:
 - **(b) Human rights, labour rights and industrial relations:** occupational health and safety, child labour, forced labour, discrimination, trade-union freedoms.
 - **(c) Community life,** including that of Indigenous peoples.
 
-**Proposed revised codes** (replaces the table in PLAN.md and the `risk_category` enum in SPECIFICATION.md §2, if you agree):
+**Revised codes (adopted 2026-10-05):**
 
 | Code | Category | Annex X ref | Change from PLAN |
 |---|---|---|---|
@@ -114,11 +114,11 @@ These are named on an official US list. They are T1 screening flags, not documen
 
 **The pattern for the scorecard:** materials on the EU list have some voluntary assurance infrastructure, however partial. Materials off the list (manganese, phosphate, vanadium) have neither the legal duty nor an assurance scheme. And manganese already carries a US child-labour listing.
 
-## 5. Open questions for review
+## 5. Decisions (2026-10-05)
 
-1. **Taxonomy:** accept the revised codes in §2 (GEN → LR-DIS, add LR-TU)?
-2. **Synthetic graphite:** treat as "Unclear" coverage until a T1 source settles it? (Proposed: yes.)
-3. **UFLPA naming:** confirm that entities on official government lists can be named, with the aggregate-only rule applying only to database-derived (Sayari) flags.
+1. **Taxonomy:** the revised codes in §2 are adopted. GEN is replaced by LR-DIS (with a gender note), and LR-TU is added. PLAN.md and SPECIFICATION.md are updated on the B-03 branch.
+2. **Synthetic graphite:** EU due-diligence coverage is "Unclear" until a T1 source settles it.
+3. **Official lists:** entities on official government lists (UFLPA, 1260H) are named, with the list, date and stated basis. The aggregate-only rule applies to database-derived (Sayari) flags.
 
 ## Sources
 
