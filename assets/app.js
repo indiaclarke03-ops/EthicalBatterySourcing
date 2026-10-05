@@ -45,7 +45,7 @@ export const isGapNode = (n) => n.kind === "gap" || weak(n.confidence) || n.ethi
 
 const NAV = [
   ["index.html", "Passports"], ["scorecard.html", "Scorecard"], ["supply-chain.html", "Supply chain"],
-  ["compare.html", "Compare"], ["methods.html", "Methods"],
+  ["compare.html", "Compare"], ["methods.html", "Methods"], ["about.html", "About"],
 ];
 
 export const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));

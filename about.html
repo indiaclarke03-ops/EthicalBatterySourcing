@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About this tool · Battery Passport Audit</title>
+<meta name="description" content="Why the Battery Passport Audit exists, what it shows, how it works and how to read it.">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<main id="main" class="wrap prose">
+  <h1>About this tool</h1>
+  <p class="lede">Battery Passport Audit is an ethical-sourcing audit of the EU battery passport. It builds illustrative passports for six battery
+    chemistries, then traces each supply chain from mine to deployment to show what the passport would and wouldn't reveal about human rights, labour,
+    communities and the environment.</p>
+
+  <section id="why">
+    <h2>Why it exists</h2>
+    <p><strong>The passport promises transparency.</strong> Under the EU Batteries Regulation (Reg. 2023/1542, Art. 77), a digital battery passport becomes
+      mandatory on <strong>18 February 2027</strong> for EV batteries, light-means-of-transport batteries and industrial batteries above 2 kWh. The Commission's
+      guidance defines 71 data points.</p>
+    <p><strong>But the ethical risks sit upstream, where passport data is weakest.</strong> None of the 71 data points records where materials were mined or
+      refined. The supply-chain due-diligence duty that is meant to give sourcing data meaning was postponed to <strong>18 August 2027</strong>
+      (Reg. 2025/1561), and it covers only four raw materials: cobalt, natural graphite, lithium and nickel.</p>
+    <p><strong>Changing chemistry moves risk; it doesn't remove it.</strong> Newer chemistries can look "cleaner" on paper because their risky inputs
+      (phosphate, manganese, vanadium, copper, sulphuric acid) aren't on the due-diligence list. This tool puts those inputs back in view.</p>
+  </section>
+
+  <section id="what">
+    <h2>What it covers</h2>
+    <div class="kpis" id="counts" aria-live="polite"></div>
+    <div class="table-scroll"><table>
+      <thead><tr><th scope="col">Chemistry</th><th scope="col">Passport</th><th scope="col">Why it's here</th></tr></thead>
+      <tbody id="chems"></tbody>
+    </table></div>
+    <p class="small muted"><strong>Full</strong> passports are filled from research on named companies. A <strong>shadow</strong> passport is what the research
+      could fill in where too little is public, or where no official passport would exist. The <strong>reference</strong> passport (NMC) is a lighter
+      baseline: the chemistry the EU due-diligence list was written around.</p>
+  </section>
+
+  <section id="how">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><strong>Research.</strong> Each chemistry starts from India Clarke's earlier Electrum research and is re-verified against primary and public
+        sources, with corporate-registry and trade records from Sayari. Every finding goes into a research note with its source, evidence tier and date.</li>
+      <li><strong>Scoring.</strong> Every value, supply-chain link and risk gets a confidence score (High, Medium, Low or Unknown) and a one-line reason,
+        using one rubric for every chemistry. Risks are labelled by signal type, so a database match is never presented as a finding of harm.</li>
+      <li><strong>Data.</strong> Findings are stored as structured data files: passports, supply-chain nodes and links, sources and assurance schemes.
+        An automated validator checks every file against a schema and the project's rules (for example, that every value has a source and that database
+        forced-labour flags stay aggregate) before anything is published.</li>
+      <li><strong>Site.</strong> These pages read the data files directly in your browser. There is no server, no tracking and no external calls; every
+        number on screen is computed from the same data you can inspect in the repository.</li>
+    </ol>
+  </section>
+
+  <section id="use">
+    <h2>How to use it</h2>
+    <dl class="pages">
+      <dt><a href="index.html">Passports</a></dt>
+      <dd>Pick a chemistry and a use case. The card shows what the official passport would say; the panel beside it shows what it wouldn't. Select any field
+        for its sources and the ethical-sourcing risks along that chain. "Show gaps only" narrows the card to the weakest fields.</dd>
+      <dt><a href="scorecard.html">Scorecard</a></dt>
+      <dd>Chemistry × supply-chain stage. Each cell shows the strongest risk signal, whether EU due diligence would ask about it, and whether any
+        independent assurance exists. Select a cell for the evidence.</dd>
+      <dt><a href="supply-chain.html">Supply chain</a></dt>
+      <dd>Each chain from ore (S0) to deployment (S5). Filter by risk category, switch on the <strong>ownership &amp; capital</strong> overlay to see who
+        owns and funds what, or the <strong>policy risk</strong> overlay to see export controls, US lists and other exposures with their dates.</dd>
+      <dt><a href="compare.html">Compare</a></dt>
+      <dd>The six chemistries side by side: which minerals carry risks, where supply is concentrated, which uses the passport covers, how far back each
+        chain could be traced, and how many gaps remain.</dd>
+      <dt><a href="methods.html">Methods</a></dt>
+      <dd>The full rubric, the ethical-sourcing method, how database results are checked, and how AI was used.</dd>
+    </dl>
+    <p class="small muted">Every view has a shareable link: the address bar updates as you choose a chemistry, filter or field.</p>
+  </section>
+
+  <section id="read">
+    <h2>How to read it</h2>
+    <ul class="read-list">
+      <li><span class="badge conf-High">High</span> <span class="badge conf-Medium">Medium</span> <span class="badge conf-Low">Low</span>
+        <span class="badge conf-Unknown">Unknown</span> How confident the research is in a value, with the reason one click away.</li>
+      <li><span class="badge tier">T1</span> <span class="badge tier">T2</span> <span class="badge tier">T3</span> Evidence tier: primary source, credible
+        secondary source, or weaker source.</li>
+      <li><span class="sig sig-documented-harm">● Documented harm</span> <span class="sig sig-screening-flag">◆ Screening flag</span>
+        <span class="sig sig-structural">▲ Structural risk</span> <span class="sig sig-no-known-evidence">○ No known evidence</span>
+        What kind of signal a risk is. <strong>A screening flag is not an allegation</strong>, and "no known evidence" is not "no risk".</li>
+      <li><span class="cell-gap" style="padding:0 .4rem">dashed</span> A stage or field that couldn't be traced from public or licensed data. Gaps are
+        shown, never filled in.</li>
+      <li><strong>Side-by-side values</strong> mean sources disagree. They're never averaged.</li>
+    </ul>
+  </section>
+
+  <section id="limits">
+    <h2>Limits</h2>
+    <ul>
+      <li>The passports are <strong>illustrative</strong>. They're not real product passports and make no statement about any company's compliance.</li>
+      <li>The data is a snapshot as of <span data-asof></span>. Policy items carry their own dates; export controls and EU rules are still moving.</li>
+      <li>A blank or "no known evidence" result reflects what the research could find, not a clean bill of health.</li>
+      <li>Nothing here is legal, compliance or investment advice.</li>
+    </ul>
+    <p>Built by India Clarke with Claude Code, using Sayari and Tavily for research. See <a href="methods.html#ai">how AI was used</a>.</p>
+  </section>
+</main>
+
+<script type="module">
+import { loadData, shell, setAsOf, fail, esc } from "./assets/app.js";
+shell("about.html");
+const ORDER = ["lfp", "lmfp", "vrfb", "ni-h2", "carbon-o2", "nmc"];
+loadData().then((d) => {
+  setAsOf(d);
+  const risks = d.nodes.flatMap((n) => n.ethical_risks);
+  document.getElementById("counts").innerHTML = [
+    [d.chemistries.length, "battery chemistries"],
+    [d.passports.length, "passport field entries"],
+    [d.nodes.length, "supply-chain nodes"],
+    [risks.length, "ethical-sourcing risk entries"],
+    [Object.keys(d.sources).length, "cited sources"],
+  ].map(([n, l]) => `<div class="card kpi"><div class="num">${n}</div><div class="lab">${esc(l)}</div></div>`).join("");
+  document.getElementById("chems").innerHTML = ORDER.map((id) => d.chemById[id]).map((c) =>
+    `<tr><th scope="row"><a href="index.html?chem=${c.id}">${esc(c.short)}</a><br><span class="small muted">${esc(c.name)}</span></th>
+      <td>${esc(c.passport_type)}</td><td class="small">${esc(c.summary)}</td></tr>`).join("");
+}).catch(fail);
+</script>
+</body>
+</html>
