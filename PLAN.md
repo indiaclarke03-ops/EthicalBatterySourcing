@@ -84,6 +84,13 @@ Every node, edge and passport value gets a confidence score.
 
 **Reading of T1 text.** Applying explicit T1 text to a case it doesn't name, with no contrary source, scores **Medium**. For example, "a VRFB is a battery with external storage" applies Art. 3(1)(8). The reason line must start "Reading of T1 text:".
 
+**Scoring rules added after the B-08 test run:**
+- **Independence.** "Two independent T2 sources" means two separate pieces of research. Press coverage of one analyst report (e.g. MINING.COM reporting Benchmark) counts once.
+- **Score the claim as worded.** Evidence older than five years supports a past-tense claim ("documented in 2016") at its normal score. A present-tense claim resting only on it is capped at Medium.
+- **Statements.** A company's own statement is T1 only *as a statement* ("the company states…"). The reason line must say so.
+- **Official-list absence.** "Not on list X as of date D", checked against the list's full T1 text, scores High for that date.
+- **Sayari gate.** An S-REG/S-TRADE item stays at Low until its artefact check is done and clean. Above Medium also needs a public corroborating source.
+
 **Consistency across chemistries.** The rubric is applied the same way to every chemistry. The same evidence earns the same score whether it concerns a familiar chemistry (NMC, LFP) or an emerging one (Ni-H₂, carbon-O₂). The B-08 dry run includes at least one matched pair across chemistries to check this, and the validator warns when similar evidence scores differently.
 
 Each score is shown with a one-line reason. Conflicting values are stored as an array and displayed side by side, never averaged.
