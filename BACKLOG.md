@@ -183,7 +183,7 @@ Each note covers S0–S5 plus both overlays, with at least one node per stage. *
   - Toggle shows corporate topology and capital links. EnerVenue and Rongke are the showcase.
 - [x] **B-26 Policy-risk overlay** · Must
   - Highlights nodes affected by Decision No. 58, FEOC, 1260H and sulphuric-acid exposure, each with an as-of date.
-- [ ] **B-27 Comparison page** · Must
+- [x] **B-27 Comparison page** · Must
   - Minerals screen across six chemistries.
   - Chokepoint table.
   - Use-case scope matrix.

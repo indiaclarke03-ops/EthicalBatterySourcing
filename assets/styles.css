@@ -231,3 +231,20 @@ dialog.detail::backdrop { background: rgba(0, 0, 0, 0.35); }
 .node-pol .asof { color: var(--muted); white-space: nowrap; }
 [hidden] { display: none !important; }
 .chain-controls select { max-width: 22rem; }
+/* compare page */
+.toc { margin: 0.5rem 0 1rem; }
+section + section { margin-top: 2rem; }
+.bar { display: block; position: relative; background: var(--surface-2); border-radius: 3px; height: 1.3rem; min-width: 6rem; }
+.bar::before { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--w); background: var(--flag); opacity: 0.35; border-radius: 3px; }
+.bar span { position: relative; padding-left: 0.35rem; font-weight: 700; font-size: 0.85rem; }
+.depth { font-size: 0.8rem; font-weight: 600; padding: 0.05rem 0.45rem; border-radius: 4px; border: 1px solid currentColor; white-space: nowrap; }
+.depth-Entity { color: var(--c-high); }
+.depth-Country { color: var(--c-medium); }
+.depth-Low { color: var(--c-low); }
+.depth-Gap { color: var(--c-unknown); border-style: dashed; }
+.scope-cell { font-weight: 600; }
+.scope-cell.scope-out-of-scope { color: var(--c-low); }
+#t-minerals td { text-align: center; }
+.mcell .sig { font-size: 1.05rem; text-decoration: none; }
+.mcell.nc, .nc-key { background: color-mix(in srgb, var(--harm) 12%, transparent); }
+.nc-key { padding: 0 0.3rem; border-radius: 3px; }
