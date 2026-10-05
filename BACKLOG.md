@@ -170,7 +170,7 @@ Each note covers S0–S5 plus both overlays, with at least one node per stage. *
 - [x] **B-22 Use-case toggle** · Must
   - Switching use case updates the EU scope status and its confidence.
   - Out-of-scope uses are labelled "shadow passport".
-- [ ] **B-23 Field and node detail panel** · Must
+- [x] **B-23 Field and node detail panel** · Must
   - Shows sources (linked), tier, tag, confidence plus reason, as-of date, and conflicting values side by side.
   - Includes an **Ethical sourcing** tab listing each risk with signal type, evidence, assurance and EU due-diligence coverage.
 - [ ] **B-24 Supply-chain explorer** · Must

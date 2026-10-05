@@ -119,3 +119,95 @@ export function fail(err) {
   main.insertAdjacentHTML("afterbegin", `<p class="card" role="alert">Couldn't load the data (${esc(err.message)}).
     If you opened this file directly, serve the folder over HTTP instead (e.g. <code>python3 -m http.server</code>).</p>`);
 }
+
+// Detail panel (B-23): one <dialog> shared by passport fields and supply-chain nodes, with Details and Ethical sourcing tabs.
+const valueBlock = (v, data) => `<div class="val${v.superseded ? " superseded" : ""}">
+  <div>${esc(v.claim)}${v.superseded ? ' <span class="small muted">(superseded)</span>' : ""}</div>
+  <div class="chips">${tierBadge(v.tier)} ${tagBadge(v.tag)} <span class="small muted">as of ${esc(v.as_of)}</span></div>
+  ${sourceLinks(v.sources, data)}</div>`;
+
+function risksByNode(nodes, data) {
+  const withRisks = nodes.filter((n) => n.ethical_risks?.length);
+  if (!withRisks.length) return `<p class="muted">No ethical-sourcing risks recorded.</p>`;
+  return withRisks.map((n) => `<h4>${esc(n.stage)} · ${esc(n.name)}</h4>
+    <ul class="risk-list">${[...n.ethical_risks].sort((a, b) => SIGNAL[b.signal].rank - SIGNAL[a.signal].rank)
+      .map((r) => riskItem(r, data)).join("")}</ul>`).join("");
+}
+
+function ensureDialog() {
+  let dlg = document.getElementById("detail");
+  if (dlg) return dlg;
+  dlg = document.createElement("dialog");
+  dlg.id = "detail";
+  dlg.className = "detail";
+  dlg.setAttribute("aria-labelledby", "detail-title");
+  document.body.append(dlg);
+  dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+  return dlg;
+}
+
+function renderDialog({ title, subtitle, details, ethical, tab = "details" }) {
+  const dlg = ensureDialog();
+  dlg.innerHTML = `<div class="detail-inner">
+    <div class="detail-head"><div><h2 id="detail-title">${title}</h2>${subtitle ? `<p class="small muted">${subtitle}</p>` : ""}</div>
+      <button type="button" class="detail-close" aria-label="Close">✕</button></div>
+    <div role="tablist" class="tabs" aria-label="Detail sections">
+      <button role="tab" id="tab-details" aria-controls="pane-details">Details</button>
+      <button role="tab" id="tab-ethical" aria-controls="pane-ethical">Ethical sourcing</button>
+    </div>
+    <div role="tabpanel" id="pane-details" aria-labelledby="tab-details" tabindex="0">${details}</div>
+    <div role="tabpanel" id="pane-ethical" aria-labelledby="tab-ethical" tabindex="0">${ethical}</div>
+  </div>`;
+  const tabs = [...dlg.querySelectorAll('[role="tab"]')];
+  const select = (name) => tabs.forEach((t) => {
+    const on = t.id === `tab-${name}`;
+    t.setAttribute("aria-selected", String(on));
+    t.tabIndex = on ? 0 : -1;
+    dlg.querySelector(`#${t.getAttribute("aria-controls")}`).hidden = !on;
+  });
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => select(t.id.slice(4)));
+    t.addEventListener("keydown", (e) => {
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      const next = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+      next.focus(); select(next.id.slice(4));
+    });
+  });
+  dlg.querySelector(".detail-close").addEventListener("click", () => dlg.close());
+  select(tab);
+  if (!dlg.open) dlg.showModal();
+}
+
+export function openFieldDetail(field, chem, data, tab) {
+  const nodes = data.nodes.filter((n) => n.chemistries.includes(chem.id));
+  const vals = field.values.length
+    ? `<div class="${field.values.length > 1 ? "conflict-row" : ""}">${field.values.map((v) => valueBlock(v, data)).join("")}</div>`
+    : `<p class="muted">${field.status === "deferred" ? "Empty at launch." : field.applies ? "No public value for an illustrative product." : "Not applicable."}</p>`;
+  renderDialog({
+    title: `${esc(field.field_label)} <span class="muted">#${esc(field.guidance_no)}</span>`,
+    subtitle: `${esc(chem.short)} passport · ${esc(field.status)}${field.applies_from ? " from " + esc(field.applies_from) : ""}`,
+    tab,
+    details: `${field.values.length > 1 ? '<p class="small"><strong>Values disagree:</strong> shown side by side.</p>' : ""}${vals}
+      ${field.applies_note ? `<p class="small muted">${esc(field.applies_note)}</p>` : ""}
+      <p>${confBadge(field.confidence)} <span class="small">${esc(field.confidence_reason)}</span></p>`,
+    ethical: `<p class="small">This field doesn't record any of the following. These are the ethical-sourcing risks the research found along the ${esc(chem.short)} supply chain.</p>
+      ${risksByNode(nodes, data)}`,
+  });
+}
+
+export function openNodeDetail(node, data, tab) {
+  const conflicts = node.conflict_ids?.length ? `<p class="small">Conflicts register: ${node.conflict_ids.map(esc).join(", ")}</p>` : "";
+  renderDialog({
+    title: esc(node.name) + (node.kind === "gap" ? ' <span class="badge conf-Unknown">GAP</span>' : ""),
+    subtitle: `${esc(node.stage)} ${esc(STAGE_LABEL[node.stage] || "")} · ${esc(node.country)} · as of ${esc(node.as_of)}`,
+    tab,
+    details: `<p>${esc(node.role)}</p>
+      ${node.values.length > 1 ? '<p class="small"><strong>Values disagree:</strong> shown side by side.</p>' : ""}
+      <div class="${node.values.length > 1 ? "conflict-row" : ""}">${node.values.map((v) => valueBlock(v, data)).join("")}</div>
+      ${conflicts}
+      <p>${confBadge(node.confidence)} <span class="small">${esc(node.confidence_reason)}</span></p>
+      ${node.flags.length ? `<h3>Screening flags</h3>${node.flags.map((f) => `<p class="flag-label">${esc(f.label)}: ${esc(f.basis)}</p>${sourceLinks([f.source], data)}`).join("")}` : ""}
+      ${node.policy.length ? `<h3>Policy exposure</h3>${node.policy.map((p) => `<p class="small"><strong>${esc(p.instrument)}</strong>: ${esc(p.effect)}. ${esc(p.status)} <span class="muted">(as of ${esc(p.as_of)})</span></p>${sourceLinks(p.sources, data)}`).join("")}` : ""}`,
+    ethical: risksByNode([node], data),
+  });
+}
