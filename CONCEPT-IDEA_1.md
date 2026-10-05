@@ -145,11 +145,11 @@ Both are used at **build time only**, as MCP connectors in Claude Code. The publ
 - [ ] A live GitHub Pages URL and a public repo with the four project documents.
 - [ ] Six core passports. Each has a supply chain traced to S0 where evidence exists, and an ethical-sourcing profile for every stage.
 - [ ] The scorecard answers, for each chemistry: where the worst-documented risk sits, whether EU due diligence covers it, and whether any assurance exists.
-- [ ] A reviewer can click any item and see its source, tier, tag, confidence and as-of date.
+- [ ] A visitor can click any item and see its source, tier, tag, confidence and as-of date.
 - [ ] The demo shows the tool setup (Claude Code with GitHub, Tavily and Sayari) and the site.
 - [ ] Stretch: teammates' chemistries added at lighter depth, with credit.
 
-## Open questions for the reviewer
+## Open questions
 
 - ~~**Carbon-oxygen:** a full passport, or a shadow passport only?~~ Decided: full passport if B-13 finds enough verifiable detail, otherwise a shadow passport.
 - **Teammates' chemistries:** confirm credit wording and agreement.

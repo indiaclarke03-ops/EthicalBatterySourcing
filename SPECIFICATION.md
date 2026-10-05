@@ -2,7 +2,7 @@
 
 *Status: DRAFT v1 for human review · Owner: India Clarke. Read with CONCEPT-IDEA_1.md and PLAN.md. Where this document and PLAN.md disagree, this document wins for data shapes and page behaviour; PLAN.md wins for method.*
 
-Items marked **(confirm)** are decisions I need the reviewer to accept or change.
+Items marked **(confirm)** are decisions still to be confirmed.
 
 ## 1. Conventions
 
@@ -346,4 +346,3 @@ Decided:
 
 Still open:
 - **Field list:** fixed in B-06; §4.3 is a placeholder.
-- **Reviewer:** to be named.

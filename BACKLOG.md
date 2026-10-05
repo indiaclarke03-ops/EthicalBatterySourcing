@@ -22,11 +22,10 @@
 
 - [ ] **B-03 Commit project documents** · Must
   - All four documents (`CONCEPT-IDEA_1.md`, `PLAN.md`, `SPECIFICATION.md`, `BACKLOG.md`) plus `research/electrum-seed.md` are in the repo.
-  - PR opened and reviewer named.
+  - PR opened.
 - [ ] **B-04 Permissions and licences** · Must
   - `research/permissions.md` records the Sayari permission: who granted it, its date and its scope.
   - It also records the PitchBook position (no access; already-verified Electrum figures only, cited as "PitchBook, via Electrum report (Aug 2026)") and any other paid source.
-  - Reviewer sign-off recorded on the PR.
 
 ## Phase 2 — Research: foundations
 
@@ -206,7 +205,7 @@ Each note covers S0–S5 plus both overlays, with at least one node per stage. *
 ## Phase 6 — Ship and demo
 
 - [ ] **B-30 Live-site review** · Must
-  - The reviewer clicks through all six passports.
+  - Click through all six passports on the live site.
   - Flag and harm wording is checked for neutrality and for respect toward affected communities.
   - Issues are fixed or logged as new items.
 - [ ] **B-31 README** · Must
