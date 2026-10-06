@@ -13,7 +13,7 @@
   <p class="lede">Where each chemistry's documented harms and screening flags sit along the chain, whether EU battery due diligence would ask about them,
     and whether any independent assurance exists. Select a cell to see the evidence.</p>
 
-  <p class="factline sc-facts" id="kpis" aria-live="polite"></p>
+  <div class="kpis" id="kpis" aria-live="polite"></div>
 
   <div class="legend" aria-label="Legend">
     <span class="sig sig-documented-harm">● Documented harm</span>
@@ -92,11 +92,11 @@ function render(data) {
   const unassured = harm.filter((r) => r.assurance === "none-known");
   const gaps = data.nodes.filter((n) => n.kind === "gap").length;
   document.getElementById("kpis").innerHTML = [
-    [harm.length, "documented harms across all chains"],
-    [harmNotCovered.length, "on materials EU due diligence doesn't cover"],
-    [unassured.length, "with no independent assurance known"],
-    [gaps, "stages that can't be traced at all"],
-  ].map(([n, l]) => `<span><b>${n}</b> ${esc(l)}</span>`).join("");
+    [harm.length, "documented-harm entries across all chains"],
+    [harmNotCovered.length, `of the ${harm.length} involve materials EU due diligence doesn't cover`],
+    [unassured.length, `of the ${harm.length} have no independent assurance known`],
+    [gaps, "supply-chain stages that can't be traced at all"],
+  ].map(([n, l]) => `<div class="card kpi"><div class="num">${n}</div><div class="lab">${esc(l)}</div></div>`).join("");
 
   const pre = param("cell");
   if (pre) {
