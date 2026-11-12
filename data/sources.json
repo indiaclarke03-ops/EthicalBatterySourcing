@@ -1187,6 +1187,28 @@
    "tag": "OS",
    "retrieved": "2026-10-05",
    "research_note": "research/lfp.md"
+  },
+  {
+   "id": "src-mofcom-ann58-2026",
+   "title": "MOFCOM/GAC Announcement No. 58 of 2026: decision to continue suspending Announcements 2025 Nos. 55, 56, 57, 58, 61, 62 (9 Nov 2026)",
+   "publisher": "Ministry of Commerce of the PRC (MOFCOM)",
+   "url": "https://www.mofcom.gov.cn/zwgk/zcfb/art/2026/art_91466027f465467985942a639a9485f4.html",
+   "access": "public",
+   "tier": "T1",
+   "tag": "OS",
+   "retrieved": "2026-11-12",
+   "research_note": "research/cross-cutting.md"
+  },
+  {
+   "id": "src-reuters-mofcom-ext-2026",
+   "title": "China extends suspension of new rare earth controls until January (9 Nov 2026)",
+   "publisher": "Reuters",
+   "url": "https://www.reuters.com/world/china/china-extends-suspension-new-rare-earth-controls-until-january-2026-11-09",
+   "access": "public",
+   "tier": "T2",
+   "tag": "OS",
+   "retrieved": "2026-11-12",
+   "research_note": "research/cross-cutting.md"
   }
  ]
 }

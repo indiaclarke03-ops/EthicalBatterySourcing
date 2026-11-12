@@ -8,7 +8,7 @@ Each item re-verifies the matching row in `electrum-seed.md` and states whether 
 
 | Item | Seed status | Current status (2026-10-05) | Conf |
 |---|---|---|---|
-| China export controls on Li-ion, cathode, artificial-graphite anode (Ann. No. 58/2025) | Holds | **Suspended until 10 Nov 2026** (Ann. No. 70/2025). The 2023 graphite controls (Ann. No. 39/2023, 1C108) **remain in force**. ⚠ Re-check after 10 Nov 2026 | High |
+| China export controls on Li-ion, cathode, artificial-graphite anode (Ann. No. 58/2025) | Holds | **Suspension extended to 10 Jan 2027** (MOFCOM/GAC Ann. No. 58 of 2026, 9 Nov 2026; originally Ann. No. 70/2025, to 10 Nov 2026). The 2023 graphite controls (Ann. No. 39/2023, 1C108) **remain in force**. ⚠ Re-check on or after 11 Jan 2027 | High |
 | Seed label "Decision No. 70" | **Correct the name** | It's MOFCOM/GAC **Announcement** No. 70 of 2025 | High |
 | FEOC/PFE thresholds | **Partly wrong** | Battery components: 60 / 65 / 70 / **80** / 85% (2026→2030+). Storage projects: 55 / 60 / 65 / 70 / 75% | High |
 | Section 1260H | Holds, with one correction | BYD, CALB and EVE added **8 Jun 2026** (FR 2026-11571). CATL was **already listed in Jan 2025** and remains | High |
@@ -23,6 +23,7 @@ Each item re-verifies the matching row in `electrum-seed.md` and states whether 
 | EC-2 | Announcement No. 70 of 2025 (7 Nov 2025) suspends Nos. 55–58, 61 and 62 **from 7 Nov 2025 to 10 Nov 2026** | Global Times (state media, reporting MOFCOM); CIRS; Pillsbury | T1 (via state media) / T2 | High |
 | EC-3 | Graphite items under **Ann. No. 39/2023 (1C108)** still need a dual-use export licence. The suspension doesn't cover them | 0523.tw compliance summary (as of 23 Aug 2026), citing MOFCOM | T3 | Low. T3 only; needs a MOFCOM primary (rubric fix, B-08) |
 | EC-5 | **Status re-checked 2026-10-05:** no extension or early lifting of Ann. No. 70 announced; compliance trackers (Aug–Oct 2026) still show the suspension ending 10 Nov 2026. Separately, MOFCOM Ann. No. 26 of 2026 (24 Jun, in force 1 Jul) created a reporting mechanism for suspected breaches of strategic-mineral export controls, incl. transhipment through third countries | Zhengdao AI regulation map; ciprocess (Aug 2026); Exploverse (Ann. 26/2026) | T3 | Medium for "no extension announced" (several trackers agree); Low for Ann. 26 detail (T3 only) |
+| EC-6 | **Status re-checked 2026-11-12:** MOFCOM/GAC Announcement No. 58 of 2026 (9 Nov 2026; note: same number as the 2025 announcement, different year) states that Anns. 55, 56, 57, 58 (2025) and 61, 62 (2025) **remain suspended from 11 Nov 2026 to 10 Jan 2027**, with no gap after Ann. No. 70. Ann. No. 58 of 2025 controls are therefore still not in force. The text is one sentence and gives no further detail; the underlying announcements are suspended, not withdrawn. Ann. No. 18/2025 (April 2025 rare earths) is not covered. | MOFCOM announcement page (mofcom.gov.cn, 9 Nov 2026); Reuters, 9 Nov 2026 | T1 / T2 | High (primary text plus Reuters agree) |
 | EC-4 | Ann. No. 72 (9 Nov 2025) suspends the US-specific tightening for gallium, germanium, antimony, superhard materials and graphite (Art. 2 of Ann. 46/2024) **until 27 Nov 2026**. The ban on dual-use exports to **US military end users stays** | Pillsbury; Clark Hill | T2 | High |
 
 **Relevance to ethics.** The export controls are a supply-security issue, not a harm. But they decide whether non-Chinese chains can get process know-how (CATL licensing to Ford; Nano One). That matters to the "does a non-Chinese chain change the risk picture?" question in B-09 and B-10. Gallium (carbon-O₂ stack, trace amounts) falls under EC-4.
@@ -96,7 +97,7 @@ Copper is in every chemistry (current collectors, busbars, wiring) and cannot be
 
 | Item | Re-check on or after | Why |
 |---|---|---|
-| Ann. No. 58 / No. 70 | **11 Nov 2026** | Suspension expires 10 Nov 2026 |
+| Ann. No. 58 / No. 70 | ~~11 Nov 2026~~ done 2026-11-12 (EC-6: extended). Next: **11 Jan 2027** | Suspension now expires 10 Jan 2027 (Ann. No. 58 of 2026) |
 | Ann. No. 72 (Ga/Ge/Sb, US-specific) | **28 Nov 2026** | Suspension expires 27 Nov 2026 |
 | Omnibus IV (EU DD threshold) | Monthly | Formal adoption pending (`regulation.md`) |
 | Sulphur/acid | Before demo | Q4 disruption risk |
